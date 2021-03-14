@@ -5,7 +5,7 @@ import config
 import base64
 from lazywritter import log_writter
 from flask import Flask,request,flash, jsonify
-#from flask_restful import Resource, Api, reqparse
+# from flask_restful import Resource, Api, reqparse
 import hcp_find_response
 import hcp_response_generator
 import hcp_get_history
@@ -14,9 +14,7 @@ import ssl
 
 logger = log_writter()
 
-finder = hcp_find_response.response_finder()
 geneset = hcp_response_generator.response_generator()
-history = hcp_get_history.History()
 
 try:
     raise NotImplementedError("No error")
@@ -30,22 +28,23 @@ app = Flask(__name__)
 #app.config['CORS_ORIGINS'] = ['*']
 #app.config['CORS_HEADERS'] = ['Content-Type']
 
+# class Acadia_HCP_Model(Resource):
+#     def post(input):
+#         return "Hello World!" + input
 
-class Acadia_HCP_Model(Resource):
-    def post(input):
-        return "Hello World!" + input
 
-
-class Acadia_Patient_Model(Resource):
-    def post(self):
-        pass
+# class Acadia_Patient_Model(Resource):
+#     def post(self):
+#         pass
 
 @app.route('/', methods=['GET', 'POST'])
-def welcome():
+def index():
     return "Unauthorized Access."
 
 @app.route('/welcome', methods=['GET', 'POST'])
-def welcome():    
+def welcome(): 
+    finder = hcp_find_response.response_finder()
+
     res_json = finder.get_welcome_message()
 
     response = geneset.generate_response(res_json)
@@ -63,6 +62,8 @@ def calling():
 
 @app.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
+    finder = hcp_find_response.response_finder()
+    history = hcp_get_history.History()
     user_chat = request.args['conv']
     uid = request.args['uid']
     
@@ -83,6 +84,8 @@ def hcpchatbot():
 
 @app.route('/hcpchathistory', methods=['GET', 'POST'])
 def hcpchathistory():
+    finder = hcp_find_response.response_finder()
+    history = hcp_get_history.History()
     uid = request.args['uid']
 
     uid = history.check_generate_uid(uid)
