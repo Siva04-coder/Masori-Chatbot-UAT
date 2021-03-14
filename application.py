@@ -8,7 +8,7 @@ application = Flask(__name__)
 
 logger = log_writter()
 
-geneset = hcp_response_generator.response_generator()
+# geneset = hcp_response_generator.response_generator()
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
