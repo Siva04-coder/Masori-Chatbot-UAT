@@ -1,4 +1,8 @@
 from flask import Flask
+import hcp_find_response
+import hcp_response_generator
+import hcp_get_history
+
 application = Flask(__name__)
 
 @application.route('/', methods=['GET', 'POST'])
