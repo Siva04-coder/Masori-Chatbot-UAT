@@ -1,45 +1,10 @@
-import subprocess
-import time, datetime
-import os, sys
-import config
-import base64
-from lazywritter import log_writter
-from flask import Flask,request,flash, jsonify
-# from flask_restful import Resource, Api, reqparse
-import hcp_find_response
-import hcp_response_generator
-import hcp_get_history
-from flask_cors import CORS, cross_origin
-import ssl
-
-logger = log_writter()
-
-geneset = hcp_response_generator.response_generator()
-
-try:
-    raise NotImplementedError("No error")
-except Exception as e:
-    logger.write_exception('error message', 'method')
-
+from flask import Flask
 application = Flask(__name__)
-#api = Api(app)
-# cors = CORS(app)
-#, resources={r"/*": {"origins": "*"}}
-#app.config['CORS_ORIGINS'] = ['*']
-#app.config['CORS_HEADERS'] = ['Content-Type']
-
-# class Acadia_HCP_Model(Resource):
-#     def post(input):
-#         return "Hello World!" + input
-
-
-# class Acadia_Patient_Model(Resource):
-#     def post(self):
-#         pass
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
     return "Unauthorized Access."
+
 
 @application.route('/welcome', methods=['GET', 'POST'])
 def welcome(): 
@@ -109,9 +74,4 @@ def refreshCorpus():
     corpus_sheetname='HCP_Website_Data'
     upload_excel_to_database.UpdateDB(corpus_filename, corpus_sheetname)
     return "Successfully Updated."
-
-#api.add_resource(Acadia_HCP_Model,'/')
-
-#api.add_resource(Acadia_Patient_Model,'/patientmodel')
-
 
