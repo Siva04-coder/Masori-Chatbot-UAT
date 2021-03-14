@@ -2,6 +2,7 @@ from flask import Flask
 import hcp_find_response
 import hcp_response_generator
 import hcp_get_history
+from lazywritter import log_writter
 
 application = Flask(__name__)
 
