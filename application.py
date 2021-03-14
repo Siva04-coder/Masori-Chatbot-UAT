@@ -115,10 +115,3 @@ def refreshCorpus():
 #api.add_resource(Acadia_Patient_Model,'/patientmodel')
 
 
-if __name__ == "__main__":
-    # context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-    # context.verify_mode = ssl.CERT_REQUIRED
-    # context.load_cert_chain('ec2-3-128-171-30.us-east-2.compute.amazonaws.com.crt', 'ec2-3-128-171-30.us-east-2.compute.amazonaws.com.key')
-    # context = ('ec2-3-128-171-30.us-east-2.compute.amazonaws.com.crt', 'ec2-3-128-171-30.us-east-2.compute.amazonaws.com.key')#certificate and key files
-    # app.run(debug =True,host ='0.0.0.0',port=443,ssl_context=context)
-    app.run()
