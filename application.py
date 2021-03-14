@@ -6,16 +6,18 @@ from lazywritter import log_writter
 
 application = Flask(__name__)
 
+logger = log_writter()
+
+geneset = hcp_response_generator.response_generator()
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
-        
     try:
-        logger = log_writter()
-        return "Unauthorized Access."
+        finder = hcp_find_response.response_finder()
+        return "Welcome."
     except Exception as e:
         return str(e)
-
+    
 
 
 @application.route('/welcome', methods=['GET', 'POST'])
