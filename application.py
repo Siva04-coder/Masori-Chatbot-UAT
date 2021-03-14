@@ -6,11 +6,16 @@ from lazywritter import log_writter
 
 application = Flask(__name__)
 
-logger = log_writter()
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
-    return "Unauthorized Access."
+        
+    try:
+        logger = log_writter()
+        return "Unauthorized Access."
+    except Exception as e:
+        return str(e)
+
 
 
 @application.route('/welcome', methods=['GET', 'POST'])
