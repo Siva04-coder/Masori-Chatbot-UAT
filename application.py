@@ -5,7 +5,7 @@ import config
 import base64
 from lazywritter import log_writter
 from flask import Flask,request,flash, jsonify
-from flask_restful import Resource, Api, reqparse
+#from flask_restful import Resource, Api, reqparse
 import hcp_find_response
 import hcp_response_generator
 import hcp_get_history
@@ -24,8 +24,8 @@ except Exception as e:
     logger.write_exception('error message', 'method')
 
 app = Flask(__name__)
-api = Api(app)
-cors = CORS(app)
+#api = Api(app)
+# cors = CORS(app)
 #, resources={r"/*": {"origins": "*"}}
 #app.config['CORS_ORIGINS'] = ['*']
 #app.config['CORS_HEADERS'] = ['Content-Type']
@@ -39,6 +39,10 @@ class Acadia_HCP_Model(Resource):
 class Acadia_Patient_Model(Resource):
     def post(self):
         pass
+
+@app.route('/', methods=['GET', 'POST'])
+def welcome():
+    return "Unauthorized Access."
 
 @app.route('/welcome', methods=['GET', 'POST'])
 def welcome():    
