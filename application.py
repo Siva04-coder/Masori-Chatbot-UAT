@@ -13,7 +13,7 @@ logger = log_writter()
 @application.route('/', methods=['GET', 'POST'])
 def index():
     try:
-        finder = hcp_find_response.response_finder()
+        # finder = hcp_find_response.response_finder()
         return "Welcome."
     except Exception as e:
         return str(e)
