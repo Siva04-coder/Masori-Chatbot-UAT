@@ -1,45 +1,28 @@
 import pandas as pd
 import mysql.connector
-import config, json
-
-cfg = config.Config()
-
-config_details = cfg.get_database_configs()
-
-db_user=config_details['db_user']
-db_pass=config_details['db_pass']
-db_host=config_details['db_host']
-database=config_details['db_name']
-db_port= config_details['db_port']
-
+import json
+import load_corpus
 class response_finder:
 
     cnx = ''
     cursor = ''
+    welcome_message = ''
+    website_data = ''
+    master_intent_entity = ''
 
     def __init__(self):
-        self.cnx = mysql.connector.connect(user=db_user, password=db_pass,
-                            host=db_host, port=db_port,
-                            database=database)
+        self.welcome_message = load_corpus.get_welcome_message()
 
-        self.cursor = self.cnx.cursor()
+        self.website_data, self.master_intent_entity = load_corpus.get_data()
 
-        pass
 
     def get_welcome_message(self):
         res_query = "Select * from Master_Default_Messages Where lower(Message_Type)= 'welcome'"
         res_json = {}
-        try:
-            self.cursor.execute(res_query)
-            
-            table_rows = self.cursor.fetchall()
 
-            df_response = pd.DataFrame(table_rows)
-            
-            output_text = str(df_response[2][0])
-            
+        try:            
             res_json = {
-                "output_text": output_text,
+                "output_text": self.welcome_message,
                 "bullet": '',
                 "video_url": '',
                 "hyperlink_text": '',
@@ -64,45 +47,27 @@ class response_finder:
             return resultwords
 
     def find_response(self, chat_message):
-        query = "Select * from master_intent_entity_mapping where Site_Area='HCP' "
-        res_query = "Select * from website_data Where lower(Intents)= '"
         res_json = {}
         try:
             chats = self.remove_stopwords(chat_message)
-            
+            master = self.master_intent_entity
+            corpus = self.website_data
+
             for chat in chats:
-                if(chat != ''):
+                if chat != '':
                     chat.replace("'", "\'")
-                    query = query + "and lower(Entities) like '%" + chat.lower() + "%' "
-            print(query)
-            self.cursor.execute(query)
-            
-            table_rows = self.cursor.fetchall()
+                    master = master.loc[(master['Site_Area'] == 'HCP') & (master['Entities'].str.contains(chat))]
 
-            df = pd.DataFrame(table_rows)
-            count = len(df)
-            
-            intent = str(df[1][0])
+            corpus = corpus.loc[(corpus['Site_Area'] == 'HCP') & (corpus['Intents'] == master['Intents'].iloc[0])]
 
-            intent = intent.replace("'", "")
+            display_type = corpus['Display_Type'].iloc[0]
+            output_text = '' if str(corpus['Output'].iloc[0]) == 'nan' else corpus['Output'].iloc[0]
+            bullet = '' if str(corpus['Bullets'].iloc[0]) == 'nan' else corpus['Bullets'].iloc[0]
+            video_url = '' if str(corpus['Video URL'].iloc[0]) == 'nan' else corpus['Video URL'].iloc[0]
+            hyperlink_text = '' if str(corpus['Hyperlink Text'].iloc[0]) == 'nan' else corpus['Hyperlink Text'].iloc[0]
+            hyperlink = '' if str(corpus['Hyperlink URL'].iloc[0]) == 'nan' else corpus['Hyperlink URL'].iloc[0]
+            image_url = '' if str(corpus['Image URL'].iloc[0]) == 'nan' else corpus['Image URL'].iloc[0]
 
-            res_query = res_query + intent.lower() + "'"
-
-            self.cursor.execute(res_query)
-            
-            table_rows = self.cursor.fetchall()
-
-            df_response = pd.DataFrame(table_rows)
-
-            display_type = df_response[6][0]
-
-            output_text = '' if df_response[7][0] == 'nan' else df_response[7][0]
-            bullet = '' if df_response[8][0] == 'nan' else df_response[8][0]
-            video_url = '' if df_response[9][0] == 'nan' else df_response[9][0]
-            hyperlink_text = '' if df_response[10][0] == 'nan' else df_response[10][0]
-            hyperlink = '' if df_response[11][0] == 'nan' else df_response[11][0]
-            image_url = '' if df_response[12][0] == 'nan' else df_response[12][0]
-            
             res_json = {
                 "output_text": output_text,
                 "bullet": bullet,
@@ -112,6 +77,8 @@ class response_finder:
                 "image_url": image_url,
                 "display_type": display_type
             }
+
+            print(res_json)
 
         except Exception as e:
             print(str(e))

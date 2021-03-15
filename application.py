@@ -1,36 +1,40 @@
-from flask import Flask
 import hcp_find_response
 import hcp_response_generator
 import hcp_get_history
 from lazywritter import log_writter
+from flask import Flask,request,flash, jsonify
+from flask_restful import Resource, Api, reqparse
+import subprocess
+import time, datetime
+import os, sys
+import config
+import base64
 
 application = Flask(__name__)
 
 logger = log_writter()
 
-# geneset = hcp_response_generator.response_generator()
+geneset = hcp_response_generator.response_generator()
+
+finder = hcp_find_response.response_finder()
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
     try:
-        # finder = hcp_find_response.response_finder()
         return "Welcome."
     except Exception as e:
         return str(e)
     
 
-
 @application.route('/welcome', methods=['GET', 'POST'])
 def welcome(): 
-    finder = hcp_find_response.response_finder()
-
     res_json = finder.get_welcome_message()
 
     response = geneset.generate_response(res_json)
 
     return response
 
-@application.route('/calling/', methods=['GET', 'POST', 'OPTIONS'])
+@application.route('/calling', methods=['GET', 'POST', 'OPTIONS'])
 def calling():
     print('welcome')
     input = request.args['value']    
@@ -41,7 +45,6 @@ def calling():
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
-    finder = hcp_find_response.response_finder()
     history = hcp_get_history.History()
     user_chat = request.args['conv']
     uid = request.args['uid']
@@ -63,7 +66,6 @@ def hcpchatbot():
 
 @application.route('/hcpchathistory', methods=['GET', 'POST'])
 def hcpchathistory():
-    finder = hcp_find_response.response_finder()
     history = hcp_get_history.History()
     uid = request.args['uid']
 
@@ -89,3 +91,5 @@ def refreshCorpus():
     upload_excel_to_database.UpdateDB(corpus_filename, corpus_sheetname)
     return "Successfully Updated."
 
+# if __name__ == "__main__":
+#     application.run(debug=True)
