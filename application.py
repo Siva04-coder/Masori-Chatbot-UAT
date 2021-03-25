@@ -9,8 +9,10 @@ import time, datetime
 import os, sys
 import config
 import base64
+from flask_cors import CORS
 
 application = Flask(__name__)
+CORS(application)
 
 logger = log_writter()
 
