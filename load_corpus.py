@@ -9,7 +9,6 @@ def get_welcome_message():
     for index, row in msg_corpus.iterrows():
         if str(row['Message_Type']) == 'welcome':
             welcome_message = str(row['Message'])
-            break
     
     return welcome_message
 
