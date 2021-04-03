@@ -36,7 +36,8 @@
 					  "Resources NUPLAZID", 
 					  "NUPLAZID Factsheet", 
 					  "NUPLAZID Warning",
-					  "Blackbox warning"					  
+					  "Blackbox warning",
+					  "fact sheets & discussion guide"
                     ],
          "responses": ["fact sheets & discussion guide"]
         },
@@ -94,13 +95,15 @@
 					  "hallucinations measured",
                       "delusion measured",
                       "example of SAPS",
-                      "common adverse reactions"
+                      "common adverse reactions",
+					  "SAPS PD"
 					  ],
          "responses": ["About SAPS-PD"]
         },
         {"Intent": "About SAPS-PD",
          "patterns": [ 
-					  "common adverse reactions"					  
+					  "common adverse reactions",
+					  "Adverse reaction"
 					  ],
          "responses": ["Adverse reaction"]
         },
@@ -112,12 +115,13 @@
          "responses": ["Pimavanserin safety"]
         },
         {"Intent": "Safety Information",
-         "patterns": ["placebo-controlled studies",
+         "patterns": ["placebo controlled studies",
 					  "percentage of suffering",
-					  "open-label safety",
+					  "open label safety",
                       "administration information",
                       "dosage information",
-                      "treatment-emergent"
+                      "treatment emergent",
+					  "safety information"
 					 ],
          "responses": ["NUPLAZID important safety information"]
         },
@@ -148,7 +152,7 @@
 					  "Acadia Connect patient assistance program", 
 					  "NUPLAZID financial assistance", 
 					  "NUPLAZID discount card", 
-					  "long-term care access",
+					  "long-term care access"
 					  "NUPLAZID foundation assistance", 
 					  "NUPLAZID medication payment assistance",
 					  "patient care Offered","coverage financial assistance",
@@ -241,7 +245,8 @@
 					  "In-office care",
 					  "Long-term care",
 					  "support documents",
-					  "reimbursement process"					  
+					  "reimbursement process",
+					  ""
                     ],
          "responses": ["NUPLAZID cost details"]
         },
@@ -265,7 +270,7 @@
          "patterns": [  
 					   
 					  
-					  "NUPLAZID copay assistance", "NUPLAZID contact number", "NUPLAZID ASSISTANCE", "Contact Information", "About ACADIA"	  
+					  "NUPLAZID copay assistance", "NUPLAZID contact number", "NUPLAZID ASSISTANCE", "Contact Information", "About ACADIA","Acadiaconnect details"
                     ],
          "responses": ["Acadiaconnect details"]
         }
