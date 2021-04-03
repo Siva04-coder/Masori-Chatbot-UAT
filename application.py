@@ -20,16 +20,30 @@ geneset = hcp_response_generator.response_generator()
 
 finder = hcp_find_response.response_finder()
 
+def Authorize(username, password):
+    is_authorize = False
+    if username == 'masori' and password == 'd5a791474d2c6dfc4ed8aa4a':
+        is_authorize = True
+    return is_authorize
+
 @application.route('/', methods=['GET', 'POST'])
 def index():
+    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
+
     try:
-        return "Unauthorized."
+        return "Welcome."
     except Exception as e:
         return str(e)
     
 
 @application.route('/welcome', methods=['GET', 'POST'])
 def welcome(): 
+    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
+
     res_json = finder.get_welcome_message()
 
     response = geneset.generate_response(res_json)
@@ -39,7 +53,11 @@ def welcome():
 
 @application.route('/pred', methods=['GET', 'POST'])
 def pred(): 
-    user_chat = request.args['conv']
+    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
+
+    user_chat = request.headers.get('conv')
 
     import predict
 
@@ -52,9 +70,13 @@ def pred():
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
+    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
+
     try:
         history = hcp_get_history.History()
-        user_chat = request.args['conv']
+        user_chat = request.headers.get('conv')
         uid = request.args['uid']
         
         res_json = finder.find_HCP_response(user_chat)
@@ -79,15 +101,17 @@ def hcpchatbot():
 
 @application.route('/hcprecommendchat', methods=['GET', 'POST'])
 def hcprecommendchat():
+    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
+
     try:
         history = hcp_get_history.History()
-        user_chat = request.args['conv']
+        user_chat = request.headers.get('conv')
         uid = request.args['uid']
-        
+
         res_json = finder.find_HCP_response(user_chat, True)
-
         cur_response = geneset.generate_response(res_json)
-
         uid = history.check_generate_uid(uid)
 
         history.check_update_history(uid, user_chat, cur_response)
@@ -106,6 +130,10 @@ def hcprecommendchat():
 
 @application.route('/hcpchathistory', methods=['GET', 'POST'])
 def hcpchathistory():
+    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
+
     history = hcp_get_history.History()
     uid = request.args['uid']
 

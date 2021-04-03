@@ -50,40 +50,95 @@ class response_finder:
             
             return resultwords
 
-    def find_response_by_chat(self, chat_message):
+    def find_HCP_response(self, chat_message, isRecommend=False):
         res_json = {}
         try:
-            
-            chats = self.remove_stopwords(chat_message)
-            master = self.master_intent_entity
+            chat = ''
+            if isRecommend == False:
+                intent = predict.predict(chat_message)
+                print('\n\nAll intents : ', intent)
+                chat = intent[0]
+            else:
+                chat = chat_message
+            # chats = self.remove_stopwords(chat_message)
+            # master = self.master_intent_entity
             corpus = self.website_data
 
-            for chat in chats:
-                if chat != '':
-                    chat.replace("'", "\'")
-                    master = master.loc[(master['Site_Area'] == 'HCP') & (master['Entities'].str.contains(chat))]
+            # for chat in chats:
+            #     if chat != '':
+            #         chat.replace("'", "\'")
+            #         master = master.loc[(master['Site_Area'] == 'HCP') & (master['Entities'].str.contains(chat))]
 
-            corpus = corpus.loc[(corpus['Site_Area'] == 'HCP') & (corpus['Intents'] == master['Intents'].iloc[0])]
+            corpus = corpus.loc[(corpus['Sub Functional Area'].str.lower() == str(chat).lower())]
+            
+            if not corpus.empty:
+                print('\n\ncorpus : ', corpus)
+                print('\n\nintent : ', chat)
+                output_text = '' if str(corpus['Response'].iloc[0]) == 'nan' else corpus['Response'].iloc[0]
+                bullet = '' if str(corpus['Bullets'].iloc[0]) == 'nan' else corpus['Bullets'].iloc[0]
+                video_url = '' if str(corpus['Video URL'].iloc[0]) == 'nan' else corpus['Video URL'].iloc[0]
+                hyperlink_text = '' if str(corpus['Hyperlink Text'].iloc[0]) == 'nan' else corpus['Hyperlink Text'].iloc[0]
+                hyperlink = '' if str(corpus['Hyperlink URL'].iloc[0]) == 'nan' else corpus['Hyperlink URL'].iloc[0]
+                image_url = '' if str(corpus['Image URL'].iloc[0]) == 'nan' else corpus['Image URL'].iloc[0]
+                #recommend_text = '' if str(corpus['Recommend Text'].iloc[0]) == 'nan' else corpus['Recommend Text'].iloc[0]
+                recommend_intent = '' if str(corpus['Recommend Intent'].iloc[0]) == 'nan' else corpus['Recommend Intent'].iloc[0]
+                visit_page = '' if str(corpus['Visit Page'].iloc[0]) == 'nan' else corpus['Visit Page'].iloc[0]
 
-            display_type = corpus['Display_Type'].iloc[0]
-            output_text = '' if str(corpus['Output'].iloc[0]) == 'nan' else corpus['Output'].iloc[0]
-            bullet = '' if str(corpus['Bullets'].iloc[0]) == 'nan' else corpus['Bullets'].iloc[0]
-            video_url = '' if str(corpus['Video URL'].iloc[0]) == 'nan' else corpus['Video URL'].iloc[0]
-            hyperlink_text = '' if str(corpus['Hyperlink Text'].iloc[0]) == 'nan' else corpus['Hyperlink Text'].iloc[0]
-            hyperlink = '' if str(corpus['Hyperlink URL'].iloc[0]) == 'nan' else corpus['Hyperlink URL'].iloc[0]
-            image_url = '' if str(corpus['Image URL'].iloc[0]) == 'nan' else corpus['Image URL'].iloc[0]
+                print('recommend')
+                res_json = {
+                    "output_text": output_text,
+                    "bullet": bullet,
+                    "video_url": video_url,
+                    "hyperlink_text": hyperlink_text,
+                    "hyperlink_url": hyperlink,
+                    "image_url": image_url,
+                    #"recommend_text": recommend_text,
+                    "recommend_intent": recommend_intent,
+                    "visit_page": visit_page
+                }
+            else:
+                cnt = 1
+                while True:
+                    try:
+                        chat = intent[cnt]
+                        chat = chat
 
-            res_json = {
-                "output_text": output_text,
-                "bullet": bullet,
-                "video_url": video_url,
-                "hyperlink_text": hyperlink_text,
-                "hyperlink_url": hyperlink,
-                "image_url": image_url,
-                "display_type": display_type
-            }
+                        corpus = self.website_data
+                        corpus = corpus.loc[corpus['Sub Functional Area'].str.lower() == str(chat).lower()]
+                        
+                        if not corpus.empty:
+                            print('\n\corpus : ', corpus)
+                            print('\n\nintent : ', chat)
+                            output_text = '' if str(corpus['Response'].iloc[0]) == 'nan' else corpus['Response'].iloc[0]
+                            bullet = '' if str(corpus['Bullets'].iloc[0]) == 'nan' else corpus['Bullets'].iloc[0]
+                            video_url = '' if str(corpus['Video URL'].iloc[0]) == 'nan' else corpus['Video URL'].iloc[0]
+                            hyperlink_text = '' if str(corpus['Hyperlink Text'].iloc[0]) == 'nan' else corpus['Hyperlink Text'].iloc[0]
+                            hyperlink = '' if str(corpus['Hyperlink URL'].iloc[0]) == 'nan' else corpus['Hyperlink URL'].iloc[0]
+                            image_url = '' if str(corpus['Image URL'].iloc[0]) == 'nan' else corpus['Image URL'].iloc[0]
+                            #recommend_text = '' if str(corpus['Recommend Text'].iloc[0]) == 'nan' else corpus['Recommend Text'].iloc[0]
+                            recommend_intent = '' if str(corpus['Recommend Intent'].iloc[0]) == 'nan' else corpus['Recommend Intent'].iloc[0]
+                            visit_page = '' if str(corpus['Visit Page'].iloc[0]) == 'nan' else corpus['Visit Page'].iloc[0]
 
-            print(res_json)
+                            res_json = {
+                                "output_text": output_text,
+                                "bullet": bullet,
+                                "video_url": video_url,
+                                "hyperlink_text": hyperlink_text,
+                                "hyperlink_url": hyperlink,
+                                "image_url": image_url,
+                                #"recommend_text": recommend_text,
+                                "recommend_intent": recommend_intent,
+                                "visit_page": visit_page
+                            }
+                            break
+
+                        cnt = cnt + 1
+                    except Exception as e:
+                        break
+                        pass
+                    
+
+            print('\n\nres_json : ', res_json)
 
         except Exception as e:
             print(str(e))
@@ -91,7 +146,8 @@ class response_finder:
 
         return json.dumps(res_json)
 
-    def find_HCP_response(self, chat_message, isRecommend=False):
+
+    def find_Consumer_response(self, chat_message, isRecommend=False):
         res_json = {}
         try:
             chat = ''
