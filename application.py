@@ -33,8 +33,10 @@ def index():
         if is_authorize == False:
             return "Unauthorized Access."
     except Exception as d:
+        logger.write_exception(str(d), 'Index')
         pass
-
+    
+    logger.write_activity('Index Logging Activity')
     try:
         return "Welcome."
     except Exception as e:
