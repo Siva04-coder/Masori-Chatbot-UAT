@@ -1,0 +1,211 @@
+{"data": [
+        {"Intent": "Symptoms",
+         "patterns": ["signs Parkinson disease",
+					  "pd symptoms", "symptoms of pd", 
+					  "symptoms Parkinson disease", 
+					  "Parkinson disease symptoms", 
+					  "symptoms of Parkinson", 
+					  "signs of Parkinson",
+					  "motor symptoms",
+					  "nonmotor symptoms",
+					  "About Parkinson Disease Psychosis", 
+					  "symptoms & potential causes"
+                    ],
+         "responses": ["symptoms of Parkinson’s disease"]
+        },
+        {"Intent": "Symptoms",
+         "patterns": ["About PD disease",
+					  "PD",
+					  "About Parkinson Disease Psychosis", 
+					  "symptoms & potential causes"
+                    ],
+         "responses": ["About Parkinson’s Disease Psychosis"]
+        },
+        {"Intent": "About Nuplazid",
+         "patterns": ["about NUPLAZID",
+					  "NUPLAZID medication", 
+					  "NUPLAZID"
+                    ],
+         "responses": ["NUPLAZID medication"]
+        },
+        {"Intent": "About Nuplazid",
+         "patterns": [
+					  "NUPLAZID Parkinson", 
+					  "clinical data"					  
+                    ],
+         "responses": ["NUPLAZID Parkinson’s"]
+        },
+        {"Intent": "About Parkinson’s Disease",
+         "patterns": ["cause of Parkinson disease",
+					  "Parkinson condition", 
+					  "remedy Parkinson’s", 
+					  "management of Parkinson", 
+					  "remedies Parkinson disease", 
+					  "Learn about Parkinson disease"
+                    ],
+         "responses": ["cause of Parkinson’s disease"]
+        },
+        {"Intent": "Talking to your healthcare provider",
+         "patterns": ["Doctor discussion guide",
+					  "healthcare Discussion"				  
+					  					  
+                    ],
+         "responses": ["Doctor discussion guide"]
+        },
+        {"Intent": "Personal Stories",
+         "patterns": ["Personal Stories"				  				  
+					  					  
+                    ],
+         "responses": ["Personal Stories"]
+        },
+		{"Intent": "Talking to your healthcare provider",
+         "patterns": [
+					  "healthcare provider", 
+					  "consult healthcare provider", 
+					  "healthcare"					  
+                    ],
+         "responses": ["Necessity to Consult healthcare provider"]
+        },
+        {"Intent": "About Parkinson’s Disease",
+         "patterns": ["cause of Parkinson disease",
+					  "remedy Parkinson",
+					  "Parkinson remedies"
+					  
+                    ],
+         "responses": ["cause of Parkinson’s disease"]
+        },
+        {"Intent": "About Parkinson’s Disease",
+         "patterns": ["Parkinson condition", 
+					  "management of Parkinson", 
+					  "remedies Parkinson disease", 
+					  "Learn about Parkinson disease"
+                    ],
+         "responses": ["Parkinson’s condition"]
+        },
+        {"Intent": "Related hallucinations and delusions queries",
+         "patterns": ["hallucinations Parkinson", 
+					  "Parkinson induced hallucinations", 
+					  "Parkinson hallucination", 
+					  "signs of hallucinations"
+                    ],
+         "responses": ["Parkinson’s hallucination"]
+        },
+        {"Intent": "Related hallucinations and delusions queries",
+         "patterns": [
+					  "Parkinson delusions", 
+					  "related hallucinations & delusion", 
+					  "signs of hallucinations"					  
+                    ],
+         "responses": ["Parkinson’s delusions"]
+        },
+        {"Intent": "Related hallucinations and delusions queries",
+         "patterns": ["delusions associated PD psychosis",
+					  "psychosis"
+                    ],
+         "responses": ["delusions associated with PD psychosis"]
+        },
+        {"Intent": "Contact Details",
+         "patterns": ["NUPLAZID address",
+					  "Acadia address",
+					  "NUPLAZID hub", 
+					  "NUPLAZID copay assistance contact number", 
+					  "phone",
+					  "contact information",
+					 ],
+         "responses": ["Contact Acadia CA"]
+        },
+        {"Intent": "Contact Details",
+         "patterns": [				  
+					  "Acadia Connect",
+					  "about Acadia Pharmaceuticals", 
+					  "additional information",
+					  "Contact Acadia"
+                    ],
+         "responses": ["Acadia connect"]
+        },
+        {"Intent": "Prescribe Information",
+         "patterns": [				  
+					  "NUPLAZID prescribing",
+					  "pimavanserin prescribing information",
+					  "Prescribing Information",
+					  "prescribtion"
+                    ],
+         "responses": ["NUPLAZID prescribing"]
+        },
+        {"Intent": "Prescribe Information",
+         "patterns": [				  
+					  "NUPLAZID dosage options",
+					  "Recommended dose"
+					  
+                    ],
+         "responses": ["NUPLAZID dosage options"]
+        },
+        {"Intent": "FAQ",
+         "patterns": [				  
+					  "FAQ",
+					  "Frequently Asked Question"
+					  
+                    ],
+         "responses": ["FAQ"]
+        },
+        {"Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
+         "patterns": [				  
+					  "NUPLAZID cost", 					  
+					  "Acadia Connect",					  					  
+					  "financial assistance",
+					  "further assistance",
+					  "NUPLAZID prescription",
+					  "Care cordinator"
+					  
+                    ],
+         "responses": ["NUPLAZID cost"]
+        },
+        {"Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
+         "patterns": [				  
+					   
+					  "NUPLAZID coverage", 
+					  "NUPLAZID medication payment assistance",
+					  "insurance type",
+					  "insurance coverage",
+					  "Insurance plans",
+					  "financial assistance",
+					  "Assistance",
+					  "financial resources",
+					  "further assistance",
+					  "prescription support"
+					  "NUPLAZID prescription",
+					  		 
+					  
+                    ],
+         "responses": ["NUPLAZID coverage"]
+        },
+        {"Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
+         "patterns": [				  
+					   
+					  
+					  "copay program","Signup"			 
+					  
+                    ],
+         "responses": ["Signup"]
+        },
+        {"Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
+         "patterns": [				  
+					   
+					  
+					  "resources"			 
+					  
+                    ],
+         "responses": ["Resources"]
+        },
+        {"Intent": "Enrollment Form",
+         "patterns": [				  
+					   
+					  
+					  "Patient Enrollment Form","Nuplazid Enrollment Form"			 
+					  
+                    ],
+         "responses": ["Patient Enrollment Form"]
+        }	
+		
+   ]
+}
