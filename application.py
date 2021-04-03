@@ -64,7 +64,9 @@ def hcpchatbot():
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
             "uid": uid
         }
+        response.headers.add("Access-Control-Allow-Origin", "*")
     except Exception as ee:
+        pass
         response = {
             "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
             "uid": "Unknown"
