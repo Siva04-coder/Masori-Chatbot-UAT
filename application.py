@@ -36,21 +36,19 @@ def welcome():
 
     return response
 
+
 @application.route('/pred', methods=['GET', 'POST'])
-def pred(): 
+def welcome(): 
     user_chat = request.args['conv']
-    try:
-        import nltk
-        nltk.download('punkt')
-        import predict
 
-        preds = predict.predict(user_chat)
+    import predict
 
-        response = {"intents" : preds}
-    except Exception as e:
-        response = {"intents" : str(e)}
+    preds = predict.predict(user_chat)
+
+    response = {"intents" : preds}
 
     return response
+
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
@@ -69,8 +67,7 @@ def hcpchatbot():
 
         response = {
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
-            "uid": uid,
-            "res_json": res_json
+            "uid": uid
         }
     except Exception as ee:
         response = {
