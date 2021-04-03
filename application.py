@@ -40,6 +40,8 @@ def welcome():
 def pred(): 
     user_chat = request.args['conv']
     try:
+        import nltk
+        nltk.download('punkt')
         import predict
 
         preds = predict.predict(user_chat)
