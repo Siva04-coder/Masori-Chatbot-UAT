@@ -10,6 +10,7 @@ import os, sys
 import config
 import base64
 from flask_cors import CORS
+import auth
 
 application = Flask(__name__)
 CORS(application)
@@ -20,15 +21,9 @@ geneset = hcp_response_generator.response_generator()
 
 finder = hcp_find_response.response_finder()
 
-def Authorize(username, password):
-    is_authorize = False
-    if username == 'masori' and password == 'd5a791474d2c6dfc4ed8aa4a':
-        is_authorize = True
-    return is_authorize
-
 @application.route('/', methods=['GET', 'POST'])
 def index():
-    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    is_authorize = auth.Authorize(request.authorization["username"], request.authorization["password"])
     if is_authorize == False:
         return "Unauthorized Access."
 
@@ -40,7 +35,7 @@ def index():
 
 @application.route('/welcome', methods=['GET', 'POST'])
 def welcome(): 
-    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    is_authorize = auth.Authorize(request.authorization["username"], request.authorization["password"])
     if is_authorize == False:
         return "Unauthorized Access."
 
@@ -53,7 +48,7 @@ def welcome():
 
 @application.route('/pred', methods=['GET', 'POST'])
 def pred(): 
-    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    is_authorize = auth.Authorize(request.authorization["username"], request.authorization["password"])
     if is_authorize == False:
         return "Unauthorized Access."
 
@@ -70,7 +65,7 @@ def pred():
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
-    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    is_authorize = auth.Authorize(request.authorization["username"], request.authorization["password"])
     if is_authorize == False:
         return "Unauthorized Access."
 
@@ -101,7 +96,7 @@ def hcpchatbot():
 
 @application.route('/hcprecommendchat', methods=['GET', 'POST'])
 def hcprecommendchat():
-    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    is_authorize = auth.Authorize(request.authorization["username"], request.authorization["password"])
     if is_authorize == False:
         return "Unauthorized Access."
 
@@ -130,7 +125,7 @@ def hcprecommendchat():
 
 @application.route('/hcpchathistory', methods=['GET', 'POST'])
 def hcpchathistory():
-    is_authorize = Authorize(request.authorization["username"], request.authorization["password"])
+    is_authorize = auth.Authorize(request.authorization["username"], request.authorization["password"])
     if is_authorize == False:
         return "Unauthorized Access."
 
