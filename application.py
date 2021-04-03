@@ -54,7 +54,8 @@ def hcpchatbot():
 
         response = {
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
-            "uid": uid
+            "uid": uid,
+            "res_json": res_json
         }
     except Exception as ee:
         response = {
