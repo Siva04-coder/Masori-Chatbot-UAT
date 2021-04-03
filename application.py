@@ -39,12 +39,14 @@ def welcome():
 @application.route('/pred', methods=['GET', 'POST'])
 def pred(): 
     user_chat = request.args['conv']
+    try:
+        import predict
 
-    import predict
+        preds = predict.predict(user_chat)
 
-    preds = predict.predict(user_chat)
-
-    response = {"intents" : preds}
+        response = {"intents" : preds}
+    except Exception as e:
+        response = {"intents" : str(e)}
 
     return response
 
