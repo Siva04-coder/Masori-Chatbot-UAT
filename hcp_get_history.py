@@ -41,42 +41,48 @@ class History:
         return uid
 
     def check_update_history(self, uid, cur_user_chat, cur_bot_chat):
-        history_path = 'History/' + uid + '.json'
+        
         json_data = {
             "uid": uid,
             "chats": []
         }
 
-        if os.path.exists(history_path):
-            with open(history_path) as outfile:
-                json_data = outfile.read()
-                json_data = json.loads(json_data)
+        try:
+            history_path = 'History/' + uid + '.json'
 
-        json_data = check_buffer_time_to_clear(json_data, uid)
+            if os.path.exists(history_path):
+                with open(history_path) as outfile:
+                    json_data = outfile.read()
+                    json_data = json.loads(json_data)
 
-        json_data_chats = json_data["chats"]
-        cur_json = {
-            "message": cur_user_chat,
-            "who": "user",
-            "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
-        }
-        json_data_chats.append(cur_json)
-        cur_json = {
-            "message": cur_bot_chat,
-            "who": "bot",
-            "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
-        }
-        json_data_chats.append(cur_json)
+            json_data = check_buffer_time_to_clear(json_data, uid)
 
-        if not os.path.exists(history_path):
-            with open(history_path, 'w') as outfile:  
-                json.dump(json_data, outfile)
-        else:
-            with open(history_path, 'r+') as outfile:  
-                json.dump(json_data, outfile)
+            json_data_chats = json_data["chats"]
+            cur_json = {
+                "message": cur_user_chat,
+                "who": "user",
+                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
+            }
+            json_data_chats.append(cur_json)
+            cur_json = {
+                "message": cur_bot_chat,
+                "who": "bot",
+                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
+            }
+            json_data_chats.append(cur_json)
+
+            if not os.path.exists(history_path):
+                with open(history_path, 'w') as outfile:  
+                    json.dump(json_data, outfile)
+            else:
+                with open(history_path, 'r+') as outfile:  
+                    json.dump(json_data, outfile)
+            
+        except Exception as e:
+            pass
         
         return json_data
-            
+
     def get_history_alone(self, uid, finder, geneset):
         history_path = 'History/' + uid + '.json'
         json_data = {
