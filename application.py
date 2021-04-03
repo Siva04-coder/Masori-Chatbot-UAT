@@ -39,22 +39,30 @@ def welcome():
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
-    history = hcp_get_history.History()
-    user_chat = request.args['conv']
-    uid = request.args['uid']
+    try:
+        history = hcp_get_history.History()
+        user_chat = request.args['conv']
+        uid = request.args['uid']
+        
+        res_json = finder.find_HCP_response(user_chat)
 
-    res_json = finder.find_HCP_response(user_chat)
+        cur_response = geneset.generate_response(res_json)
 
-    cur_response = geneset.generate_response(res_json)
+        uid = history.check_generate_uid(uid)
 
-    uid = history.check_generate_uid(uid)
+        history.check_update_history(uid, user_chat, cur_response)
 
-    history.check_update_history(uid, user_chat, cur_response)
+        response = {
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "uid": uid
+        }
+    except Exception as ee:
+        response = {
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "uid": "Unknown"
+        }
 
-    response = {
-        "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
-        "uid": uid
-    }
+    return response
 
 @application.route('/hcpchathistory', methods=['GET', 'POST'])
 def hcpchathistory():
