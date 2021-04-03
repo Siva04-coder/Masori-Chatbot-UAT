@@ -51,7 +51,7 @@ def hcpchatbot():
     user_chat = request.args['conv']
     uid = request.args['uid']
     
-    res_json = finder.find_response(user_chat)
+    res_json = finder.find_HCP_response(user_chat)
 
     cur_response = geneset.generate_response(res_json)
 
