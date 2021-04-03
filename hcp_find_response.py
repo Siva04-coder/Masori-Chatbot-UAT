@@ -89,14 +89,16 @@ class response_finder:
 
         return json.dumps(res_json)
 
-    def find_HCP_response(self, chat_message):
+    def find_HCP_response(self, chat_message, isRecommend=False):
         res_json = {}
         try:
-            intent = predict.predict(chat_message)
-            print('\n\nAll intents : ', intent)
             chat = ''
-            chat = intent[0]
-
+            if isRecommend == False:
+                intent = predict.predict(chat_message)
+                print('\n\nAll intents : ', intent)
+                chat = intent[0]
+            else:
+                chat = chat_message
             # chats = self.remove_stopwords(chat_message)
             # master = self.master_intent_entity
             corpus = self.website_data
@@ -117,6 +119,8 @@ class response_finder:
                 hyperlink_text = '' if str(corpus['Hyperlink Text'].iloc[0]) == 'nan' else corpus['Hyperlink Text'].iloc[0]
                 hyperlink = '' if str(corpus['Hyperlink URL'].iloc[0]) == 'nan' else corpus['Hyperlink URL'].iloc[0]
                 image_url = '' if str(corpus['Image URL'].iloc[0]) == 'nan' else corpus['Image URL'].iloc[0]
+                #recommend_text = '' if str(corpus['Recommend Text'].iloc[0]) == 'nan' else corpus['Recommend Text'].iloc[0]
+                recommend_intent = '' if str(corpus['Recommend Intent'].iloc[0]) == 'nan' else corpus['Recommend Intent'].iloc[0]
 
                 res_json = {
                     "output_text": output_text,
@@ -124,7 +128,9 @@ class response_finder:
                     "video_url": video_url,
                     "hyperlink_text": hyperlink_text,
                     "hyperlink_url": hyperlink,
-                    "image_url": image_url
+                    "image_url": image_url,
+                    #"recommend_text": recommend_text,
+                    "recommend_intent": recommend_intent
                 }
             else:
                 cnt = 1
@@ -145,6 +151,8 @@ class response_finder:
                             hyperlink_text = '' if str(corpus['Hyperlink Text'].iloc[0]) == 'nan' else corpus['Hyperlink Text'].iloc[0]
                             hyperlink = '' if str(corpus['Hyperlink URL'].iloc[0]) == 'nan' else corpus['Hyperlink URL'].iloc[0]
                             image_url = '' if str(corpus['Image URL'].iloc[0]) == 'nan' else corpus['Image URL'].iloc[0]
+                            #recommend_text = '' if str(corpus['Recommend Text'].iloc[0]) == 'nan' else corpus['Recommend Text'].iloc[0]
+                            recommend_intent = '' if str(corpus['Recommend Intent'].iloc[0]) == 'nan' else corpus['Recommend Intent'].iloc[0]
 
                             res_json = {
                                 "output_text": output_text,
@@ -152,7 +160,9 @@ class response_finder:
                                 "video_url": video_url,
                                 "hyperlink_text": hyperlink_text,
                                 "hyperlink_url": hyperlink,
-                                "image_url": image_url
+                                "image_url": image_url,
+                                #"recommend_text": recommend_text,
+                                "recommend_intent": recommend_intent
                             }
                             break
 
