@@ -26,13 +26,10 @@ finder = hcp_find_response.response_finder()
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
-    try:
-        is_authorize = auth.Authorize(
-            request.authorization["username"], request.authorization["password"])
-        if is_authorize == False:
-            return "Unauthorized Access."
-    except Exception as d:
-        return str(d)
+    is_authorize = auth.Authorize(
+        request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
 
     try:
         return "Welcome."
@@ -42,13 +39,10 @@ def index():
 
 @application.route('/welcome', methods=['GET', 'POST'])
 def welcome():
-    try:
-        is_authorize = auth.Authorize(
-            request.authorization["username"], request.authorization["password"])
-        if is_authorize == False:
-            return "Unauthorized Access."
-    except Exception as d:
-        return str(d)
+    is_authorize = auth.Authorize(
+        request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
 
     res_json = finder.get_welcome_message()
 
@@ -59,13 +53,10 @@ def welcome():
 
 @application.route('/pred', methods=['GET', 'POST'])
 def pred():
-    try:
-        is_authorize = auth.Authorize(
-            request.authorization["username"], request.authorization["password"])
-        if is_authorize == False:
-            return "Unauthorized Access."
-    except Exception as d:
-        return str(d)
+    is_authorize = auth.Authorize(
+        request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
 
     user_chat = request.headers.get('conv')
 
@@ -80,13 +71,11 @@ def pred():
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
-    try:
-        is_authorize = auth.Authorize(
-            request.authorization["username"], request.authorization["password"])
-        if is_authorize == False:
-            return "Unauthorized Access."
-    except Exception as d:
-        return str(d)
+    is_authorize = auth.Authorize(
+        request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
+
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
@@ -115,13 +104,11 @@ def hcpchatbot():
 
 @application.route('/hcprecommendchat', methods=['GET', 'POST'])
 def hcprecommendchat():
-    try:
-        is_authorize = auth.Authorize(
-            request.authorization["username"], request.authorization["password"])
-        if is_authorize == False:
-            return "Unauthorized Access."
-    except Exception as d:
-        return str(d)
+    is_authorize = auth.Authorize(
+        request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
+
 
     try:
         history = hcp_get_history.History()
@@ -149,13 +136,10 @@ def hcprecommendchat():
 
 @application.route('/hcpchathistory', methods=['GET', 'POST'])
 def hcpchathistory():
-    try:
-        is_authorize = auth.Authorize(
-            request.authorization["username"], request.authorization["password"])
-        if is_authorize == False:
-            return "Unauthorized Access."
-    except Exception as d:
-        return str(d)
+    is_authorize = auth.Authorize(
+        request.authorization["username"], request.authorization["password"])
+    if is_authorize == False:
+        return "Unauthorized Access."
 
     history = hcp_get_history.History()
     uid = request.args['uid']
@@ -184,5 +168,5 @@ def refreshCorpus():
     return "Successfully Updated."
 
 
-if __name__ == "__main__":
-    application.run(debug=True)
+# if __name__ == "__main__":
+#     application.run(debug=True)
