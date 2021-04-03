@@ -36,6 +36,17 @@ def welcome():
 
     return response
 
+@application.route('/pred', methods=['GET', 'POST'])
+def welcome(): 
+    user_chat = request.args['conv']
+
+    import predict
+
+    preds = predict.predict(user_chat)
+
+    response = {"intents" : preds}
+
+    return response
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
