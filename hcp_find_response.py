@@ -2,6 +2,8 @@ import pandas as pd
 import mysql.connector
 import json
 import load_corpus
+import predict
+
 class response_finder:
 
     cnx = ''
@@ -13,7 +15,7 @@ class response_finder:
     def __init__(self):
         self.welcome_message = load_corpus.get_welcome_message()
 
-        self.website_data, self.master_intent_entity = load_corpus.get_data()
+        self.website_data, self.master_intent_entity = load_corpus.get_HCP_data()
 
 
     def get_welcome_message(self):
@@ -46,9 +48,10 @@ class response_finder:
             
             return resultwords
 
-    def find_response(self, chat_message):
+    def find_response_by_chat(self, chat_message):
         res_json = {}
         try:
+            
             chats = self.remove_stopwords(chat_message)
             master = self.master_intent_entity
             corpus = self.website_data
@@ -79,6 +82,87 @@ class response_finder:
             }
 
             print(res_json)
+
+        except Exception as e:
+            print(str(e))
+            pass
+
+        return json.dumps(res_json)
+
+    def find_HCP_response(self, chat_message):
+        res_json = {}
+        try:
+            intent = predict.predict(chat_message)
+            print('\n\nAll intents : ', intent)
+            chat = ''
+            chat = intent[0]
+
+            # chats = self.remove_stopwords(chat_message)
+            # master = self.master_intent_entity
+            corpus = self.website_data
+
+            # for chat in chats:
+            #     if chat != '':
+            #         chat.replace("'", "\'")
+            #         master = master.loc[(master['Site_Area'] == 'HCP') & (master['Entities'].str.contains(chat))]
+
+            corpus = corpus.loc[(corpus['Sub Functional Area'].str.lower() == str(chat).lower())]
+            
+            if not corpus.empty:
+                print('\n\ncorpus : ', corpus)
+                print('\n\nintent : ', chat)
+                output_text = '' if str(corpus['Response'].iloc[0]) == 'nan' else corpus['Response'].iloc[0]
+                bullet = '' if str(corpus['Bullets'].iloc[0]) == 'nan' else corpus['Bullets'].iloc[0]
+                video_url = '' if str(corpus['Video URL'].iloc[0]) == 'nan' else corpus['Video URL'].iloc[0]
+                hyperlink_text = '' if str(corpus['Hyperlink Text'].iloc[0]) == 'nan' else corpus['Hyperlink Text'].iloc[0]
+                hyperlink = '' if str(corpus['Hyperlink URL'].iloc[0]) == 'nan' else corpus['Hyperlink URL'].iloc[0]
+                image_url = '' if str(corpus['Image URL'].iloc[0]) == 'nan' else corpus['Image URL'].iloc[0]
+
+                res_json = {
+                    "output_text": output_text,
+                    "bullet": bullet,
+                    "video_url": video_url,
+                    "hyperlink_text": hyperlink_text,
+                    "hyperlink_url": hyperlink,
+                    "image_url": image_url
+                }
+            else:
+                cnt = 1
+                while True:
+                    try:
+                        chat = intent[cnt]
+                        chat = chat
+
+                        corpus = self.website_data
+                        corpus = corpus.loc[corpus['Sub Functional Area'].str.lower() == str(chat).lower()]
+                        
+                        if not corpus.empty:
+                            print('\n\corpus : ', corpus)
+                            print('\n\nintent : ', chat)
+                            output_text = '' if str(corpus['Response'].iloc[0]) == 'nan' else corpus['Response'].iloc[0]
+                            bullet = '' if str(corpus['Bullets'].iloc[0]) == 'nan' else corpus['Bullets'].iloc[0]
+                            video_url = '' if str(corpus['Video URL'].iloc[0]) == 'nan' else corpus['Video URL'].iloc[0]
+                            hyperlink_text = '' if str(corpus['Hyperlink Text'].iloc[0]) == 'nan' else corpus['Hyperlink Text'].iloc[0]
+                            hyperlink = '' if str(corpus['Hyperlink URL'].iloc[0]) == 'nan' else corpus['Hyperlink URL'].iloc[0]
+                            image_url = '' if str(corpus['Image URL'].iloc[0]) == 'nan' else corpus['Image URL'].iloc[0]
+
+                            res_json = {
+                                "output_text": output_text,
+                                "bullet": bullet,
+                                "video_url": video_url,
+                                "hyperlink_text": hyperlink_text,
+                                "hyperlink_url": hyperlink,
+                                "image_url": image_url
+                            }
+                            break
+
+                        cnt = cnt + 1
+                    except Exception as e:
+                        break
+                        pass
+                    
+
+            print('\n\nres_json : ', res_json)
 
         except Exception as e:
             print(str(e))
