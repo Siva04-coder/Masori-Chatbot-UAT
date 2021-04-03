@@ -38,7 +38,7 @@ def welcome():
 
 
 @application.route('/pred', methods=['GET', 'POST'])
-def welcome(): 
+def pred(): 
     user_chat = request.args['conv']
 
     import predict
