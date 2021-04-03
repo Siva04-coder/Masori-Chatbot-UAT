@@ -89,7 +89,6 @@ def patientchatbot():
     input = request.args['value']
     return input
 
-
 @application.route('/refreshCorpus', methods=['GET', 'POST'])
 def refreshCorpus():
     import upload_excel_to_database
