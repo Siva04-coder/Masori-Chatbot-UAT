@@ -57,10 +57,7 @@ def hcpchatbot():
             "uid": uid
         }
     except Exception as ee:
-        response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
-            "uid": "Unknown"
-        }
+        pass
 
     return response
 
