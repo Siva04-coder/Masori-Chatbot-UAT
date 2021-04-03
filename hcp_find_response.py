@@ -30,7 +30,8 @@ class response_finder:
                 "hyperlink_text": '',
                 "hyperlink_url": '',
                 "image_url": '',
-                "display_type": 'Welcome'
+                "display_type": 'Welcome',
+                "recommend_intent": ''
             }
 
         except Exception as e:
