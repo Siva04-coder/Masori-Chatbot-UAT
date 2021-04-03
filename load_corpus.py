@@ -1,6 +1,6 @@
 import pandas as pd
 
-corpus_path = 'Corpus/FullCorpus.xlsx'
+corpus_path = 'Corpus/MLR_Corpus.xlsx'
 message_path = 'Corpus/Default_Messages.xlsx'
 
 def get_welcome_message():
@@ -54,34 +54,44 @@ def update_master_intent_entity_data():
     return 'Updated'
 
 
-def get_data():
+def get_HCP_data():
     corpus = pd.read_excel(corpus_path, engine='openpyxl',
-                            sheet_name='website_data')
+                            sheet_name='Nuplazid HCP')
 
     data = []
 
     for index, row in corpus.iterrows():
 
-        if str(row['Question']).lower() != 'nan':
+        if str(row['Sub Functional Area']).lower() != 'nan':
             
-            if str(row["Site_Area"]).lower() != 'nan':
-                Site_Area = str(row["Site_Area"])
+            Site_Area = 'HCP'
+            Functionality_Area = ''
+            Entities = ''
+            Intent = ''
 
-            if str(row["Functionality_Area"]).lower() != 'nan':
-                Functionality_Area = str(row["Functionality_Area"])
+            if str(row["Functional Area"]).lower() != 'nan':
+                Functionality_Area = str(row["Functional Area"])
 
-            if '\n' in str(row["Entities"]):
-                entities = str(row["Entities"]).split('\n')
+            if str(row["Keyword"]).lower() != 'nan':
+                Entities = str(row["Keyword"]).replace("'", "''")
 
-                for entity in entities:
-                    if str(row["Intents"]).replace("'", "''") != 'nan' and str(entity).replace("'", "''") != 'nan':
-                        data.append([Site_Area, str(row["Intents"]).replace("'", "''"), str(entity).replace("'", "''")])
+            if str(row["Sub Functional Area"]).lower() != 'nan':
+                Entities = str(row["Sub Functional Area"]).replace("'", "''")
+
+            data.append([Site_Area, Intent, Entities])
+
+            # if '\n' in str(row["Entities"]):
+            #     entities = str(row["Entities"]).split('\n')
+
+            #     for entity in entities:
+            #         if str(row["Intents"]).replace("'", "''") != 'nan' and str(entity).replace("'", "''") != 'nan':
+            #             data.append([Site_Area, str(row["Intents"]).replace("'", "''"), str(entity).replace("'", "''")])
                     
-            else:
-                if str(row["Intents"]).replace("'", "''") != 'nan' and str(row["Entities"]).replace("'", "''") != 'nan':
-                    data.append([Site_Area, str(row["Intents"]).replace("'", "''"), str(row["Entities"]).replace("'", "''")])
+            # else:
+            #     if str(row["Intents"]).replace("'", "''") != 'nan' and str(row["Entities"]).replace("'", "''") != 'nan':
+            #         data.append([Site_Area, str(row["Intents"]).replace("'", "''"), str(row["Entities"]).replace("'", "''")])
                 
 
-    df = pd.DataFrame(data, columns = ['Site_Area', 'Intents', 'Entities'])
+    df = pd.DataFrame(data, columns = ['Site_Area', 'Sub Functional Area', 'Keyword'])
 
     return corpus, df
