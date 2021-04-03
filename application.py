@@ -23,7 +23,7 @@ finder = hcp_find_response.response_finder()
 @application.route('/', methods=['GET', 'POST'])
 def index():
     try:
-        return "Welcome."
+        return "Unauthorized."
     except Exception as e:
         return str(e)
     
@@ -36,14 +36,6 @@ def welcome():
 
     return response
 
-@application.route('/calling', methods=['GET', 'POST', 'OPTIONS'])
-def calling():
-    print('welcome')
-    input = request.args['value']    
-    response = jsonify(message=input)
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    print(response)
-    return input
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
@@ -64,9 +56,7 @@ def hcpchatbot():
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
             "uid": uid
         }
-        
     except Exception as ee:
-        pass
         response = {
             "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
             "uid": "Unknown"
@@ -88,6 +78,7 @@ def hcpchathistory():
 def patientchatbot():
     input = request.args['value']
     return input
+
 
 @application.route('/refreshCorpus', methods=['GET', 'POST'])
 def refreshCorpus():
