@@ -57,6 +57,10 @@ def hcpchatbot():
             "uid": uid
         }
     except Exception as ee:
+        response = {
+            "chats": [{}],
+            "uid": ""
+        }
         pass
 
     return response
