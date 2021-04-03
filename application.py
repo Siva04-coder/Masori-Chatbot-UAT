@@ -36,8 +36,8 @@ def index():
         logger.write_exception(str(d), 'Index')
         pass
     
-    logger.write_activity('Index Logging Activity', 1)
     try:
+        logger.write_activity('Index Logging Activity', 1)
         return "Welcome."
     except Exception as e:
         return str(e)
