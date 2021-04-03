@@ -59,6 +59,11 @@ class response_generator:
             if json_obj['recommend_intent'] != '':
                 response = response + "<p><b>More information </b></p><a onclick=recommend('" + json_obj['recommend_intent'] + "')>" + json_obj['recommend_intent'] + "</a>"
 
+            # %% Visit Page Generation
+            if json_obj['visit_page'] != '':
+                response = response + '<div class="chat-buttons-container"><button><a href="' + json_obj['visit_page'] 
+                response = response + '" target="_blank">Visit Page</a></button></div>'
+
             print(json_obj['recommend_intent'], 'done4', response)
 
             if response == '':
