@@ -54,12 +54,12 @@ class response_generator:
                     response = response + '<a href="' + json_obj['hyperlink_url'] + '" target="_blank">' 
                     response = response + json_obj['hyperlink_text'] + '</a>'
             # %% Image Generation
-            print('done4', response)
+            print(json_obj['recommend_intent'],'done4', response)
             # %% Recommend Generation
             if json_obj['recommend_intent'] != '':
-                response = response + "<a onclick=recommend('" + json_obj['recommend_intent'] + "')>More information about " 
-                + json_obj['recommend_intent'] + "</a>"
+                response = response + '<p><b>More information </b></p><a onclick=recommend("' + json_obj['recommend_intent'] + '")>' + json_obj['recommend_intent'] + '</a>'
 
+            print(json_obj['recommend_intent'], 'done4', response)
 
             if response == '':
                 response = "<p>Please try again with different queries</p>"
