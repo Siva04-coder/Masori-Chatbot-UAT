@@ -26,8 +26,9 @@ finder = hcp_find_response.response_finder()
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
+    auth_creds = request.authorization
     is_authorize = auth.Authorize(
-        request.authorization["username"], request.authorization["password"])
+        auth_creds.username, auth_creds.password)
     if is_authorize == False:
         return "Unauthorized Access."
 
@@ -39,8 +40,9 @@ def index():
 
 @application.route('/welcome', methods=['GET', 'POST'])
 def welcome():
+    auth_creds = request.authorization
     is_authorize = auth.Authorize(
-        request.authorization["username"], request.authorization["password"])
+        auth_creds.username, auth_creds.password)
     if is_authorize == False:
         return "Unauthorized Access."
 
@@ -53,8 +55,9 @@ def welcome():
 
 @application.route('/pred', methods=['GET', 'POST'])
 def pred():
+    auth_creds = request.authorization
     is_authorize = auth.Authorize(
-        request.authorization["username"], request.authorization["password"])
+        auth_creds.username, auth_creds.password)
     if is_authorize == False:
         return "Unauthorized Access."
 
@@ -71,8 +74,9 @@ def pred():
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
+    auth_creds = request.authorization
     is_authorize = auth.Authorize(
-        request.authorization["username"], request.authorization["password"])
+        auth_creds.username, auth_creds.password)
     if is_authorize == False:
         return "Unauthorized Access."
 
@@ -104,11 +108,11 @@ def hcpchatbot():
 
 @application.route('/hcprecommendchat', methods=['GET', 'POST'])
 def hcprecommendchat():
+    auth_creds = request.authorization
     is_authorize = auth.Authorize(
-        request.authorization["username"], request.authorization["password"])
+        auth_creds.username, auth_creds.password)
     if is_authorize == False:
         return "Unauthorized Access."
-
 
     try:
         history = hcp_get_history.History()
@@ -168,5 +172,5 @@ def refreshCorpus():
     return "Successfully Updated."
 
 
-# if __name__ == "__main__":
-#     application.run(debug=True)
+if __name__ == "__main__":
+    application.run(debug=True)
