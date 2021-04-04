@@ -139,22 +139,22 @@ class response_finder:
                             break
                             pass
                         
-            if not bool(res_json):
-                response = predict.getGeneralResponse(chat_message)
-                # print('response', response)
-                if str(response).strip() == '':
-                    response = "I don't understand your question. Try asking the question in different way or ask me about something else."
-                res_json = {
-                    "output_text": response,
-                    "bullet": '',
-                    "video_url": '',
-                    "hyperlink_text": '',
-                    "hyperlink_url": '',
-                    "image_url": '',
-                    #"recommend_text": recommend_text,
-                    "recommend_intent": '',
-                    "visit_page": ''
-                }
+                if not bool(res_json):
+                    response = predict.getGeneralResponse(chat_message)
+                    # print('response', response)
+                    if str(response).strip() == '':
+                        response = "I don't understand your question. Try asking the question in different way or ask me about something else."
+                    res_json = {
+                        "output_text": response,
+                        "bullet": '',
+                        "video_url": '',
+                        "hyperlink_text": '',
+                        "hyperlink_url": '',
+                        "image_url": '',
+                        #"recommend_text": recommend_text,
+                        "recommend_intent": '',
+                        "visit_page": ''
+                    }
 
             print('\n\nres_json : ', res_json)
 
