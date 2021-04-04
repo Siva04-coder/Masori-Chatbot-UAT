@@ -112,8 +112,14 @@ def hcpchatbot():
         user_chat = request.headers.get('conv')
         print('user_chat', user_chat)
         uid = request.args['uid']
+        is_recommend = False
+        try:
+            rec = request.args['rec']
+            is_recommend = bool(rec)
+        except:
+            pass
 
-        res_json = finder.find_response(user_chat)
+        res_json = finder.find_response(user_chat, is_recommend)
 
         cur_response = geneset.generate_response(res_json)
 
@@ -208,8 +214,14 @@ def consumerchatbot():
         history = consumer_get_history.History()
         user_chat = request.headers.get('conv')
         uid = request.args['uid']
+        is_recommend = False
+        try:
+            rec = request.args['rec']
+            is_recommend = bool(rec)
+        except:
+            pass
 
-        res_json = consumer_finder.find_response(user_chat)
+        res_json = consumer_finder.find_response(user_chat, is_recommend)
 
         cur_response = consumer_geneset.generate_response(res_json)
 
