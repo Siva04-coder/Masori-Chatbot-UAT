@@ -142,7 +142,7 @@ class response_finder:
             if not bool(res_json):
                 response = predict.getGeneralResponse(chat_message)
                 # print('response', response)
-                if response.strip() == '':
+                if str(response).strip() == '':
                     response = "I don't understand your question. Try asking the question in different way or ask me about something else."
                 res_json = {
                     "output_text": response,
