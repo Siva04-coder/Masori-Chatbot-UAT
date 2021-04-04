@@ -255,7 +255,7 @@ def consumerrecommendchat():
         pass
 
     try:
-        history = hcp_get_history.History()
+        history = consumer_get_history.History()
         user_chat = request.headers.get('conv')
         uid = request.args['uid']
 
@@ -290,7 +290,7 @@ def consumerchathistory():
     except Exception as d:
         pass
 
-    history = hcp_get_history.History()
+    history = consumer_get_history.History()
     uid = request.args['uid']
 
     uid = history.check_generate_consumer_uid(uid)
