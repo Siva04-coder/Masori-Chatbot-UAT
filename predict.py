@@ -12,7 +12,7 @@ import nltk
 import string
 import re
 import pickle
-
+import json
 
 words = []
 
@@ -169,3 +169,30 @@ def predict(chat):
     return results
 
 #predict("What is OLE ?")
+
+def getGeneralResponse(chat_msg):
+    with open("./data/General_Intent.json") as json_data:
+        intents = json.load(json_data)
+
+    chat_msg = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',chat_msg)
+    response = ''
+
+    for intent in intents["intents"]:
+        print(intent)
+        tag = intent["tag"]
+        patterns = intent["patterns"]
+        responses = intent["responses"]
+        is_break = False
+        for pattern in patterns:
+            print(pattern)
+            if str(pattern).lower() == str(chat_msg).lower():
+                response = responses[0]
+                is_break = True
+                break
+
+        if is_break == True:
+            break
+
+    print(response)
+    
+    return response
