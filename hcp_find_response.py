@@ -56,7 +56,7 @@ class response_finder:
         res_json = {}
         try:
             chat = ''
-            
+            intent = []
             if isRecommend == False:
                 import predict
                 intent = predict.predict(chat_message)
@@ -68,6 +68,7 @@ class response_finder:
                         except:
                             pass
                     chat = intent[0]
+                print('intent', intent)
             else:
                 chat = chat_message
             # chats = self.remove_stopwords(chat_message)
@@ -78,8 +79,8 @@ class response_finder:
             #     if chat != '':
             #         chat.replace("'", "\'")
             #         master = master.loc[(master['Site_Area'] == 'HCP') & (master['Entities'].str.contains(chat))]
-            print('intent', intent)
-            if len(intent) > 0:
+            
+            if chat != '':
                 print('corpus', corpus)
                 corpus = corpus.loc[(corpus['Sub Functional Area'] == str(chat))]
                 
@@ -113,6 +114,8 @@ class response_finder:
                     cnt = 1
                     while True:
                         try:
+                            if len(intent) == 0:
+                                break
                             chat = intent[cnt]
                             chat = chat
 

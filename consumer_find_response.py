@@ -56,17 +56,20 @@ class response_finder:
         res_json = {}
         try:
             chat = ''
-            import consumer_predict
-            intent = consumer_predict.predict(chat_message)
-            print('\n\nAll intents : ', intent)
-            if len(intent) > 0:                
-                if isRecommend == True:
-                    try:
-                        intent.remove(chat_message)
-                    except:
-                        pass
-                chat = intent[0]
-                
+            intent = []
+            if isRecommend == False:
+                import consumer_predict
+                intent = consumer_predict.predict(chat_message)
+                print('\n\nAll intents : ', intent)
+                if len(intent) > 0:                
+                    if isRecommend == True:
+                        try:
+                            intent.remove(chat_message)
+                        except:
+                            pass
+                    chat = intent[0]
+            else:
+                chat = chat_message
             # chats = self.remove_stopwords(chat_message)
             # master = self.master_intent_entity
             corpus = self.website_data
@@ -75,7 +78,7 @@ class response_finder:
             #     if chat != '':
             #         chat.replace("'", "\'")
             #         master = master.loc[(master['Site_Area'] == 'HCP') & (master['Entities'].str.contains(chat))]
-            if len(intent) > 0:
+            if chat != '':
                 corpus = corpus.loc[(corpus['Sub Functional Area'].str.lower() == str(chat).lower())]
                 
                 if not corpus.empty:
@@ -106,6 +109,8 @@ class response_finder:
                     cnt = 1
                     while True:
                         try:
+                            if len(intent) == 0:
+                                break
                             chat = intent[cnt]
                             chat = chat
 
