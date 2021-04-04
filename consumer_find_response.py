@@ -61,7 +61,10 @@ class response_finder:
             print('\n\nAll intents : ', intent)
             if len(intent) > 0:                
                 if isRecommend == True:
-                    intent.remove(chat_message)
+                    try:
+                        intent.remove(chat_message)
+                    except:
+                        pass
                 chat = intent[0]
                 
             # chats = self.remove_stopwords(chat_message)

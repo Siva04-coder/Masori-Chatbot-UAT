@@ -56,14 +56,20 @@ class response_finder:
         res_json = {}
         try:
             chat = ''
-            import predict
-            intent = predict.predict(chat_message)
-            print('\n\nAll intents : ', intent)
-            if len(intent) > 0:
-                if isRecommend == True:
-                    intent.remove(chat_message)
-                chat = intent[0]
-                
+            
+            if isRecommend == False:
+                import predict
+                intent = predict.predict(chat_message)
+                print('\n\nAll intents : ', intent)
+                if len(intent) > 0:
+                    if isRecommend == True:
+                        try:
+                            intent.remove(chat_message)
+                        except:
+                            pass
+                    chat = intent[0]
+            else:
+                chat = chat_message
             # chats = self.remove_stopwords(chat_message)
             # master = self.master_intent_entity
             corpus = self.website_data
