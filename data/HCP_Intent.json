@@ -4,13 +4,13 @@
                         "Intent": "About PD Psychosis",
                         "patterns": [
                                 "About PD disease",
-                                "Parkinson's Disease",
+                                "Parkinson Disease",
                                 "PDP",
                                 "About Parkinson Disease Psychosis",
                                 "symptoms & potential causes"
                         ],
                         "responses": [
-                                "About Parkinson’s Disease Psychosis"
+                                "About Parkinson Disease Psychosis"
                         ]
                 },
                 {
@@ -18,7 +18,6 @@
                         "patterns": [
                                 "about NUPLAZID",
                                 "NUPLAZID medication",
-                                "NUPLAZID Parkinson",
                                 "Nuplazid indication",
                                 "Learn NUPLAZID",
                                 "NUPLAZID"
