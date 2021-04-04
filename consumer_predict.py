@@ -69,14 +69,15 @@ def bow(sentence, words, show_details=False):
 
 def predict_bag(intent, output, show_details=False):
     prediction = []
-    p = nltk.PorterStemmer()
+    #p = nltk.PorterStemmer()
     # print('intent', intentdata)
     for ind in intent.index:
         for wrd in intent['Keywords'][ind].split(' '):
             # print('match', wrd, output)
             for i,w in enumerate(output):
-                print('Stemmer: ', p.stem(w.strip()), p.stem(wrd.strip()))
-                if p.stem(w.strip()) == p.stem(wrd.strip()):
+                #print('Stemmer: ', p.stem(w.strip()), p.stem(wrd.strip()))
+                #if p.stem(w.strip()) == p.stem(wrd.strip()):
+                if w.strip() == wrd.strip():
                     # print(p.stem(w.strip()), p.stem(wrd.strip()), intent['Intents'][ind].replace("â€™", "'"), w, intent['Keywords'][ind].split(' '))
                     if intent['Intents'][ind].replace("â€™", "'") not in prediction:
                         prediction.append(intent['Intents'][ind].replace("â€™", "'"))
