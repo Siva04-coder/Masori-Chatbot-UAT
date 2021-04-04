@@ -178,13 +178,11 @@ def getGeneralResponse(chat_msg):
     response = ''
 
     for intent in intents["intents"]:
-        print(intent)
         tag = intent["tag"]
         patterns = intent["patterns"]
         responses = intent["responses"]
         is_break = False
         for pattern in patterns:
-            print(pattern)
             if str(pattern).lower() == str(chat_msg).lower():
                 response = responses[0]
                 is_break = True
@@ -193,6 +191,6 @@ def getGeneralResponse(chat_msg):
         if is_break == True:
             break
 
-    print(response)
+    print('General response', response)
     
     return response

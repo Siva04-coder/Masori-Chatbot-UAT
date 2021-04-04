@@ -76,11 +76,11 @@ class response_generator:
             print(json_obj['recommend_intent'], 'done4', response)
 
             if response == '':
-                response = "<p>Please try again with different queries</p>"
+                response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
             
         except Exception as e:
             print('Error')
-            response = "<p>Please try again with different queries</p>"
+            response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
             print(str(e))
 
         return response
