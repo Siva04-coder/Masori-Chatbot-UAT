@@ -19,7 +19,8 @@
     {
       "tag": "about SAM",
       "patterns": [
-        "who are you"
+        "who are you",
+        "what is your name"
       ],
       "responses": [
         "My name is SAM, the Nuplazid Search Assistant Manager.I am here to help you."
