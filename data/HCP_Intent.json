@@ -1,8 +1,10 @@
 {"data": [
         {"Intent": "Symptoms",
          "patterns": ["signs Parkinson disease",
-					  "pd symptoms", "symptoms of pd", 
-					  "symptoms Parkinson disease", 
+					  "pd symptoms","pd symptom", "symptoms pd","symptom of pd", 
+					  "symptoms Parkinson disease",
+					  "symptoms Parkinson diseases",
+					  "symptom Parkinson disease",
 					  "Parkinson disease symptoms", 
 					  "symptoms of Parkinson", 
 					  "signs of Parkinson",
@@ -37,7 +39,8 @@
 					  "NUPLAZID Factsheet", 
 					  "NUPLAZID Warning",
 					  "Blackbox warning",
-					  "fact sheets & discussion guide"
+					  "fact sheets & discussion guide",
+					  "fact sheet"
                     ],
          "responses": ["fact sheets & discussion guide"]
         },
@@ -82,6 +85,7 @@
         {"Intent": "Efficacy",
          "patterns": [ 
 					  "efficacy results",
+					  "efficacy result"
 					  "OLE",
 					  "OLE Study",
 					  "Open label extenstion"
@@ -95,8 +99,7 @@
 					  "hallucinations measured",
                       "delusion measured",
                       "example of SAPS",
-                      "common adverse reactions",
-					  "SAPS PD"
+                      "SAPS PD"
 					  ],
          "responses": ["About SAPS-PD"]
         },
@@ -130,7 +133,7 @@
 					  "NUPLAZID dosage", "withdrawal from NUPLAZID",
 					  "Mechanism Of Action",  
                       "sprinkle dosing guide",
-					  "About MOA","drug interactions"
+					  "About MOA","drug interactions","drug interaction"
                     ],
          "responses": ["About MOA"]
         },
@@ -143,6 +146,7 @@
 					  "Dosage Administration",
 					  "FDA approved",
 					  "best practices",
+					  "best practice"
 					  "Nuplazid administration"
                     ],
          "responses": ["Dosage Administration"]
@@ -152,7 +156,7 @@
 					  "Acadia Connect patient assistance program", 
 					  "NUPLAZID financial assistance", 
 					  "NUPLAZID discount card", 
-					  "long-term care access",
+					  "long-term care access"
 					  "NUPLAZID foundation assistance", 
 					  "NUPLAZID medication payment assistance",
 					  "patient care Offered","coverage financial assistance",
@@ -254,7 +258,7 @@
          "patterns": [  
 					   
 					  
-					  "ICD-10 Codes","Diagnostic codes"					  
+					  "ICD-10 Codes","ICD-10 Code","Diagnostic codes","Diagnostic code"					  
                     ],
          "responses": ["Diagnostic codes"]
         },
