@@ -74,7 +74,8 @@ class response_finder:
             #         master = master.loc[(master['Site_Area'] == 'HCP') & (master['Entities'].str.contains(chat))]
             print('intent', intent)
             if len(intent) > 0:
-                corpus = corpus.loc[(corpus['Sub Functional Area'].str.lower() == str(chat).lower())]
+                print('corpus', corpus)
+                corpus = corpus.loc[(corpus['Sub Functional Area'] == str(chat))]
                 
                 if not corpus.empty:
                     print('\n\ncorpus : ', corpus)
