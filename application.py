@@ -25,14 +25,14 @@ CORS(application)
 
 logger = log_writter()
 
-geneset = hcp_response_generator.response_generator()
+geneset = hcp_response_generator.response_generator(logger)
 
-finder = hcp_find_response.response_finder()
+finder = hcp_find_response.response_finder(logger)
 
 
-consumer_geneset = consumer_response_generator.response_generator()
+consumer_geneset = consumer_response_generator.response_generator(logger)
 
-consumer_finder = consumer_find_response.response_finder()
+consumer_finder = consumer_find_response.response_finder(logger)
 
 # %% Common 
 
