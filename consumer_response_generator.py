@@ -2,7 +2,10 @@ import json
 
 class response_generator:
 
-    def __init__(self):
+    logger = ''
+
+    def __init__(self, _logger):
+        self.logger = _logger
         pass
 
     def generate_response(self, json_data):
@@ -82,5 +85,6 @@ class response_generator:
             print('Error')
             response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
             print(str(e))
+            self.logger.write_exception(str(e), 'get_welcome_message')
 
         return response

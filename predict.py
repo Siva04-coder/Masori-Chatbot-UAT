@@ -35,6 +35,7 @@ arr=[]
 stopwords_plus = stopwords + lots_of_stopwords
 stopwords_plus = set(stopwords_plus)
 inputstr = " "
+st = nltk.PorterStemmer()
 
 try:
     data = pickle.load(open( "./pickles/HCP_ExtractedKeyword.pkl", "rb" ))
@@ -61,7 +62,7 @@ def bow(sentence, words, show_details=False):
         for i,w in enumerate(words):
             #print('words array', w)
             for word in w:
-                if word == s: 
+                if st.stem(word) == st.stem(s): 
                     documents.append(word)
                     #print("Words",documents)
                     if show_details:
@@ -71,14 +72,14 @@ def bow(sentence, words, show_details=False):
     return(documents)
 
 def predict_bag(intent, output, show_details=False):
-    prediction = []
-    # print('intent', intentdata)
+    print('output', output)
     for ind in intent.index:
         for wrd in intent['Keywords'][ind].split(' '):
-            # print('match', wrd, output)
+            #print('match', wrd, output)
             for i,w in enumerate(output):
-                if w.strip() == wrd.strip():
-                    # print(w.strip(), wrd.strip(), intent['Intents'][ind].replace("â€™", "'"), w, intent['Keywords'][ind].split(' '))
+                # print('Stemmer: ', st.stem(w.strip()), st.stem(wrd.strip()))
+                if st.stem(w.strip()) == st.stem(wrd.strip()):
+                    # print(p.stem(w.strip()), p.stem(wrd.strip()), intent['Intents'][ind].replace("â€™", "'"), w, intent['Keywords'][ind].split(' '))
                     if intent['Intents'][ind].replace("â€™", "'") not in prediction:
                         prediction.append(intent['Intents'][ind].replace("â€™", "'"))
 
@@ -183,7 +184,7 @@ def getGeneralResponse(chat_msg):
         responses = intent["responses"]
         is_break = False
         for pattern in patterns:
-            if str(pattern).lower() == str(chat_msg).lower():
+            if str(pattern).lower().strip() == str(chat_msg).lower().strip():
                 response = responses[0]
                 is_break = True
                 break

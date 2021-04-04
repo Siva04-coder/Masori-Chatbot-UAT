@@ -10,8 +10,10 @@ class response_finder:
     welcome_message = ''
     website_data = ''
     master_intent_entity = ''
+    logger = ''
 
-    def __init__(self):
+    def __init__(self, _logger):
+        self.logger = _logger
         self.welcome_message = load_corpus.get_welcome_message()
 
         self.website_data, self.master_intent_entity = load_corpus.get_Consumer_data()
@@ -36,6 +38,7 @@ class response_finder:
 
         except Exception as e:
             print(str(e))
+            self.logger.write_exception(str(e), 'get_welcome_message')
 
         return json.dumps(res_json)
 
@@ -158,6 +161,7 @@ class response_finder:
 
         except Exception as e:
             print(str(e))
+            self.logger.write_exception(str(e), 'find_response')
             pass
 
         return json.dumps(res_json)
