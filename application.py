@@ -126,6 +126,7 @@ def hcpchatbot():
             "uid": uid
         }
     except Exception as ee:
+        logger.write_exception(str(ee), 'hcpchatbot')
         response = {
             "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
             "uid": "Unknown"
@@ -161,6 +162,7 @@ def hcprecommendchat():
             "uid": uid
         }
     except Exception as ee:
+        logger.write_exception(str(ee), 'hcpchatbot')
         response = {
             "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
             "uid": "Unknown"
@@ -220,6 +222,7 @@ def consumerchatbot():
             "uid": uid
         }
     except Exception as ee:
+        logger.write_exception(str(ee), 'consumerchatbot')
         response = {
             "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
             "uid": "Unknown"
@@ -255,6 +258,7 @@ def consumerrecommendchat():
             "uid": uid
         }
     except Exception as ee:
+        logger.write_exception(str(ee), 'consumerrecommendchat')
         response = {
             "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
             "uid": "Unknown"
