@@ -73,6 +73,7 @@ def bow(sentence, words, show_details=False):
     return(documents)
 
 def predict_bag(intent, output, show_details=False):
+    prediction = []
     print('output', output)
     for ind in intent.index:
         for wrd in intent['Keywords'][ind].split(' '):
