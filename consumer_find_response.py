@@ -14,7 +14,7 @@ class response_finder:
     def __init__(self):
         self.welcome_message = load_corpus.get_welcome_message()
 
-        self.website_data, self.master_intent_entity = load_corpus.get_HCP_data()
+        self.website_data, self.master_intent_entity = load_corpus.get_Consumer_data()
 
 
     def get_welcome_message(self):
@@ -54,8 +54,8 @@ class response_finder:
         try:
             chat = ''
             if isRecommend == False:
-                import predict
-                intent = predict.predict(chat_message)
+                import consumer_predict
+                intent = consumer_predict.predict(chat_message)
                 print('\n\nAll intents : ', intent)
                 chat = intent[0]
             else:
@@ -63,7 +63,7 @@ class response_finder:
             # chats = self.remove_stopwords(chat_message)
             # master = self.master_intent_entity
             corpus = self.website_data
-
+            print('\n\nIntent Tried: ', chat, '\n')
             # for chat in chats:
             #     if chat != '':
             #         chat.replace("'", "\'")
@@ -84,7 +84,6 @@ class response_finder:
                 recommend_intent = '' if str(corpus['Recommend Intent'].iloc[0]) == 'nan' else corpus['Recommend Intent'].iloc[0]
                 visit_page = '' if str(corpus['Visit Page'].iloc[0]) == 'nan' else corpus['Visit Page'].iloc[0]
 
-                print('recommend')
                 res_json = {
                     "output_text": output_text,
                     "bullet": bullet,
@@ -145,3 +144,4 @@ class response_finder:
             pass
 
         return json.dumps(res_json)
+

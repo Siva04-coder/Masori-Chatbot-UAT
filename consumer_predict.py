@@ -34,17 +34,14 @@ stopwords = []
 arr=[]
 stopwords_plus = stopwords + lots_of_stopwords
 stopwords_plus = set(stopwords_plus)
-inputstr = " "
 
-try:
-    data = pickle.load(open( "./pickles/HCP_ExtractedKeyword.pkl", "rb" ))
-    words = data
-    intentdata = pickle.load(open( "./pickles/HCP_Intent.pkl", "rb" ))
-    # print('intentdata', intentdata)
-    intent = intentdata
-    # print("intent",intent)
-except Exception as e:
-    pass
+data = pickle.load(open( "./pickles/Consumer_ExtractedKeyword.pkl", "rb" ))
+words = data
+intentdata = pickle.load(open( "./pickles/Consumer_Intent.pkl", "rb" ))
+# print('intentdata', intentdata)
+intent = intentdata
+inputstr = " "
+# print("intent",intent)
 
 def clean_up_sentence(sentence):
     sentence = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',sentence)
@@ -78,7 +75,7 @@ def predict_bag(intent, output, show_details=False):
             # print('match', wrd, output)
             for i,w in enumerate(output):
                 if w.strip() == wrd.strip():
-                    # print(w.strip(), wrd.strip(), intent['Intents'][ind].replace("â€™", "'"), w, intent['Keywords'][ind].split(' '))
+                    print(w.strip(), wrd.strip(), intent['Intents'][ind].replace("â€™", "'"), w, intent['Keywords'][ind].split(' '))
                     if intent['Intents'][ind].replace("â€™", "'") not in prediction:
                         prediction.append(intent['Intents'][ind].replace("â€™", "'"))
 
@@ -146,26 +143,25 @@ def ngrams_custom(tokens):
 
     return ngram_token
 
-
 def predict(chat):
     input = []
-    inputstr = ""
     processed_list = clean_up_sentence(chat)
-    print('processed_list', processed_list)
     inputstr=' '.join(map(str, processed_list))
     input.append(inputstr)
-    
+    print('processed_list', processed_list)
     arr=[]
     new_str=''
     #text = ngrams(processed_list, 3)
     text = ngrams_custom(processed_list)
-    print('ngram out ', text)
+    print('text', text)
     output = bow(text,words)
+    print("output act prev",output)
     output = sorted(list(set(output)))
+    print("output act",output)
     sorted_list = list(sorted(output, key = len, reverse=True))
-    print('sorted_list ', sorted_list)
+    print("sorted_list",sorted_list)
     results= predict_bag(intent,sorted_list)
-
+    print("output",results)
     return results
 
 #predict("What is OLE ?")

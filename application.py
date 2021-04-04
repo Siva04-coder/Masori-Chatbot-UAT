@@ -1,6 +1,10 @@
+# %% Import(s)
 import hcp_find_response
 import hcp_response_generator
 import hcp_get_history
+import consumer_find_response
+import consumer_response_generator
+import consumer_get_history
 from lazywritter import log_writter
 from flask import Flask, request, flash, jsonify
 from flask_restful import Resource, Api, reqparse
@@ -14,6 +18,8 @@ import base64
 from flask_cors import CORS
 import auth
 
+# %% Declaration(s) 
+
 application = Flask(__name__)
 CORS(application)
 
@@ -23,6 +29,12 @@ geneset = hcp_response_generator.response_generator()
 
 finder = hcp_find_response.response_finder()
 
+
+consumer_geneset = consumer_response_generator.response_generator()
+
+consumer_finder = consumer_find_response.response_finder()
+
+# %% Common 
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
@@ -36,8 +48,8 @@ def index():
         logger.write_exception(str(d), 'Index')
         pass
     
+    logger.write_activity('Index Logging Activity', 1)
     try:
-        logger.write_activity('Index Logging Activity', 1)
         return "Welcome."
     except Exception as e:
         return str(e)
@@ -75,13 +87,14 @@ def pred():
     user_chat = request.headers.get('conv')
 
     import predict
-
+    
     preds = predict.predict(user_chat)
 
     response = {"intents": preds}
 
     return response
 
+# %% HCP 
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
@@ -97,9 +110,10 @@ def hcpchatbot():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
+        print('user_chat', user_chat)
         uid = request.args['uid']
 
-        res_json = finder.find_HCP_response(user_chat)
+        res_json = finder.find_response(user_chat)
 
         cur_response = geneset.generate_response(res_json)
 
@@ -136,7 +150,7 @@ def hcprecommendchat():
         user_chat = request.headers.get('conv')
         uid = request.args['uid']
 
-        res_json = finder.find_HCP_response(user_chat, True)
+        res_json = finder.find_response(user_chat, True)
         cur_response = geneset.generate_response(res_json)
         uid = history.check_generate_uid(uid)
 
@@ -175,11 +189,100 @@ def hcpchathistory():
     return response
 
 
-@application.route('/patientchat', methods=['GET', 'POST'])
-def patientchatbot():
-    input = request.args['value']
-    return input
+# %% Consumer
 
+@application.route('/consumerchat', methods=['GET', 'POST'])
+def consumerchatbot():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return "Unauthorized Access."
+    except Exception as d:
+        pass
+
+    try:
+        history = consumer_get_history.History()
+        user_chat = request.headers.get('conv')
+        uid = request.args['uid']
+
+        res_json = consumer_finder.find_response(user_chat)
+
+        cur_response = consumer_geneset.generate_response(res_json)
+
+        uid = history.check_generate_consumer_uid(uid)
+
+        history.check_update_history(uid, user_chat, cur_response)
+
+        response = {
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "uid": uid
+        }
+    except Exception as ee:
+        response = {
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "uid": "Unknown"
+        }
+
+    return response
+
+
+@application.route('/consumerrecommendchat', methods=['GET', 'POST'])
+def consumerrecommendchat():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return "Unauthorized Access."
+    except Exception as d:
+        pass
+
+    try:
+        history = hcp_get_history.History()
+        user_chat = request.headers.get('conv')
+        uid = request.args['uid']
+
+        res_json = finder.find_response(user_chat, True)
+        cur_response = geneset.generate_response(res_json)
+        uid = history.check_generate_consumer_uid(uid)
+
+        history.check_update_history(uid, user_chat, cur_response)
+
+        response = {
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "uid": uid
+        }
+    except Exception as ee:
+        response = {
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "uid": "Unknown"
+        }
+
+    return response
+
+
+@application.route('/consumerchathistory', methods=['GET', 'POST'])
+def consumerchathistory():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return "Unauthorized Access."
+    except Exception as d:
+        pass
+
+    history = hcp_get_history.History()
+    uid = request.args['uid']
+
+    uid = history.check_generate_consumer_uid(uid)
+    response = history.get_history_alone(uid, finder, geneset)
+
+    return response
+
+# %% Refresh Corpus to Database
 
 @application.route('/refreshCorpus', methods=['GET', 'POST'])
 def refreshCorpus():
@@ -192,6 +295,38 @@ def refreshCorpus():
     upload_excel_to_database.UpdateDB(corpus_filename, corpus_sheetname)
     return "Successfully Updated."
 
+# %% Refresh Pickle Models
 
-if __name__ == "__main__":
-    application.run(debug=True)
+@application.route('/refreshHCPModel', methods=['GET', 'POST'])
+def refreshHCPModel():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return "Unauthorized Access."
+    except Exception as d:
+        pass
+
+    import keywordextraction
+
+    return "Model has been updated."
+
+@application.route('/refreshConsumerModel', methods=['GET', 'POST'])
+def refreshConsumerModel():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return "Unauthorized Access."
+    except Exception as d:
+        pass
+
+    import consumer_keywordextraction
+
+    return "Model has been updated."
+
+# %% Main but it should be commented before upload to Git
+# if __name__ == "__main__":
+#     application.run(debug=True)

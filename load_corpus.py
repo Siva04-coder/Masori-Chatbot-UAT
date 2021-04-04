@@ -95,3 +95,46 @@ def get_HCP_data():
     df = pd.DataFrame(data, columns = ['Site_Area', 'Sub Functional Area', 'Keyword'])
 
     return corpus, df
+
+
+def get_Consumer_data():
+    corpus = pd.read_excel(corpus_path, engine='openpyxl',
+                            sheet_name='Nuplazid Consumer')
+
+    data = []
+
+    for index, row in corpus.iterrows():
+
+        if str(row['Sub Functional Area']).lower() != 'nan':
+            
+            Site_Area = 'Consumer'
+            Functionality_Area = ''
+            Entities = ''
+            Intent = ''
+
+            if str(row["Functional Area"]).lower() != 'nan':
+                Functionality_Area = str(row["Functional Area"])
+
+            if str(row["Keyword"]).lower() != 'nan':
+                Entities = str(row["Keyword"]).replace("'", "''")
+
+            if str(row["Sub Functional Area"]).lower() != 'nan':
+                Entities = str(row["Sub Functional Area"]).replace("'", "''")
+
+            data.append([Site_Area, Intent, Entities])
+
+            # if '\n' in str(row["Entities"]):
+            #     entities = str(row["Entities"]).split('\n')
+
+            #     for entity in entities:
+            #         if str(row["Intents"]).replace("'", "''") != 'nan' and str(entity).replace("'", "''") != 'nan':
+            #             data.append([Site_Area, str(row["Intents"]).replace("'", "''"), str(entity).replace("'", "''")])
+                    
+            # else:
+            #     if str(row["Intents"]).replace("'", "''") != 'nan' and str(row["Entities"]).replace("'", "''") != 'nan':
+            #         data.append([Site_Area, str(row["Intents"]).replace("'", "''"), str(row["Entities"]).replace("'", "''")])
+                
+
+    df = pd.DataFrame(data, columns = ['Site_Area', 'Sub Functional Area', 'Keyword'])
+
+    return corpus, df
