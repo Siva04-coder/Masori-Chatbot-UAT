@@ -72,7 +72,7 @@ class response_generator:
             print(json_obj['recommend_intent'],'done4', response)
             # %% Recommend Generation
             if json_obj['recommend_intent'] != '':
-               response = response + '<div class="chat-text-divider"></div>'
+                response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<p><b>Recommend topic for you </b></p>'
 
                 if '\n' in json_obj['recommend_intent']:
