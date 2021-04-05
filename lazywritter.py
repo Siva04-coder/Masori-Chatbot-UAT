@@ -11,21 +11,21 @@ class log_writter:
 
     def __init__(self):
         exceptions = ''
-        configFilePath = os.path.dirname(os.path.realpath(__file__)) + '/app.cfg'
+        configFilePath = 'app.cfg'
         err_log_file = ''
         sysDate = datetime.now()
         level=logging.INFO
 
         if not os.path.exists(configFilePath):
             err_log_file = 'other'
-            configFilePath = os.path.dirname(sys.executable) + '/app.cfg'
+            configFilePath = 'app.cfg'
 
         if err_log_file == 'other':
-            err_log_file = os.path.dirname(sys.executable) + "/Logs/Exception/Exception" + sysDate.strftime('%d_%b_%Y') + ".log"
-            act_log_file = os.path.dirname(sys.executable) + "/Logs/Activity/Activity" + sysDate.strftime('%d_%b_%Y') + ".log"
+            err_log_file = "Logs/Exception/Exception" + sysDate.strftime('%d_%b_%Y') + ".log"
+            act_log_file = "Logs/Activity/Activity" + sysDate.strftime('%d_%b_%Y') + ".log"
         else:
-            err_log_file = os.path.dirname(os.path.realpath(__file__)) + "/Logs/Exception/Exception" + sysDate.strftime('%d_%b_%Y') + ".log"
-            act_log_file = os.path.dirname(os.path.realpath(__file__)) + "/Logs/Activity/Activity" + sysDate.strftime('%d_%b_%Y') + ".log"
+            err_log_file = "Logs/Exception/Exception" + sysDate.strftime('%d_%b_%Y') + ".log"
+            act_log_file = "Logs/Activity/Activity" + sysDate.strftime('%d_%b_%Y') + ".log"
         
         if not os.path.exists(os.path.dirname(err_log_file)):
             try:
