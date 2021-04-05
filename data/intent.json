@@ -15,7 +15,7 @@
                 "symptom & potential cause",
                 "symptoms & potential causes"
             ],
-            "responses": ["symptoms of Parkinson’s disease"]
+            "responses": ["symptoms of Parkinson disease"]
         },
         {
             "Intent": "Symptoms",
@@ -24,7 +24,7 @@
                 "About Parkinson Disease Psychosis",
                 "symptoms & potential causes"
             ],
-            "responses": ["About Parkinson’s Disease Psychosis"]
+            "responses": ["About Parkinson Disease Psychosis"]
         },
         {
             "Intent": "About Nuplazid",
@@ -40,7 +40,7 @@
                 "NUPLAZID Parkinson",
                 "clinical data"
             ],
-            "responses": ["NUPLAZID Parkinson’s"]
+            "responses": ["NUPLAZID Parkinson"]
         },
         {
             "Intent": "About Parkinson’s Disease",
@@ -51,7 +51,7 @@
                 "remedies Parkinson disease",
                 "Learn about Parkinson disease"
             ],
-            "responses": ["cause of Parkinson’s disease"]
+            "responses": ["cause of Parkinson disease"]
         },
         {
             "Intent": "Talking to your healthcare provider",
@@ -85,7 +85,7 @@
                 "Parkinson remedies"
 
             ],
-            "responses": ["cause of Parkinson’s disease"]
+            "responses": ["cause of Parkinson disease"]
         },
         {
             "Intent": "About Parkinson’s Disease",
@@ -94,7 +94,7 @@
                 "remedies Parkinson disease",
                 "Learn about Parkinson disease"
             ],
-            "responses": ["Parkinson’s condition"]
+            "responses": ["Parkinson condition"]
         },
         {
             "Intent": "Related hallucinations and delusions queries",
@@ -104,7 +104,7 @@
                 "signs of hallucinations",
                 "sign of hallucination"
             ],
-            "responses": ["Parkinson’s hallucination"]
+            "responses": ["Parkinson hallucination"]
         },
         {
             "Intent": "Related hallucinations and delusions queries",
@@ -115,7 +115,7 @@
                 "related hallucinations & delusions"
 
             ],
-            "responses": ["Parkinson’s delusions"]
+            "responses": ["Parkinson delusions"]
         },
         {
             "Intent": "Related hallucinations and delusions queries",
@@ -171,13 +171,15 @@
             "responses": ["NUPLAZID dosage options"]
         },
         {
-            "Intent": "FAQ",
+            "Intent": "Side Effects",
             "patterns": [
-                "FAQ",
-                "Frequently Asked Question"
+                "Side effect",
+                "Side effects",
+                "Nuplazid Side effects",
+                "Nuplazid Side effect"
 
             ],
-            "responses": ["FAQ"]
+            "responses": ["Side Effects"]
         },
         {
             "Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",

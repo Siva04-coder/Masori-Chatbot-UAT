@@ -7,7 +7,16 @@
                 "About Parkinson Disease Psychosis",
                 "symptoms & potential causes"
             ],
-            "responses": ["About Parkinson’s Disease Psychosis"]
+            "responses": ["About Parkinson Disease Psychosis"]
+        },
+        {
+            "Intent": "About Hallucinations and Delusions",
+            "patterns": ["Hallucination",
+                "Hallucinations",
+                "Delusion",
+                "Delusions"
+            ],
+            "responses": ["About Hallucinations & Delusions"]
         },
         {
             "Intent": "About Nuplazid",
