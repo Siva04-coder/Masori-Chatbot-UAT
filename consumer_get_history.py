@@ -95,10 +95,17 @@ class History:
             "chats": []
         }
 
-        if os.path.exists(history_path):
-            with open(history_path) as outfile:
-                json_data = outfile.read()
-                json_data = json.loads(json_data)
+        try:
+            if os.path.exists(history_path):
+                with open(history_path) as outfile:
+                    json_data = outfile.read()
+                    json_data = json.loads(json_data)
+        except:
+            json_data = {
+                "uid": uid,
+                "chats": []
+            }   
+            pass
 
         json_data = check_buffer_time_to_clear(json_data, uid)
 
