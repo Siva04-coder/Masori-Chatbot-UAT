@@ -57,6 +57,9 @@ class response_generator:
                             txt = hyperlink_texts[cnt]
                         except Exception as e:
                             pass
+                        
+                        if cnt == 0:
+                            response = response + '<br />'
 
                         response = response + '<p><a href="' + hyperlink + '" target="_blank">' 
                         response = response + txt + '</a></p>'
