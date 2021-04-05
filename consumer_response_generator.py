@@ -47,6 +47,8 @@ class response_generator:
             # %% Hyperlink Generation
             print('done3')
             if json_obj['hyperlink_text'] != '' and json_obj['hyperlink_url'] != '':
+                response = response + '<br>'
+
                 if '\n' in json_obj['hyperlink_url']:
                     hyperlinks = json_obj['hyperlink_url'].split('\n')
                     hyperlink_texts = json_obj['hyperlink_text'].split('\n')
@@ -57,9 +59,6 @@ class response_generator:
                             txt = hyperlink_texts[cnt]
                         except Exception as e:
                             pass
-
-                        if cnt == 0:
-                            response = response + '<br />'
                         
                         response = response + '<p><a href="' + hyperlink + '" target="_blank">' 
                         response = response + txt + '</a></p>'
