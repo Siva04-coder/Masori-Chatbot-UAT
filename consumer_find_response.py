@@ -57,8 +57,8 @@ class response_finder:
         try:
             chat = ''
             intent = []
+            import consumer_predict
             if isRecommend == False:
-                import consumer_predict
                 intent = consumer_predict.predict(chat_message)
                 print('\n\nAll intents : ', intent)
                 if len(intent) > 0:                
