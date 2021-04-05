@@ -58,7 +58,7 @@ class response_finder:
             chat = ''
             intent = []
             import predict
-            
+
             if isRecommend == False:
                 intent = predict.predict(chat_message)
                 print('\n\nAll intents : ', intent)
@@ -85,6 +85,7 @@ class response_finder:
                 print('corpus', corpus)
                 corpus = corpus.loc[(corpus['Sub Functional Area'] == str(chat))]
                 
+                print('Filtered corpus', corpus)
                 if not corpus.empty:
                     print('\n\ncorpus : ', corpus)
                     print('\n\nintent : ', chat)
