@@ -82,6 +82,7 @@ class response_generator:
 
             if response == '':
                 response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
+                response = response + '<br /><a href="https://www.nuplazid.com/frequently-asked-questions">Click here to get more information</a>'
             
         except Exception as e:
             print('Error')
