@@ -34,6 +34,8 @@ consumer_geneset = consumer_response_generator.response_generator(logger)
 
 consumer_finder = consumer_find_response.response_finder(logger)
 
+unauthorized_msg = 'Unauthorized Access.'
+
 # %% Common 
 
 @application.route('/', methods=['GET', 'POST'])
@@ -43,9 +45,9 @@ def index():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
-            return "Unauthorized Access."
+            return unauthorized_msg
     except Exception as d:
-        logger.write_exception(str(d), 'Index')
+        return unauthorized_msg
         pass
     
     logger.write_activity('Index Logging Activity', 1)
@@ -62,8 +64,9 @@ def welcome():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
-            return "Unauthorized Access."
+            return unauthorized_msg
     except Exception as d:
+        return unauthorized_msg
         pass
 
     res_json = finder.get_welcome_message()
@@ -80,8 +83,9 @@ def pred():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
-            return "Unauthorized Access."
+            return unauthorized_msg
     except Exception as d:
+        return unauthorized_msg
         pass
 
     user_chat = request.headers.get('conv')
@@ -103,8 +107,9 @@ def hcpchatbot():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
-            return "Unauthorized Access."
+            return unauthorized_msg
     except Exception as d:
+        return unauthorized_msg
         pass
 
     try:
@@ -148,8 +153,9 @@ def hcprecommendchat():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
-            return "Unauthorized Access."
+            return unauthorized_msg
     except Exception as d:
+        return unauthorized_msg
         pass
 
     try:
@@ -184,8 +190,9 @@ def hcpchathistory():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
-            return "Unauthorized Access."
+            return unauthorized_msg
     except Exception as d:
+        return unauthorized_msg
         pass
 
     history = hcp_get_history.History()
@@ -206,8 +213,9 @@ def consumerchatbot():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
-            return "Unauthorized Access."
+            return unauthorized_msg
     except Exception as d:
+        return unauthorized_msg
         pass
 
     try:
@@ -250,8 +258,9 @@ def consumerrecommendchat():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
-            return "Unauthorized Access."
+            return unauthorized_msg
     except Exception as d:
+        return unauthorized_msg
         pass
 
     try:
@@ -286,8 +295,9 @@ def consumerchathistory():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
-            return "Unauthorized Access."
+            return unauthorized_msg
     except Exception as d:
+        return unauthorized_msg
         pass
 
     history = consumer_get_history.History()
