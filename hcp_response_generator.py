@@ -42,12 +42,13 @@ class response_generator:
             # %% Video Generation
             print('done2')
             if json_obj['video_url'] != '':
+                response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<div class="chat-buttons-container"><button><a href="' + json_obj['video_url'] 
                 response = response + '" target="_blank">Watch Video</a></button></div>'
             # %% Hyperlink Generation
             print('done3')
             if json_obj['hyperlink_text'] != '' and json_obj['hyperlink_url'] != '':
-                response = response + '<br>'
+                response = response + '<div class="chat-text-divider"></div>'
                 
                 if '\n' in json_obj['hyperlink_url']:
                     hyperlinks = json_obj['hyperlink_url'].split('\n')
@@ -71,10 +72,12 @@ class response_generator:
             print(json_obj['recommend_intent'],'done4', response)
             # %% Recommend Generation
             if json_obj['recommend_intent'] != '':
+                response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<p><b>Recommend topic for you </b></p><a href="#" onclick="recommend(\'' + json_obj['recommend_intent'] + '\')">' + json_obj['recommend_intent'] + '</a>'
 
             # %% Visit Page Generation
             if json_obj['visit_page'] != '':
+                response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<div class="chat-buttons-container"><button><a href="' + json_obj['visit_page'] 
                 response = response + '" target="_blank">Visit Page</a></button></div>'
 
