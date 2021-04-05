@@ -40,7 +40,7 @@
                 "NUPLAZID Parkinson",
                 "clinical data"
             ],
-            "responses": ["NUPLAZID Parkinson"]
+            "responses": ["NUPLAZID Clinical Trial Results"]
         },
         {
             "Intent": "About Parkinson’s Disease",
@@ -123,6 +123,15 @@
                 "psychosis"
             ],
             "responses": ["delusions associated with PD psychosis"]
+        },
+        {
+            "Intent": "how to start NUPLAZID",
+            "patterns": ["start Nuplazid",
+                "nuplazid start",
+                "getting nuplazid",
+                "get nuplazid"
+            ],
+            "responses": ["how to start NUPLAZID"]
         },
         {
             "Intent": "Contact Details",
