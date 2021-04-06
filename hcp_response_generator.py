@@ -54,6 +54,7 @@ class response_generator:
                     hyperlinks = json_obj['hyperlink_url'].split('\n')
                     hyperlink_texts = json_obj['hyperlink_text'].split('\n')
                     cnt = 0
+                    response = response + '<ul class="hyperlink">'
                     for hyperlink in hyperlinks:
                         txt = json_obj['hyperlink_text']
                         try:
@@ -61,10 +62,11 @@ class response_generator:
                         except Exception as e:
                             pass
                         
-                        response = response + '<p><a href="' + hyperlink + '" target="_blank">' 
-                        response = response + txt + '</a></p>'
+                        response = response + '<li><a href="' + hyperlink + '" target="_blank">' 
+                        response = response + txt + '</a></li>'
 
                         cnt = cnt + 1
+                    response = response + '</ul>'
                 else:
                     response = response + '<a href="' + json_obj['hyperlink_url'] + '" target="_blank">' 
                     response = response + json_obj['hyperlink_text'] + '</a>'
@@ -86,8 +88,9 @@ class response_generator:
             # %% Visit Page Generation
             if json_obj['visit_page'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
-                response = response + '<div class="chat-buttons-container"><button style="width: 100%"><a href="' + json_obj['visit_page'] 
-                response = response + '" target="_blank">Visit Page</a></button></div>'
+                response = response + '<div class="chat-buttons-container"><div style="float:left;min-height: 35px;padding-top: 10px;">For more information </div>'
+                response = response + '<div style="float:right"><button style="width: 100%;"><a href="' + json_obj['visit_page'] 
+                response = response + '" target="_blank">Visit Page</a></button></div></div>'
 
             print(json_obj['recommend_intent'], 'done4', response)
 
