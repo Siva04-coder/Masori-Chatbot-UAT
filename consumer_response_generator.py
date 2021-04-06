@@ -81,7 +81,8 @@ class response_generator:
                     recommend_intents = json_obj['recommend_intent'].split('\n')
                     
                     for recommend_intent in recommend_intents:
-                        response = response + '<li><a href="#" onclick="recommend(\'' + recommend_intent + '\')">' + recommend_intent + '</a><li>'
+                        if recommend_intent.strip() != '':
+                            response = response + '<li><a href="#" onclick="recommend(\'' + recommend_intent + '\')">' + recommend_intent + '</a><li>'
                 else:
                     response = response + '<li><a href="#" onclick="recommend(\'' + json_obj['recommend_intent'] + '\')">' + json_obj['recommend_intent'] + '</a><li>'
                 response = response + '</ul>'
@@ -89,7 +90,7 @@ class response_generator:
             if json_obj['visit_page'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<div class="chat-buttons-container"><div style="float:left;min-height: 35px;padding-top: 10px;">For more information </div>'
-                response = response + '<div style="float:right"><button style="width: 100%;"><a href="' + json_obj['visit_page'] 
+                response = response + '<div style="float:right"><button><a href="' + json_obj['visit_page'] 
                 response = response + '" target="_blank">Visit Page</a></button></div></div>'
 
             print(json_obj['recommend_intent'], 'done4', response)
