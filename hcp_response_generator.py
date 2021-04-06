@@ -27,7 +27,7 @@ class response_generator:
             # %% Bullet Generation
             print('done1')
             if json_obj['bullet'] != '':
-                response = response + '<ul class="hyperlink">'
+                response = response + '<ul>'
 
                 if '\n' in json_obj['bullet']:
                     bullets = json_obj['bullet'].split('\n')
@@ -37,7 +37,7 @@ class response_generator:
                 else:
                     response = response + '<li>' + json_obj['bullets'] + '</li>'
             
-                if '<ul class="hyperlink">' in response:
+                if '<ul>' in response:
                     response = response + '</ul>'
             # %% Video Generation
             print('done2')
@@ -54,7 +54,7 @@ class response_generator:
                     hyperlinks = json_obj['hyperlink_url'].split('\n')
                     hyperlink_texts = json_obj['hyperlink_text'].split('\n')
                     cnt = 0
-                    response = response + '<ul class="hyperlink">'
+                    response = response + '<ul>'
                     for hyperlink in hyperlinks:
                         txt = json_obj['hyperlink_text']
                         try:
@@ -91,7 +91,7 @@ class response_generator:
             if json_obj['visit_page'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<div class="chat-buttons-container"><div style="float:left;min-height: 35px;padding-top: 10px;">For more information </div>'
-                response = response + '<div style="float:right"><button style="width: 100%;"><a href="' + json_obj['visit_page'] 
+                response = response + '<div style="float:right"><button><a href="' + json_obj['visit_page'] 
                 response = response + '" target="_blank">Visit Page</a></button></div></div>'
 
             print(json_obj['recommend_intent'], 'done4', response)
