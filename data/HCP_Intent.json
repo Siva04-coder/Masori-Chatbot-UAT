@@ -105,7 +105,8 @@
                 "Nuplazid secondary endpoint",
                 "primary endpoint",
                 "secondary endpoint",
-                "Efficacy Nuplazid"
+                "Efficacy Nuplazid",
+                "Efficacy"
             ],
             "responses": [
                 "NUPLAZID efficacy"
@@ -126,7 +127,6 @@
             "Intent": "Efficacy",
             "patterns": [
                 "OLE Study",
-                "open label safety Study",
                 "Open label extenstion Study"
             ],
             "responses": [
@@ -330,7 +330,10 @@
                 "In-office care",
                 "Long-term care",
                 "support documents",
-                "reimbursement process"
+                "reimbursement process",
+                "free cost nuplazid",
+                "free supply",
+                "free cost"
             ],
             "responses": [
                 "NUPLAZID cost details"

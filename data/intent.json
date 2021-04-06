@@ -15,9 +15,10 @@
                 "signs of Parkinson",
                 "motor symptoms",
                 "nonmotor symptoms",
-                "About Parkinson Disease Psychosis",
                 "symptom & potential cause",
-                "symptoms & potential causes"
+                "symptoms & potential causes",
+                "symptoms",
+                "symptom"
             ],
             "responses": [
                 "symptoms of Parkinson disease"
@@ -29,6 +30,10 @@
                 "About PD disease",
                 "PD",
                 "About Parkinson Disease Psychosis",
+                "About Parkinsons Disease Psychosis",
+                "About Parkinsons Diseases Psychosis",
+                "about psychosis",
+                "psychosis",
                 "symptoms & potential causes",
                 "parkinson disease",
                 "parkinsons diseases",
@@ -43,7 +48,8 @@
             "patterns": [
                 "about NUPLAZID",
                 "NUPLAZID medication",
-                "NUPLAZID"
+                "NUPLAZID",
+                "medication"
             ],
             "responses": [
                 "NUPLAZID medication"
@@ -53,7 +59,11 @@
             "Intent": "About Nuplazid",
             "patterns": [
                 "NUPLAZID Parkinson",
-                "clinical data"
+                "clinical data",
+                "Clinical results",
+                "Clinical trail results",
+                "Clinical trail result",
+                "clinical result"
             ],
             "responses": [
                 "NUPLAZID Clinical Trial Results"
@@ -63,6 +73,7 @@
             "Intent": "About Parkinson’s Disease",
             "patterns": [
                 "cause of Parkinson disease",
+                "cause of PD",
                 "cause of Parkinsons disease",
                 "cause of Parkinson diseases",
                 "cause of Parkinsons diseases",
@@ -90,7 +101,9 @@
             "Intent": "Personal Stories",
             "patterns": [
                 "Personal Stories",
-                "Personal Story"
+                "Personal Story",
+                "stories",
+                "story"
             ],
             "responses": [
                 "Personal Stories"
@@ -101,7 +114,8 @@
             "patterns": [
                 "healthcare provider",
                 "consult healthcare provider",
-                "healthcare"
+                "healthcare",
+                "consult"
             ],
             "responses": [
                 "Necessity to Consult healthcare provider"
@@ -137,7 +151,9 @@
                 "Parkinson induced hallucinations",
                 "Parkinson hallucination",
                 "signs of hallucinations",
-                "sign of hallucination"
+                "sign of hallucination",
+                "hallucination",
+                "hallucinations"
             ],
             "responses": [
                 "Parkinson hallucination"
@@ -149,7 +165,9 @@
                 "Parkinson delusions",
                 "Parkinson delusion",
                 "related hallucination & delusion",
-                "related hallucinations & delusions"
+                "related hallucinations & delusions",
+                "delusion",
+                "delusions"
             ],
             "responses": [
                 "Parkinson delusions"
@@ -211,7 +229,7 @@
                 "pimavanserin prescribing information",
                 "Prescribing Information",
                 "prescribe",
-                "prescribtion",
+                "prescription",
                 "prescription support",
                 "NUPLAZID prescription"
             ],
@@ -224,7 +242,9 @@
             "patterns": [
                 "NUPLAZID dosage options",
                 "NUPLAZID dosage option",
-                "Recommended dose"
+                "Recommended dose",
+                "dosage",
+                "dosage information"
             ],
             "responses": [
                 "NUPLAZID dosage options"
@@ -249,7 +269,10 @@
                 "Acadia Connect",
                 "financial assistance",
                 "further assistance",
-                "care cordinator"
+                "care cordinator",
+                "cost details",
+                "cost detail",
+                "cost"
             ],
             "responses": [
                 "NUPLAZID cost"
@@ -268,7 +291,8 @@
                 "Assistance",
                 "financial resources",
                 "financial resource",
-                "further assistance"
+                "further assistance",
+                "Insurance"
             ],
             "responses": [
                 "NUPLAZID coverage"
@@ -298,7 +322,8 @@
             "Intent": "Enrollment Form",
             "patterns": [
                 "Patient Enrollment Form",
-                "Nuplazid Enrollment Form"
+                "Nuplazid Enrollment Form",
+                "Enrollment form"
             ],
             "responses": [
                 "Patient Enrollment Form"
