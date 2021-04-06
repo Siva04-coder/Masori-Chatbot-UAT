@@ -79,7 +79,7 @@ class response_finder:
             #         chat.replace("'", "\'")
             #         master = master.loc[(master['Site_Area'] == 'HCP') & (master['Entities'].str.contains(chat))]
             if chat != '':
-                corpus = corpus.loc[(corpus['Sub Functional Area'].str.strip().lower() == str(chat).strip().lower())]
+                corpus = corpus.loc[(corpus['Sub Functional Area'].str.lower() == str(chat).lower())]
                 
                 if not corpus.empty:
                     print('\n\ncorpus : ', corpus)
