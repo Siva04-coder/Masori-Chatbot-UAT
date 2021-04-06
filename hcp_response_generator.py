@@ -24,6 +24,12 @@ class response_generator:
             else:
                 response = response + '<p>' + json_obj['output_text'] + '</p>'
             
+            if 'Goodbye' in json_obj['output_text']:
+                response = response + '<div class="chat-individual-feedback"><span>Was this helpful?</span>'
+                response = response + '<button class="chat-individual-feedback-button-no" onclick="feedbackno()">No</button>'
+                response = response + '<button class="chat-individual-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
+                response = response + '<div class="chat-float-clear"></div></div>'
+
             # %% Bullet Generation
             print('done1')
             if json_obj['bullet'] != '':
