@@ -27,7 +27,7 @@ class response_generator:
             # %% Bullet Generation
             print('done1')
             if json_obj['bullet'] != '':
-                response = response + '<ul>'
+                response = response + '<ul class="hyperlink">'
 
                 if '\n' in json_obj['bullet']:
                     bullets = json_obj['bullet'].split('\n')
@@ -37,7 +37,7 @@ class response_generator:
                 else:
                     response = response + '<li>' + json_obj['bullets'] + '</li>'
             
-                if '<ul>' in response:
+                if '<ul class="hyperlink">' in response:
                     response = response + '</ul>'
             # %% Video Generation
             print('done2')
@@ -73,7 +73,7 @@ class response_generator:
             # %% Image Generation
             print(json_obj['recommend_intent'],'done4', response)
             # %% Recommend Generation
-            if json_obj['recommend_intent'] != '':
+             if json_obj['recommend_intent'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<p><b>Recommend topic for you </b></p>'
                 response = response + '<ul>'
