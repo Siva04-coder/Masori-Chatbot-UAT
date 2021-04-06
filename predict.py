@@ -170,17 +170,19 @@ def predict(chat):
     print('processed_list', processed_list)
     inputstr=' '.join(map(str, processed_list))
     input.append(inputstr)
+    results = []
     
-    arr=[]
-    new_str=''
-    text = ngrams(processed_list, len(processed_list))
-    #text = ngrams_custom(processed_list)
-    print('ngram out ', text)
-    output = bow(text,words)
-    output = sorted(list(set(output)))
-    sorted_list = list(sorted(output, key = len, reverse=True))
-    print('sorted_list ', sorted_list)
-    results= predict_bag(intent,sorted_list)
+    if len(processed_list) > 0:
+        arr=[]
+        new_str=''
+        text = ngrams(processed_list, len(processed_list))
+        #text = ngrams_custom(processed_list)
+        print('ngram out ', text)
+        output = bow(text,words)
+        output = sorted(list(set(output)))
+        sorted_list = list(sorted(output, key = len, reverse=True))
+        print('sorted_list ', sorted_list)
+        results= predict_bag(intent,sorted_list)
 
     return results
 
