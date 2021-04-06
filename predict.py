@@ -74,17 +74,29 @@ def bow(sentence, words, show_details=False):
 
 def predict_bag(intent, output, show_details=False):
     prediction = []
-    print('output', output)
+    #print('output-predict', output)
+    #print('intent-predict', intent)
+    
+    intent = intent.sort_values('wordcount', ascending=False)
+
+    #intent.sort_values(by=len(['Keywords']), inplace=True, ascending=False)
     for ind in intent.index:
-        for wrd in intent['Keywords'][ind].split(' '):
+        #print('keywords', intent['Keywords'][ind])
+        #for wrd in intent['Keywords'][ind].split(' '):
             #print('match', wrd, output)
-            for i,w in enumerate(output):
-                # print('Stemmer: ', st.stem(w.strip()), st.stem(wrd.strip()))
-                # if st.stem(w.strip()) == st.stem(wrd.strip()):
-                if w.strip() == wrd.strip():
-                    # print(p.stem(w.strip()), p.stem(wrd.strip()), intent['Intents'][ind].replace("â€™", "'"), w, intent['Keywords'][ind].split(' '))
-                    if intent['Intents'][ind].replace("â€™", "'") not in prediction:
-                        prediction.append(intent['Intents'][ind].replace("â€™", "'"))
+        for i,w in enumerate(output):
+            #print('user keys ', w.strip())
+            #print('Keyword', intent['Keywords'][ind].strip())
+            # print('Keywords', wrd.strip())
+            # if st.stem(w.strip()) == st.stem(wrd.strip()):
+            #if w.strip() == wrd.strip():
+            if w.strip() == intent['Keywords'][ind].strip():
+                
+                #if intent['Intents'][ind].replace("â€™", "'") not in prediction:
+                #print('pred', intent['Intents'][ind].replace("â€™", "'"))
+                prediction.append(intent['Intents'][ind].replace("â€™", "'"))
+                    # if len(prediction) > 0:
+                    #     return prediction
 
     # for s in intent:
     #     print('intent : ', s, ' = ', intent[s])
