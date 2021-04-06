@@ -54,7 +54,7 @@ class response_generator:
                     hyperlinks = json_obj['hyperlink_url'].split('\n')
                     hyperlink_texts = json_obj['hyperlink_text'].split('\n')
                     cnt = 0
-                    response = response + '<ul class="hyperlink">'
+                    response = response + '<ul>'
                     for hyperlink in hyperlinks:
                         txt = json_obj['hyperlink_text']
                         try:
@@ -62,7 +62,7 @@ class response_generator:
                         except Exception as e:
                             pass
                         
-                        response = response + '<li><a href="' + hyperlink + '" target="_blank">' 
+                        response = response + '<li class="nav-item"><a href="' + hyperlink + '" target="_blank">' 
                         response = response + txt + '</a></li>'
 
                         cnt = cnt + 1
@@ -76,20 +76,20 @@ class response_generator:
             if json_obj['recommend_intent'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<p><b>Recommend topic for you </b></p>'
-                response = response + '<ul class="hyperlink">'
+                response = response + '<ul>'
                 if '\n' in json_obj['recommend_intent']:
                     recommend_intents = json_obj['recommend_intent'].split('\n')
                     
                     for recommend_intent in recommend_intents:
                         if recommend_intent.strip() != '':
-                            response = response + '<li><a href="#" onclick="recommend(\'' + recommend_intent + '\')">' + recommend_intent + '</a><li>'
+                            response = response + '<li class="nav-item"><a href="#" onclick="recommend(\'' + recommend_intent + '\')">' + recommend_intent + '</a><li>'
                 else:
-                    response = response + '<li><a href="#" onclick="recommend(\'' + json_obj['recommend_intent'] + '\')">' + json_obj['recommend_intent'] + '</a><li>'
+                    response = response + '<li class="nav-item"><a href="#" onclick="recommend(\'' + json_obj['recommend_intent'] + '\')">' + json_obj['recommend_intent'] + '</a><li>'
                 response = response + '</ul>'
             # %% Visit Page Generation
             if json_obj['visit_page'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
-                response = response + '<div class="chat-buttons-container"><div style="float:left;min-height: 35px;padding-top: 10px;">For more information </div>'
+                response = response + '<div class="chat-buttons-container"><div style="float:left;min-height: 35px;padding-top: 11px;">For more information </div>'
                 response = response + '<div style="float:right"><button><a href="' + json_obj['visit_page'] 
                 response = response + '" target="_blank">Visit Page</a></button></div></div>'
 
