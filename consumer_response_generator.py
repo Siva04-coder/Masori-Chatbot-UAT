@@ -8,13 +8,10 @@ class response_generator:
         self.logger = _logger
         pass
 
-    def generate_feedback_response(self, json_data):
+    def generate_feedback_response(self):
         response = ''
 
         try:
-            print('json_data', json_data)
-            json_obj = json.loads(json_data)
-            print('json', json_obj)
             # %% Plain Text Generation
             response = response + '<div class="chat-bubble you">Thank you for your feedback. Everyday I am learning. I will answer your questions to the best of my ability.<span class="chat-time">'
         except Exception as e:
