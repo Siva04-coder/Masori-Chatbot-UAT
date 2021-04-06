@@ -145,6 +145,50 @@ def hcpchatbot():
 
     return response
 
+@application.route('/updatefeedback', methods=['GET', 'POST'])
+def updatefeedback():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return unauthorized_msg
+    except Exception as d:
+        return unauthorized_msg
+        pass
+
+    try:
+        history = hcp_get_history.History()
+        user_chat = request.headers.get('conv')
+        print('user_chat', user_chat)
+        uid = request.args['uid']
+        is_recommend = False
+        try:
+            rec = request.args['rec']
+            is_recommend = bool(rec)
+        except:
+            pass
+
+        cur_response = geneset.generate_feedback_response()
+
+        uid = history.check_generate_uid(uid)
+
+        history.check_update_history(uid, user_chat, cur_response)
+
+        response = {
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "uid": uid
+        }
+    except Exception as ee:
+        logger.write_exception(str(ee), 'hcpchatbot')
+        response = {
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "uid": "Unknown"
+        }
+
+    return response
+
+
 
 @application.route('/hcprecommendchat', methods=['GET', 'POST'])
 def hcprecommendchat():
