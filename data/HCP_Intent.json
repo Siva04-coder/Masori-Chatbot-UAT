@@ -80,13 +80,19 @@
             ]
         },
         {
-            "Intent": "Efficacy Story",
+            "Intent": "Nuplazid Warnings",
             "patterns": [
-                "NUPLAZID safety",
-                "safety Information"
+                "NUPLAZID warnings",
+                "NUPLAZID warning",
+                "NUPLAZID precaution",
+                "NUPLAZID warning and precaution",
+                "warnings",
+                "warning",
+                "precaution",
+                "precautions"
             ],
             "responses": [
-                "NUPLAZID safety"
+                "Nuplazid Warnings"
             ]
         },
         {
@@ -108,8 +114,6 @@
         {
             "Intent": "Efficacy",
             "patterns": [
-                "efficacy results",
-                "efficacy result",
                 "OLE",
                 "open label safety",
                 "Open label extenstion"
@@ -122,6 +126,7 @@
             "Intent": "Efficacy",
             "patterns": [
                 "OLE Study",
+                "open label safety Study",
                 "Open label extenstion Study"
             ],
             "responses": [
@@ -155,9 +160,7 @@
         {
             "Intent": "Safety Information",
             "patterns": [
-                "NUPLAZID safety",
-                "Pimavanserin safety",
-                "NUPLAZID important safety information"
+                "Pimavanserin safety"
             ],
             "responses": [
                 "Pimavanserin safety"
@@ -172,7 +175,8 @@
                 "Nuplazid Safety",
                 "Nuplazid safe",
                 "treatment emergent",
-                "safety information"
+                "safety information",
+                "safety"
             ],
             "responses": [
                 "NUPLAZID important safety information"
@@ -184,9 +188,7 @@
                 "withdrawal from NUPLAZID",
                 "Mechanism Of Action",
                 "sprinkle dosing guide",
-                "About MOA",
-                "drug interactions",
-                "drug interaction"
+                "About MOA"
             ],
             "responses": [
                 "About MOA"
@@ -202,10 +204,26 @@
                 "administration information",
                 "best practices",
                 "best practice",
-                "Nuplazid administration"
+                "Nuplazid administration",
+                "nuplazid dosage",
+                "dosage information",
+                "dosage details",
+                "dosage detail",
+                "dosage"
             ],
             "responses": [
                 "Dosage Administration"
+            ]
+        },
+        {
+            "Intent": "Drug Interaction",
+            "patterns": [
+                "Drug Interaction",
+                "Drug Interactions",
+                "Drug"
+            ],
+            "responses": [
+                "Drug Interaction"
             ]
         },
         {
