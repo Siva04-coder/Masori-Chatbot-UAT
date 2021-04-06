@@ -85,12 +85,24 @@ for intent in intents['data']:
         w = pattern.split(' ')
         w = [(_w.lower()) for _w in w if _w.lower() not in stopwords_plus]
         
-        text = ngrams(w, 3)
-        text = sorted(list(set(text)))
-        words.extend(text)
-        words = sorted(list(set(words)))
+        w1 = ' '.join(w)
         
-        all_words.append(words)
+        #text = ngrams(w, 3)
+        #text = ngrams_custom(w)
+        #text = sorted(list(set(text)))
+        # words.extend(text)
+        # words = sorted(list(set(words)))
+        # all_words.append(words)
+
+        word = w1
+        all_words.append(word)
+        if word != '':
+            doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
+            docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
+                                    & (documents['Keywords'] == word.strip())]
+            # print('docavl', doc)
+            if docavl.empty:
+                documents = documents.append(doc, ignore_index = True)
         
         # print('\n\nwords', words)
         
@@ -99,14 +111,14 @@ for intent in intents['data']:
         #     print('text', text)
         #     print('response', respo, words)
         
-        for word in words:
-            if word != '':
-                doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
-                docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
-                                       & (documents['Keywords'] == word.strip())]
-                # print('docavl', doc)
-                if docavl.empty:
-                    documents = documents.append(doc, ignore_index = True)
+        # for word in words:
+        #     if word != '':
+        #         doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
+        #         docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
+        #                                & (documents['Keywords'] == word.strip())]
+        #         # print('docavl', doc)
+        #         if docavl.empty:
+        #             documents = documents.append(doc, ignore_index = True)
 
 
 # for intent in intents['data']:
@@ -146,6 +158,8 @@ for intent in intents['data']:
 #     #documents = sorted(list(set(documents)))
 
 # print(documents)
+
+documents['wordcount'] = documents['Keywords'].map(len)
 
 words = sorted(list(set(words)))
 with open('./pickles/Consumer_Intent.pkl', 'wb') as f:

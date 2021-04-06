@@ -69,18 +69,29 @@ def bow(sentence, words, show_details=False):
 
 def predict_bag(intent, output, show_details=False):
     prediction = []
-    #p = nltk.PorterStemmer()
-    # print('intent', intentdata)
+    print('output-predict', output)
+    #print('intent-predict', intent)
+    
+    intent = intent.sort_values('wordcount', ascending=False)
+
+    #intent.sort_values(by=len(['Keywords']), inplace=True, ascending=False)
     for ind in intent.index:
-        for wrd in intent['Keywords'][ind].split(' '):
-            # print('match', wrd, output)
-            for i,w in enumerate(output):
-                #print('Stemmer: ', p.stem(w.strip()), p.stem(wrd.strip()))
-                #if p.stem(w.strip()) == p.stem(wrd.strip()):
-                if w.strip() == wrd.strip():
-                    # print(p.stem(w.strip()), p.stem(wrd.strip()), intent['Intents'][ind].replace("â€™", "'"), w, intent['Keywords'][ind].split(' '))
-                    if intent['Intents'][ind].replace("â€™", "'") not in prediction:
-                        prediction.append(intent['Intents'][ind].replace("â€™", "'"))
+        #print('keywords', intent['Keywords'][ind])
+        #for wrd in intent['Keywords'][ind].split(' '):
+            #print('match', wrd, output)
+        for i,w in enumerate(output):
+            
+            print('Keyword', intent['Keywords'][ind].strip())
+            # print('Keywords', wrd.strip())
+            # if st.stem(w.strip()) == st.stem(wrd.strip()):
+            #if w.strip() == wrd.strip():
+            if w.strip() == intent['Keywords'][ind].strip():
+                print('user keys ', w.strip())
+                #if intent['Intents'][ind].replace("â€™", "'") not in prediction:
+                print('pred', intent['Intents'][ind].replace("â€™", "'"))
+                prediction.append(intent['Intents'][ind].replace("â€™", "'"))
+                    # if len(prediction) > 0:
+                    #     return prediction
 
     # for s in intent:
     #     print('intent : ', s, ' = ', intent[s])
@@ -148,23 +159,23 @@ def ngrams_custom(tokens):
 
 def predict(chat):
     input = []
+    inputstr = ""
     processed_list = clean_up_sentence(chat)
+    print('processed_list', processed_list)
     inputstr=' '.join(map(str, processed_list))
     input.append(inputstr)
-    print('processed_list', processed_list)
+    
     arr=[]
     new_str=''
-    #text = ngrams(processed_list, 3)
-    text = ngrams_custom(processed_list)
-    print('text', text)
+    text = ngrams(processed_list, len(processed_list))
+    #text = ngrams_custom(processed_list)
+    print('ngram out ', text)
     output = bow(text,words)
-    print("output act prev",output)
     output = sorted(list(set(output)))
-    print("output act",output)
     sorted_list = list(sorted(output, key = len, reverse=True))
-    print("sorted_list",sorted_list)
+    print('sorted_list ', sorted_list)
     results= predict_bag(intent,sorted_list)
-    print("output",results)
+
     return results
 
 #predict("What is OLE ?")
@@ -192,6 +203,6 @@ def getGeneralResponse(chat_msg):
         if is_break == True:
             break
 
-    print(response)
+    print('General response', response)
     
     return response

@@ -46,10 +46,25 @@ def ngrams(tokens, n):
             arr.append(new_str)
     return ngrams(tokens, n-1)
 
+def ngrams_custom(tokens):
+    ngram_token = []
+    temp_token = []
+    new_str = ''
+    n = len(tokens)
+    for j in range(n):
+        if tokens[j] != '':
+            ngram_token.append(tokens[j])
+            if j+1 <= n-1:
+                temp_token.append(tokens[j] + " " + tokens[j+1])
+    
+    for temp in temp_token:
+        ngram_token.append(temp)
+
+    return ngram_token
+
 #nltk.download('punkt')
 stopword_file = open("./data/long_stopwords.txt", "r")
 lots_of_stopwords = []
-
 
 
 import json
@@ -85,12 +100,24 @@ for intent in intents['data']:
         w = pattern.split(' ')
         w = [(_w.lower()) for _w in w if _w.lower() not in stopwords_plus]
         
-        text = ngrams(w, 3)
-        text = sorted(list(set(text)))
-        words.extend(text)
-        words = sorted(list(set(words)))
+        w1 = ' '.join(w)
         
-        all_words.append(words)
+        #text = ngrams(w, 3)
+        #text = ngrams_custom(w)
+        #text = sorted(list(set(text)))
+        # words.extend(text)
+        # words = sorted(list(set(words)))
+        # all_words.append(words)
+
+        word = w1
+        all_words.append(word)
+        if word != '':
+            doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
+            docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
+                                    & (documents['Keywords'] == word.strip())]
+            # print('docavl', doc)
+            if docavl.empty:
+                documents = documents.append(doc, ignore_index = True)
         
         # print('\n\nwords', words)
         
@@ -99,14 +126,14 @@ for intent in intents['data']:
         #     print('text', text)
         #     print('response', respo, words)
         
-        for word in words:
-            if word != '':
-                doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
-                docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
-                                       & (documents['Keywords'] == word.strip())]
-                # print('docavl', doc)
-                if docavl.empty:
-                    documents = documents.append(doc, ignore_index = True)
+        # for word in words:
+        #     if word != '':
+        #         doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
+        #         docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
+        #                                & (documents['Keywords'] == word.strip())]
+        #         # print('docavl', doc)
+        #         if docavl.empty:
+        #             documents = documents.append(doc, ignore_index = True)
 
 
 # for intent in intents['data']:
@@ -146,6 +173,10 @@ for intent in intents['data']:
 #     #documents = sorted(list(set(documents)))
 
 # print(documents)
+
+documents['wordcount'] = documents['Keywords'].map(len)
+
+#documents.to_csv('Key_Documents_nongram.csv')
 
 words = sorted(list(set(words)))
 with open('./pickles/HCP_Intent.pkl', 'wb') as f:

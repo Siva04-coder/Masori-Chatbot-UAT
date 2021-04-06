@@ -60,21 +60,21 @@ def bow(sentence, words, show_details=False):
     documents = []
     for s in sentence:
         for i,w in enumerate(words):
-            #print('words array', w)
-            for word in w:
+            print('words array', w)
+            #for word in w:
                 # if st.stem(word) == st.stem(s):
-                if word == s:
-                    documents.append(word)
-                    #print("Words",documents)
-                    if show_details:
-                        print ("found in bag: %s" % w)
+            if w.strip() == s.strip():
+                documents.append(w)
+                #print("Words",documents)
+                if show_details:
+                    print ("found in bag: %s" % w)
 
     
     return(documents)
 
 def predict_bag(intent, output, show_details=False):
     prediction = []
-    #print('output-predict', output)
+    print('output-predict', output)
     #print('intent-predict', intent)
     
     intent = intent.sort_values('wordcount', ascending=False)
@@ -85,15 +85,15 @@ def predict_bag(intent, output, show_details=False):
         #for wrd in intent['Keywords'][ind].split(' '):
             #print('match', wrd, output)
         for i,w in enumerate(output):
-            #print('user keys ', w.strip())
-            #print('Keyword', intent['Keywords'][ind].strip())
+            
+            print('Keyword', intent['Keywords'][ind].strip())
             # print('Keywords', wrd.strip())
             # if st.stem(w.strip()) == st.stem(wrd.strip()):
             #if w.strip() == wrd.strip():
             if w.strip() == intent['Keywords'][ind].strip():
-                
+                print('user keys ', w.strip())
                 #if intent['Intents'][ind].replace("â€™", "'") not in prediction:
-                #print('pred', intent['Intents'][ind].replace("â€™", "'"))
+                print('pred', intent['Intents'][ind].replace("â€™", "'"))
                 prediction.append(intent['Intents'][ind].replace("â€™", "'"))
                     # if len(prediction) > 0:
                     #     return prediction
@@ -173,8 +173,8 @@ def predict(chat):
     
     arr=[]
     new_str=''
-    #text = ngrams(processed_list, 3)
-    text = ngrams_custom(processed_list)
+    text = ngrams(processed_list, len(processed_list))
+    #text = ngrams_custom(processed_list)
     print('ngram out ', text)
     output = bow(text,words)
     output = sorted(list(set(output)))
