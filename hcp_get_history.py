@@ -40,7 +40,7 @@ class History:
             uid = str(uuid.uuid4())
         return uid
 
-    def check_update_history(self, uid, cur_user_chat, cur_bot_chat, disp_t):
+    def check_update_history(self, uid, cur_user_chat, cur_bot_chat):
         
         json_data = {
             "uid": uid,
@@ -61,15 +61,13 @@ class History:
             cur_json = {
                 "message": cur_user_chat,
                 "who": "user",
-                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")),
-                "display_time": disp_t
+                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
             }
             json_data_chats.append(cur_json)
             cur_json = {
                 "message": cur_bot_chat,
                 "who": "bot",
-                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")),
-                "display_time": disp_t
+                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
             }
             json_data_chats.append(cur_json)
 
@@ -85,7 +83,7 @@ class History:
         
         return json_data
 
-    def get_history_alone(self, uid, finder, geneset, disp_t):
+    def get_history_alone(self, uid, finder, geneset):
         history_path = 'History/' + uid + '.json'
         json_data = {
             "uid": uid,
@@ -107,7 +105,6 @@ class History:
         json_data = check_buffer_time_to_clear(json_data, uid)
 
         if len(json_data["chats"]) <= 0:
-            print('inside')
             res_json = finder.get_welcome_message()
 
             welcome_response = geneset.generate_response(res_json)
@@ -116,8 +113,7 @@ class History:
                 "chats": [{
                     "message": welcome_response,
                     "who": "bot",
-                    "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")),
-                    "display_time": disp_t
+                    "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
                 }],
                 "uid": uid
             }
@@ -127,3 +123,4 @@ class History:
                 json.dump(json_data, outfile)
         
         return json_data
+            

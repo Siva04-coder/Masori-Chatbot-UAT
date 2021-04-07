@@ -117,7 +117,6 @@ def hcpchatbot():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
-        disp_t = request.headers.get('disp_t')
         print('user_chat', user_chat)
         uid = request.args['uid']
         is_recommend = False
@@ -133,10 +132,10 @@ def hcpchatbot():
 
         uid = history.check_generate_uid(uid)
 
-        history.check_update_history(uid, user_chat, cur_response, disp_t)
+        history.check_update_history(uid, user_chat, cur_response)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": uid
         }
     except Exception as ee:
@@ -163,7 +162,6 @@ def updatefeedback():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
-        disp_t = request.headers.get('disp_t')
         print('user_chat', user_chat)
         uid = request.args['uid']
         is_recommend = False
@@ -177,10 +175,10 @@ def updatefeedback():
 
         uid = history.check_generate_uid(uid)
 
-        history.check_update_history(uid, user_chat, cur_response, disp_t)
+        history.check_update_history(uid, user_chat, cur_response)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": uid
         }
     except Exception as ee:
@@ -209,17 +207,16 @@ def hcprecommendchat():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
-        disp_t = request.headers.get('disp_t')
         uid = request.args['uid']
 
         res_json = finder.find_response(user_chat, True)
         cur_response = geneset.generate_response(res_json)
         uid = history.check_generate_uid(uid)
 
-        history.check_update_history(uid, user_chat, cur_response, disp_t)
+        history.check_update_history(uid, user_chat, cur_response)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": uid
         }
     except Exception as ee:
@@ -243,15 +240,13 @@ def hcpchathistory():
     except Exception as d:
         return unauthorized_msg
         pass
-    
-    disp_t = request.headers.get('disp_t')
-    
+
     history = hcp_get_history.History()
     uid = request.args['uid']
 
     uid = history.check_generate_uid(uid)
-    response = history.get_history_alone(uid, finder, geneset, disp_t)
-    
+    response = history.get_history_alone(uid, finder, geneset)
+
     return response
 
 
