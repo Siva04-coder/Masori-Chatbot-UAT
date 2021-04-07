@@ -42,7 +42,7 @@ class History:
             uid = str(uuid.uuid4())
         return uid
 
-    def check_update_history(self, uid, cur_user_chat, cur_bot_chat):
+    def check_update_history(self, uid, cur_user_chat, cur_bot_chat, user_chat_time):
         
         json_data = {
             "uid": uid,
@@ -63,7 +63,7 @@ class History:
             cur_json = {
                 "message": cur_user_chat,
                 "who": "user",
-                "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
+                "time": user_chat_time)
             }
             json_data_chats.append(cur_json)
             cur_json = {
