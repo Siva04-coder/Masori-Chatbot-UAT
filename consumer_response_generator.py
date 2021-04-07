@@ -39,6 +39,7 @@ class response_generator:
                 response = response + '<p>' + json_obj['output_text'] + '</p>'
 
             if "I don't understand your question" in json_obj['output_text']:
+                response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<br /><a href="https://www.nuplazid.com/frequently-asked-questions">Click here to see FAQ</a>'
             
             if 'Goodbye' in json_obj['output_text']:
@@ -121,6 +122,7 @@ class response_generator:
 
             if response == '':
                 response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
+                response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<br /><a href="https://www.nuplazid.com/frequently-asked-questions">Click here to see FAQ</a>'
             
         except Exception as e:
