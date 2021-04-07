@@ -23,7 +23,7 @@ class response_finder:
         res_query = "Select * from Master_Default_Messages Where lower(Message_Type)= 'welcome'"
         res_json = {}
 
-        try:            
+        try:
             res_json = {
                 "output_text": self.welcome_message,
                 "bullet": '',
