@@ -243,11 +243,12 @@ def hcpchathistory():
         return unauthorized_msg
         pass
 
+    user_chat_time = request.headers.get('time')
     history = hcp_get_history.History()
     uid = request.args['uid']
 
     uid = history.check_generate_uid(uid)
-    response = history.get_history_alone(uid, finder, geneset)
+    response = history.get_history_alone(uid, finder, geneset, user_chat_time)
 
     return response
 

@@ -69,7 +69,7 @@ class History:
             cur_json = {
                 "message": cur_bot_chat,
                 "who": "bot",
-                "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
+                "time": user_chat_time)
             }
             json_data_chats.append(cur_json)
 
@@ -85,7 +85,7 @@ class History:
         
         return json_data
 
-    def get_history_alone(self, uid, finder, geneset):
+    def get_history_alone(self, uid, finder, geneset, user_chat_time):
         history_path = 'History/' + uid + '.json'
         json_data = {
             "uid": uid,
@@ -115,7 +115,7 @@ class History:
                 "chats": [{
                     "message": welcome_response,
                     "who": "bot",
-                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
+                    "time": user_chat_time)
                 }],
                 "uid": uid
             }
