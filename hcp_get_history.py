@@ -42,7 +42,7 @@ class History:
             uid = str(uuid.uuid4())
         return uid
 
-    def check_update_history(self, uid, cur_user_chat, cur_bot_chat, user_chat_time):
+    def check_update_history(self, uid, cur_user_chat, cur_bot_chat):
         
         json_data = {
             "uid": uid,
@@ -63,13 +63,13 @@ class History:
             cur_json = {
                 "message": cur_user_chat,
                 "who": "user",
-                "time": user_chat_time
+                "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
             }
             json_data_chats.append(cur_json)
             cur_json = {
                 "message": cur_bot_chat,
                 "who": "bot",
-                "time": user_chat_time
+                "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
             }
             json_data_chats.append(cur_json)
 
@@ -85,7 +85,7 @@ class History:
         
         return json_data
 
-    def get_history_alone(self, uid, finder, geneset, user_chat_time):
+    def get_history_alone(self, uid, finder, geneset):
         history_path = 'History/' + uid + '.json'
         json_data = {
             "uid": uid,
@@ -115,7 +115,7 @@ class History:
                 "chats": [{
                     "message": welcome_response,
                     "who": "bot",
-                "time": user_chat_time
+                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
                 }],
                 "uid": uid
             }
