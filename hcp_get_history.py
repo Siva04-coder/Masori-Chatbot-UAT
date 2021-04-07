@@ -6,8 +6,6 @@ cfg = config.Config()
 
 config_details = cfg.get_app_configs()
 
-chat_msg_time_format = '%H:%M %p'
-
 if not os.path.exists('History'):
     os.makedirs('History')
 
@@ -63,13 +61,13 @@ class History:
             cur_json = {
                 "message": cur_user_chat,
                 "who": "user",
-                "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
+                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
             }
             json_data_chats.append(cur_json)
             cur_json = {
                 "message": cur_bot_chat,
                 "who": "bot",
-                "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
+                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
             }
             json_data_chats.append(cur_json)
 
@@ -115,7 +113,7 @@ class History:
                 "chats": [{
                     "message": welcome_response,
                     "who": "bot",
-                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
+                    "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S"))
                 }],
                 "uid": uid
             }

@@ -36,7 +36,7 @@ consumer_finder = consumer_find_response.response_finder(logger)
 
 unauthorized_msg = 'Unauthorized Access.'
 
-chat_msg_time_format = '%H:%M %p'
+chat_msg_time_format = '%d/%m/%y %H:%M:%S'
 
 # %% Common 
 
