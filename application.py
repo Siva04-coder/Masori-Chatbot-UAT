@@ -243,14 +243,15 @@ def hcpchathistory():
     except Exception as d:
         return unauthorized_msg
         pass
-
+    
     disp_t = request.headers.get('disp_t')
+    
     history = hcp_get_history.History()
     uid = request.args['uid']
 
     uid = history.check_generate_uid(uid)
     response = history.get_history_alone(uid, finder, geneset, disp_t)
-
+    
     return response
 
 

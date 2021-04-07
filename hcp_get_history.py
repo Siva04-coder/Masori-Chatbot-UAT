@@ -107,6 +107,7 @@ class History:
         json_data = check_buffer_time_to_clear(json_data, uid)
 
         if len(json_data["chats"]) <= 0:
+            print('inside')
             res_json = finder.get_welcome_message()
 
             welcome_response = geneset.generate_response(res_json)
@@ -126,4 +127,3 @@ class History:
                 json.dump(json_data, outfile)
         
         return json_data
-            
