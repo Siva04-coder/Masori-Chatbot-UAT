@@ -172,9 +172,7 @@ further
 furthermore
 g
 gave
-get
 gets
-getting
 give
 given
 gives
@@ -302,7 +300,6 @@ most
 mostly
 mr
 mrs
-much
 mug
 must
 my
