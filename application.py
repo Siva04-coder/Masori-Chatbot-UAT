@@ -36,6 +36,8 @@ consumer_finder = consumer_find_response.response_finder(logger)
 
 unauthorized_msg = 'Unauthorized Access.'
 
+chat_msg_time_format = '%H:%M %p'
+
 # %% Common 
 
 @application.route('/', methods=['GET', 'POST'])
@@ -133,13 +135,13 @@ def hcpchatbot():
         history.check_update_history(uid, user_chat, cur_response)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'hcpchatbot')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": "Unknown"
         }
 
@@ -176,13 +178,13 @@ def updatefeedback():
         history.check_update_history(uid, user_chat, cur_response)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'hcpchatbot')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": "Unknown"
         }
 
@@ -214,13 +216,13 @@ def hcprecommendchat():
         history.check_update_history(uid, user_chat, cur_response)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'hcpchatbot')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": "Unknown"
         }
 
@@ -282,13 +284,13 @@ def consumerchatbot():
         history.check_update_history(uid, user_chat, cur_response)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'consumerchatbot')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": "Unknown"
         }
 
@@ -319,13 +321,13 @@ def consumerrecommendchat():
         history.check_update_history(uid, user_chat, cur_response)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'consumerrecommendchat')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
             "uid": "Unknown"
         }
 
