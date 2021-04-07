@@ -37,6 +37,9 @@ class response_generator:
                     response = response + '<p>' + txt + '</p>'
             else:
                 response = response + '<p>' + json_obj['output_text'] + '</p>'
+
+            if "I don't understand your question" in json_obj['output_text']:
+                response = response + '<br /><a href="https://www.nuplazid.com/frequently-asked-questions">Click here to see FAQ</a>'
             
             if 'Goodbye' in json_obj['output_text']:
                 response = response + '<div class="chat-individual-feedback"><span>Was this helpful?</span>'
