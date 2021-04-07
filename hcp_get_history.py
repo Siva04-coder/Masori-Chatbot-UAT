@@ -63,13 +63,13 @@ class History:
             cur_json = {
                 "message": cur_user_chat,
                 "who": "user",
-                "time": user_chat_time)
+                "time": user_chat_time
             }
             json_data_chats.append(cur_json)
             cur_json = {
                 "message": cur_bot_chat,
                 "who": "bot",
-                "time": user_chat_time)
+                "time": user_chat_time
             }
             json_data_chats.append(cur_json)
 
@@ -115,7 +115,7 @@ class History:
                 "chats": [{
                     "message": welcome_response,
                     "who": "bot",
-                    "time": user_chat_time)
+                "time": user_chat_time
                 }],
                 "uid": uid
             }
