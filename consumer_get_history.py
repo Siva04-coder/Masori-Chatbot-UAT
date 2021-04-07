@@ -6,7 +6,7 @@ cfg = config.Config()
 
 config_details = cfg.get_app_configs()
 
-chat_msg_time_format = '%H:%M %p'
+chat_msg_time_format = '%d/%m/%y %H:%M:%S'
 
 if not os.path.exists('History'):
     os.makedirs('History')
