@@ -6,6 +6,8 @@ cfg = config.Config()
 
 config_details = cfg.get_app_configs()
 
+chat_msg_time_format = '%d/%m/%y %H:%M:%S'
+
 if not os.path.exists('History'):
     os.makedirs('History')
 
@@ -18,7 +20,7 @@ def check_buffer_time_to_clear(chats, uid):
                 time_his.append(chat_h["time"])
         
             max_time = max(time_his)
-            max_time = datetime.datetime.strptime(max_time, "%d/%m/%y %H:%M:%S")
+            max_time = datetime.datetime.strptime(max_time, chat_msg_time_format)
             # cur_time = datetime.datetime.strptime(datetime.datetime.now(), "%d/%m/%y %H:%M:%S")
             cur_time = datetime.datetime.now()
             diff = (cur_time - max_time).total_seconds() / 60.0
@@ -61,14 +63,14 @@ class History:
             cur_json = {
                 "message": cur_user_chat,
                 "who": "user",
-                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")),
+                "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
                 "display_time": disp_t
             }
             json_data_chats.append(cur_json)
             cur_json = {
                 "message": cur_bot_chat,
                 "who": "bot",
-                "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")),
+                "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
                 "display_time": disp_t
             }
             json_data_chats.append(cur_json)
@@ -116,7 +118,7 @@ class History:
                 "chats": [{
                     "message": welcome_response,
                     "who": "bot",
-                    "time": str(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")),
+                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
                     "display_time": disp_t
                 }],
                 "uid": uid

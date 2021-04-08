@@ -274,6 +274,7 @@ def consumerchatbot():
 
     try:
         history = consumer_get_history.History()
+        disp_t = request.form.get('disp_t')
         user_chat = request.headers.get('conv')
         uid = request.args['uid']
         is_recommend = False
@@ -289,7 +290,7 @@ def consumerchatbot():
 
         uid = history.check_generate_consumer_uid(uid)
 
-        history.check_update_history(uid, user_chat, cur_response)
+        history.check_update_history(uid, user_chat, cur_response, disp_t)
 
         response = {
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
@@ -320,13 +321,14 @@ def consumerrecommendchat():
     try:
         history = consumer_get_history.History()
         user_chat = request.headers.get('conv')
+        disp_t = request.form.get('disp_t')
         uid = request.args['uid']
 
         res_json = finder.find_response(user_chat, True)
         cur_response = geneset.generate_response(res_json)
         uid = history.check_generate_consumer_uid(uid)
 
-        history.check_update_history(uid, user_chat, cur_response)
+        history.check_update_history(uid, user_chat, cur_response, disp_t)
 
         response = {
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
@@ -354,11 +356,12 @@ def consumerchathistory():
         return unauthorized_msg
         pass
 
+    disp_t = request.form.get('disp_t')
     history = consumer_get_history.History()
     uid = request.args['uid']
 
     uid = history.check_generate_consumer_uid(uid)
-    response = history.get_history_alone(uid, finder, geneset)
+    response = history.get_history_alone(uid, finder, geneset, disp_t)
 
     return response
 

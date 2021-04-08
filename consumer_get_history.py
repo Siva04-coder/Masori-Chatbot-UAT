@@ -20,7 +20,7 @@ def check_buffer_time_to_clear(chats, uid):
                 time_his.append(chat_h["time"])
         
             max_time = max(time_his)
-            max_time = datetime.datetime.strptime(max_time, "%d/%m/%y %H:%M:%S")
+            max_time = datetime.datetime.strptime(max_time, chat_msg_time_format)
             # cur_time = datetime.datetime.strptime(datetime.datetime.now(), "%d/%m/%y %H:%M:%S")
             cur_time = datetime.datetime.now()
             diff = (cur_time - max_time).total_seconds() / 60.0
@@ -47,7 +47,7 @@ class History:
             uid = 'con_' + str(uuid.uuid4())
         return uid
 
-    def check_update_history(self, uid, cur_user_chat, cur_bot_chat):
+    def check_update_history(self, uid, cur_user_chat, cur_bot_chat, disp_t):
         
         json_data = {
             "uid": uid,
@@ -68,13 +68,15 @@ class History:
             cur_json = {
                 "message": cur_user_chat,
                 "who": "user",
-                "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
+                "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
+                "display_time": disp_t
             }
             json_data_chats.append(cur_json)
             cur_json = {
                 "message": cur_bot_chat,
                 "who": "bot",
-                "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
+                "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
+                "display_time": disp_t
             }
             json_data_chats.append(cur_json)
 
@@ -90,7 +92,7 @@ class History:
         
         return json_data
     
-    def get_history_alone(self, uid, finder, geneset):
+    def get_history_alone(self, uid, finder, geneset, disp_t):
         history_path = 'History/' + uid + '.json'
         json_data = {
             "uid": uid,
@@ -120,7 +122,8 @@ class History:
                 "chats": [{
                     "message": welcome_response,
                     "who": "bot",
-                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format))
+                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
+                    "display_time": disp_t
                 }],
                 "uid": uid
             }
