@@ -293,13 +293,13 @@ def consumerchatbot():
         history.check_update_history(uid, user_chat, cur_response, disp_t)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'consumerchatbot')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format), "display_time": ""}],
             "uid": "Unknown"
         }
 
@@ -331,13 +331,13 @@ def consumerrecommendchat():
         history.check_update_history(uid, user_chat, cur_response, disp_t)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'consumerrecommendchat')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format), "display_time": ""}],
             "uid": "Unknown"
         }
 
