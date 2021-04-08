@@ -117,7 +117,6 @@ def hcpchatbot():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
-        disp_t = request.headers.get('disp_t')
         disp_t = request.form.get('disp_t')
         print('user_chat', disp_t)
         uid = request.args['uid']
@@ -167,7 +166,7 @@ def updatefeedback():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
-        disp_t = request.headers.get('disp_t')
+        disp_t = request.form.get('disp_t')
         print('user_chat', user_chat)
         uid = request.args['uid']
         is_recommend = False
@@ -213,7 +212,7 @@ def hcprecommendchat():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
-        disp_t = request.headers.get('disp_t')
+        disp_t = request.form.get('disp_t')
         uid = request.args['uid']
 
         res_json = finder.find_response(user_chat, True)
@@ -248,7 +247,7 @@ def hcpchathistory():
         return unauthorized_msg
         pass
     
-    disp_t = request.headers.get('disp_t')
+    disp_t = request.form.get('disp_t')
     
     history = hcp_get_history.History()
     uid = request.args['uid']
