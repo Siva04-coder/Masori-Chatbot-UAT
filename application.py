@@ -135,6 +135,9 @@ def hcpchatbot():
 
         history.check_update_history(uid, user_chat, cur_response, disp_t)
 
+        if disp_t == 'null':
+            disp_t = "raised null"
+
         response = {
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
             "uid": uid
