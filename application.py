@@ -118,6 +118,7 @@ def hcpchatbot():
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
         disp_t = request.headers.get('disp_t')
+        disp_t = request.form.get('disp_t')
         print('user_chat', disp_t)
         uid = request.args['uid']
         is_recommend = False
@@ -135,7 +136,7 @@ def hcpchatbot():
 
         history.check_update_history(uid, user_chat, cur_response, disp_t)
 
-        if disp_t == 'null':
+        if disp_t == 'null' or disp_t == None:
             disp_t = "raised null"
 
         response = {
