@@ -41,7 +41,7 @@ class History:
         return uid
 
     def check_update_history(self, uid, cur_user_chat, cur_bot_chat, disp_t):
-        
+        print('disp_t', disp_t)
         json_data = {
             "uid": uid,
             "chats": []
