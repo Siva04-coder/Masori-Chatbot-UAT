@@ -118,7 +118,7 @@ def hcpchatbot():
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
         disp_t = request.headers.get('disp_t')
-        print('user_chat', user_chat)
+        print('user_chat', disp_t)
         uid = request.args['uid']
         is_recommend = False
         try:
