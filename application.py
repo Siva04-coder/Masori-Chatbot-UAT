@@ -117,6 +117,7 @@ def hcpchatbot():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
+        disp_t = request.headers.get('disp_t')
         print('user_chat', user_chat)
         uid = request.args['uid']
         is_recommend = False
@@ -132,16 +133,16 @@ def hcpchatbot():
 
         uid = history.check_generate_uid(uid)
 
-        history.check_update_history(uid, user_chat, cur_response)
+        history.check_update_history(uid, user_chat, cur_response, disp_t)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'hcpchatbot')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format), "display_time": ""}],
             "uid": "Unknown"
         }
 
@@ -162,6 +163,7 @@ def updatefeedback():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
+        disp_t = request.headers.get('disp_t')
         print('user_chat', user_chat)
         uid = request.args['uid']
         is_recommend = False
@@ -175,16 +177,16 @@ def updatefeedback():
 
         uid = history.check_generate_uid(uid)
 
-        history.check_update_history(uid, user_chat, cur_response)
+        history.check_update_history(uid, user_chat, cur_response, disp_t)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'hcpchatbot')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format), "display_time": ""}],
             "uid": "Unknown"
         }
 
@@ -207,22 +209,23 @@ def hcprecommendchat():
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
+        disp_t = request.headers.get('disp_t')
         uid = request.args['uid']
 
         res_json = finder.find_response(user_chat, True)
         cur_response = geneset.generate_response(res_json)
         uid = history.check_generate_uid(uid)
 
-        history.check_update_history(uid, user_chat, cur_response)
+        history.check_update_history(uid, user_chat, cur_response, disp_t)
 
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
             "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'hcpchatbot')
         response = {
-            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format)}],
+            "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format), "display_time": ""}],
             "uid": "Unknown"
         }
 
@@ -240,13 +243,15 @@ def hcpchathistory():
     except Exception as d:
         return unauthorized_msg
         pass
-
+    
+    disp_t = request.headers.get('disp_t')
+    
     history = hcp_get_history.History()
     uid = request.args['uid']
 
     uid = history.check_generate_uid(uid)
-    response = history.get_history_alone(uid, finder, geneset)
-
+    response = history.get_history_alone(uid, finder, geneset, disp_t)
+    
     return response
 
 
