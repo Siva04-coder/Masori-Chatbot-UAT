@@ -85,10 +85,22 @@
         {
             "tag": "how are you",
             "patterns": [
-                "how are you"
+                "how are you",
+                "hi sam how are you",
+                "hi sam how are you"
             ],
             "responses": [
                 "I’m fine, thank you for asking. How can I help you?"
+            ]
+        },
+        {
+            "tag": "how can I help you",
+            "patterns": [
+                "sam",
+                "hi sam"
+            ],
+            "responses": [
+                "Hello there, How can I help you?"
             ]
         },
         {
@@ -124,6 +136,18 @@
             "tag": "bye",
             "patterns": [
                 "bye"
+            ],
+            "responses": [
+                "Goodbye. Come back if you need help with anything else!"
+            ]
+        },
+        {
+            "tag": "nothing",
+            "patterns": [
+                "nothing",
+                "nothing thanks",
+                "nothing thank you",
+                "nothing thankyou"
             ],
             "responses": [
                 "Goodbye. Come back if you need help with anything else!"
