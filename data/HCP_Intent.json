@@ -12,7 +12,10 @@
                 "About Parkinsons Diseases Psychosis",
                 "symptoms & potential causes",
                 "Parkinson Disease",
-                "Parkinson Diseases"
+                "Parkinson Diseases",
+                "parkinsons itojpe",
+                "parkinson",
+                "parkinsons"
             ],
             "responses": [
                 "About Parkinson Disease Psychosis"
@@ -117,7 +120,7 @@
             "patterns": [
                 "OLE",
                 "open label safety",
-                "Open label extenstion"
+                "Open label extension"
             ],
             "responses": [
                 "OLE"
@@ -127,7 +130,9 @@
             "Intent": "Efficacy",
             "patterns": [
                 "OLE Study",
-                "Open label extenstion Study"
+                "Open label extension Study",
+                "open label safety study",
+                "open label study"
             ],
             "responses": [
                 "OLE study"
@@ -290,7 +295,14 @@
                 "medicare plan",
                 "Insurance Coverage",
                 "patient eligibility",
-                "Insurance Options"
+                "Insurance Options",
+                "order sample",
+                "order samples",
+                "order samples now",
+                "order sample now",
+                "samples free",
+                "order some samples",
+                "order some sample"
             ],
             "responses": [
                 "Insurance Coverage"
@@ -344,6 +356,7 @@
             "patterns": [
                 "ICD-10 Codes",
                 "ICD-10 Code",
+                "ICD-10",
                 "Diagnostic codes",
                 "Diagnostic code"
             ],
@@ -369,6 +382,8 @@
                 "NUPLAZID contact number",
                 "NUPLAZID ASSISTANCE",
                 "Contact Information",
+                "Contact number",
+                "Contact details",
                 "About ACADIA",
                 "Acadiaconnect details"
             ],
