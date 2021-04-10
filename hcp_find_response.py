@@ -180,3 +180,9 @@ class response_finder:
             pass
 
         return json.dumps(res_json)
+
+    def getAllKeywords(self):
+        with open("./data/All_Keywords.json") as json_data:
+            all_keywords = json.load(json_data)
+
+        return all_keywords

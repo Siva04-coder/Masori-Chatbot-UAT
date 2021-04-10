@@ -365,6 +365,15 @@ def consumerchathistory():
 
     return response
 
+
+@application.route('/getKeys', methods=['GET', 'POST'])
+def getKeys():
+    
+    keys = finder.getAllKeywords()
+    
+    return keys
+
+
 # %% Refresh Corpus to Database
 
 @application.route('/refreshCorpus', methods=['GET', 'POST'])
