@@ -15,7 +15,28 @@
                 "Parkinson Diseases",
                 "parkinsons itojpe",
                 "parkinson",
-                "parkinsons"
+                "parkinsons",
+                "PD",
+                "psychosis",
+                "PD Psychosis",
+                "symptom",
+                "symptoms",
+                "parkinson symptoms",
+                "parkinson symptom",
+                "parkinsons symptoms",
+                "parkinsons symptom",
+                "symptoms parkinson",
+                "symptom parkinson",
+                "symptoms parkinsons",
+                "symptom parkinsons",
+                "symptoms PD",
+                "symptom PD",
+                "PD symptom",
+                "PD symptoms",
+                "symptoms PDP",
+                "symptom PDP",
+                "PDP symptoms",
+                "PDP symptom"
             ],
             "responses": [
                 "About Parkinson Disease Psychosis"
@@ -37,10 +58,16 @@
             "Intent": "About Nuplazid",
             "patterns": [
                 "about NUPLAZID",
+                "learn about NUPLAZID",
                 "NUPLAZID medication",
                 "NUPLAZID Parkinson",
                 "NUPLAZID Parkinsons",
                 "Nuplazid indication",
+                "Nuplazid indications",
+                "indication",
+                "indications",
+                "indication Nuplazid",
+                "indications Nuplazid",
                 "Learn NUPLAZID",
                 "NUPLAZID"
             ],
@@ -58,7 +85,14 @@
                 "NUPLAZID Warning",
                 "Blackbox warning",
                 "fact sheets & discussion guide",
-                "fact sheet"
+                "fact sheet",
+                "fact sheets",
+                "distribution fact sheet",
+                "fact sheet distribution",
+                "download fact sheet",
+                "download factsheet",
+                "factsheet download",
+                "fact sheet download"
             ],
             "responses": [
                 "fact sheets & discussion guide"
@@ -92,7 +126,10 @@
                 "warnings",
                 "warning",
                 "precaution",
-                "precautions"
+                "precautions",
+                "QT Interval",
+                "interval",
+                "QT"
             ],
             "responses": [
                 "Nuplazid Warnings"
@@ -181,7 +218,10 @@
                 "Nuplazid safe",
                 "treatment emergent",
                 "safety information",
-                "safety"
+                "safety",
+                "dementia",
+                "dementia related psychosis",
+                "dementia psychosis"
             ],
             "responses": [
                 "NUPLAZID important safety information"
@@ -210,11 +250,13 @@
                 "best practices",
                 "best practice",
                 "Nuplazid administration",
+                "administration Nuplazid",
                 "nuplazid dosage",
                 "dosage information",
                 "dosage details",
                 "dosage detail",
-                "dosage"
+                "dosage",
+                "administration"
             ],
             "responses": [
                 "Dosage Administration"
@@ -238,6 +280,7 @@
                 "NUPLAZID financial assistance",
                 "NUPLAZID discount card",
                 "long-term care access",
+                "long term care access",
                 "NUPLAZID foundation assistance",
                 "NUPLAZID medication payment assistance",
                 "patient care Offered",
@@ -320,6 +363,12 @@
                 "prescription process",
                 "In-office care",
                 "Long-term care",
+                "Long term care",
+                "long term care facility",
+                "long-term care facility",
+                "long term care facilities",
+                "long-term care facilities",
+                "long-term care service request form",
                 "support documents",
                 "reimbursement process"
             ],
@@ -373,6 +422,21 @@
             ],
             "responses": [
                 "General information about authorization"
+            ]
+        },
+        {
+            "Intent": "General Information",
+            "patterns": [
+                "placebo-controlled studies",
+                "placebo controlled studies",
+                "placebo controlled study",
+                "placebo controlled",
+                "placebo study",
+                "placebo control",
+                "placebo"
+            ],
+            "responses": [
+                "General information"
             ]
         },
         {

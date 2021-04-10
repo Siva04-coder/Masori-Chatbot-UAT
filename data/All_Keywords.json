@@ -49,6 +49,9 @@
         "classification",
         "support",
         "diagnostic",
-        "ICD-10"
+        "ICD-10",
+        "interval",
+        "placebo",
+        "indication"
     ]
 }

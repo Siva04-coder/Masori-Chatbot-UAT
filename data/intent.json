@@ -18,7 +18,9 @@
                 "symptom & potential cause",
                 "symptoms & potential causes",
                 "symptoms",
-                "symptom"
+                "symptom",
+                "parkinson",
+                "parkinsons"
             ],
             "responses": [
                 "symptoms of Parkinson disease"
@@ -37,6 +39,7 @@
                 "symptoms & potential causes",
                 "parkinson disease",
                 "parkinsons diseases",
+                "parkinsons disease",
                 "parkinson diseases"
             ],
             "responses": [
@@ -52,7 +55,7 @@
                 "medication"
             ],
             "responses": [
-                "NUPLAZID medication"
+                "About NUPLAZID medication"
             ]
         },
         {
@@ -227,6 +230,7 @@
             "Intent": "Prescribe Information",
             "patterns": [
                 "NUPLAZID prescribing",
+                "NUPLAZID prescribing information",
                 "pimavanserin prescribing information",
                 "Prescribing Information",
                 "prescribe",
@@ -235,7 +239,7 @@
                 "NUPLAZID prescription"
             ],
             "responses": [
-                "NUPLAZID prescribing"
+                "NUPLAZID prescribing information"
             ]
         },
         {
@@ -252,6 +256,19 @@
             ]
         },
         {
+            "Intent": "Taking NUPLAZID",
+            "patterns": [
+                "Taking NUPLAZID",
+                "Take NUPLAZID",
+                "Nuplazid effective",
+                "effective Nuplazid",
+                "effective"
+            ],
+            "responses": [
+                "Taking NUPLAZID"
+            ]
+        },
+        {
             "Intent": "Side Effects",
             "patterns": [
                 "Side effect",
@@ -264,13 +281,33 @@
             ]
         },
         {
+            "Intent": "Safety Information",
+            "patterns": [
+                "safety information",
+                "safety informations",
+                "safety details",
+                "safety detail",
+                "nuplazid safety details",
+                "nuplazid safety detail",
+                "safety details nuplazid",
+                "safety detail nuplazid",
+                "nuplazid safety information",
+                "nuplazid safety informations",
+                "safety information nuplazid",
+                "safety informations nuplazid",
+                "nuplazid safety"
+            ],
+            "responses": [
+                "Safety Information"
+            ]
+        },
+        {
             "Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
             "patterns": [
                 "NUPLAZID cost",
                 "Acadia Connect",
                 "financial assistance",
                 "further assistance",
-                "care cordinator",
                 "cost details",
                 "cost detail",
                 "cost"
@@ -302,11 +339,25 @@
         {
             "Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
             "patterns": [
-                "copay program",
-                "Signup"
+                "sign up",
+                "Signup",
+                "help signup",
+                "help sign up"
             ],
             "responses": [
-                "Signup"
+                "Sign up"
+            ]
+        },
+        {
+            "Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
+            "patterns": [
+                "copay program",
+                "copay",
+                "Support",
+                "care cordinator"
+            ],
+            "responses": [
+                "Support"
             ]
         },
         {
