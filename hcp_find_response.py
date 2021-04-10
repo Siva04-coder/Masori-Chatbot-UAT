@@ -20,7 +20,7 @@ class response_finder:
 
 
     def get_welcome_message(self):
-        res_query = "Select * from Master_Default_Messages Where lower(Message_Type)= 'welcome'"
+        
         res_json = {}
 
         try:            
