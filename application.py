@@ -385,7 +385,7 @@ def getHCPKeys():
     return keys
 
 @application.route('/getConsumerKeys', methods=['GET', 'POST'])
-def getHCPKeys():
+def getConsumerKeys():
     try:
         auth_creds = request.authorization
         is_authorize = auth.Authorize(
