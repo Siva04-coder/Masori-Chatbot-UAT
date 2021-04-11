@@ -12,8 +12,7 @@
                 "About Parkinsons Diseases Psychosis",
                 "symptoms & potential causes",
                 "Parkinson Disease",
-                "Parkinson Diseases",
-                "parkinsons itojpe",
+                "parkinsons Diseases",
                 "parkinson",
                 "parkinsons",
                 "PD",
@@ -128,7 +127,10 @@
                 "precaution",
                 "precautions",
                 "QT Interval",
+                "QT Interval Prolongation",
+                "QT Prolongation",
                 "interval",
+                "Prolongation",
                 "QT"
             ],
             "responses": [
@@ -146,7 +148,10 @@
                 "primary endpoint",
                 "secondary endpoint",
                 "Efficacy Nuplazid",
-                "Efficacy"
+                "Efficacy",
+                "measuring efficacy",
+                "efficacy measuring",
+                "measuring"
             ],
             "responses": [
                 "NUPLAZID efficacy"
@@ -221,7 +226,9 @@
                 "safety",
                 "dementia",
                 "dementia related psychosis",
-                "dementia psychosis"
+                "dementia psychosis",
+                "Contraindication",
+                "tolerability"
             ],
             "responses": [
                 "NUPLAZID important safety information"
@@ -279,8 +286,7 @@
                 "Acadia Connect patient assistance program",
                 "NUPLAZID financial assistance",
                 "NUPLAZID discount card",
-                "long-term care access",
-                "long term care access",
+                "longtermcareaccess",
                 "NUPLAZID foundation assistance",
                 "NUPLAZID medication payment assistance",
                 "patient care Offered",
@@ -335,6 +341,7 @@
                 "reimbursement support",
                 "medical necessity template",
                 "free samples",
+                "free sample",
                 "medicare plan",
                 "Insurance Coverage",
                 "patient eligibility",
@@ -345,35 +352,14 @@
                 "order sample now",
                 "samples free",
                 "order some samples",
-                "order some sample"
+                "order some sample",
+                "nuplazid sample",
+                "nuplazid samples",
+                "sample nuplazid",
+                "samples nuplazid"
             ],
             "responses": [
                 "Insurance Coverage"
-            ]
-        },
-        {
-            "Intent": "Getting NUPLAZID",
-            "patterns": [
-                "medicine NUPLAZID",
-                "NUPLAZID enrollment form",
-                "NUPLAZID drug classification",
-                "NUPLAZID black box warning",
-                "Acadia Connect treatment form",
-                "NUPLAZID pharmacy",
-                "prescription process",
-                "In-office care",
-                "Long-term care",
-                "Long term care",
-                "long term care facility",
-                "long-term care facility",
-                "long term care facilities",
-                "long-term care facilities",
-                "long-term care service request form",
-                "support documents",
-                "reimbursement process"
-            ],
-            "responses": [
-                "medicine NUPLAZID"
             ]
         },
         {
@@ -389,7 +375,19 @@
                 "NUPLAZID pharmacy",
                 "prescription process",
                 "In-office care",
+                "In office care",
                 "Long-term care",
+                "Long term care",
+                "long term care facility",
+                "long-term care facility",
+                "long term care facilities",
+                "long-term care facilities",
+                "long-term service",
+                "long term service",
+                "long-term care service request",
+                "long term care service request",
+                "long-term care service request form",
+                "long term care service request form",
                 "support documents",
                 "reimbursement process",
                 "free cost nuplazid",
