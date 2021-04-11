@@ -209,8 +209,15 @@ class response_finder:
                 w = pattern.split(' ')
                 w = [(_w.lower()) for _w in w if _w.lower() not in lots_of_stopwords]
                 for word in w:
-                    if word not in all_keywords:
-                        if word != '':
+                    wrd = ''
+                    if word.endswith('s'):
+                        wrd = word[:-1]
+                        if word not in all_keywords and wrd not in all_keywords:
                             all_keywords.append(word)
+                    else:
+                        wrd = word + 's'
+                        if word not in all_keywords and wrd not in all_keywords:
+                            if word != '':
+                                all_keywords.append(word)
 
         return json.dumps(all_keywords)
