@@ -2,6 +2,7 @@ import pandas as pd
 import mysql.connector
 import json
 import load_corpus
+import re
 
 class response_finder:
 
