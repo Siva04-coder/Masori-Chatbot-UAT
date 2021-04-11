@@ -23,7 +23,7 @@ class response_finder:
         res_query = "Select * from Master_Default_Messages Where lower(Message_Type)= 'welcome'"
         res_json = {}
 
-        try:            
+        try:
             res_json = {
                 "output_text": self.welcome_message,
                 "bullet": '',
@@ -174,3 +174,36 @@ class response_finder:
 
         return json.dumps(res_json)
 
+
+    def getAllKeywords(self):
+        with open("./data/All_Consumer_Keywords.json") as json_data:
+            multi_keywords = json.load(json_data)
+        print('multi_keywords', multi_keywords)
+        
+        lots_of_stopwords = []
+        stopword_file = open("./data/long_stopwords.txt", "r")
+        print('stopword', stopword_file)
+        with open("./data/intent.json") as json_data:
+            all_intents = json.load(json_data)
+                
+        for line in stopword_file.readlines():
+            lots_of_stopwords.append(str(line.strip()))
+
+        all_keywords = []
+
+        for muliti in multi_keywords['keywords']:
+            all_keywords.append(muliti)
+
+        for intent in all_intents['data']:
+            print('intent[patterns]', intent['patterns'])
+            for pattern in intent['patterns']:
+                words = []
+                pattern = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',pattern)
+                w = pattern.split(' ')
+                w = [(_w.lower()) for _w in w if _w.lower() not in lots_of_stopwords]
+                for word in w:
+                    if word not in all_keywords:
+                        if word != '':
+                            all_keywords.append(word)
+
+        return json.dumps(all_keywords)
