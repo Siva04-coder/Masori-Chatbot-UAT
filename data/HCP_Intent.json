@@ -17,7 +17,19 @@
                 "parkinsons",
                 "PD",
                 "psychosis",
-                "PD Psychosis",
+                "PD Psychosis"
+            ],
+            "responses": [
+                "About Parkinson Disease Psychosis"
+            ]
+        },
+        {
+            "Intent": "About Hallucinations and Delusions",
+            "patterns": [
+                "Hallucination",
+                "Hallucinations",
+                "Delusion",
+                "Delusions",
                 "symptom",
                 "symptoms",
                 "parkinson symptoms",
@@ -36,18 +48,6 @@
                 "symptom PDP",
                 "PDP symptoms",
                 "PDP symptom"
-            ],
-            "responses": [
-                "About Parkinson Disease Psychosis"
-            ]
-        },
-        {
-            "Intent": "About Hallucinations and Delusions",
-            "patterns": [
-                "Hallucination",
-                "Hallucinations",
-                "Delusion",
-                "Delusions"
             ],
             "responses": [
                 "About Hallucinations & Delusions"
@@ -85,13 +85,19 @@
                 "Blackbox warning",
                 "fact sheets & discussion guide",
                 "fact sheet",
+                "factsheet",
+                "factsheets",
                 "fact sheets",
                 "distribution fact sheet",
                 "fact sheet distribution",
                 "download fact sheet",
                 "download factsheet",
                 "factsheet download",
-                "fact sheet download"
+                "fact sheet download",
+                "distance education fact sheet",
+                "distance education factsheet",
+                "education fact sheet",
+                "education factsheet"
             ],
             "responses": [
                 "fact sheets & discussion guide"
@@ -101,7 +107,6 @@
             "Intent": "Efficacy Story",
             "patterns": [
                 "NUPLAZID patient information",
-                "NUPLAZID approval",
                 "FDA NUPLAZID",
                 "NUPLAZID pharmacology",
                 "FDA approve",
@@ -112,7 +117,7 @@
                 "FDA approved"
             ],
             "responses": [
-                "NUPLAZID pharmacology"
+                "NUPLAZID FDA approved therapy"
             ]
         },
         {
@@ -155,6 +160,18 @@
             ],
             "responses": [
                 "NUPLAZID efficacy"
+            ]
+        },
+        {
+            "Intent": "Efficacy",
+            "patterns": [
+                "nuplazid efficacy results",
+                "nuplazid efficacy result",
+                "efficacy result",
+                "efficacy results"
+            ],
+            "responses": [
+                "NUPLAZID efficacy results"
             ]
         },
         {
@@ -239,8 +256,8 @@
             "patterns": [
                 "withdrawal from NUPLAZID",
                 "Mechanism Of Action",
-                "sprinkle dosing guide",
-                "About MOA"
+                "About MOA",
+                "MOA"
             ],
             "responses": [
                 "About MOA"
@@ -263,7 +280,8 @@
                 "dosage details",
                 "dosage detail",
                 "dosage",
-                "administration"
+                "administration",
+                "sprinkle dosing guide"
             ],
             "responses": [
                 "Dosage Administration"
@@ -317,6 +335,7 @@
             "patterns": [
                 "NUPLAZID patient assistance",
                 "Treatment form",
+                "patient treatment form",
                 "free supply"
             ],
             "responses": [
@@ -337,7 +356,8 @@
             "Intent": "Coverage high level information and links",
             "patterns": [
                 "Insurance Coverage",
-                "Insurance Lookup,coverage samples",
+                "Insurance Lookup",
+                "coverage samples",
                 "reimbursement support",
                 "medical necessity template",
                 "free samples",
@@ -371,11 +391,25 @@
                 "NUPLAZID enrollment form",
                 "NUPLAZID drug classification",
                 "NUPLAZID black box warning",
-                "Acadia Connect treatment form",
                 "NUPLAZID pharmacy",
                 "prescription process",
                 "In-office care",
                 "In office care",
+                "support documents",
+                "reimbursement process",
+                "free cost nuplazid",
+                "free supply",
+                "free cost"
+            ],
+            "responses": [
+                "NUPLAZID cost details"
+            ]
+        },
+        {
+            "Intent": "Long-Term Care Service",
+            "patterns": [
+                "Long-term",
+                "Long term",
                 "Long-term care",
                 "Long term care",
                 "long term care facility",
@@ -387,15 +421,10 @@
                 "long-term care service request",
                 "long term care service request",
                 "long-term care service request form",
-                "long term care service request form",
-                "support documents",
-                "reimbursement process",
-                "free cost nuplazid",
-                "free supply",
-                "free cost"
+                "long term care service request form"
             ],
             "responses": [
-                "NUPLAZID cost details"
+                "Long-Term Care Service"
             ]
         },
         {
@@ -414,9 +443,10 @@
         {
             "Intent": "Service Request Form",
             "patterns": [
-                "Acadia Connect form",
-                "Acadia Connect treatment form",
-                "NUPLAZID treatment form"
+                "letter of appeal",
+                "appeal letter",
+                "medical necessity",
+                "necessity medical"
             ],
             "responses": [
                 "General information about authorization"
@@ -434,7 +464,7 @@
                 "placebo"
             ],
             "responses": [
-                "General information"
+                "Placebo controlled studies"
             ]
         },
         {
