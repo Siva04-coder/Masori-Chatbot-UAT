@@ -185,7 +185,7 @@ class response_finder:
     def getAllKeywords(self):
         with open("./data/All_HCP_Keywords.json") as json_data:
             multi_keywords = json.load(json_data)
-
+        print('multi_keywords', multi_keywords)
         with open("./data/HCP_intent.json") as json_data:
             all_intents = json.load(json_data)
 
