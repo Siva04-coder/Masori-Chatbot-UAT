@@ -366,8 +366,17 @@ def consumerchathistory():
     return response
 
 
-@application.route('/getKeys', methods=['GET', 'POST'])
-def getKeys():
+@application.route('/getHCPKeys', methods=['GET', 'POST'])
+def getHCPKeys():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return unauthorized_msg
+    except Exception as d:
+        return unauthorized_msg
+        pass
     
     keys = finder.getAllKeywords()
     
