@@ -190,7 +190,7 @@ class response_finder:
         lots_of_stopwords = []
         stopword_file = open("./data/long_stopwords.txt", "r")
         print('stopword', stopword_file)
-        with open("data/HCP_intent.json") as json_data:
+        with open("./data/HCP_intent.json") as json_data:
             all_intents = json.load(json_data)
                 
         for line in stopword_file.readlines():
