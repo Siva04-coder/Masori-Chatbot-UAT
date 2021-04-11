@@ -326,7 +326,7 @@ def consumerrecommendchat():
         disp_t = request.form.get('disp_t')
         uid = request.args['uid']
 
-        res_json = finder.find_response(user_chat, True)
+        res_json = consumer_finder.find_response(user_chat, True)
         cur_response = geneset.generate_response(res_json)
         uid = history.check_generate_consumer_uid(uid)
 
@@ -363,7 +363,7 @@ def consumerchathistory():
     uid = request.args['uid']
 
     uid = history.check_generate_consumer_uid(uid)
-    response = history.get_history_alone(uid, finder, geneset, disp_t)
+    response = history.get_history_alone(uid, consumer_finder, geneset, disp_t)
 
     return response
 
@@ -381,6 +381,22 @@ def getHCPKeys():
         pass
 
     keys = finder.getAllKeywords()
+
+    return keys
+
+@application.route('/getConsumerKeys', methods=['GET', 'POST'])
+def getHCPKeys():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return unauthorized_msg
+    except Exception as d:
+        return unauthorized_msg
+        pass
+
+    keys = consumer_finder.getAllKeywords()
 
     return keys
 
