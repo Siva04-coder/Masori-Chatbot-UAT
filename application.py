@@ -436,3 +436,5 @@ def refreshConsumerModel():
 # %% Main but it should be commented before upload to Git
 # if __name__ == "__main__":
 #     application.run(debug=True)
+import nltk
+nltk.download('punkt')
