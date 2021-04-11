@@ -206,7 +206,7 @@ class response_finder:
                     wrd = ''
                     if word.endswith('s'):
                         wrd = word[:-1]
-                        if wrd not in all_keywords:
+                        if word not in all_keywords and wrd not in all_keywords:
                             all_keywords.append(word)
                     else:
                         wrd = word + 's'
