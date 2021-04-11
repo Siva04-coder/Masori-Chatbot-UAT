@@ -18,7 +18,7 @@ import base64
 from flask_cors import CORS
 import auth
 
-# %% Declaration(s) 
+# %% Declaration(s)
 
 application = Flask(__name__)
 CORS(application)
@@ -38,7 +38,8 @@ unauthorized_msg = 'Unauthorized Access.'
 
 chat_msg_time_format = '%d/%m/%y %H:%M:%S'
 
-# %% Common 
+# %% Common
+
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
@@ -51,7 +52,7 @@ def index():
     except Exception as d:
         return unauthorized_msg
         pass
-    
+
     logger.write_activity('Index Logging Activity', 1)
     try:
         return "Welcome."
@@ -93,14 +94,15 @@ def pred():
     user_chat = request.headers.get('conv')
 
     import predict
-    
+
     preds = predict.predict(user_chat)
 
     response = {"intents": preds}
 
     return response
 
-# %% HCP 
+# %% HCP
+
 
 @application.route('/hcpchat', methods=['GET', 'POST'])
 def hcpchatbot():
@@ -151,6 +153,7 @@ def hcpchatbot():
 
     return response
 
+
 @application.route('/updatefeedback', methods=['GET', 'POST'])
 def updatefeedback():
     try:
@@ -194,7 +197,6 @@ def updatefeedback():
         }
 
     return response
-
 
 
 @application.route('/hcprecommendchat', methods=['GET', 'POST'])
@@ -246,15 +248,15 @@ def hcpchathistory():
     except Exception as d:
         return unauthorized_msg
         pass
-    
+
     disp_t = request.form.get('disp_t')
-    
+
     history = hcp_get_history.History()
     uid = request.args['uid']
 
     uid = history.check_generate_uid(uid)
     response = history.get_history_alone(uid, finder, geneset, disp_t)
-    
+
     return response
 
 
@@ -377,9 +379,9 @@ def getHCPKeys():
     except Exception as d:
         return unauthorized_msg
         pass
-    
+
     keys = finder.getAllKeywords()
-    
+
     return keys
 
 
@@ -398,6 +400,7 @@ def refreshCorpus():
 
 # %% Refresh Pickle Models
 
+
 @application.route('/refreshHCPModel', methods=['GET', 'POST'])
 def refreshHCPModel():
     try:
@@ -413,6 +416,7 @@ def refreshHCPModel():
 
     return "Model has been updated."
 
+
 @application.route('/refreshConsumerModel', methods=['GET', 'POST'])
 def refreshConsumerModel():
     try:
@@ -427,6 +431,7 @@ def refreshConsumerModel():
     import consumer_keywordextraction
 
     return "Model has been updated."
+
 
 # %% Main but it should be commented before upload to Git
 # if __name__ == "__main__":
