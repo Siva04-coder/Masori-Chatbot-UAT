@@ -444,6 +444,7 @@ selves
 sent
 seven
 several
+share
 shall
 she
 shed
@@ -568,7 +569,6 @@ unlike
 unlikely
 until
 unto
-up
 upon
 ups
 us
