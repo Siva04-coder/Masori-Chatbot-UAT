@@ -2,28 +2,28 @@
     "data": [{
             "Intent": "Symptoms",
             "patterns": [
-                "signs Parkinson disease",
-                "sign Parkinson disease",
+                "signs Parkinson's disease",
+                "sign Parkinson's disease",
                 "pd symptoms",
                 "pd symptom",
                 "symptoms of pd",
                 "symptom of pd",
-                "symptoms Parkinson disease",
-                "symptom Parkinson disease",
-                "Parkinson disease symptoms",
-                "symptoms of Parkinson",
-                "signs of Parkinson",
+                "symptoms Parkinson's disease",
+                "symptom Parkinson's disease",
+                "Parkinson's disease symptoms",
+                "symptoms of Parkinson's",
+                "signs of Parkinson's",
                 "motor symptoms",
                 "nonmotor symptoms",
                 "symptom & potential cause",
                 "symptoms & potential causes",
                 "symptoms",
                 "symptom",
-                "parkinson",
+                "parkinson's",
                 "parkinsons"
             ],
             "responses": [
-                "symptoms of Parkinson disease"
+                "symptoms of Parkinson's disease"
             ]
         },
         {
@@ -32,18 +32,22 @@
                 "About PD disease",
                 "PD",
                 "About Parkinson Disease Psychosis",
+                "About Parkinson's Disease Psychosis",
+                "About Parkinson's Diseases Psychosis",
                 "About Parkinsons Disease Psychosis",
                 "About Parkinsons Diseases Psychosis",
                 "about psychosis",
                 "psychosis",
                 "symptoms & potential causes",
                 "parkinson disease",
+                "parkinson's disease",
+                "parkinson's diseases",
                 "parkinsons diseases",
                 "parkinsons disease",
                 "parkinson diseases"
             ],
             "responses": [
-                "About Parkinson Disease Psychosis"
+                "About Parkinson's Disease Psychosis"
             ]
         },
         {
@@ -62,6 +66,7 @@
             "Intent": "About Nuplazid",
             "patterns": [
                 "NUPLAZID Parkinson",
+                "NUPLAZID Parkinson's",
                 "clinical data",
                 "Clinical results",
                 "Clinical trail results",
@@ -76,18 +81,25 @@
             "Intent": "About Parkinson’s Disease",
             "patterns": [
                 "cause of Parkinson disease",
+                "cause of Parkinson's disease",
+                "cause of Parkinson's diseases",
                 "cause of PD",
                 "cause of Parkinsons disease",
                 "cause of Parkinson diseases",
                 "cause of Parkinsons diseases",
                 "Parkinson condition",
+                "Parkinson's condition",
                 "remedy Parkinson disease",
+                "remedy Parkinson's disease",
                 "management of Parkinson",
+                "management of Parkinson's",
                 "remedies Parkinson disease",
-                "Learn about Parkinson disease"
+                "remedies Parkinson's disease",
+                "Learn about Parkinson disease",
+                "Learn about Parkinson's disease"
             ],
             "responses": [
-                "cause of Parkinson disease"
+                "cause of Parkinson's disease"
             ]
         },
         {
@@ -128,11 +140,14 @@
             "Intent": "About Parkinson’s Disease",
             "patterns": [
                 "cause of Parkinson disease",
+                "cause of Parkinson's disease",
                 "remedy Parkinson",
-                "Parkinson remedies"
+                "remedy Parkinson's",
+                "Parkinson remedies",
+                "Parkinson's remedies"
             ],
             "responses": [
-                "cause of Parkinson disease"
+                "cause of Parkinson's disease"
             ]
         },
         {
@@ -141,10 +156,14 @@
                 "Parkinson condition",
                 "management of Parkinson",
                 "remedies Parkinson disease",
-                "Learn about Parkinson disease"
+                "Learn about Parkinson disease",
+                "Parkinson's condition",
+                "management of Parkinson's",
+                "remedies Parkinson's disease",
+                "Learn about Parkinson's disease"
             ],
             "responses": [
-                "Parkinson condition"
+                "Parkinson's condition"
             ]
         },
         {
@@ -153,27 +172,34 @@
                 "hallucinations Parkinson",
                 "Parkinson induced hallucinations",
                 "Parkinson hallucination",
+                "hallucinations Parkinson's",
+                "Parkinson's induced hallucinations",
+                "Parkinson's hallucination",
                 "signs of hallucinations",
                 "sign of hallucination",
                 "hallucination",
                 "hallucinations"
             ],
             "responses": [
-                "Parkinson hallucination"
+                "Parkinson's hallucination"
             ]
         },
         {
             "Intent": "Related hallucinations and delusions queries",
             "patterns": [
                 "Parkinson delusions",
+                "Parkinson induced delusions",
                 "Parkinson delusion",
+                "Parkinson's delusions",
+                "Parkinson's induced delusions",
+                "Parkinson's delusion",
                 "related hallucination & delusion",
                 "related hallucinations & delusions",
                 "delusion",
                 "delusions"
             ],
             "responses": [
-                "Parkinson delusions"
+                "Parkinson's delusions"
             ]
         },
         {
@@ -184,6 +210,7 @@
                 "delusions associated psychosis",
                 "delusions associated PD",
                 "delusions associated Parkinson",
+                "delusions associated Parkinson's",
                 "delusions associated Parkinsons"
             ],
             "responses": [
