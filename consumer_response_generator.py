@@ -106,9 +106,9 @@ class response_generator:
                     
                     for recommend_intent in recommend_intents:
                         if recommend_intent.strip() != '':
-                            response = response + '<li><a href="#" class="recommended" onclick="recommend(\'' + recommend_intent + '\')">' + recommend_intent + '</a></li>'
+                            response = response + '<li><a href="#" class="recommended" onclick="recommend(this)">' + recommend_intent + '</a></li>'
                 else:
-                    response = response + '<li><a href="#" class="recommended" onclick="recommend(\'' + json_obj['recommend_intent'] + '\')">' + json_obj['recommend_intent'] + '</a></li>'
+                    response = response + '<li><a href="#" class="recommended" onclick="recommend(this)">' + json_obj['recommend_intent'] + '</a></li>'
                 response = response + '</ul>'
 
             # %% Visit Page Generation
