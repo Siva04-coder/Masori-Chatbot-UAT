@@ -180,7 +180,11 @@
             "Intent": "Related hallucinations and delusions queries",
             "patterns": [
                 "delusions associated PD psychosis",
-                "psychosis"
+                "delusions psychosis",
+                "delusions associated psychosis",
+                "delusions associated PD",
+                "delusions associated Parkinson",
+                "delusions associated Parkinsons"
             ],
             "responses": [
                 "delusions associated with PD psychosis"

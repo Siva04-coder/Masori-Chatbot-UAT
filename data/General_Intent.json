@@ -76,7 +76,15 @@
             "tag": "Thank you",
             "patterns": [
                 "Thank you",
-                "Thanks"
+                "Thanks",
+                "nothing thanks",
+                "nothing thank you",
+                "nothing thankyou",
+                "no thank you",
+                "no thankyou",
+                "no thanks",
+                "thank you bye",
+                "thankyou bye"
             ],
             "responses": [
                 "My pleasure! Can i help you with anything"
@@ -145,12 +153,10 @@
             "tag": "nothing",
             "patterns": [
                 "nothing",
-                "nothing thanks",
-                "nothing thank you",
-                "nothing thankyou"
+                "no"
             ],
             "responses": [
-                "Goodbye. Come back if you need help with anything else!"
+                "Ok bye. Come back if you need help with anything else!"
             ]
         }
     ]

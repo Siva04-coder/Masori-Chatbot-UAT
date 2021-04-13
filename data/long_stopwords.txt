@@ -491,8 +491,7 @@ such
 sufficiently
 suggest
 sup
-sure	t
-take
+sure
 taken
 taking
 tell
