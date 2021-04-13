@@ -95,16 +95,16 @@ class response_generator:
             # %% Recommend Generation
             if json_obj['recommend_intent'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
-                response = response + "<p><b>Here's What I found </b></p>"
+                response = response + "<p><b>Here's what I found </b></p>"
                 response = response + '<ul>'
                 if '\n' in json_obj['recommend_intent']:
                     recommend_intents = json_obj['recommend_intent'].split('\n')
                     
                     for recommend_intent in recommend_intents:
                         if recommend_intent.strip() != '':
-                            response = response + '<li><a href="#" class="recommended" onclick="recommend(\'' + recommend_intent + '\')">' + recommend_intent + '</a></li>'
+                            response = response + '<li><a href="#" class="recommended" onclick="recommend(\'' + recommend_intent.replace("'", "\'") + '\')">' + recommend_intent + '</a></li>'
                 else:
-                    response = response + '<li><a href="#" class="recommended" onclick="recommend(\'' + json_obj['recommend_intent'] + '\')">' + json_obj['recommend_intent'] + '</a></li>'
+                    response = response + '<li><a href="#" class="recommended" onclick="recommend(\'' + json_obj['recommend_intent'].replace("'", "\'") + '\')">' + json_obj['recommend_intent'] + '</a></li>'
                 response = response + '</ul>'
 
             # %% Visit Page Generation
