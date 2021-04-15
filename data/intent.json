@@ -51,15 +51,15 @@
             ]
         },
         {
-            "Intent": "About NUPLAZID Medication",
+            "Intent": "About NUPLAZID efficiency",
             "patterns": [
-                "About NUPLAZID Medication",
-                "NUPLAZID Medication",
-                "Medication NUPLAZID",
-                "Medication"
+                "About NUPLAZID efficiency",
+                "NUPLAZID efficiency",
+                "Efficiency NUPLAZID",
+                "Efficiency"
             ],
             "responses": [
-                "About NUPLAZID medication"
+                "About NUPLAZID efficiency"
             ]
         },
         {
@@ -241,6 +241,19 @@
             ]
         },
         {
+            "Intent": "Allergic reaction",
+            "patterns": [
+                "Allergic reaction",
+                "Allergic reactions",
+                "Allergy reaction",
+                "Allergy reactions",
+                "Allergy"
+            ],
+            "responses": [
+                "Allergic reaction"
+            ]
+        },
+        {
             "Intent": "Contact Details",
             "patterns": [
                 "NUPLAZID address",
@@ -340,6 +353,8 @@
                 "NUPLAZID safety",
                 "NUPLAZID safe",
                 "safe NUPLAZID",
+                "Dementia",
+                "NUPLAZID Dementia",
                 "NUPLAZID approved Dementia",
                 "Dementia approved NUPLAZID",
                 "NUPLAZID approve Dementia",
@@ -358,7 +373,9 @@
                 "further assistance",
                 "cost details",
                 "cost detail",
-                "cost"
+                "cost",
+                "much NUPLAZID Cost",
+                "much NUPLAZID"
             ],
             "responses": [
                 "NUPLAZID cost"
@@ -369,8 +386,8 @@
             "patterns": [
                 "NUPLAZID coverage",
                 "NUPLAZID medication payment assistance",
-                "insurance type",
-                "insurance coverage",
+                "Insurance type",
+                "Insurance coverage",
                 "Insurance plans",
                 "Insurance plan",
                 "financial assistance",
@@ -402,7 +419,9 @@
                 "copay program",
                 "copay",
                 "Support",
-                "care cordinator"
+                "care cordinator",
+                "use NUPLAZID",
+                "NUPLAZID usage"
             ],
             "responses": [
                 "Support"
