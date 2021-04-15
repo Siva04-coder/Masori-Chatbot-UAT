@@ -230,7 +230,9 @@
             "Intent": "About SAPS-PD",
             "patterns": [
                 "common adverse reactions",
-                "Adverse reaction"
+                "Adverse reaction",
+                "Adverse reactions",
+                "Adverse"
             ],
             "responses": [
                 "Adverse reaction"

@@ -51,27 +51,37 @@
             ]
         },
         {
-            "Intent": "About Nuplazid",
+            "Intent": "About NUPLAZID Medication",
             "patterns": [
-                "about NUPLAZID",
-                "NUPLAZID medication",
-                "NUPLAZID",
-                "medication"
+                "About NUPLAZID",
+                "NUPLAZID Medication",
+                "Medication"
             ],
             "responses": [
                 "About NUPLAZID medication"
             ]
         },
         {
-            "Intent": "About Nuplazid",
+            "Intent": "About NUPLAZID",
+            "patterns": [
+                "About NUPLAZID",
+                "NUPLAZID",
+                "Explain NUPLAZID"
+            ],
+            "responses": [
+                "About NUPLAZID"
+            ]
+        },
+        {
+            "Intent": "NUPLAZID Clinical Trial",
             "patterns": [
                 "NUPLAZID Parkinson",
                 "NUPLAZID Parkinson's",
-                "clinical data",
+                "Clinical data",
                 "Clinical results",
                 "Clinical trail results",
                 "Clinical trail result",
-                "clinical result"
+                "Clinical result"
             ],
             "responses": [
                 "NUPLAZID Clinical Trial Results"
@@ -220,10 +230,10 @@
         {
             "Intent": "how to start NUPLAZID",
             "patterns": [
-                "start Nuplazid",
-                "nuplazid start",
-                "getting nuplazid",
-                "get nuplazid"
+                "start NUPLAZID",
+                "NUPLAZID start",
+                "getting NUPLAZID",
+                "get NUPLAZID"
             ],
             "responses": [
                 "how to start NUPLAZID"
@@ -291,8 +301,8 @@
             "patterns": [
                 "Taking NUPLAZID",
                 "Take NUPLAZID",
-                "Nuplazid effective",
-                "effective Nuplazid",
+                "NUPLAZID effective",
+                "effective NUPLAZID",
                 "effective"
             ],
             "responses": [
@@ -304,8 +314,8 @@
             "patterns": [
                 "Side effect",
                 "Side effects",
-                "Nuplazid Side effects",
-                "Nuplazid Side effect"
+                "NUPLAZID Side effects",
+                "NUPLAZID Side effect"
             ],
             "responses": [
                 "Side Effects"
@@ -318,15 +328,17 @@
                 "safety informations",
                 "safety details",
                 "safety detail",
-                "nuplazid safety details",
-                "nuplazid safety detail",
-                "safety details nuplazid",
-                "safety detail nuplazid",
-                "nuplazid safety information",
-                "nuplazid safety informations",
-                "safety information nuplazid",
-                "safety informations nuplazid",
-                "nuplazid safety"
+                "NUPLAZID safety details",
+                "NUPLAZID safety detail",
+                "safety details NUPLAZID",
+                "safety detail NUPLAZID",
+                "NUPLAZID safety information",
+                "NUPLAZID safety informations",
+                "safety information NUPLAZID",
+                "safety informations NUPLAZID",
+                "NUPLAZID safety",
+                "NUPLAZID safe",
+                "safe NUPLAZID"
             ],
             "responses": [
                 "Safety Information"
@@ -405,7 +417,7 @@
             "Intent": "Enrollment Form",
             "patterns": [
                 "Patient Enrollment Form",
-                "Nuplazid Enrollment Form",
+                "NUPLAZID Enrollment Form",
                 "Enrollment form"
             ],
             "responses": [
