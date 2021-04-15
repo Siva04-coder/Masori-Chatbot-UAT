@@ -53,8 +53,9 @@
         {
             "Intent": "About NUPLAZID Medication",
             "patterns": [
-                "About NUPLAZID",
+                "About NUPLAZID Medication",
                 "NUPLAZID Medication",
+                "Medication NUPLAZID",
                 "Medication"
             ],
             "responses": [
@@ -338,7 +339,11 @@
                 "safety informations NUPLAZID",
                 "NUPLAZID safety",
                 "NUPLAZID safe",
-                "safe NUPLAZID"
+                "safe NUPLAZID",
+                "NUPLAZID approved Dementia",
+                "Dementia approved NUPLAZID",
+                "NUPLAZID approve Dementia",
+                "Dementia approve NUPLAZID"
             ],
             "responses": [
                 "Safety Information"
