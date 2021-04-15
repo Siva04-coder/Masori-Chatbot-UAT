@@ -100,7 +100,6 @@ class response_finder:
                     recommend_intent = '' if str(corpus['Recommend Intent'].iloc[0]) == 'nan' else corpus['Recommend Intent'].iloc[0]
                     visit_page = '' if str(corpus['Visit Page'].iloc[0]) == 'nan' else corpus['Visit Page'].iloc[0]
 
-                    print('recommend')
                     res_json = {
                         "output_text": output_text,
                         "bullet": bullet,
