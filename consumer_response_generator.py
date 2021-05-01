@@ -144,10 +144,8 @@ class response_generator:
                 else:
                     response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<p>Is there anything else you are looking for?</p>'
-                response = response + \
-                    '<button class="chat-feedback-button-no" onclick="feedbackno()">No</button>'
-                response = response + \
-                    '<button class="chat-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
+                response = response + '<button class="chat-feedback-button-no" onclick="feedbackno()">No</button>'
+                response = response + '<button class="chat-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
 
         except Exception as e:
             print('Error')
