@@ -65,7 +65,7 @@ class response_generator:
                     response = response + '<li>' + \
                         json_obj['bullets'] + '</li>'
 
-                if '<ul>'3 in response:
+                if '<ul>' in response:
                     response = response + '</ul>'
             # %% Video Generation
             print('done2')
