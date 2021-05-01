@@ -23,7 +23,7 @@ class response_generator:
         return response
 
     def generate_response(self, json_data):
-        response = ''+9='*'
+        response = ''
         try:
             print('json_data', json_data)
             json_obj = json.loads(json_data)
