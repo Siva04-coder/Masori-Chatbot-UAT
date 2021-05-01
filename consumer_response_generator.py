@@ -124,10 +124,11 @@ class response_generator:
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
             else:
-                response = response + '<div class="chat-individual-feedback"><span>Was this helpful?</span>'
-                response = response + '<button class="chat-individual-feedback-button-no" onclick="feedbackno()">No</button>'
-                response = response + '<button class="chat-individual-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
-                response = response + '<div class="chat-float-clear"></div></div>'
+                response = response + '<div class="chat-text-divider"></div>'
+                response = response + '<span>Is there anything else you are looking for?</span>'
+                response = response + '<button class="chat-feedback-button-no" onclick="feedbackno()">No</button>'
+                response = response + '<button class="chat-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
+                response = response + '<div class="chat-float-clear"></div>'
             
         except Exception as e:
             print('Error')
