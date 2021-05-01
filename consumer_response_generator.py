@@ -23,8 +23,7 @@ class response_generator:
         return response
 
     def generate_response(self, json_data):
-        response = ''
-
+        response = ''+9='*'
         try:
             print('json_data', json_data)
             json_obj = json.loads(json_data)
@@ -110,7 +109,7 @@ class response_generator:
                 else:
                     response = response + '<li><a href="#" class="recommended" onclick="recommend(this)">' + json_obj['recommend_intent'] + '</a></li>'
                 response = response + '</ul>'
-
+            
             # %% Visit Page Generation
             if json_obj['visit_page'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
@@ -124,6 +123,11 @@ class response_generator:
                 response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
+            else:
+                response = response + '<div class="chat-individual-feedback"><span>Was this helpful?</span>'
+                response = response + '<button class="chat-individual-feedback-button-no" onclick="feedbackno()">No</button>'
+                response = response + '<button class="chat-individual-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
+                response = response + '<div class="chat-float-clear"></div></div>'
             
         except Exception as e:
             print('Error')
