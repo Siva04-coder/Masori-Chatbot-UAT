@@ -125,7 +125,7 @@ class response_generator:
                 response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
             else:
                 response = response + '<div class="chat-text-divider"></div>'
-                response = response + '<p>Is there anything else you are looking for?</p><br>'
+                response = response + '<p>Is there anything else you are looking for?</p>'
                 response = response + '<button class="chat-feedback-button-no" onclick="feedbackno()">No</button>'
                 response = response + '<button class="chat-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
             
