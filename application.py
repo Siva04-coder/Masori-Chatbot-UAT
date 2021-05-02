@@ -98,6 +98,30 @@ def getConfigs():
 
     return configs
 
+@application.route('/feedback', methods=['GET', 'POST'])
+def feedback():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return unauthorized_msg
+    except Exception as d:
+        return unauthorized_msg
+        pass
+
+    feedback = request.headers.get('feedback')
+    disp_t = request.form.get('disp_t')
+
+    user_chat = "<p>" + feedback + "</p>"
+    
+    cur_response = consumer_geneset.feedback_generator(feedback)
+
+    history.check_update_history(uid, user_chat, cur_response, disp_t)
+
+    return cur_response
+
+
 @application.route('/pred', methods=['GET', 'POST'])
 def pred():
     try:
