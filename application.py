@@ -99,6 +99,7 @@ def getConfigs():
 
     return configs
 
+    
 @application.route('/feedback', methods=['GET', 'POST'])
 def feedback():
     try:
@@ -113,6 +114,7 @@ def feedback():
 
     feedback = request.headers.get('feedback')
     disp_t = request.form.get('disp_t')
+    uid = request.args['uid']
 
     user_chat = "<p>" + feedback + "</p>"
     
