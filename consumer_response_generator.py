@@ -140,17 +140,29 @@ class response_generator:
                 response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
             else:
                 if isMoreInfo == True:
-                    response = response + '<div class="chat-text-divider" style="margin-top: 33px"></div>'
+                    response = response + '<div id="lookingfeedback"><div class="chat-text-divider" style="margin-top: 33px"></div>'
                 else:
-                    response = response + '<div class="chat-text-divider"></div>'
+                    response = response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
                 response = response + '<p>Is there anything else you are looking for?</p>'
-                response = response + '<button class="chat-feedback-button-no" onclick="feedbackno()">No</button>'
-                response = response + '<button class="chat-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
+                response = response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+                response = response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
 
         except Exception as e:
             print('Error')
             response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
             print(str(e))
             self.logger.write_exception(str(e), 'get_welcome_message')
+
+        return response
+
+    def feedback_generator(feedback):
+        response = ''
+        try:
+            if feedback == "Yes":
+                response = response + '<p>How may I help you?</p>'
+            else:
+                response = response + "<p>Thank you! I'm so glad I could help.</p>"
+        except:
+            pass
 
         return response
