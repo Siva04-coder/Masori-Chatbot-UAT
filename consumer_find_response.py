@@ -61,7 +61,7 @@ class response_finder:
             import consumer_predict
             if isRecommend == False:
                 intent = consumer_predict.predict(chat_message)
-                print('\n\nAll intents : ', intent)
+                
                 if len(intent) > 0:                
                     if isRecommend == True:
                         try:
@@ -74,7 +74,7 @@ class response_finder:
             # chats = self.remove_stopwords(chat_message)
             # master = self.master_intent_entity
             corpus = self.website_data
-            print('\n\nIntent Tried: ', chat, '\n')
+            
             # for chat in chats:
             #     if chat != '':
             #         chat.replace("'", "\'")
@@ -83,8 +83,7 @@ class response_finder:
                 corpus = corpus.loc[(corpus['Sub Functional Area'].str.lower() == str(chat).lower())]
                 
                 if not corpus.empty:
-                    print('\n\ncorpus : ', corpus)
-                    print('\n\nintent : ', chat)
+                    
                     output_text = '' if str(corpus['Response'].iloc[0]) == 'nan' else corpus['Response'].iloc[0]
                     bullet = '' if str(corpus['Bullets'].iloc[0]) == 'nan' else corpus['Bullets'].iloc[0]
                     video_url = '' if str(corpus['Video URL'].iloc[0]) == 'nan' else corpus['Video URL'].iloc[0]
@@ -119,8 +118,7 @@ class response_finder:
                             corpus = corpus.loc[corpus['Sub Functional Area'].str.lower() == str(chat).lower()]
                             
                             if not corpus.empty:
-                                print('\n\corpus : ', corpus)
-                                print('\n\nintent : ', chat)
+                                
                                 output_text = '' if str(corpus['Response'].iloc[0]) == 'nan' else corpus['Response'].iloc[0]
                                 bullet = '' if str(corpus['Bullets'].iloc[0]) == 'nan' else corpus['Bullets'].iloc[0]
                                 video_url = '' if str(corpus['Video URL'].iloc[0]) == 'nan' else corpus['Video URL'].iloc[0]
@@ -166,7 +164,7 @@ class response_finder:
                     "visit_page": ''
                 }
 
-            print('\n\nres_json : ', res_json)
+            # print('\n\nres_json : ', res_json)
 
         except Exception as e:
             print(str(e))
@@ -179,11 +177,10 @@ class response_finder:
     def getAllKeywords(self):
         with open("./data/All_Consumer_Keywords.json") as json_data:
             multi_keywords = json.load(json_data)
-        print('multi_keywords', multi_keywords)
-        
+                
         lots_of_stopwords = []
         stopword_file = open("./data/long_stopwords.txt", "r")
-        print('stopword', stopword_file)
+        
         with open("./data/intent.json") as json_data:
             all_intents = json.load(json_data)
                 
@@ -196,7 +193,7 @@ class response_finder:
             all_keywords.append(muliti)
 
         for intent in all_intents['data']:
-            print('intent[patterns]', intent['patterns'])
+            
             for pattern in intent['patterns']:
                 words = []
                 pattern = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',pattern)

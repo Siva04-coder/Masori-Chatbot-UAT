@@ -27,9 +27,9 @@ class response_generator:
         response = ''
         try:
             isMoreInfo = False
-            print('json_data', json_data)
+            
             json_obj = json.loads(json_data)
-            print('json', json_obj)
+            
             # %% Plain Text Generation
             if '\n' in json_obj['output_text']:
                 txts = json_obj['output_text'].split('\n')
@@ -54,7 +54,7 @@ class response_generator:
                 response = response + '<div class="chat-float-clear"></div></div>'
 
             # %% Bullet Generation
-            print('done1')
+            
             if json_obj['bullet'] != '':
                 response = response + '<ul>'
 
@@ -70,7 +70,7 @@ class response_generator:
                 if '<ul>' in response:
                     response = response + '</ul>'
             # %% Video Generation
-            print('done2')
+            
             if json_obj['video_url'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + \
@@ -78,7 +78,7 @@ class response_generator:
                     json_obj['video_url']
                 response = response + '" target="_blank">Watch Video</a></button></div>'
             # %% Hyperlink Generation
-            print('done3')
+            
             if json_obj['hyperlink_text'] != '' and json_obj['hyperlink_url'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
 
@@ -115,7 +115,7 @@ class response_generator:
                 response = response + '" target="_blank">Click here</a></button></div></div>'
                 isMoreInfo = True
 
-            print(json_obj['recommend_intent'], 'done4', response)
+            
             # %% Recommend Generation
             if json_obj['recommend_intent'] != '':
                 if isMoreInfo == True:
@@ -139,7 +139,7 @@ class response_generator:
                         json_obj['recommend_intent'] + '</a></li>'
                 response = response + '</ul>'
 
-            print(json_obj['recommend_intent'], 'done4', response)
+            
 
             if response == '':
                 response = "<p>I am sorry can you rephrase your question?</p>"
