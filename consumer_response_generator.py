@@ -117,7 +117,10 @@ class response_generator:
             print(json_obj['recommend_intent'], 'done4', response)
             # %% Recommend Generation
             if json_obj['recommend_intent'] != '':
-                response = response + '<div class="chat-text-divider"></div>'
+                 if isMoreInfo == True:
+                    response = response + '<div class="chat-text-divider" style="margin-top: 33px"></div>'
+                else:
+                    response = response + '<div class="chat-text-divider"></div>'
                 response = response + "<p><b>Here's what I found </b></p>"
                 response = response + '<ul>'
                 if '\n' in json_obj['recommend_intent']:
@@ -142,10 +145,7 @@ class response_generator:
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
             else:
-                if isMoreInfo == True:
-                    response = response + '<div id="lookingfeedback"><div class="chat-text-divider" style="margin-top: 33px"></div>'
-                else:
-                    response = response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+                response = response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
                 response = response + '<p>Is there anything else you are looking for?</p>'
                 response = response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
                 response = response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
