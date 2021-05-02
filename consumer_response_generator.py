@@ -17,7 +17,7 @@ class response_generator:
             response = response + 'Thank you for your feedback. Everyday I am learning. I will answer your questions to the best of my ability.'
         except Exception as e:
             print('Error')
-            response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
+            response = "<p>I am sorry can you rephrase your question?</p>"
             print(str(e))
             self.logger.write_exception(str(e), 'get_welcome_message')
 
@@ -37,11 +37,13 @@ class response_generator:
                 for txt in txts:
                     response = response + '<p>' + txt + '</p>'
             else:
-                response = response + '<p>' + json_obj['output_text'] + '</p>'
+                if json_obj['output_text'] != '':
+                    response = response + '<p>' + json_obj['output_text'] + '</p>'
+                
 
-            if "I don't understand your question" in json_obj['output_text']:
-                response = response + '<div class="chat-text-divider"></div>'
-                response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank" >Click here to see FAQ</a>'
+            # if "I don't understand your question" in json_obj['output_text']:
+            #     response = response + '<div class="chat-text-divider"></div>'
+            #     response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank" >Click here to see FAQ</a>'
 
             if 'Goodbye' in json_obj['output_text'] or 'My pleasure' in json_obj['output_text']:
                 response = response + '<div class="chat-individual-feedback"><span>Was this helpful?</span>'
@@ -135,7 +137,7 @@ class response_generator:
             print(json_obj['recommend_intent'], 'done4', response)
 
             if response == '':
-                response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
+                response = "<p>I am sorry can you rephrase your question?</p>"
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
             else:
@@ -149,7 +151,7 @@ class response_generator:
 
         except Exception as e:
             print('Error')
-            response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
+            response = "<p>I am sorry can you rephrase your question?</p>"
             print(str(e))
             self.logger.write_exception(str(e), 'get_welcome_message')
 
