@@ -104,6 +104,16 @@ class response_generator:
                         json_obj['hyperlink_url'] + '" target="_blank">'
                     response = response + json_obj['hyperlink_text'] + '</a>'
             # %% Image Generation
+
+            # %% Visit Page Generation
+            if json_obj['visit_page'] != '':
+                response = response + '<div class="chat-text-divider"></div>'
+                response = response + '<div class="chat-buttons-container"><div style="float:left;padding-top: 7px;">Here is a link that may help </div>'
+                response = response + '<div style="float:right"><button><a href="' + \
+                    json_obj['visit_page']
+                response = response + '" target="_blank">Click here</a></button></div></div>'
+                isMoreInfo = True
+
             print(json_obj['recommend_intent'], 'done4', response)
             # %% Recommend Generation
             if json_obj['recommend_intent'] != '':
@@ -124,15 +134,6 @@ class response_generator:
                         '<li><a href="#" class="recommended" onclick="recommend(this)">' + \
                         json_obj['recommend_intent'] + '</a></li>'
                 response = response + '</ul>'
-
-            # %% Visit Page Generation
-            if json_obj['visit_page'] != '':
-                response = response + '<div class="chat-text-divider"></div>'
-                response = response + '<div class="chat-buttons-container"><div style="float:left;padding-top: 7px;">For more information </div>'
-                response = response + '<div style="float:right"><button><a href="' + \
-                    json_obj['visit_page']
-                response = response + '" target="_blank">Visit Page</a></button></div></div>'
-                isMoreInfo = True
 
             print(json_obj['recommend_intent'], 'done4', response)
 
