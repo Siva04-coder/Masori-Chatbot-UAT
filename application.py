@@ -78,6 +78,25 @@ def welcome():
 
     return response
 
+@application.route('/getConfigs', methods=['GET', 'POST'])
+def getConfigs():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return unauthorized_msg
+    except Exception as d:
+        return unauthorized_msg
+        pass
+
+    config_details = cfg.get_ui_configs()
+    
+    configs = {
+        "chat_timeout_sec": config_details["chat_timeout_sec"]
+    }
+
+    return configs
 
 @application.route('/pred', methods=['GET', 'POST'])
 def pred():
