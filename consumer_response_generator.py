@@ -146,10 +146,11 @@ class response_generator:
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
             else:
-                response = response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
-                response = response + '<p>Is there anything else you are looking for?</p>'
-                response = response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
-                response = response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
+                if 'can you rephrase your question' not in response and 'My pleasure! Can i help ' not in response:
+                    response = response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+                    response = response + '<p>Is there anything else you are looking for?</p>'
+                    response = response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+                    response = response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
 
         except Exception as e:
             print('Error')
