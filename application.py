@@ -19,6 +19,7 @@ from flask_cors import CORS
 import auth
 
 # %% Declaration(s)
+cfg = config.Config()
 
 application = Flask(__name__)
 CORS(application)
