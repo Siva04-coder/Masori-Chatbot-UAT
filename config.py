@@ -47,3 +47,18 @@ class Config:
             pass
 
         return self.cfgDict
+
+    def get_ui_configs(self):
+        self.cfgDict = {}
+
+        try:
+            config.read(self.configFilePath)
+
+            chat_timeout_sec = str(config.get('UIConfigs', 'chat_timeout_sec'))
+
+            self.cfgDict.update({'chat_timeout_sec': chat_timeout_sec})
+            
+        except Exception as e:
+            pass
+
+        return self.cfgDict
