@@ -107,6 +107,14 @@ def feedback():
         is_authorize = auth.Authorize(
             auth_creds.username, auth_creds.password)
         if is_authorize == False:
+    
+@application.route('/feedback', methods=['GET', 'POST'])
+def feedback():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
             return unauthorized_msg
     except Exception as d:
         return unauthorized_msg
@@ -133,7 +141,7 @@ def feedback():
         "uid": uid
     }
 
-    return cur_response
+    return response
     
 @application.route('/timeouthit', methods=['GET', 'POST'])
 def timeouthit():
@@ -155,14 +163,16 @@ def timeouthit():
     cur_response = cur_response + "<p>Is there anything else you are looking for?</p>"
     #cur_response = consumer_geneset.feedback_generator(feedback)
 
-    history.check_update_bot_history(uid, cur_response, disp_t)
+    isAvoid = history.check_update_bot_history(uid, cur_response, disp_t)
+    response = ''
 
-    response = {
-        "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
-        "uid": uid
-    }
+    if isAvoid == False:
+        response = {
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
+            "uid": uid
+        }
 
-    return cur_response
+    return response
 
 @application.route('/pred', methods=['GET', 'POST'])
 def pred():
