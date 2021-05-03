@@ -99,7 +99,7 @@ def getConfigs():
 
     return configs
 
-    
+
 @application.route('/feedback', methods=['GET', 'POST'])
 def feedback():
     try:
@@ -112,13 +112,19 @@ def feedback():
         return unauthorized_msg
         pass
 
+    history = consumer_get_history.History()
     feedback = request.headers.get('feedback')
     disp_t = request.form.get('disp_t')
     uid = request.args['uid']
 
     user_chat = "<p>" + feedback + "</p>"
     
-    cur_response = consumer_geneset.feedback_generator(feedback)
+    cur_response = ''
+    if feedback == "Yes":
+        cur_response = cur_response + '<p>How may I help you?</p>'
+    else:
+        cur_response = cur_response + "<p>Thank you! I'm so glad I could help.</p>"
+    #cur_response = consumer_geneset.feedback_generator(feedback)
 
     history.check_update_history(uid, user_chat, cur_response, disp_t)
 
