@@ -130,6 +130,80 @@ class History:
         
         return json_data
     
+    def check_update_bot_history(self, uid, cur_bot_chat, disp_t):
+        
+        json_data = {
+            "uid": uid,
+            "chats": []
+        }
+
+        try:
+            history_path = 'History/' + uid + '.json'
+
+            if os.path.exists(history_path):
+                with open(history_path) as outfile:
+                    json_data = outfile.read()
+                    json_data = json.loads(json_data)
+
+            json_data = check_buffer_time_to_clear(json_data, uid)
+
+            json_data_chats = json_data["chats"]
+            
+            cur_json = {
+                "message": cur_bot_chat,
+                "who": "bot",
+                "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
+                "display_time": disp_t
+            }
+
+            json_data_chats.append(cur_json)
+
+            if not os.path.exists(history_path):
+                with open(history_path, 'w') as outfile:  
+                    json.dump(json_data, outfile)
+            else:
+                with open(history_path, 'r+') as outfile:  
+                    json.dump(json_data, outfile)
+            
+        except Exception as e:
+            try:
+                os.remove(history_path)
+            except:
+                pass
+            
+            try:
+                if os.path.exists(history_path):
+                    with open(history_path) as outfile:
+                        json_data = outfile.read()
+                        json_data = json.loads(json_data)
+
+                json_data = check_buffer_time_to_clear(json_data, uid)
+
+                json_data_chats = json_data["chats"]
+                
+                cur_json = {
+                    "message": cur_bot_chat,
+                    "who": "bot",
+                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
+                    "display_time": disp_t
+                }
+                
+                json_data_chats.append(cur_json)
+
+                if not os.path.exists(history_path):
+                    with open(history_path, 'w') as outfile:  
+                        json.dump(json_data, outfile)
+                else:
+                    with open(history_path, 'r+') as outfile:  
+                        json.dump(json_data, outfile)
+            except:
+                pass
+            
+            pass
+        
+        return json_data
+    
+
     def get_history_alone(self, uid, finder, geneset, disp_t):
         history_path = 'History/' + uid + '.json'
         json_data = {
