@@ -34,7 +34,8 @@ class response_finder:
                 "image_url": '',
                 "display_type": 'Welcome',
                 "recommend_intent": '',
-                "visit_page": ''
+                "visit_page": '',
+                "is_general": False
             }
 
         except Exception as e:
@@ -103,7 +104,8 @@ class response_finder:
                         "image_url": image_url,
                         #"recommend_text": recommend_text,
                         "recommend_intent": recommend_intent,
-                        "visit_page": visit_page
+                        "visit_page": visit_page,
+                        "is_general": False
                     }
                 else:
                     cnt = 1
@@ -138,7 +140,8 @@ class response_finder:
                                     "image_url": image_url,
                                     #"recommend_text": recommend_text,
                                     "recommend_intent": recommend_intent,
-                                    "visit_page": visit_page
+                                    "visit_page": visit_page,
+                                    "is_general": False
                                 }
                                 break
 
@@ -161,10 +164,11 @@ class response_finder:
                     "image_url": '',
                     #"recommend_text": recommend_text,
                     "recommend_intent": '',
-                    "visit_page": ''
+                    "visit_page": '',
+                    "is_general": True
                 }
 
-            # print('\n\nres_json : ', res_json)
+            print('\n\nres_json : ', res_json)
 
         except Exception as e:
             print(str(e))
