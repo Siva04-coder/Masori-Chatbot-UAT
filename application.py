@@ -100,14 +100,7 @@ def getConfigs():
     return configs
 
 
-@application.route('/feedback', methods=['GET', 'POST'])
-def feedback():
-    try:
-        auth_creds = request.authorization
-        is_authorize = auth.Authorize(
-            auth_creds.username, auth_creds.password)
-        if is_authorize == False:
-    
+   
 @application.route('/feedback', methods=['GET', 'POST'])
 def feedback():
     try:
