@@ -122,7 +122,7 @@ class response_generator:
                     response = response + '<div class="chat-text-divider" style="margin-top: 33px"></div>'
                 else:
                     response = response + '<div class="chat-text-divider"></div>'
-                response = response + "<p><b>Here's what I found </b></p>"
+                response = response + "<p><b>Related Information </b></p>"
                 response = response + '<ul>'
                 if '\n' in json_obj['recommend_intent']:
                     recommend_intents = json_obj['recommend_intent'].split(
