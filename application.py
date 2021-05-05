@@ -154,8 +154,8 @@ def timeouthit():
     
     cur_response = ''
     cur_response = cur_response + "<p>Hi, I am SAM, the Search Assistant Manager. How can I help you today?</p>"
-    cur_response = cur_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
-    cur_response = cur_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
+    # cur_response = cur_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+    # cur_response = cur_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
     #cur_response = consumer_geneset.feedback_generator(feedback)
 
     isAvoid = history.check_update_bot_history(uid, cur_response, disp_t)
