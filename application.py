@@ -385,10 +385,10 @@ def consumerchatbot():
         history.check_update_history(uid, user_chat, cur_response, disp_t)
 
         seperate_response = ""
-        seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+        #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
         seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
         seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
-        seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
+        seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
 
         response = {
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t, "seperate_response": seperate_response}],
