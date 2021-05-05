@@ -20,7 +20,9 @@
                 "symptoms",
                 "symptom",
                 "parkinson's",
-                "parkinsons"
+                "parkinsons",
+                "challenges",
+                "pd related hallucinations and delusions"
             ],
             "responses": [
                 "symptoms of Parkinson's disease"
@@ -58,7 +60,10 @@
                 "Efficiency NUPLAZID",
                 "Efficiency",
                 "NUPLAZID help",
-                "help NUPLAZID"
+                "help NUPLAZID",
+                "clinical information",
+                "Dosing",
+                "interactions"
             ],
             "responses": [
                 "About NUPLAZID efficiency"
@@ -69,7 +74,10 @@
             "patterns": [
                 "About NUPLAZID",
                 "NUPLAZID",
-                "Explain NUPLAZID"
+                "Explain NUPLAZID",
+                "faqs",
+                "questions",
+                "answers"
             ],
             "responses": [
                 "About NUPLAZID"
@@ -131,7 +139,10 @@
                 "Personal Stories",
                 "Personal Story",
                 "stories",
-                "story"
+                "story",
+                "personal experiences",
+                "personal video",
+                "examples"
             ],
             "responses": [
                 "Personal Stories"
@@ -143,7 +154,12 @@
                 "healthcare provider",
                 "consult healthcare provider",
                 "healthcare",
-                "consult"
+                "consult",
+                "talk",
+                "speak with",
+                "guide",
+                "ddg",
+                "information"
             ],
             "responses": [
                 "Necessity to Consult healthcare provider"
@@ -191,7 +207,8 @@
                 "signs of hallucinations",
                 "sign of hallucination",
                 "hallucination",
-                "hallucinations"
+                "hallucinations",
+                "visual hallucinations"
             ],
             "responses": [
                 "Parkinson's hallucination"
@@ -263,7 +280,10 @@
                 "NUPLAZID hub",
                 "NUPLAZID copay assistance contact number",
                 "phone",
-                "contact information"
+                "contact information",
+                "phone number",
+                "company address",
+                "company contact"
             ],
             "responses": [
                 "Contact Acadia CA"
@@ -331,7 +351,13 @@
                 "Side effect",
                 "Side effects",
                 "NUPLAZID Side effects",
-                "NUPLAZID Side effect"
+                "NUPLAZID Side effect",
+                "common side effects",
+                "drug interactions",
+                "warnings",
+                "heart conditions",
+                "safety faqs",
+                "safety information"
             ],
             "responses": [
                 "Side Effects"
@@ -412,7 +438,12 @@
                 "sign up",
                 "Signup",
                 "help signup",
-                "help sign up"
+                "help sign up",
+                "more information",
+                "support",
+                "financial resources",
+                "prescription support",
+                "insurance"
             ],
             "responses": [
                 "Sign up"
@@ -436,7 +467,9 @@
             "Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
             "patterns": [
                 "resources",
-                "resource"
+                "resource",
+                "fact sheet",
+                "tv commerical"
             ],
             "responses": [
                 "Resources"
