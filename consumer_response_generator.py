@@ -47,10 +47,10 @@ class response_generator:
 
             if 'Goodbye' in json_obj['output_text'] or 'My pleasure' in json_obj['output_text']:
                 response = response + '<div class="chat-individual-feedback"><span>Was this helpful?</span>'
-                response = response + \
-                    '<button class="chat-individual-feedback-button-no" onclick="feedbackno()">No</button>'
-                response = response + \
-                    '<button class="chat-individual-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
+                # response = response + \
+                #     '<button class="chat-individual-feedback-button-no" onclick="feedbackno()">No</button>'
+                # response = response + \
+                #     '<button class="chat-individual-feedback-button-yes" onclick="feedbackyes()">Yes</button>'
                 response = response + '<div class="chat-float-clear"></div></div>'
 
             # %% Bullet Generation
@@ -116,41 +116,40 @@ class response_generator:
                 isMoreInfo = True
 
             
-            # %% Recommend Generation
-            if json_obj['recommend_intent'] != '':
-                if isMoreInfo == True:
-                    response = response + '<div class="chat-text-divider" style="margin-top: 33px"></div>'
-                else:
-                    response = response + '<div class="chat-text-divider"></div>'
-                response = response + "<p><b>Related Information </b></p>"
-                response = response + '<ul>'
-                if '\n' in json_obj['recommend_intent']:
-                    recommend_intents = json_obj['recommend_intent'].split(
-                        '\n')
+            # # %% Recommend Generation
+            # if json_obj['recommend_intent'] != '':
+            #     if isMoreInfo == True:
+            #         response = response + '<div class="chat-text-divider" style="margin-top: 33px"></div>'
+            #     else:
+            #         response = response + '<div class="chat-text-divider"></div>'
+            #     response = response + "<p><b>Related Information </b></p>"
+            #     response = response + '<ul>'
+            #     if '\n' in json_obj['recommend_intent']:
+            #         recommend_intents = json_obj['recommend_intent'].split(
+            #             '\n')
 
-                    for recommend_intent in recommend_intents:
-                        if recommend_intent.strip() != '':
-                            response = response + \
-                                '<li><a href="#" class="recommended" onclick="recommend(this)">' + \
-                                recommend_intent + '</a></li>'
-                else:
-                    response = response + \
-                        '<li><a href="#" class="recommended" onclick="recommend(this)">' + \
-                        json_obj['recommend_intent'] + '</a></li>'
-                response = response + '</ul>'
+            #         for recommend_intent in recommend_intents:
+            #             if recommend_intent.strip() != '':
+            #                 response = response + \
+            #                     '<li><a href="#" class="recommended" onclick="recommend(this)">' + \
+            #                     recommend_intent + '</a></li>'
+            #     else:
+            #         response = response + \
+            #             '<li><a href="#" class="recommended" onclick="recommend(this)">' + \
+            #             json_obj['recommend_intent'] + '</a></li>'
+            #     response = response + '</ul>'
 
             
-
             if response == '':
                 response = "<p>I am sorry can you rephrase your question?</p>"
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
-            else:
-                if 'can you rephrase your question' not in response and 'My pleasure! Can i help ' not in response and json_obj['is_general'] == False:
-                    response = response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
-                    response = response + '<p>Is there anything else you are looking for?</p>'
-                    response = response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
-                    response = response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
+            # else:
+            #     if 'can you rephrase your question' not in response and 'My pleasure! Can i help ' not in response and json_obj['is_general'] == False:
+            #         response = response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+            #         response = response + '<p>Is there anything else you are looking for?</p>'
+            #         response = response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+            #         response = response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
 
         except Exception as e:
             print('Error')
