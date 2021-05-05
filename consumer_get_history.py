@@ -27,7 +27,6 @@ def check_buffer_time_to_clear(chats, uid):
             print('cur - max : ', cur_time, max_time)
             print('seconds: ', (cur_time - max_time).total_seconds())
             print('difference : ', diff)
-            
             chat_clear_buffer_min = int(config_details["chat_clear_buffer_min"])
 
             if chat_clear_buffer_min < diff:
@@ -90,6 +89,7 @@ class History:
                     json.dump(json_data, outfile)
             
         except Exception as e:
+            print(str(e))
             try:
                 os.remove(history_path)
             except:
@@ -125,7 +125,8 @@ class History:
                 else:
                     with open(history_path, 'r+') as outfile:  
                         json.dump(json_data, outfile)
-            except:
+            except Exception as er:
+                print(str(er))
                 pass
             
             pass
