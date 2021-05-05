@@ -121,7 +121,7 @@ def feedback():
     user_chat = "<p>" + feedback + "</p>"
     
     cur_response = ''
-    if feedback == "Yes":
+    if feedback.lower() == "yes":
         cur_response = cur_response + '<p>How may I help you?</p>'
     else:
         cur_response = cur_response + "<p>Thank you! I'm so glad I could help.</p>"
