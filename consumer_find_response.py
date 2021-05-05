@@ -12,6 +12,7 @@ class response_finder:
     website_data = ''
     master_intent_entity = ''
     logger = ''
+    invalid_user_chat = ['who', 'where']
 
     def __init__(self, _logger):
         self.logger = _logger
@@ -61,15 +62,18 @@ class response_finder:
             intent = []
             import consumer_predict
             if isRecommend == False:
-                intent = consumer_predict.predict(chat_message)
+                isInvalid = self.validateUserinput(chat_message)
                 
-                if len(intent) > 0:                
-                    if isRecommend == True:
-                        try:
-                            intent.remove(chat_message)
-                        except:
-                            pass
-                    chat = intent[0]
+                if isInvalid == False:
+                    intent = consumer_predict.predict(chat_message)
+                    
+                    if len(intent) > 0:                
+                        if isRecommend == True:
+                            try:
+                                intent.remove(chat_message)
+                            except:
+                                pass
+                        chat = intent[0]
             else:
                 chat = chat_message
             # chats = self.remove_stopwords(chat_message)
@@ -217,3 +221,75 @@ class response_finder:
                                     all_keywords.append(word)
 
         return json.dumps(all_keywords)
+
+    def validateUserinput(self, chat_message):
+        with open("./data/All_Consumer_Keywords.json") as json_data:
+            multi_keywords = json.load(json_data)
+                
+        lots_of_stopwords = []
+        stopword_file = open("./data/long_stopwords.txt", "r")
+        isKeywordAvl = False
+        
+        with open("./data/intent.json") as json_data:
+            all_intents = json.load(json_data)
+                
+        for line in stopword_file.readlines():
+            lots_of_stopwords.append(str(line.strip()))
+
+        all_keywords_temp = []
+
+        for muliti in multi_keywords['keywords']:
+            all_keywords_temp.append(muliti)
+
+        isBreak = False
+
+        for intent in all_intents['data']:
+            
+            if isBreak == True:
+                break
+
+            for pattern in intent['patterns']:
+                
+                if isBreak == True:
+                    break
+                words = []
+                pattern = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',pattern)
+                w = pattern.split(' ')
+                #w = [(_w.lower()) for _w in w if _w.lower() not in lots_of_stopwords]
+                for word in w:
+                    wrd = ''
+                    if word.lower() not in lots_of_stopwords:
+                        if word.endswith('s'):
+                            wrd = word[:-1]
+                            if word not in all_keywords_temp and wrd not in all_keywords_temp:
+                                cont = any(item.lower() in self.invalid_user_chat for item in chat_message.split(' '))
+                                print(chat_message.split(' '))
+                                print(cont)
+                                if 'acadia' in chat_message.lower() and 'who' in chat_message.lower():
+                                    isKeywordAvl = False
+                                    isBreak = True
+                                    break
+                                if word.lower() in chat_message.lower() and cont == True:
+                                    isKeywordAvl = True
+                                    isBreak = True
+                                    break
+                                all_keywords_temp.append(word)
+                        else:
+                            wrd = word + 's'
+                            if word not in all_keywords_temp and wrd not in all_keywords_temp:
+                                if word != '':
+                                    cont = any(item.lower() in self.invalid_user_chat for item in chat_message.split(' '))
+                                    print(chat_message.split(' '))
+                                    print(cont)
+                                    if 'acadia' in chat_message.lower() and 'who' in chat_message.lower():
+                                        isKeywordAvl = False
+                                        isBreak = True
+                                        break
+                                    if word.lower() in chat_message.lower() and cont == True:
+                                        isKeywordAvl = True
+                                        isBreak = True
+                                        break
+                                    all_keywords_temp.append(word)
+        
+        return isKeywordAvl
+        

@@ -207,7 +207,8 @@ class History:
                     else:
                         with open(history_path, 'r+') as outfile:  
                             json.dump(json_data, outfile)
-            except:
+            except Exception as e:
+                print('Error : ' + str(e))
                 pass
             
             pass
