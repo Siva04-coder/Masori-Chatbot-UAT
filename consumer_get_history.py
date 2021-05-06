@@ -28,8 +28,8 @@ def check_buffer_time_to_clear(chats, uid):
             print('cur - max : ', cur_time, max_time)
             print('seconds: ', (cur_time - max_time).total_seconds())
             print('difference : ', diff)
-            print('chat_clear_buffer_min : ', chat_clear_buffer_min)
             chat_clear_buffer_min = int(config_details["chat_clear_buffer_min"])
+            print('chat_clear_buffer_min : ', chat_clear_buffer_min)
 
             if chat_clear_buffer_min < diff:
                 chats = {"uid": uid, "chats": []}
