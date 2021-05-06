@@ -491,7 +491,16 @@
                 "medical problem",
                 "medical problems",
                 "product issue",
-                "product issues"
+                "product issues",
+                "swelling legs",
+                "swelling leg",
+                "swelling",
+                "getting pain",
+                "feeling lost",
+                "Nausea",
+                "Confusion",
+                "Constipation",
+                "Changes normal walking"
             ],
             "responses": [
                 "Adverse Reaction"
