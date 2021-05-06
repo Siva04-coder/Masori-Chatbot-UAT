@@ -260,7 +260,7 @@ class History:
 
         cur_response = json_data["chats"][len(json_data["chats"]) - 1]
         seperate_response = ''
-        if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and "Hi, I am SAM, the Search Assistant Manager" not in cur_response:
+        if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and str(cur_response["message"]).find("How can I help you") == -1:
             #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
             seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
             seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
