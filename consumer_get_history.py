@@ -258,6 +258,16 @@ class History:
                 "uid": uid
             }
 
+        cur_response = json_data["chats"][len(json_data["chats"]) - 1]
+        seperate_response = ''
+        if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response:
+            #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+            seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
+            seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+            seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
+
+        json_data["chats"][len(json_data["chats"]) - 1]["seperate_response"] = seperate_response;
+
         if not os.path.exists(history_path):
             with open(history_path, 'w') as outfile:  
                 json.dump(json_data, outfile)
