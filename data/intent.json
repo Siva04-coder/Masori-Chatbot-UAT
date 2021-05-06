@@ -22,7 +22,30 @@
                 "parkinson's",
                 "parkinsons",
                 "challenges",
-                "pd related hallucinations and delusions"
+                "pd related hallucinations and delusions",
+                "pd related hallucinations delusions",
+                "pdp",
+                "Parkinson’s Disease Psychosis",
+                "Parkinson’s disease Hallucinations",
+                "Parkinson’s disease Delusions",
+                "Parkinson’s disease Hallucinations Delusions",
+                "Parkinson’s disease Hallucinations and Delusions",
+                "symptoms of pdp",
+                "signs of pdp",
+                "signs of pd",
+                "signs of Parkinson's disease",
+                "signs of Parkinson's disease Psychosis",
+                "cause of pdp",
+                "cause of pd",
+                "cause of Parkinson's disease",
+                "cause of Parkinson's disease Psychosis",
+                "Parkinson's condition",
+                "manage Parkinson's disease",
+                "manage pd",
+                "manage pdp",
+                "treatment Parkinson's disease",
+                "treatment pd",
+                "treatment pdp"
             ],
             "responses": [
                 "symptoms of Parkinson's disease"
@@ -63,7 +86,18 @@
                 "help NUPLAZID",
                 "clinical information",
                 "Dosing",
-                "interactions"
+                "interactions",
+                "effective nuplazid",
+                "dosing nuplazid",
+                "nuplazid safe patients cardiac",
+                "nuplazid safe patients cardiac troubles",
+                "nuplazid safe patients heart conditions",
+                "nuplazid safe patients Problems",
+                "nuplazid safe patients issues",
+                "nuplazid medicines",
+                "nuplazid medicine",
+                "current medications use nuplazid",
+                "current medications nuplazid"
             ],
             "responses": [
                 "About NUPLAZID efficiency"
@@ -142,7 +176,10 @@
                 "story",
                 "personal experiences",
                 "personal video",
-                "examples"
+                "examples",
+                "example videos",
+                "patient stories",
+                "testimonials"
             ],
             "responses": [
                 "Personal Stories"
@@ -283,7 +320,11 @@
                 "contact information",
                 "phone number",
                 "company address",
-                "company contact"
+                "company contact",
+                "telephone number call",
+                "telephone number",
+                "contact details",
+                "talk rep"
             ],
             "responses": [
                 "Contact Acadia CA"
@@ -314,7 +355,17 @@
                 "prescribe",
                 "prescription",
                 "prescription support",
-                "NUPLAZID prescription"
+                "NUPLAZID prescription",
+                "prescription nuplazid",
+                "dosage nuplazid",
+                "dosage administration",
+                "nuplazid tablet form",
+                "nuplazid capsule form",
+                "forms dosage",
+                "indication nuplazid",
+                "nuplazid food",
+                "nuplazid diet",
+                "nuplazid injection oral intake"
             ],
             "responses": [
                 "NUPLAZID prescribing information"
@@ -407,10 +458,40 @@
                 "cost detail",
                 "cost",
                 "much NUPLAZID Cost",
-                "much NUPLAZID"
+                "much NUPLAZID",
+                "cost nuplazid"
             ],
             "responses": [
                 "NUPLAZID cost"
+            ]
+        },
+        {
+            "Intent": "Adverse Reaction",
+            "patterns": [
+                "Adverse Reaction",
+                "Adverse Reactions",
+                "report Adverse Reaction",
+                "report issue",
+                "medical concern",
+                "urgent help",
+                "immediate help",
+                "urgent",
+                "getting pain taking nuplazid",
+                "swlling legs nuplazid intake",
+                "swlling leg nuplazid intake",
+                "feeling lost taking nuplazid",
+                "constipation nuplazid intake",
+                "reporting adverse reaction",
+                "reporting",
+                "issues",
+                "problem",
+                "concerns",
+                "death",
+                "medical problem",
+                "product issue"
+            ],
+            "responses": [
+                "Adverse Reaction"
             ]
         },
         {
@@ -427,7 +508,14 @@
                 "financial resources",
                 "financial resource",
                 "further assistance",
-                "Insurance"
+                "Insurance",
+                "nuplazid covered medicare",
+                "medicare insurance get coverage nuplazid",
+                "nuplazid covered medicaid",
+                "copay assistance",
+                "prescription support nuplazid",
+                "someone assist insurance",
+                "patient assistance program"
             ],
             "responses": [
                 "NUPLAZID coverage"
@@ -444,7 +532,13 @@
                 "support",
                 "financial resources",
                 "prescription support",
-                "insurance"
+                "insurance",
+                "community support",
+                "parkinson's patient support",
+                "organizations parkinson's patient support",
+                "more nuplazid",
+                "parkinson's support community",
+                "pdp support community"
             ],
             "responses": [
                 "Sign up"
@@ -481,7 +575,11 @@
             "patterns": [
                 "Patient Enrollment Form",
                 "NUPLAZID Enrollment Form",
-                "Enrollment form"
+                "Enrollment form",
+                "patient enrollment program",
+                "enroll patient",
+                "enroll",
+                "caregiver enroll patient"
             ],
             "responses": [
                 "Patient Enrollment Form"
