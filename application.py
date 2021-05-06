@@ -393,7 +393,7 @@ def consumerchatbot():
             seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
 
         IsLast = ""
-        if "Thank you! I'm so glad I could help" in cur_response:
+        if "I'm so glad I could help" in cur_response:
             IsLast = "true"
 
         response = {
