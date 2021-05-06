@@ -129,8 +129,12 @@ def feedback():
 
     history.check_update_history(uid, user_chat, cur_response, disp_t)
 
+    IsLast = ""
+    if "I'm so glad I could help" in cur_response:
+        IsLast = "true"
+
     response = {
-        "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
+        "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t, "is_last": IsLast}],
         "uid": uid
     }
 
