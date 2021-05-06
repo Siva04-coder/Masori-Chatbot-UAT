@@ -263,8 +263,7 @@ class response_finder:
                             wrd = word[:-1]
                             if word not in all_keywords_temp and wrd not in all_keywords_temp:
                                 cont = any(item.lower() in self.invalid_user_chat for item in chat_message.split(' '))
-                                print(chat_message.split(' '))
-                                print(cont)
+                                
                                 if 'acadia' in chat_message.lower() and 'who' in chat_message.lower():
                                     isKeywordAvl = False
                                     isBreak = True
@@ -279,8 +278,7 @@ class response_finder:
                             if word not in all_keywords_temp and wrd not in all_keywords_temp:
                                 if word != '':
                                     cont = any(item.lower() in self.invalid_user_chat for item in chat_message.split(' '))
-                                    print(chat_message.split(' '))
-                                    print(cont)
+                                    
                                     if 'acadia' in chat_message.lower() and 'who' in chat_message.lower():
                                         isKeywordAvl = False
                                         isBreak = True

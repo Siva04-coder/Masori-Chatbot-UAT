@@ -29,6 +29,7 @@ def check_buffer_time_to_clear(chats, uid):
             print('seconds: ', (cur_time - max_time).total_seconds())
             print('difference : ', diff)
             chat_clear_buffer_min = int(config_details["chat_clear_buffer_min"])
+
             print('chat_clear_buffer_min : ', chat_clear_buffer_min)
 
             if chat_clear_buffer_min < diff:
@@ -66,7 +67,7 @@ class History:
                     json_data = json.loads(json_data)
 
             json_data = check_buffer_time_to_clear(json_data, uid)
-
+            
             json_data_chats = json_data["chats"]
             cur_json = {
                 "message": cur_user_chat,
@@ -82,7 +83,7 @@ class History:
                 "display_time": disp_t
             }
             json_data_chats.append(cur_json)
-
+            
             if not os.path.exists(history_path):
                 with open(history_path, 'w') as outfile:  
                     json.dump(json_data, outfile)
