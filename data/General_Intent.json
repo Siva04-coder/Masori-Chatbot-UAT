@@ -12,7 +12,7 @@
                 "Good evening"
             ],
             "responses": [
-                "Hi my name is SAM. How can I help you today ?"
+                "Hi, I am SAM, the Search Assistant Manager. How can I help you today ?"
             ]
         },
         {
@@ -22,7 +22,7 @@
                 "what is your name"
             ],
             "responses": [
-                "My name is SAM, the Nuplazid Search Assistant Manager.I am here to help you."
+                "I am SAM, the Search Assistant Manager. How can I help you today ?."
             ]
         },
         {
@@ -87,7 +87,7 @@
                 "thankyou bye"
             ],
             "responses": [
-                "My pleasure! Can i help you with anything"
+                "Thank you, I'm so glad I could help."
             ]
         },
         {
