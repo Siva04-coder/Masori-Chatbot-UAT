@@ -408,8 +408,7 @@
                 "drug interactions",
                 "warnings",
                 "heart conditions",
-                "safety faqs",
-                "safety information"
+                "safety faqs"
             ],
             "responses": [
                 "Side Effects"
