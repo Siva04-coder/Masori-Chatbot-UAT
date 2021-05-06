@@ -477,18 +477,22 @@
                 "immediate help",
                 "urgent",
                 "getting pain taking nuplazid",
-                "swlling legs nuplazid intake",
-                "swlling leg nuplazid intake",
+                "swelling legs nuplazid intake",
+                "swelling leg nuplazid intake",
                 "feeling lost taking nuplazid",
                 "constipation nuplazid intake",
                 "reporting adverse reaction",
+                "reporting adverse reactions",
                 "reporting",
                 "issues",
                 "problem",
+                "problems",
                 "concerns",
                 "death",
                 "medical problem",
-                "product issue"
+                "medical problems",
+                "product issue",
+                "product issues"
             ],
             "responses": [
                 "Adverse Reaction"
