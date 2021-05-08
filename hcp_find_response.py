@@ -64,7 +64,7 @@ class response_finder:
                 isInvalid = self.validateUserinput(chat_message)
                 
                 if isInvalid == False:
-                    intent = consumer_predict.predict(chat_message)
+                    intent = predict.predict(chat_message)
                     
                     if len(intent) > 0:                
                         if isRecommend == True:
