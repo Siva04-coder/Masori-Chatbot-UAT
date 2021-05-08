@@ -65,8 +65,8 @@ def bow(sentence, words, show_details=False):
             if w.strip() == s.strip():
                 documents.append(w)
                 #print("Words",documents)
-                if show_details:
-                    print ("found in bag: %s" % w)
+                # if show_details:
+                #     print ("found in bag: %s" % w)
 
     
     return(documents)
@@ -85,14 +85,14 @@ def predict_bag(intent, output, show_details=False):
             #print('match', wrd, output)
         for i,w in enumerate(output):
             
-            print('Keyword', intent['Keywords'][ind].strip())
+            #print('Keyword', intent['Keywords'][ind].strip())
             # print('Keywords', wrd.strip())
             # if st.stem(w.strip()) == st.stem(wrd.strip()):
             #if w.strip() == wrd.strip():
             if w.strip() == intent['Keywords'][ind].strip():
-                print('user keys ', w.strip())
+                #print('user keys ', w.strip())
                 #if intent['Intents'][ind].replace("â€™", "'") not in prediction:
-                print('pred', intent['Intents'][ind].replace("â€™", "'"))
+                #print('pred', intent['Intents'][ind].replace("â€™", "'"))
                 prediction.append(intent['Intents'][ind].replace("â€™", "'"))
                     # if len(prediction) > 0:
                     #     return prediction
@@ -166,7 +166,7 @@ def predict(chat):
     input = []
     inputstr = ""
     processed_list = clean_up_sentence(chat)
-    print('processed_list', processed_list)
+    
     inputstr=' '.join(map(str, processed_list))
     input.append(inputstr)
     results = []
@@ -207,6 +207,6 @@ def getGeneralResponse(chat_msg):
         if is_break == True:
             break
 
-    print('General response', response)
+    
     
     return response

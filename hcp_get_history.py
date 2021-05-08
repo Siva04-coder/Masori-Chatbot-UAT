@@ -24,7 +24,6 @@ def check_buffer_time_to_clear(chats, uid):
             # cur_time = datetime.datetime.strptime(datetime.datetime.now(), "%d/%m/%y %H:%M:%S")
             cur_time = datetime.datetime.now()
             diff = (cur_time - max_time).total_seconds() / 60.0
-            print(diff)
             
             chat_clear_buffer_min = int(config_details["chat_clear_buffer_min"])
 
@@ -43,7 +42,7 @@ class History:
         return uid
 
     def check_update_history(self, uid, cur_user_chat, cur_bot_chat, disp_t):
-        print('disp_t', disp_t)
+        
         json_data = {
             "uid": uid,
             "chats": []
@@ -125,6 +124,91 @@ class History:
         
         return json_data
 
+    def check_update_bot_history(self, uid, cur_bot_chat, disp_t):
+        
+        json_data = {
+            "uid": uid,
+            "chats": []
+        }
+        isAvoid = False
+
+        try:
+            history_path = 'History/' + uid + '.json'
+
+            if os.path.exists(history_path):
+                with open(history_path) as outfile:
+                    json_data = outfile.read()
+                    json_data = json.loads(json_data)
+
+            json_data = check_buffer_time_to_clear(json_data, uid)
+
+            json_data_chats = json_data["chats"]
+            
+            for dat in json_data_chats:
+                if dat["message"] == cur_bot_chat:
+                    isAvoid = True
+
+            if isAvoid == False:
+                cur_json = {
+                    "message": cur_bot_chat,
+                    "who": "bot",
+                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
+                    "display_time": disp_t
+                }
+
+                json_data_chats.append(cur_json)
+
+                if not os.path.exists(history_path):
+                    with open(history_path, 'w') as outfile:  
+                        json.dump(json_data, outfile)
+                else:
+                    with open(history_path, 'r+') as outfile:  
+                        json.dump(json_data, outfile)
+            
+        except Exception as e:
+            try:
+                os.remove(history_path)
+            except:
+                pass
+            
+            try:
+                if os.path.exists(history_path):
+                    with open(history_path) as outfile:
+                        json_data = outfile.read()
+                        json_data = json.loads(json_data)
+
+                json_data = check_buffer_time_to_clear(json_data, uid)
+
+                json_data_chats = json_data["chats"]
+                
+                for dat in json_data_chats:
+                    if dat["message"] == cur_bot_chat:
+                        isAvoid = True
+                        
+                if isAvoid == False:
+                    cur_json = {
+                        "message": cur_bot_chat,
+                        "who": "bot",
+                        "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
+                        "display_time": disp_t
+                    }
+
+                    json_data_chats.append(cur_json)
+
+                    if not os.path.exists(history_path):
+                        with open(history_path, 'w') as outfile:  
+                            json.dump(json_data, outfile)
+                    else:
+                        with open(history_path, 'r+') as outfile:  
+                            json.dump(json_data, outfile)
+            except Exception as e:
+                print('Error : ' + str(e))
+                pass
+            
+            pass
+        
+        return isAvoid
+
     def get_history_alone(self, uid, finder, geneset, disp_t):
         history_path = 'History/' + uid + '.json'
         json_data = {
@@ -161,6 +245,17 @@ class History:
                 }],
                 "uid": uid
             }
+        
+        cur_response = json_data["chats"][len(json_data["chats"]) - 1]
+
+        seperate_response = ''
+        if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and str(cur_response["message"]).find("How can I help you") == -1:
+            #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+            seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
+            seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+            seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
+
+        json_data["chats"][len(json_data["chats"]) - 1]["seperate_response"] = seperate_response;
 
         if not os.path.exists(history_path):
             with open(history_path, 'w') as outfile:  
