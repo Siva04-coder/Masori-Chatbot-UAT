@@ -16,7 +16,7 @@ class response_generator:
             response = response + 'Thank you for your feedback. Everyday I am learning. I will answer your questions to the best of my ability.'
         except Exception as e:
             print('Error')
-            response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
+            response = "I am sorry can you rephrase your question?"
             print(str(e))
             self.logger.write_exception(str(e), 'get_welcome_message')
 
@@ -132,7 +132,7 @@ class response_generator:
 
         except Exception as e:
             print('Error')
-            response = "<p>I don't understand your question. Try asking the question in different way or ask me about something else.</p>"
+            response = "I am sorry can you rephrase your question?"
             print(str(e))
             self.logger.write_exception(str(e), 'generate_response')
 
