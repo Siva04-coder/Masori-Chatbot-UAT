@@ -97,10 +97,13 @@ class response_generator:
             
             # %% Visit Page Generation
             if json_obj['visit_page'] != '':
-                response = response + '<div class="chat-text-divider"></div>'
+                if response != '':
+                    response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<div class="chat-buttons-container"><div style="float:left;padding-top: 7px;">Here is a link that may help </div>'
-                response = response + '<div style="float:right"><button><a href="' + json_obj['visit_page'] 
-                response = response + '" target="_blank">Visit Page</a></button></div></div>'
+                response = response + '<div style="float:right"><button><a href="' + \
+                    json_obj['visit_page']
+                response = response + '" target="_blank">Click here</a></button></div></div>'
+                isMoreInfo = True
 
             # # %% Recommend Generation
             # if json_obj['recommend_intent'] != '':
