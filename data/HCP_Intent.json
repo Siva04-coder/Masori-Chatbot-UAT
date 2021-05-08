@@ -24,7 +24,13 @@
                 "Parkinsons",
                 "PD",
                 "psychosis",
-                "PD Psychosis"
+                "PD Psychosis",
+                "Parkinson’s Disease Psychosis",
+                "Hallucinations",
+                "Visual hallucinations",
+                "PD related Hallucinations and Delusions",
+                "Delusions of jealousy",
+                "Delusions jealousy"
             ],
             "responses": [
                 "About Parkinson's Disease Psychosis"
@@ -148,7 +154,11 @@
                 "NUPLAZID approved FDA",
                 "approved FDA",
                 "NUPLAZID approved",
-                "FDA approved"
+                "FDA approved",
+                "motor functions",
+                "motor function",
+                "Impact on motor functions",
+                "Impact motor functions"
             ],
             "responses": [
                 "NUPLAZID FDA-approved therapy"
@@ -267,7 +277,10 @@
         {
             "Intent": "Safety Information",
             "patterns": [
-                "Pimavanserin safety"
+                "Pimavanserin safety",
+                "Safety profile",
+                "Adverse reactions table",
+                "Long Term Safety"
             ],
             "responses": [
                 "Pimavanserin safety"
@@ -300,7 +313,13 @@
                 "withdrawal from NUPLAZID",
                 "Mechanism Of Action",
                 "About MOA",
-                "MOA"
+                "MOA",
+                "Serotonergic agent",
+                "Serotonergic",
+                "In Vitro",
+                "Vitro",
+                "Mechanism of action",
+                "Mechanism action"
             ],
             "responses": [
                 "About MOA"
@@ -327,7 +346,11 @@
                 "sprinkle dosing guide",
                 "recommended dosage",
                 "recommended daily dosage",
-                "daily dosage"
+                "daily dosage",
+                "Dosage forms",
+                "Tablet",
+                "Capsule",
+                "sprinkled"
             ],
             "responses": [
                 "Dosage Administration"
@@ -357,7 +380,10 @@
                 "patient care Offered",
                 "coverage financial assistance",
                 "Guidelines care coordinator",
-                "Acadia connect contact information"
+                "Acadia connect contact information",
+                "Formulary Lookup",
+                "Prior authorization",
+                "Treatment Forms"
             ],
             "responses": [
                 "NUPLAZID medication payment assistance"
@@ -368,6 +394,7 @@
             "patterns": [
                 "NUPLAZID bridge form",
                 "Acadia Connect",
+                "Connect Acadia",
                 "cost and insurance",
                 "forms",
                 "covering prescription costs",
@@ -424,7 +451,10 @@
                 "NUPLAZID sample",
                 "NUPLAZID samples",
                 "sample NUPLAZID",
-                "samples NUPLAZID"
+                "samples NUPLAZID",
+                "Samples",
+                "sample ordering",
+                "sample order"
             ],
             "responses": [
                 "Insurance Coverage"
@@ -489,6 +519,24 @@
             ]
         },
         {
+            "Intent": "Resources",
+            "patterns": [
+                "ICD-10 Codes",
+                "ICD-10 Code",
+                "ICD-10",
+                "Diagnostic codes",
+                "Diagnostic code",
+                "Dosing Guide",
+                "Pricing guide",
+                "Service request form",
+                "Brochure",
+                "Patient Video"
+            ],
+            "responses": [
+                "Resources"
+            ]
+        },
+        {
             "Intent": "Service Request Form",
             "patterns": [
                 "letter of appeal",
@@ -498,6 +546,22 @@
             ],
             "responses": [
                 "General information about authorization"
+            ]
+        },
+        {
+            "Intent": "Medical Questions",
+            "patterns": [
+                "Reporting Adverse reactions",
+                "Reporting",
+                "Issues",
+                "Problem",
+                "Concerns",
+                "Death",
+                "Medical problem",
+                "Product issue"
+            ],
+            "responses": [
+                "Medical Questions"
             ]
         },
         {
