@@ -176,6 +176,7 @@
                 "story",
                 "personal experiences",
                 "personal video",
+                "personal videos",
                 "examples",
                 "example videos",
                 "patient stories",
@@ -196,7 +197,14 @@
                 "speak with",
                 "guide",
                 "ddg",
-                "information"
+                "information",
+                "questions doctor",
+                "symptoms get worse over time",
+                "symptoms worse over time",
+                "information pd related hallucination",
+                "information pd related hallucinations",
+                "information pd related delusion",
+                "information pd related delusions"
             ],
             "responses": [
                 "Necessity to Consult healthcare provider"
@@ -324,7 +332,13 @@
                 "telephone number call",
                 "telephone number",
                 "contact details",
-                "talk rep"
+                "talk rep",
+                "Contact Acadia",
+                "acadia's address",
+                "phone number acadia connect",
+                "number acadia connect",
+                "phone number contact acadia",
+                "number contact acadia"
             ],
             "responses": [
                 "Contact Acadia CA"
@@ -354,7 +368,6 @@
                 "Prescribing Information",
                 "prescribe",
                 "prescription",
-                "prescription support",
                 "NUPLAZID prescription",
                 "prescription nuplazid",
                 "dosage nuplazid",
@@ -365,7 +378,17 @@
                 "indication nuplazid",
                 "nuplazid food",
                 "nuplazid diet",
-                "nuplazid injection oral intake"
+                "nuplazid injection oral intake",
+                "contraindications nuplazid",
+                "contraindication nuplazid",
+                "contraindications",
+                "contraindication",
+                "box warning",
+                "full Prescribing Information",
+                "drug interactions",
+                "indication usage",
+                "Warnings Precautions",
+                "Warning Precaution"
             ],
             "responses": [
                 "NUPLAZID prescribing information"
@@ -405,13 +428,34 @@
                 "NUPLAZID Side effects",
                 "NUPLAZID Side effect",
                 "common side effects",
-                "drug interactions",
                 "warnings",
                 "heart conditions",
                 "safety faqs"
             ],
             "responses": [
                 "Side Effects"
+            ]
+        },
+        {
+            "Intent": "Medical Questions",
+            "patterns": [
+                "Reporting Adverse reactions",
+                "Reporting",
+                "Issues",
+                "Issue",
+                "Problem",
+                "Concerns",
+                "Concern",
+                "Death",
+                "Medical problem",
+                "Medical problems",
+                "Product issue",
+                "Product issues",
+                "Product concern",
+                "Product concerns"
+            ],
+            "responses": [
+                "Medical Questions"
             ]
         },
         {
@@ -515,19 +559,19 @@
                 "Insurance coverage",
                 "Insurance plans",
                 "Insurance plan",
+                "Insurance",
+                "Insurance coverage information",
                 "financial assistance",
                 "Assistance",
-                "financial resources",
-                "financial resource",
                 "further assistance",
-                "Insurance",
                 "nuplazid covered medicare",
                 "medicare insurance get coverage nuplazid",
                 "nuplazid covered medicaid",
                 "copay assistance",
                 "prescription support nuplazid",
                 "someone assist insurance",
-                "patient assistance program"
+                "patient assistance program",
+                "patient assistance"
             ],
             "responses": [
                 "NUPLAZID coverage"
@@ -576,6 +620,10 @@
                 "resources",
                 "resource",
                 "fact sheet",
+                "factsheet",
+                "materials printout",
+                "materials print out",
+                "materials print",
                 "tv commerical"
             ],
             "responses": [
