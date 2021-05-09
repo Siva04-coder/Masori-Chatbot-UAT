@@ -275,6 +275,10 @@ class response_finder:
                                     isKeywordAvl = True
                                     isBreak = True
                                     break
+                                if 'acadia' in chat_message.lower() and 'how' in chat_message.lower():
+                                    isKeywordAvl = True
+                                    isBreak = True
+                                    break
                                 all_keywords_temp.append(word)
                         else:
                             wrd = word + 's'
@@ -290,6 +294,10 @@ class response_finder:
                                         isKeywordAvl = True
                                         isBreak = True
                                         break
+                                    if 'acadia' in chat_message.lower() and 'how' in chat_message.lower():
+                                    isKeywordAvl = True
+                                    isBreak = True
+                                    break
                                     all_keywords_temp.append(word)
         
         return isKeywordAvl
