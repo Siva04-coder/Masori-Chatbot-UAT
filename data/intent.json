@@ -118,6 +118,24 @@
             ]
         },
         {
+            "Intent": "About NUPLAZID",
+            "patterns": [
+                "frequently asked questions",
+                "frequently asked question",
+                "frequent asked question",
+                "frequent asked questions",
+                "answers",
+                "answer",
+                "questions",
+                "question",
+                "faqs",
+                "faq"
+            ],
+            "responses": [
+                "FAQ"
+            ]
+        },
+        {
             "Intent": "NUPLAZID Clinical Trial",
             "patterns": [
                 "NUPLAZID Parkinson",
@@ -428,8 +446,6 @@
                 "NUPLAZID Side effects",
                 "NUPLAZID Side effect",
                 "common side effects",
-                "warnings",
-                "heart conditions",
                 "safety faqs"
             ],
             "responses": [
@@ -484,7 +500,13 @@
                 "NUPLAZID use approved Dementia",
                 "Dementia approved NUPLAZID",
                 "NUPLAZID approve Dementia",
-                "Dementia approve NUPLAZID"
+                "Dementia approve NUPLAZID",
+                "heart conditions",
+                "heart condition",
+                "warnings",
+                "warning",
+                "safety FAQ",
+                "safety FAQs"
             ],
             "responses": [
                 "Safety Information"

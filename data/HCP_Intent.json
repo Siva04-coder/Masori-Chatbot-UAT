@@ -158,7 +158,9 @@
                 "motor functions",
                 "motor function",
                 "Impact on motor functions",
-                "Impact motor functions"
+                "Impact motor functions",
+                "Impact on nonmotor functions",
+                "Impact nonmotor functions"
             ],
             "responses": [
                 "NUPLAZID FDA-approved therapy"
@@ -175,8 +177,6 @@
                 "NUPLAZID warning and precautions",
                 "warnings",
                 "warning",
-                "precaution",
-                "precautions",
                 "QT Interval",
                 "QT Interval Prolongation",
                 "QT Interval Prolongations",
@@ -275,13 +275,30 @@
             ]
         },
         {
+            "Intent": "Medical Information",
+            "patterns": [
+                "common adverse reactions",
+                "common adverse reaction",
+                "Adverse reaction",
+                "Adverse reactions",
+                "Adverse",
+                "Common Adverse"
+            ],
+            "responses": [
+                "Medical Information"
+            ]
+        },
+        {
             "Intent": "Safety Information",
             "patterns": [
                 "Pimavanserin safety",
                 "Safety profile",
                 "Adverse reactions table",
                 "Adverse reaction table",
-                "Long Term Safety"
+                "Long Term Safety",
+                "box warning",
+                "precautions",
+                "precaution"
             ],
             "responses": [
                 "Pimavanserin safety"
@@ -352,7 +369,13 @@
                 "Dosage forms",
                 "Tablet",
                 "Capsule",
-                "sprinkled"
+                "sprinkled",
+                "nuplazid food",
+                "adjust dosing",
+                "steady state plasma concentration",
+                "steady state plasma",
+                "steady state",
+                "sprinkle food"
             ],
             "responses": [
                 "Dosage Administration"
@@ -523,7 +546,9 @@
                 "Pricing guide",
                 "Service request form",
                 "Brochure",
-                "Patient Video"
+                "Patient Video",
+                "education materials patients",
+                "some resources"
             ],
             "responses": [
                 "Resources"
@@ -547,11 +572,21 @@
                 "Reporting Adverse reactions",
                 "Reporting",
                 "Issues",
+                "Issue",
                 "Problem",
                 "Concerns",
+                "Concern",
                 "Death",
                 "Medical problem",
-                "Product issue"
+                "Medical problems",
+                "Product issue",
+                "Product issues",
+                "report adverse reaction",
+                "report adverse reactions",
+                "report issue",
+                "report issues",
+                "someone medical concern",
+                "someone about medical concern"
             ],
             "responses": [
                 "Medical Questions"
@@ -581,7 +616,11 @@
                 "Acadiaconnect details",
                 "Acadia",
                 "Acadia Connect",
-                "Connect Acadia"
+                "Connect Acadia",
+                "care coordinator",
+                "someone enroll acadia connect",
+                "enroll acadia connect",
+                "acadia connect"
             ],
             "responses": [
                 "Acadiaconnect details"
