@@ -382,10 +382,7 @@
                 "patient care Offered",
                 "coverage financial assistance",
                 "Guidelines care coordinator",
-                "Acadia connect contact information",
-                "Formulary Lookup",
-                "Prior authorization",
-                "Treatment Forms"
+                "Acadia connect contact information"
             ],
             "responses": [
                 "NUPLAZID medication payment assistance"
@@ -395,7 +392,6 @@
             "Intent": "Cost Information",
             "patterns": [
                 "NUPLAZID bridge form",
-                "Acadia Connect",
                 "Connect Acadia",
                 "cost and insurance",
                 "forms",
@@ -523,11 +519,6 @@
         {
             "Intent": "Resources",
             "patterns": [
-                "ICD-10 Codes",
-                "ICD-10 Code",
-                "ICD-10",
-                "Diagnostic codes",
-                "Diagnostic code",
                 "Dosing Guide",
                 "Pricing guide",
                 "Service request form",
@@ -584,14 +575,13 @@
         {
             "Intent": "Acadia Connect Representative Contact Details",
             "patterns": [
-                "NUPLAZID copay assistance",
-                "NUPLAZID contact number",
-                "NUPLAZID ASSISTANCE",
-                "Contact Information",
-                "Contact number",
-                "Contact details",
-                "About ACADIA",
-                "Acadiaconnect details"
+                "Formulary Lookup",
+                "Prior authorization",
+                "Treatment Forms",
+                "Acadiaconnect details",
+                "Acadia",
+                "Acadia Connect",
+                "Connect Acadia"
             ],
             "responses": [
                 "Acadiaconnect details"
