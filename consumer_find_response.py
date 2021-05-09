@@ -272,7 +272,7 @@ class response_finder:
                                     isKeywordAvl = True
                                     isBreak = True
                                     break
-                                if 'acadia' in chat_message.lower() and 'how' in chat_message.lower():
+                                if 'how acadia' in chat_message.lower() and 'how is acadia' in chat_message.lower():
                                     isKeywordAvl = True
                                     isBreak = True
                                     break
@@ -291,7 +291,7 @@ class response_finder:
                                         isKeywordAvl = True
                                         isBreak = True
                                         break
-                                    if 'acadia' in chat_message.lower() and 'how' in chat_message.lower():
+                                    if 'how acadia' in chat_message.lower() and 'how is acadia' in chat_message.lower():
                                         isKeywordAvl = True
                                         isBreak = True
                                         break
