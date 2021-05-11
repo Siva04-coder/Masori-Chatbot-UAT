@@ -356,7 +356,12 @@
                 "phone number acadia connect",
                 "number acadia connect",
                 "phone number contact acadia",
-                "number contact acadia"
+                "number contact acadia",
+                "talk agent",
+                "agent",
+                "help",
+                "care coordinator",
+                "assistant"
             ],
             "responses": [
                 "Contact Acadia CA"
@@ -368,7 +373,6 @@
                 "Acadia Connect",
                 "about Acadia Pharmaceuticals",
                 "about Acadia Pharmaceutical",
-                "additional information",
                 "Contact Acadia",
                 "Connect Acadia",
                 "acadia"
@@ -607,7 +611,6 @@
                 "help signup",
                 "help sign up",
                 "more information",
-                "support",
                 "financial resources",
                 "prescription support",
                 "insurance",
@@ -630,7 +633,11 @@
                 "Support",
                 "care cordinator",
                 "use NUPLAZID",
-                "NUPLAZID usage"
+                "NUPLAZID usage",
+                "additional information",
+                "additional info",
+                "reference doc",
+                "reference document"
             ],
             "responses": [
                 "Support"
@@ -646,7 +653,8 @@
                 "materials printout",
                 "materials print out",
                 "materials print",
-                "tv commerical"
+                "tv commerical",
+                "support"
             ],
             "responses": [
                 "Resources"

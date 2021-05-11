@@ -426,6 +426,19 @@
             ]
         },
         {
+            "Intent": "Contact",
+            "patterns": [
+                "talk agent",
+                "help",
+                "care coordinator",
+                "assistant",
+                "contact"
+            ],
+            "responses": [
+                "Contact"
+            ]
+        },
+        {
             "Intent": "Coverage high level information and links",
             "patterns": [
                 "NUPLAZID patient assistance",
@@ -548,7 +561,12 @@
                 "Brochure",
                 "Patient Video",
                 "education materials patients",
-                "some resources"
+                "some resources",
+                "support",
+                "additional information",
+                "additional info",
+                "reference document",
+                "reference doc"
             ],
             "responses": [
                 "Resources"
@@ -617,7 +635,6 @@
                 "Acadia",
                 "Acadia Connect",
                 "Connect Acadia",
-                "care coordinator",
                 "someone enroll acadia connect",
                 "enroll acadia connect",
                 "acadia connect"
