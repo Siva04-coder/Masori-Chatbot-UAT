@@ -361,7 +361,9 @@
                 "agent",
                 "help",
                 "care coordinator",
-                "assistant"
+                "assistant",
+                "assistance",
+                "assist me"
             ],
             "responses": [
                 "Contact Acadia CA"
