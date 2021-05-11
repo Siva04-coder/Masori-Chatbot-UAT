@@ -636,8 +636,14 @@
                 "NUPLAZID usage",
                 "additional information",
                 "additional info",
+                "share information",
+                "share info",
+                "share additional info",
+                "share additional information",
                 "reference doc",
-                "reference document"
+                "reference document",
+                "refer doc",
+                "refer document"
             ],
             "responses": [
                 "Support"

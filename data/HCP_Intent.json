@@ -432,6 +432,7 @@
                 "help",
                 "care coordinator",
                 "assistant",
+                "assist me",
                 "contact"
             ],
             "responses": [
@@ -565,8 +566,14 @@
                 "support",
                 "additional information",
                 "additional info",
+                "share information",
+                "share info",
+                "share additional info",
+                "share additional information",
                 "reference document",
-                "reference doc"
+                "reference doc",
+                "refer doc",
+                "refer document"
             ],
             "responses": [
                 "Resources"
