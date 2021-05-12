@@ -15,6 +15,8 @@
                 "signs of Parkinson's",
                 "motor symptoms",
                 "nonmotor symptoms",
+                "potential cause",
+                "potential causes",
                 "symptom & potential cause",
                 "symptoms & potential causes",
                 "symptoms",
@@ -180,6 +182,7 @@
             "Intent": "Talking to your healthcare provider",
             "patterns": [
                 "Doctor discussion guide",
+                "discussion guide",
                 "healthcare Discussion"
             ],
             "responses": [
