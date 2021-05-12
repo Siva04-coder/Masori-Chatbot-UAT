@@ -17,7 +17,7 @@ class response_generator:
             response = response + 'Thank you for your feedback. Everyday I am learning. I will answer your questions to the best of my ability.'
         except Exception as e:
             print('Error')
-            response = "<p>I am sorry can you rephrase your question?</p>"
+            response = "<p>I am sorry, can you rephrase your question?</p>"
             print(str(e))
             self.logger.write_exception(str(e), 'get_welcome_message')
 
@@ -141,7 +141,7 @@ class response_generator:
 
             
             if response == '':
-                response = "<p>I am sorry can you rephrase your question?</p>"
+                response = "<p>I am sorry, can you rephrase your question?</p>"
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
             # else:
@@ -153,7 +153,7 @@ class response_generator:
 
         except Exception as e:
             print('Error')
-            response = "<p>I am sorry can you rephrase your question?</p>"
+            response = "<p>I am sorry, can you rephrase your question?</p>"
             print(str(e))
             self.logger.write_exception(str(e), 'get_welcome_message')
 

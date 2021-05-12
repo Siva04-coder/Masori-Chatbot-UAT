@@ -158,7 +158,7 @@ class response_finder:
                 response = consumer_predict.getGeneralResponse(chat_message)
                 # print('response', response)
                 if str(response).strip() == '':
-                    response = "I am sorry can you rephrase your question?"
+                    response = "I am sorry, can you rephrase your question?"
                 res_json = {
                     "output_text": response,
                     "bullet": '',
