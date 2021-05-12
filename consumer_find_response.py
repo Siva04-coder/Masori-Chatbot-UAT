@@ -186,39 +186,39 @@ class response_finder:
         with open("./data/All_Consumer_Keywords.json") as json_data:
             multi_keywords = json.load(json_data)
                 
-        lots_of_stopwords = []
-        stopword_file = open("./data/long_stopwords.txt", "r")
+        # lots_of_stopwords = []
+        # stopword_file = open("./data/long_stopwords.txt", "r")
         
-        with open("./data/intent.json") as json_data:
-            all_intents = json.load(json_data)
+        # with open("./data/intent.json") as json_data:
+        #     all_intents = json.load(json_data)
                 
-        for line in stopword_file.readlines():
-            lots_of_stopwords.append(str(line.strip()))
+        # for line in stopword_file.readlines():
+        #     lots_of_stopwords.append(str(line.strip()))
 
         all_keywords = []
 
         for muliti in multi_keywords['keywords']:
             all_keywords.append(muliti)
 
-        for intent in all_intents['data']:
+        # for intent in all_intents['data']:
             
-            for pattern in intent['patterns']:
-                words = []
-                pattern = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',pattern)
-                w = pattern.split(' ')
-                #w = [(_w.lower()) for _w in w if _w.lower() not in lots_of_stopwords]
-                for word in w:
-                    wrd = ''
-                    if word.lower() not in lots_of_stopwords:
-                        if word.endswith('s'):
-                            wrd = word[:-1]
-                            if word not in all_keywords and wrd not in all_keywords:
-                                all_keywords.append(word)
-                        else:
-                            wrd = word + 's'
-                            if word not in all_keywords and wrd not in all_keywords:
-                                if word != '':
-                                    all_keywords.append(word)
+        #     for pattern in intent['patterns']:
+        #         words = []
+        #         pattern = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',pattern)
+        #         w = pattern.split(' ')
+        #         #w = [(_w.lower()) for _w in w if _w.lower() not in lots_of_stopwords]
+        #         for word in w:
+        #             wrd = ''
+        #             if word.lower() not in lots_of_stopwords:
+        #                 if word.endswith('s'):
+        #                     wrd = word[:-1]
+        #                     if word not in all_keywords and wrd not in all_keywords:
+        #                         all_keywords.append(word)
+        #                 else:
+        #                     wrd = word + 's'
+        #                     if word not in all_keywords and wrd not in all_keywords:
+        #                         if word != '':
+        #                             all_keywords.append(word)
 
         return json.dumps(all_keywords)
 

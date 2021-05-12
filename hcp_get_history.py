@@ -24,7 +24,7 @@ def check_buffer_time_to_clear(chats, uid):
             # cur_time = datetime.datetime.strptime(datetime.datetime.now(), "%d/%m/%y %H:%M:%S")
             cur_time = datetime.datetime.now()
             diff = (cur_time - max_time).total_seconds() / 60.0
-            print('difference', diff)
+            
             chat_clear_buffer_min = int(config_details["chat_clear_buffer_min"])
 
             if chat_clear_buffer_min < diff:
