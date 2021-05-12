@@ -18,13 +18,13 @@ def check_buffer_time_to_clear(chats, uid):
         if len(chat_his) > 0:
             for chat_h in chat_his:
                 time_his.append(chat_h["time"])
-        
+            
             max_time = max(time_his)
             max_time = datetime.datetime.strptime(max_time, chat_msg_time_format)
             # cur_time = datetime.datetime.strptime(datetime.datetime.now(), "%d/%m/%y %H:%M:%S")
             cur_time = datetime.datetime.now()
             diff = (cur_time - max_time).total_seconds() / 60.0
-            
+            print('difference', diff)
             chat_clear_buffer_min = int(config_details["chat_clear_buffer_min"])
 
             if chat_clear_buffer_min < diff:
@@ -57,7 +57,9 @@ class History:
                     json_data = outfile.read()
                     json_data = json.loads(json_data)
 
+            
             json_data = check_buffer_time_to_clear(json_data, uid)
+            
 
             json_data_chats = json_data["chats"]
             cur_json = {
@@ -227,11 +229,12 @@ class History:
                 "chats": []
             }   
             pass
-
+        
+        
         json_data = check_buffer_time_to_clear(json_data, uid)
+        
 
         if len(json_data["chats"]) <= 0:
-            print('inside')
             res_json = finder.get_welcome_message()
 
             welcome_response = geneset.generate_response(res_json)
