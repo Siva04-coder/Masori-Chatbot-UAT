@@ -55,8 +55,10 @@ class Config:
             config.read(self.configFilePath)
 
             chat_timeout_sec = str(config.get('UIConfigs', 'chat_timeout_sec'))
+            chat_anythingelse_sec = str(config.get('UIConfigs', 'chat_anythingelse_sec'))
 
             self.cfgDict.update({'chat_timeout_sec': chat_timeout_sec})
+            self.cfgDict.update({'chat_anythingelse_sec': chat_anythingelse_sec})
             
         except Exception as e:
             pass
