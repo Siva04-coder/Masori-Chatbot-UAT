@@ -419,7 +419,8 @@
                 "cost and insurance",
                 "forms",
                 "covering prescription costs",
-                "enrolled eligibility"
+                "enrolled eligibility",
+                "cost"
             ],
             "responses": [
                 "cost and insurance"
@@ -444,7 +445,9 @@
             "Intent": "Coverage high level information and links",
             "patterns": [
                 "NUPLAZID patient assistance",
+                "treatment",
                 "Treatment form",
+                "Treatment forms",
                 "patient treatment form",
                 "free supply",
                 "get NUPLAZID"
@@ -638,7 +641,6 @@
             "patterns": [
                 "Formulary Lookup",
                 "Prior authorization",
-                "Treatment Forms",
                 "Acadiaconnect details",
                 "Acadia",
                 "Acadia Connect",
