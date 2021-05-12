@@ -110,6 +110,8 @@
                 "Warning Blackbox",
                 "Warnings Blackbox",
                 "Blackbox",
+                "Discussion guide",
+                "Discussion guides",
                 "Fact sheets & Discussion guide",
                 "Fact sheets & Discussion guides",
                 "Fact sheet",
@@ -129,6 +131,7 @@
                 "download Factsheets",
                 "Factsheet download",
                 "Fact sheet download",
+                "Distance education fact",
                 "Distance education fact sheet",
                 "Distance education factsheet",
                 "Distance education fact sheets",
@@ -146,6 +149,7 @@
             "Intent": "Efficacy Story",
             "patterns": [
                 "NUPLAZID patient information",
+                "patient information",
                 "NUPLAZID patient informations",
                 "FDA NUPLAZID",
                 "NUPLAZID pharmacology",
@@ -157,6 +161,8 @@
                 "FDA approved",
                 "motor functions",
                 "motor function",
+                "nonmotor functions",
+                "nonmotor function",
                 "Impact on motor functions",
                 "Impact motor functions",
                 "Impact on nonmotor functions",
@@ -400,12 +406,15 @@
                 "NUPLAZID financial assistance coverage",
                 "NUPLAZID discount card",
                 "longtermcareaccess",
+                "long term care access",
                 "NUPLAZID foundation assistance",
                 "NUPLAZID medication payment assistance",
                 "patient care Offered",
                 "coverage financial assistance",
                 "Guidelines care coordinator",
-                "Acadia connect contact information"
+                "Guidelines",
+                "Acadia connect contact information",
+                "Guidelines"
             ],
             "responses": [
                 "NUPLAZID medication payment assistance"
@@ -643,6 +652,7 @@
                 "Prior authorization",
                 "Acadiaconnect details",
                 "Acadia",
+                "Acadiaconnect",
                 "Acadia Connect",
                 "Connect Acadia",
                 "someone enroll acadia connect",
