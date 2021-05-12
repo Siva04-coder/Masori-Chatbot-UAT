@@ -94,7 +94,8 @@ def getConfigs():
     config_details = cfg.get_ui_configs()
     
     configs = {
-        "chat_timeout_sec": config_details["chat_timeout_sec"]
+        "chat_timeout_sec": config_details["chat_timeout_sec"],
+        "chat_anythingelse_sec": config_details["chat_anythingelse_sec"]
     }
 
     return configs
@@ -158,6 +159,42 @@ def timeouthit():
     
     cur_response = ''
     cur_response = cur_response + "<p>Hi, I am SAM, the Search Assistant Manager. How can I help you today?</p>"
+    # cur_response = cur_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+    # cur_response = cur_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
+    #cur_response = consumer_geneset.feedback_generator(feedback)
+
+    isAvoid = history.check_update_bot_history(uid, cur_response, disp_t)
+    response = ''
+
+    if isAvoid == False:
+        response = {
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t}],
+            "uid": uid
+        }
+
+    return response
+
+@application.route('/lookingfor', methods=['GET', 'POST'])
+def lookingfor():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return unauthorized_msg
+    except Exception as d:
+        return unauthorized_msg
+        pass
+
+    history = consumer_get_history.History()
+    disp_t = request.form.get('disp_t')
+    uid = request.args['uid']
+    
+    cur_response = ''
+    cur_response = cur_response + '<p>Is there anything else you are looking for?</p>'
+    cur_response = cur_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+    cur_response = cur_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'
+    # cur_response = cur_response + "<p>Hi, I am SAM, the Search Assistant Manager. How can I help you today?</p>"
     # cur_response = cur_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
     # cur_response = cur_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button></div>'
     #cur_response = consumer_geneset.feedback_generator(feedback)
