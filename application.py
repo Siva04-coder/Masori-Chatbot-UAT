@@ -269,12 +269,12 @@ def hcpchatbot():
         history.check_update_history(uid, user_chat, cur_response, disp_t)
         
         seperate_response = ""
-        if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and 'is_general": false' in res_json:
-            #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
-            print(res_json)
-            seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
-            seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
-            seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
+        #if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and 'is_general": false' in res_json:
+        #    #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+        #    print(res_json)
+        #    seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
+        #    seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+        #    seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
 
         IsLast = ""
         if "I'm so glad I could help" in cur_response:
