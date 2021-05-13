@@ -68,7 +68,7 @@ class response_generator:
             if json_obj['video_url'] != '':
                 response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<div class="chat-buttons-container"><button><a href="' + json_obj['video_url'] 
-                response = response + '" target="_blank">Watch Video</a></button></div>'
+                response = response + '" >Watch Video</a></button></div>'
             # %% Hyperlink Generation
             
             if json_obj['hyperlink_text'] != '' and json_obj['hyperlink_url'] != '':
@@ -86,13 +86,13 @@ class response_generator:
                         except Exception as e:
                             pass
                         
-                        response = response + '<li><a href="' + hyperlink + '" target="_blank">' 
+                        response = response + '<li><a href="' + hyperlink + '" >' 
                         response = response + txt + '</a></li>'
 
                         cnt = cnt + 1
                     response = response + '</ul>'
                 else:
-                    response = response + '<a href="' + json_obj['hyperlink_url'] + '" target="_blank">' 
+                    response = response + '<a href="' + json_obj['hyperlink_url'] + '" >' 
                     response = response + json_obj['hyperlink_text'] + '</a>'
             # %% Image Generation
             
@@ -103,7 +103,7 @@ class response_generator:
                 response = response + '<div class="chat-buttons-container"><div style="float:left;padding-top: 7px;">Here is a link that may help </div>'
                 response = response + '<div style="float:right"><button><a href="' + \
                     json_obj['visit_page']
-                response = response + '" target="_blank">Click here</a></button></div></div>'
+                response = response + '" >Click here</a></button></div></div>'
                 isMoreInfo = True
 
             # # %% Recommend Generation
@@ -131,8 +131,6 @@ class response_generator:
 
             if response == '':
                 response = "<p>I am sorry, can you rephrase your question?</p>"
-                response = response + '<div class="chat-text-divider"></div>'
-                response = response + '<a href="https://nuplazid-masori.azurewebsites.net/frequently-asked-questions" target="_blank">Click here to see FAQ</a>'
 
         except Exception as e:
             print('Error')
