@@ -155,23 +155,23 @@ class History:
                 if dat["message"] == cur_bot_chat:
                     isAvoid = True
 
-            if isAvoid == False:
-                cur_json = {
-                    "message": cur_bot_chat,
-                    "who": "bot",
-                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
-                    "display_time": disp_t
-                }
+            #if isAvoid == False:
+            cur_json = {
+                "message": cur_bot_chat,
+                "who": "bot",
+                "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
+                "display_time": disp_t
+            }
 
-                json_data_chats.append(cur_json)
+            json_data_chats.append(cur_json)
 
-                if not os.path.exists(history_path):
-                    with open(history_path, 'w') as outfile:  
-                        json.dump(json_data, outfile)
-                else:
-                    with open(history_path, 'r+') as outfile:  
-                        json.dump(json_data, outfile)
-            
+            if not os.path.exists(history_path):
+                with open(history_path, 'w') as outfile:  
+                    json.dump(json_data, outfile)
+            else:
+                with open(history_path, 'r+') as outfile:  
+                    json.dump(json_data, outfile)
+        
         except Exception as e:
             try:
                 os.remove(history_path)
@@ -192,22 +192,23 @@ class History:
                     if dat["message"] == cur_bot_chat:
                         isAvoid = True
                         
-                if isAvoid == False:
-                    cur_json = {
-                        "message": cur_bot_chat,
-                        "who": "bot",
-                        "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
-                        "display_time": disp_t
-                    }
+                #if isAvoid == False:
+                cur_json = {
+                    "message": cur_bot_chat,
+                    "who": "bot",
+                    "time": str(datetime.datetime.now().strftime(chat_msg_time_format)),
+                    "display_time": disp_t
+                }
 
-                    json_data_chats.append(cur_json)
+                json_data_chats.append(cur_json)
 
-                    if not os.path.exists(history_path):
-                        with open(history_path, 'w') as outfile:  
-                            json.dump(json_data, outfile)
-                    else:
-                        with open(history_path, 'r+') as outfile:  
-                            json.dump(json_data, outfile)
+                if not os.path.exists(history_path):
+                    with open(history_path, 'w') as outfile:  
+                        json.dump(json_data, outfile)
+                else:
+                    with open(history_path, 'r+') as outfile:  
+                        json.dump(json_data, outfile)
+                        
             except Exception as e:
                 print('Error : ' + str(e))
                 pass
