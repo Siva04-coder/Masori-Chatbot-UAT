@@ -247,6 +247,9 @@ def hcpchatbot():
         return unauthorized_msg
         pass
 
+    domain = request.url.split('/')[0] + request.url.split('/')[1] + '//' + request.url.split('/')[2] + '/'
+    print(domain)
+    
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
@@ -282,7 +285,8 @@ def hcpchatbot():
 
         response = {
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t, "seperate_response": seperate_response, "is_last": IsLast}],
-            "uid": uid
+            "uid": uid,
+            "domain": domain
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'hcpchatbot')
