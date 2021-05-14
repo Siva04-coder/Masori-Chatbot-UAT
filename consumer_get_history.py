@@ -208,7 +208,7 @@ class History:
                 else:
                     with open(history_path, 'r+') as outfile:  
                         json.dump(json_data, outfile)
-                        
+
             except Exception as e:
                 print('Error : ' + str(e))
                 pass
@@ -257,11 +257,11 @@ class History:
         cur_response = json_data["chats"][len(json_data["chats"]) - 1]
 
         seperate_response = ''
-        # if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and str(cur_response["message"]).find("How can I help you") == -1:
-        #     #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
-        #     seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
-        #     seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
-        #     seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
+        if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and str(cur_response["message"]).find("How can I help you") == -1:
+            #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+            seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
+            seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+            seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
 
         json_data["chats"][len(json_data["chats"]) - 1]["seperate_response"] = seperate_response;
 
