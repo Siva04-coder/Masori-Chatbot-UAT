@@ -22,7 +22,7 @@ class response_generator:
 
         return response
 
-    def generate_response(self, json_data):
+    def generate_response(self, json_data, UIProtocolHostName):
         response = ''
 
         try:
@@ -97,14 +97,14 @@ class response_generator:
             # %% Image Generation
             
             # %% Visit Page Generation
-            if json_obj['visit_page'] != '':
-                if response != '':
-                    response = response + '<div class="chat-text-divider"></div>'
-                response = response + '<div class="chat-buttons-container"><div style="float:left;padding-top: 7px;">Here is a link that may help </div>'
-                response = response + '<div style="float:right"><button><a href="' + \
-                    json_obj['visit_page']
-                response = response + '" >Click here</a></button></div></div>'
-                isMoreInfo = True
+            #if json_obj['visit_page'] != '':
+            if response != '':
+                response = response + '<div class="chat-text-divider"></div>'
+            response = response + '<div class="chat-buttons-container"><div style="float:left;padding-top: 7px;">Here is a link that may help </div>'
+            response = response + '<div style="float:right"><button><a href="' + \
+                UIProtocolHostName + json_obj['visit_page']
+            response = response + '" >Click here</a></button></div></div>'
+            isMoreInfo = True
 
             # # %% Recommend Generation
             # if json_obj['recommend_intent'] != '':
