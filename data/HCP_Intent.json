@@ -607,6 +607,7 @@
             "Intent": "Medical Questions",
             "patterns": [
                 "Reporting Adverse reactions",
+                "Reporting Adverse reaction",
                 "Reporting",
                 "Issues",
                 "Issue",

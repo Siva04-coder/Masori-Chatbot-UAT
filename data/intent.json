@@ -89,7 +89,13 @@
                 "help NUPLAZID",
                 "clinical information",
                 "Dosing",
+                "Dosing pd",
+                "Dosing parkinson disease",
+                "Dosing parkinson's disease",
+                "Dosing pdp",
                 "interactions",
+                "interaction",
+                "interact",
                 "effective nuplazid",
                 "dosing nuplazid",
                 "nuplazid safe patients cardiac",
@@ -111,10 +117,7 @@
             "patterns": [
                 "About NUPLAZID",
                 "NUPLAZID",
-                "Explain NUPLAZID",
-                "faqs",
-                "questions",
-                "answers"
+                "Explain NUPLAZID"
             ],
             "responses": [
                 "About NUPLAZID"
@@ -132,7 +135,27 @@
                 "questions",
                 "question",
                 "faqs",
-                "faq"
+                "faq",
+                "faq nuplazid",
+                "faq pd",
+                "faq pdp",
+                "faq parkinson disease",
+                "faq parkinson's disease",
+                "faqs nuplazid",
+                "faqs pd",
+                "faqs pdp",
+                "faqs parkinson disease",
+                "faqs parkinson's disease",
+                "frequently asked question nuplazid",
+                "frequently asked question pd",
+                "frequently asked question pdp",
+                "frequently asked question parkinson disease",
+                "frequently asked question parkinson's disease",
+                "frequently asked questions nuplazid",
+                "frequently asked questions pd",
+                "frequently asked questions pdp",
+                "frequently asked questions parkinson disease",
+                "frequently asked questions parkinson's disease"
             ],
             "responses": [
                 "FAQ"
@@ -349,6 +372,8 @@
                 "phone",
                 "contact information",
                 "phone number",
+                "address",
+                "contact",
                 "company address",
                 "company contact",
                 "telephone number call",
@@ -395,6 +420,7 @@
                 "pimavanserin prescribing information",
                 "Prescribing Information",
                 "prescribe",
+                "prescribing",
                 "prescription",
                 "NUPLAZID prescription",
                 "prescription nuplazid",
@@ -455,7 +481,14 @@
                 "Side effects",
                 "NUPLAZID Side effects",
                 "NUPLAZID Side effect",
-                "common side effects",
+                "side effect pd",
+                "side effect pdp",
+                "side effect parkinson disease",
+                "side effect parkinson's disease",
+                "side effects pd",
+                "side effects pdp",
+                "side effects parkinson disease",
+                "side effects parkinson's disease",
                 "safety faqs"
             ],
             "responses": [
@@ -516,7 +549,9 @@
                 "warnings",
                 "warning",
                 "safety FAQ",
-                "safety FAQs"
+                "safety FAQs",
+                "common side effects",
+                "common side effect"
             ],
             "responses": [
                 "Safety Information"
@@ -665,7 +700,7 @@
                 "materials printout",
                 "materials print out",
                 "materials print",
-                "tv commerical",
+                "tv commercial",
                 "support"
             ],
             "responses": [
