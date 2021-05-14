@@ -106,8 +106,13 @@ class response_generator:
                 if response != '':
                     response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<div class="chat-buttons-container"><div style="float:left;padding-top: 7px;">Here is a link that may help </div>'
-                response = response + '<div style="float:right"><button><a href="' + \
-                    UIProtocolHostName + json_obj['visit_page']
+                lnk = str(json_obj['visit_page']).lower()
+                if 'http' in lnk:
+                    response = response + '<div style="float:right"><button><a href="' + \
+                        json_obj['visit_page']
+                else:
+                    response = response + '<div style="float:right"><button><a href="' + \
+                        UIProtocolHostName + json_obj['visit_page']
                 response = response + '" >Click here</a></button></div></div>'
                 isMoreInfo = True
 
