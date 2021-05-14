@@ -96,6 +96,7 @@ def feedback():
     history = consumer_get_history.History()
     feedback = request.headers.get('feedback')
     disp_t = request.form.get('disp_t')
+    UIProtocolHostName = request.form.get('UIProtocolHostName')
     uid = request.args['uid']
 
     user_chat = "<p>" + feedback + "</p>"
@@ -418,6 +419,7 @@ def consumerchatbot():
     try:
         history = consumer_get_history.History()
         disp_t = request.form.get('disp_t')
+        UIProtocolHostName = request.form.get('UIProtocolHostName')
         user_chat = request.headers.get('conv')
         uid = request.args['uid']
         is_recommend = False
@@ -429,7 +431,7 @@ def consumerchatbot():
         
         res_json = consumer_finder.find_response(user_chat, is_recommend)
         
-        cur_response = consumer_geneset.generate_response(res_json)
+        cur_response = consumer_geneset.generate_response(res_json, UIProtocolHostName)
         
         uid = history.check_generate_consumer_uid(uid)
         
@@ -478,10 +480,11 @@ def consumerrecommendchat():
         history = consumer_get_history.History()
         user_chat = request.headers.get('conv')
         disp_t = request.form.get('disp_t')
+        UIProtocolHostName = request.form.get('UIProtocolHostName')
         uid = request.args['uid']
 
         res_json = consumer_finder.find_response(user_chat, True)
-        cur_response = geneset.generate_response(res_json)
+        cur_response = geneset.generate_response(res_json, UIProtocolHostName)
         uid = history.check_generate_consumer_uid(uid)
 
         history.check_update_history(uid, user_chat, cur_response, disp_t)
@@ -513,6 +516,7 @@ def consumerchathistory():
         pass
 
     disp_t = request.form.get('disp_t')
+    UIProtocolHostName = request.form.get('UIProtocolHostName')
     history = consumer_get_history.History()
     uid = request.args['uid']
 
