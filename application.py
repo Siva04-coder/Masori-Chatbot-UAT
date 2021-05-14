@@ -60,25 +60,6 @@ def index():
     except Exception as e:
         return str(e)
 
-
-@application.route('/welcome', methods=['GET', 'POST'])
-def welcome():
-    try:
-        auth_creds = request.authorization
-        is_authorize = auth.Authorize(
-            auth_creds.username, auth_creds.password)
-        if is_authorize == False:
-            return unauthorized_msg
-    except Exception as d:
-        return unauthorized_msg
-        pass
-
-    res_json = finder.get_welcome_message()
-
-    response = geneset.generate_response(res_json)
-
-    return response
-
 @application.route('/getConfigs', methods=['GET', 'POST'])
 def getConfigs():
     try:
@@ -99,9 +80,7 @@ def getConfigs():
     }
 
     return configs
-
-
-   
+    
 @application.route('/feedback', methods=['GET', 'POST'])
 def feedback():
     try:
@@ -173,6 +152,7 @@ def timeouthit():
         }
 
     return response
+    
 
 @application.route('/lookingfor', methods=['GET', 'POST'])
 def lookingfor():
@@ -210,6 +190,25 @@ def lookingfor():
 
     return response
 
+@application.route('/welcome', methods=['GET', 'POST'])
+def welcome():
+    try:
+        auth_creds = request.authorization
+        is_authorize = auth.Authorize(
+            auth_creds.username, auth_creds.password)
+        if is_authorize == False:
+            return unauthorized_msg
+    except Exception as d:
+        return unauthorized_msg
+        pass
+
+    res_json = finder.get_welcome_message()
+
+    response = geneset.generate_response(res_json)
+
+    return response
+
+
 @application.route('/pred', methods=['GET', 'POST'])
 def pred():
     try:
@@ -246,14 +245,12 @@ def hcpchatbot():
     except Exception as d:
         return unauthorized_msg
         pass
-
-    domain = request.url.split('/')[0] + request.url.split('/')[1] + '//' + request.url.split('/')[2] + '/'
-    print(domain)
     
     try:
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
         disp_t = request.form.get('disp_t')
+        UIProtocolHostName = request.form.get('UIProtocolHostName')
         print('user_chat', disp_t)
         uid = request.args['uid']
         is_recommend = False
@@ -265,19 +262,19 @@ def hcpchatbot():
 
         res_json = finder.find_response(user_chat, is_recommend)
 
-        cur_response = geneset.generate_response(res_json)
+        cur_response = geneset.generate_response(res_json, UIProtocolHostName)
 
         uid = history.check_generate_uid(uid)
 
         history.check_update_history(uid, user_chat, cur_response, disp_t)
         
         seperate_response = ""
-        #if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and 'is_general": false' in res_json:
-        #    #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
-        #    print(res_json)
-        #    seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
-        #    seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
-        #    seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
+        # if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and 'is_general": false' in res_json:
+        #     #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+        #     print(res_json)
+        #     seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
+        #     seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+        #     seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
 
         IsLast = ""
         if "I'm so glad I could help" in cur_response:
@@ -285,8 +282,7 @@ def hcpchatbot():
 
         response = {
             "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t, "seperate_response": seperate_response, "is_last": IsLast}],
-            "uid": uid,
-            "domain": domain
+            "uid": uid
         }
     except Exception as ee:
         logger.write_exception(str(ee), 'hcpchatbot')
@@ -429,22 +425,22 @@ def consumerchatbot():
             is_recommend = bool(rec)
         except:
             pass
-
+        
         res_json = consumer_finder.find_response(user_chat, is_recommend)
-
+        
         cur_response = consumer_geneset.generate_response(res_json)
-
+        
         uid = history.check_generate_consumer_uid(uid)
-
+        
         history.check_update_history(uid, user_chat, cur_response, disp_t)
-
+        
         seperate_response = ""
-        #if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and 'is_general": false' in res_json:
-        #    #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
-        #    print(res_json)
-        #    seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
-        #    seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
-        #    seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
+        # if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and 'is_general": false' in res_json:
+        #     #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+        #     print(res_json)
+        #     seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
+        #     seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
+        #     seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
 
         IsLast = ""
         if "I'm so glad I could help" in cur_response:
@@ -455,6 +451,7 @@ def consumerchatbot():
             "uid": uid
         }
     except Exception as ee:
+        print(str(ee))
         logger.write_exception(str(ee), 'consumerchatbot')
         response = {
             "chats": [{"message": str(ee), "who": "bot", "time":  datetime.datetime.now().strftime(chat_msg_time_format), "display_time": ""}],
