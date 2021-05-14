@@ -270,7 +270,7 @@ def hcpchatbot():
         
         seperate_response = ""
         if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and 'is_general": false' in res_json:
-            seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+            #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
             seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
             seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
             seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
@@ -438,7 +438,7 @@ def consumerchatbot():
         
         seperate_response = ""
         if 'can you rephrase your question' not in cur_response and "Thank you, I'm so glad I could help " not in cur_response and 'is_general": false' in res_json:
-            seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
+            #seperate_response = seperate_response + '<div id="lookingfeedback"><div class="chat-text-divider"></div>'
             seperate_response = seperate_response + '<p>Is there anything else you are looking for?</p>'
             seperate_response = seperate_response + '<button class="chat-feedback-button-no" onclick="feedbacklookingno()">No</button>'
             seperate_response = seperate_response + '<button class="chat-feedback-button-yes" onclick="feedbacklookingyes()">Yes</button>'#</div>
