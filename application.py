@@ -396,7 +396,7 @@ def hcpchathistory():
     uid = request.args['uid']
 
     uid = history.check_generate_uid(uid)
-    response = history.get_history_alone(uid, finder, geneset, disp_t)
+    response = history.get_history_alone(uid, finder, geneset, disp_t, UIProtocolHostName)
 
     return response
 
