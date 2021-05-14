@@ -251,7 +251,6 @@ def hcpchatbot():
         user_chat = request.headers.get('conv')
         disp_t = request.form.get('disp_t')
         UIProtocolHostName = request.form.get('UIProtocolHostName')
-        print('user_chat', disp_t)
         uid = request.args['uid']
         is_recommend = False
         try:
@@ -310,7 +309,7 @@ def updatefeedback():
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
         disp_t = request.form.get('disp_t')
-        print('user_chat', user_chat)
+        UIProtocolHostName = request.form.get('UIProtocolHostName')
         uid = request.args['uid']
         is_recommend = False
         try:
@@ -355,10 +354,11 @@ def hcprecommendchat():
         history = hcp_get_history.History()
         user_chat = request.headers.get('conv')
         disp_t = request.form.get('disp_t')
+        UIProtocolHostName = request.form.get('UIProtocolHostName')
         uid = request.args['uid']
 
         res_json = finder.find_response(user_chat, True)
-        cur_response = geneset.generate_response(res_json)
+        cur_response = geneset.generate_response(res_json, UIProtocolHostName)
         uid = history.check_generate_uid(uid)
 
         history.check_update_history(uid, user_chat, cur_response, disp_t)
@@ -390,6 +390,7 @@ def hcpchathistory():
         pass
 
     disp_t = request.form.get('disp_t')
+    UIProtocolHostName = request.form.get('UIProtocolHostName')
 
     history = hcp_get_history.History()
     uid = request.args['uid']
