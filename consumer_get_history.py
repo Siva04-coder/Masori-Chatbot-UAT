@@ -217,7 +217,7 @@ class History:
         return isAvoid
     
 
-    def get_history_alone(self, uid, finder, geneset, disp_t):
+    def get_history_alone(self, uid, finder, geneset, disp_t, UIProtocolHostName):
         history_path = 'History/' + uid + '.json'
         json_data = {
             "uid": uid,
@@ -241,7 +241,7 @@ class History:
         if len(json_data["chats"]) <= 0:
             res_json = finder.get_welcome_message()
 
-            welcome_response = geneset.generate_response(res_json)
+            welcome_response = geneset.generate_response(res_json, UIProtocolHostName)
 
             json_data = {
                 "chats": [{
