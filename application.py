@@ -279,8 +279,14 @@ def hcpchatbot():
         if "I'm so glad I could help" in cur_response:
             IsLast = "true"
 
+        is_general = ''
+        try:
+            is_general = res_json["is_general"]
+        except:
+            pass
+
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t, "seperate_response": seperate_response, "is_last": IsLast}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t, "seperate_response": seperate_response, "is_last": IsLast, 'is_general': is_general}],
             "uid": uid
         }
     except Exception as ee:
