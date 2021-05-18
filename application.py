@@ -17,6 +17,7 @@ import config
 import base64
 from flask_cors import CORS
 import auth
+import json
 
 # %% Declaration(s)
 cfg = config.Config()
@@ -281,7 +282,8 @@ def hcpchatbot():
 
         is_general = ''
         try:
-            is_general = res_json["is_general"]
+            json_obj = json.loads(res_json)
+            is_general = json_obj["is_general"]
         except:
             pass
 
@@ -453,8 +455,15 @@ def consumerchatbot():
         if "I'm so glad I could help" in cur_response:
             IsLast = "true"
 
+        is_general = ''
+        try:
+            json_obj = json.loads(res_json)
+            is_general = json_obj["is_general"]
+        except:
+            pass
+
         response = {
-            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t, "seperate_response": seperate_response, "is_last": IsLast}],
+            "chats": [{"message": cur_response, "who": "bot", "time": datetime.datetime.now().strftime(chat_msg_time_format), "display_time": disp_t, "seperate_response": seperate_response, "is_last": IsLast, 'is_general': is_general}],
             "uid": uid
         }
     except Exception as ee:
