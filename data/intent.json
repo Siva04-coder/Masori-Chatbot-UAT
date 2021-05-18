@@ -79,12 +79,12 @@
             ]
         },
         {
-            "Intent": "About NUPLAZID efficiency",
+            "Intent": "About NUPLAZID Efficacy",
             "patterns": [
-                "About NUPLAZID efficiency",
-                "NUPLAZID efficiency",
-                "Efficiency NUPLAZID",
-                "Efficiency",
+                "About NUPLAZID efficacy",
+                "NUPLAZID efficacy",
+                "efficacy NUPLAZID",
+                "efficacy",
                 "NUPLAZID help",
                 "help NUPLAZID",
                 "clinical information",
@@ -109,7 +109,7 @@
                 "current medications nuplazid"
             ],
             "responses": [
-                "About NUPLAZID efficiency"
+                "About NUPLAZID Efficacy"
             ]
         },
         {
