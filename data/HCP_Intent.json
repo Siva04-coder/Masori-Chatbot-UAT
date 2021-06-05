@@ -75,9 +75,24 @@
             ]
         },
         {
+            "Intent": "Prescribing Information",
+            "patterns": [
+                "NUPLAZID prescribing",
+                "Pimavanserin prescribing information",
+                "Full prescribing information",
+                "Full PI",
+                "PI",
+                "Prescribing Info",
+                "Package Insert"
+            ],
+            "responses": [
+                "Prescribing Information"
+            ]
+        },
+        {
             "Intent": "About NUPLAZID",
             "patterns": [
-                "about NUPLAZID",
+                "care coordinator",
                 "learn about NUPLAZID",
                 "NUPLAZID medications",
                 "NUPLAZID Parkinson's",
@@ -131,11 +146,6 @@
                 "download Factsheets",
                 "Factsheet download",
                 "Fact sheet download",
-                "Distance education fact",
-                "Distance education fact sheet",
-                "Distance education factsheet",
-                "Distance education fact sheets",
-                "Distance education factsheets",
                 "Education Fact sheet",
                 "Education Factsheet",
                 "Education Fact sheets",
@@ -304,7 +314,9 @@
                 "Long Term Safety",
                 "box warning",
                 "precautions",
-                "precaution"
+                "precaution",
+                "boxed warning",
+                "safety studies"
             ],
             "responses": [
                 "Pimavanserin safety"
@@ -314,18 +326,23 @@
             "Intent": "Safety Information",
             "patterns": [
                 "placebo controlled studies",
-                "percentage of suffering",
                 "NUPLAZID important safety information",
                 "NUPLAZID Safety",
                 "NUPLAZID safe",
-                "treatment emergent",
                 "safety information",
                 "safety",
                 "dementia",
                 "dementia related psychosis",
                 "dementia psychosis",
                 "Contraindication",
-                "tolerability"
+                "tolerability",
+                "Drug Interactions",
+                "Drug Interaction",
+                "Indication usage",
+                "Indication",
+                "Usage",
+                "warnings precautions",
+                "warning precaution"
             ],
             "responses": [
                 "NUPLAZID important safety information"
@@ -334,7 +351,6 @@
         {
             "Intent": "Proposed Moa Information",
             "patterns": [
-                "withdrawal from NUPLAZID",
                 "Mechanism Of Action",
                 "About MOA",
                 "MOA",
@@ -353,13 +369,10 @@
         {
             "Intent": "Dosing",
             "patterns": [
-                "timetake NUPLAZID",
                 "Dosing Information",
                 "dosage and administration",
                 "Dosage Administration",
                 "administration information",
-                "best practices",
-                "best practice",
                 "NUPLAZID administration",
                 "administration NUPLAZID",
                 "NUPLAZID dosage",
@@ -380,22 +393,10 @@
                 "adjust dosing",
                 "steady state plasma concentration",
                 "steady state plasma",
-                "steady state",
-                "sprinkle food"
+                "steady state"
             ],
             "responses": [
                 "Dosage Administration"
-            ]
-        },
-        {
-            "Intent": "Drug Interaction",
-            "patterns": [
-                "Drug Interaction",
-                "Drug Interactions",
-                "Drug"
-            ],
-            "responses": [
-                "Drug Interaction"
             ]
         },
         {
@@ -437,7 +438,6 @@
         {
             "Intent": "Contact",
             "patterns": [
-                "talk agent",
                 "help",
                 "care coordinator",
                 "assistant",
@@ -457,7 +457,6 @@
                 "Treatment form",
                 "Treatment forms",
                 "patient treatment form",
-                "free supply",
                 "get NUPLAZID"
             ],
             "responses": [
@@ -482,8 +481,6 @@
                 "coverage samples",
                 "reimbursement support",
                 "medical necessity template",
-                "free samples",
-                "free sample",
                 "medicare plan",
                 "Insurance Coverage",
                 "patient eligibility",
@@ -492,7 +489,6 @@
                 "order samples",
                 "order samples now",
                 "order sample now",
-                "samples free",
                 "order some samples",
                 "order some sample",
                 "NUPLAZID sample",
@@ -522,7 +518,6 @@
                 "In office care",
                 "support documents",
                 "reimbursement process",
-                "free cost NUPLAZID",
                 "free supply",
                 "free cost"
             ],
@@ -592,18 +587,6 @@
             ]
         },
         {
-            "Intent": "Service Request Form",
-            "patterns": [
-                "letter of appeal",
-                "appeal letter",
-                "medical necessity",
-                "necessity medical"
-            ],
-            "responses": [
-                "General information about authorization"
-            ]
-        },
-        {
             "Intent": "Medical Questions",
             "patterns": [
                 "Reporting Adverse reactions",
@@ -621,17 +604,8 @@
                 "Reporting Adverse effects",
                 "Issues",
                 "Issue",
-                "Problem",
                 "Concerns",
                 "Concern",
-                "Death",
-                "died",
-                "dying",
-                "depressed",
-                "die",
-                "anxiety",
-                "suicide",
-                "depression",
                 "disturb",
                 "disturbed",
                 "Medical problem",
