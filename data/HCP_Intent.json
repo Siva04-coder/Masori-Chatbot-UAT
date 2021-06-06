@@ -93,7 +93,6 @@
             "Intent": "About NUPLAZID",
             "patterns": [
                 "care coordinator",
-                "learn about NUPLAZID",
                 "NUPLAZID medications",
                 "NUPLAZID Parkinson's",
                 "NUPLAZID Parkinson",
@@ -342,7 +341,11 @@
                 "Indication",
                 "Usage",
                 "warnings precautions",
-                "warning precaution"
+                "warning precaution",
+                "warning",
+                "precaution",
+                "precautions",
+                "warnings"
             ],
             "responses": [
                 "NUPLAZID important safety information"
