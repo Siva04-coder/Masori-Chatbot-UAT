@@ -30,7 +30,7 @@ def UpdateDB(corpus_filename, corpus_sheetname):
     print('corpus')
     Site_Area = ''
     Functionality_Area = ''
-    print('Started')
+    
     for index, row in corpus.iterrows():
         if str(row['Question']).lower() != 'nan':
             
