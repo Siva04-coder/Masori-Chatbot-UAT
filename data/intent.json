@@ -27,11 +27,11 @@
                 "pd related hallucinations and delusions",
                 "pd related hallucinations delusions",
                 "pdp",
-                "Parkinson’s Disease Psychosis",
-                "Parkinson’s disease Hallucinations",
-                "Parkinson’s disease Delusions",
-                "Parkinson’s disease Hallucinations Delusions",
-                "Parkinson’s disease Hallucinations and Delusions",
+                "Parkinson's Disease Psychosis",
+                "Parkinson's disease Hallucinations",
+                "Parkinson's disease Delusions",
+                "Parkinson's disease Hallucinations Delusions",
+                "Parkinson's disease Hallucinations and Delusions",
                 "symptoms of pdp",
                 "signs of pdp",
                 "signs of pd",
@@ -160,8 +160,8 @@
                 "NUPLAZID Parkinson's",
                 "Clinical data",
                 "Clinical results",
-                "Clinical trail results",
-                "Clinical trail result",
+                "Clinical trial results",
+                "Clinical trial result",
                 "Clinical result"
             ],
             "responses": [
@@ -169,7 +169,7 @@
             ]
         },
         {
-            "Intent": "About Parkinson’s Disease",
+            "Intent": "About Parkinson's Disease",
             "patterns": [
                 "cause of Parkinson disease",
                 "cause of Parkinson's disease",
@@ -241,7 +241,7 @@
             ]
         },
         {
-            "Intent": "About Parkinson’s Disease",
+            "Intent": "About Parkinson's Disease",
             "patterns": [
                 "cause of Parkinson disease",
                 "cause of Parkinson's disease"
@@ -251,7 +251,7 @@
             ]
         },
         {
-            "Intent": "About Parkinson’s Disease",
+            "Intent": "About Parkinson's Disease",
             "patterns": [
                 "Parkinson condition",
                 "management of Parkinson",

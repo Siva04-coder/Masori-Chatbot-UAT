@@ -25,7 +25,7 @@
                 "PD",
                 "psychosis",
                 "PD Psychosis",
-                "Parkinson’s Disease Psychosis",
+                "Parkinson's Disease Psychosis",
                 "Hallucinations",
                 "Visual hallucinations",
                 "PD related Hallucinations and Delusions",
@@ -242,24 +242,16 @@
         {
             "Intent": "Efficacy",
             "patterns": [
+                "OLE Study",
+                "Open label extension Study",
+                "open label safety study",
+                "open label study",
                 "OLE",
                 "open label safety",
                 "Open label extension"
             ],
             "responses": [
-                "OLE"
-            ]
-        },
-        {
-            "Intent": "Efficacy",
-            "patterns": [
-                "OLE Study",
-                "Open label extension Study",
-                "open label safety study",
-                "open label study"
-            ],
-            "responses": [
-                "OLE study"
+                "OLE Study"
             ]
         },
         {
@@ -371,14 +363,12 @@
                 "dosage detail",
                 "dosage",
                 "administration",
-                "sprinkle dosing guide",
                 "recommended dosage",
                 "recommended daily dosage",
                 "daily dosage",
                 "Dosage forms",
                 "Tablet",
                 "Capsule",
-                "sprinkled",
                 "nuplazid food",
                 "adjust dosing",
                 "steady state plasma concentration",
