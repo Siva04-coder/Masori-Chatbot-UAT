@@ -44,7 +44,6 @@
         "Contact Acadia",
         "Connect Acadia",
         "Dosage administration",
-        "Contraindications",
         "Warning Precaution",
         "Recommended dose",
         "Taking NUPLAZID",
@@ -57,6 +56,7 @@
         "Financial assistance",
         "NUPLAZID coverage",
         "Parkinson's support community",
+        "support community",
         "Copay program",
         "Resources",
         "Fact sheet",
@@ -158,9 +158,9 @@
         "Faqs parkinson's disease",
         "NUPLAZID Parkinson",
         "Clinical data",
-        "Clinical trail results",
+        "Clinical trial results",
         "Clinical information",
-        "Clinical trail result",
+        "Clinical trial result",
         "Clinical result",
         "Cause of Parkinson's diseases",
         "Cause of Parkinsons disease",
@@ -242,6 +242,7 @@
         "Assist me",
         "About Acadia Pharmaceuticals",
         "About Acadia Pharmaceutical",
+        "Pharmaceutical",
         "Acadia",
         "NUPLAZID prescribing",
         "NUPLAZID prescribing information",
@@ -258,6 +259,7 @@
         "Induced",
         "Indication nuplazid",
         "Nuplazid food",
+        "Contraindications",
         "Contraindications nuplazid",
         "Contraindication nuplazid",
         "Contraindication",
@@ -403,7 +405,6 @@
         "Enroll patient",
         "Enroll",
         "Caregiver enroll patient",
-        "Hallucinations ",
-        "Clinical trial results"
+        "Hallucinations"
     ]
 }

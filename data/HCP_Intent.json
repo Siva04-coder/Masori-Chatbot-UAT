@@ -386,6 +386,7 @@
                 "NUPLAZID financial assistance",
                 "NUPLAZID financial assistance coverage",
                 "NUPLAZID discount card",
+                "Discount card",
                 "longtermcareaccess",
                 "long term care access",
                 "NUPLAZID foundation assistance",
@@ -409,6 +410,7 @@
                 "forms",
                 "covering prescription costs",
                 "enrolled eligibility",
+                "eligibility",
                 "cost"
             ],
             "responses": [
@@ -492,6 +494,7 @@
                 "much NUPLAZID",
                 "NUPLAZID enrollment form",
                 "NUPLAZID drug classification",
+                "drug classification",
                 "NUPLAZID black box warning",
                 "NUPLAZID pharmacy",
                 "prescription process",
