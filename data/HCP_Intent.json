@@ -276,20 +276,6 @@
             ]
         },
         {
-            "Intent": "About SAPS-PD",
-            "patterns": [
-                "common adverse reactions",
-                "common adverse reaction",
-                "Adverse reaction",
-                "Adverse reactions",
-                "Adverse",
-                "Common Adverse"
-            ],
-            "responses": [
-                "Adverse reaction"
-            ]
-        },
-        {
             "Intent": "Medical Information",
             "patterns": [
                 "common adverse reactions",
@@ -595,12 +581,16 @@
                 "Reporting Adverse reactions",
                 "Reporting Adverse reaction",
                 "Reporting",
+                "Adverse reaction",
+                "Adverse reactions",
                 "Report Adverse reactions",
                 "Report Adverse reaction",
                 "Report Adverse event",
                 "Report Adverse events",
                 "Report Adverse effect",
                 "Report Adverse effects",
+                "Adverse event",
+                "Adverse events",
                 "Reporting Adverse event",
                 "Reporting Adverse events",
                 "Reporting Adverse effect",

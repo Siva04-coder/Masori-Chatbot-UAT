@@ -533,6 +533,8 @@
                 "Reporting Adverse reaction",
                 "Report Adverse reactions",
                 "Report Adverse reaction",
+                "Adverse event",
+                "Adverse events",
                 "Report Adverse event",
                 "Report Adverse events",
                 "Reporting Adverse event",
@@ -553,6 +555,10 @@
                 "Reports Adverses events",
                 "Reports Adverses effect",
                 "Reports Adverses effects",
+                "Adverse Reaction",
+                "Adverse Reactions",
+                "Adverse effect",
+                "Adverse effects",
                 "Death",
                 "Medical problem",
                 "Medical problems",
@@ -589,8 +595,6 @@
         {
             "Intent": "Adverse Reaction",
             "patterns": [
-                "Adverse Reaction",
-                "Adverse Reactions",
                 "report issue",
                 "medical concern",
                 "urgent help",
