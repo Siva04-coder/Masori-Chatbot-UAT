@@ -145,11 +145,7 @@
                 "download Fact sheets",
                 "download Factsheets",
                 "Factsheet download",
-                "Fact sheet download",
-                "Education Fact sheet",
-                "Education Factsheet",
-                "Education Fact sheets",
-                "Education Factsheets"
+                "Fact sheet download"
             ],
             "responses": [
                 "Fact sheets & Discussion guide"
@@ -162,13 +158,8 @@
                 "patient information",
                 "NUPLAZID patient informations",
                 "FDA NUPLAZID",
-                "NUPLAZID pharmacology",
                 "FDA approve",
-                "NUPLAZID FDA approved",
-                "NUPLAZID approved FDA",
-                "approved FDA",
-                "NUPLAZID approved",
-                "FDA approved",
+                "NUPLAZID pharmacology",
                 "motor functions",
                 "motor function",
                 "nonmotor functions",
@@ -261,7 +252,6 @@
                 "pivotal trial",
                 "hallucinations measured",
                 "delusion measured",
-                "example of SAPS",
                 "SAPS PD"
             ],
             "responses": [
@@ -309,9 +299,6 @@
                 "NUPLAZID safe",
                 "safety information",
                 "safety",
-                "dementia",
-                "dementia related psychosis",
-                "dementia psychosis",
                 "Contraindication",
                 "tolerability",
                 "Drug Interactions",
@@ -319,12 +306,8 @@
                 "Indication usage",
                 "Indication",
                 "Usage",
-                "warnings precautions",
-                "warning precaution",
-                "warning",
                 "precaution",
-                "precautions",
-                "warnings"
+                "precautions"
             ],
             "responses": [
                 "NUPLAZID important safety information"
@@ -404,7 +387,6 @@
         {
             "Intent": "Cost Information",
             "patterns": [
-                "NUPLAZID bridge form",
                 "Connect Acadia",
                 "cost and insurance",
                 "forms",
@@ -500,10 +482,7 @@
                 "prescription process",
                 "In-office care",
                 "In office care",
-                "support documents",
-                "reimbursement process",
-                "free supply",
-                "free cost"
+                "reimbursement process"
             ],
             "responses": [
                 "NUPLAZID cost details"
@@ -516,10 +495,6 @@
                 "Long term",
                 "Long-term care",
                 "Long term care",
-                "long term care facility",
-                "long-term care facility",
-                "long term care facilities",
-                "long-term care facilities",
                 "long-term service",
                 "long term service",
                 "long-term care service request",
@@ -560,11 +535,7 @@
                 "share information",
                 "share info",
                 "share additional info",
-                "share additional information",
-                "reference document",
-                "reference doc",
-                "refer doc",
-                "refer document"
+                "share additional information"
             ],
             "responses": [
                 "Resources"
