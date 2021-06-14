@@ -95,6 +95,7 @@
                 "current medications use nuplazid",
                 "current medications nuplazid",
                 "treatment Parkinson's disease",
+                "treatment Parkinsons disease",
                 "treatment pd",
                 "treatment pdp",
                 "treatment"
@@ -418,7 +419,8 @@
                 "drug interactions",
                 "indication usage",
                 "Warnings Precautions",
-                "Warning Precaution"
+                "Warning Precaution",
+                "Nuplazid Indication"
             ],
             "responses": [
                 "NUPLAZID prescribing information"
