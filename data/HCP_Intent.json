@@ -120,11 +120,6 @@
                 "NUPLAZID Resource",
                 "Resources NUPLAZID",
                 "NUPLAZID Factsheet",
-                "Blackbox warning",
-                "Blackbox warnings",
-                "Warning Blackbox",
-                "Warnings Blackbox",
-                "Blackbox",
                 "Discussion guide",
                 "Discussion guides",
                 "Fact sheets & Discussion guide",
@@ -184,8 +179,6 @@
                 "NUPLAZID warning and precaution",
                 "NUPLAZID precautions",
                 "NUPLAZID warning and precautions",
-                "warnings",
-                "warning",
                 "QT Interval",
                 "QT Interval Prolongation",
                 "QT Interval Prolongations",
@@ -286,7 +279,14 @@
                 "precautions",
                 "precaution",
                 "boxed warning",
-                "safety studies"
+                "safety studies",
+                "warnings",
+                "warning",
+                "Blackbox warning",
+                "Blackbox warnings",
+                "Warning Blackbox",
+                "Warnings Blackbox",
+                "Blackbox"
             ],
             "responses": [
                 "Pimavanserin safety"
@@ -380,7 +380,8 @@
                 "coverage financial assistance",
                 "Guidelines care coordinator",
                 "Acadia connect contact information",
-                "Guidelines"
+                "Guidelines",
+                "financial assistance"
             ],
             "responses": [
                 "NUPLAZID medication payment assistance"
@@ -440,18 +441,9 @@
             ]
         },
         {
-            "Intent": "Coverage high level information and links",
+            "Intent": "ordering samples",
             "patterns": [
-                "Insurance Coverage",
-                "Insurance Lookup",
                 "coverage samples",
-                "reimbursement support",
-                "medical necessity template",
-                "Medical necessity",
-                "medicare plan",
-                "Insurance Coverage",
-                "patient eligibility",
-                "Insurance Options",
                 "order sample",
                 "order samples",
                 "order samples now",
@@ -465,6 +457,23 @@
                 "Samples",
                 "sample ordering",
                 "sample order"
+            ],
+            "responses": [
+                "ordering samples"
+            ]
+        },
+        {
+            "Intent": "Coverage high level information and links",
+            "patterns": [
+                "Insurance Coverage",
+                "Insurance Lookup",
+                "reimbursement support",
+                "medical necessity template",
+                "Medical necessity",
+                "medicare plan",
+                "Insurance Coverage",
+                "patient eligibility",
+                "Insurance Options"
             ],
             "responses": [
                 "Insurance Coverage"
