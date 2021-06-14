@@ -44,11 +44,7 @@
                 "Parkinson's condition",
                 "manage Parkinson's disease",
                 "manage pd",
-                "manage pdp",
-                "treatment Parkinson's disease",
-                "treatment pd",
-                "treatment pdp",
-                "treatment"
+                "manage pdp"
             ],
             "responses": [
                 "symptoms of Parkinson's disease"
@@ -97,7 +93,11 @@
                 "dosing nuplazid",
                 "nuplazid medicine",
                 "current medications use nuplazid",
-                "current medications nuplazid"
+                "current medications nuplazid",
+                "treatment Parkinson's disease",
+                "treatment pd",
+                "treatment pdp",
+                "treatment"
             ],
             "responses": [
                 "About NUPLAZID Efficacy"
@@ -157,6 +157,7 @@
             "patterns": [
                 "NUPLAZID Parkinson",
                 "NUPLAZID Parkinson's",
+                "NUPLAZID Parkinsons",
                 "Clinical data",
                 "Clinical results",
                 "Clinical trial results",
