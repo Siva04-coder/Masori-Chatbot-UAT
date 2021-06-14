@@ -87,6 +87,7 @@ class response_generator:
                             pass
                         
                         response = response + '<li><a href="' + hyperlink + '" >' 
+                            
                         response = response + txt + '</a></li>'
 
                         cnt = cnt + 1
@@ -101,8 +102,13 @@ class response_generator:
                 if response != '':
                     response = response + '<div class="chat-text-divider"></div>'
                 response = response + '<div class="chat-buttons-container"><div style="float:left;padding-top: 7px;">Here is a link that may help </div>'
-                response = response + '<div style="float:right"><button><a href="' + \
-                    UIProtocolHostName + json_obj['visit_page']
+                print(json_obj['visit_page'])
+                if 'hcpordering.com' in json_obj['visit_page']:
+                    response = response + '<div style="float:right"><button><a target="_blank" href="' + \
+                        json_obj['visit_page']
+                else:
+                    response = response + '<div style="float:right"><button><a href="' + \
+                        UIProtocolHostName + json_obj['visit_page']
                 response = response + '" >Click here</a></button></div></div>'
                 isMoreInfo = True
 
