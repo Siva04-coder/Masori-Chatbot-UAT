@@ -7,6 +7,7 @@ cfg = config.Config()
 config_details = cfg.get_database_configs()
 
 
+
 db_user=config_details['db_user']
 db_pass=config_details['db_pass']
 db_host=config_details['db_host']
