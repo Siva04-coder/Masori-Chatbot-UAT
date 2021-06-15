@@ -84,7 +84,15 @@
                 "Full PI",
                 "PI",
                 "Prescribing Info",
-                "Package Insert"
+                "Package Insert",
+                "warnings",
+                "warning",
+                "box warning",
+                "boxed warning",
+                "Blackbox warning",
+                "Blackbox warnings",
+                "Warning Blackbox",
+                "Warnings Blackbox"
             ],
             "responses": [
                 "Prescribing Information"
@@ -275,17 +283,9 @@
                 "Adverse reactions table",
                 "Adverse reaction table",
                 "Long Term Safety",
-                "box warning",
                 "precautions",
                 "precaution",
-                "boxed warning",
                 "safety studies",
-                "warnings",
-                "warning",
-                "Blackbox warning",
-                "Blackbox warnings",
-                "Warning Blackbox",
-                "Warnings Blackbox",
                 "Blackbox"
             ],
             "responses": [
