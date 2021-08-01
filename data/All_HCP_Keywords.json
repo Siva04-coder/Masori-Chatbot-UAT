@@ -11,23 +11,23 @@
         "Visual hallucinations",
         "Delusions of jealousy",
         "Delusions",
+        
         "PD symptom",
         "PDP symptom",
-        "NUPLAZID medications",
+        "NUPLAZID medication",
         "NUPLAZID indication",
         "NUPLAZID warning and precaution",
-        "NUPLAZID indications",
         "NUPLAZID approved FDA",
         "NUPLAZID",
         "NUPLAZID Parkinson's",
         "Adverse reaction",
-        "About Parkinson Disease Psychosis",
+        
         "About NUPLAZID",
         "About PD disease",
         "NUPLAZID Discussion guide",
         "NUPLAZID Resources",
         "NUPLAZID Factsheet",
-        "Box warning",
+        "Boxed warning",
         "Blackbox warning",
         "FDA NUPLAZID",
         "Formulary Lookup",
@@ -38,22 +38,22 @@
         "Discussion guide",
         "NUPLAZID patient information",
 
-        "Motor functions",
-        "Nonmotor functions",
+        "Motor function",
+        "Nonmotor function",
         "NUPLAZID precaution",
         "NUPLAZID warning",
-        "QT Interval Prolongation",
-        "QT Prolongation",
-        "QT",
-        "QT Interval",
-        "Prolongation",
+        
+        
+        
+        
+        
         "NUPLAZID efficacy",
         "Efficacy Data",
         "Efficacy Data NUPLAZID",
         "NUPLAZID primary endpoint",
         "NUPLAZID secondary endpoint",
         "Primary endpoint",
-        "Serotonergic agent",
+        "Serotonergic receptors",
         "Secondary endpoint",
         "Mechanism of action NUPLAZID",
         "Measuring efficacy",
@@ -80,7 +80,7 @@
         "Tolerability",
         "About MOA",
         "MOA",
-        "Vitro",
+        "Pharmacodynamics",
         "Dosing Information",
         "NUPLAZID Administration",
         "Report Adverse reactions",
@@ -92,9 +92,9 @@
         "Discount card",
         "NUPLAZID foundation assistance",
         "Foundation assistance",
-        "Guidelines",
-        "Guidelines care coordinator",
-        "Connect Acadia",
+        
+        
+        
         "Cost and insurance",
         "NUPLAZID patient assistance",
         "Indication",
@@ -119,53 +119,52 @@
         "Prior authorization",
         "Acadia Connect patient assistance program",
         "Acadia Connect",
-        "Parkinsons Disease",
-        "Parkinson Diseases",
+        
+        
         "Parkinson's Diseases",
         "PDP",
         "About Parkinson's Disease Psychosis",
-        "About Parkinsons Disease Psychosis",
-        "About Parkinson Diseases Psychosis",
-        "About Parkinson's Diseases Psychosis",
-        "About Parkinsons Diseases Psychosis",
+        "Symptoms of Parkinson's Disease",
+        
+        
+        
         "Symptoms & potential cause",
-        "Symptoms Parkinson's",
-        "Symptoms PDP",
+        
+        
         "Symptoms & potential causes",
-        "Parkinson Disease",
-        "Parkinsons Diseases",
-        "Parkinson",
+        
+        
+        
         "Parkinson's",
-        "Parkinsons",
+        
         "Psychosis",
         "Parkinson's Disease Psychosis",
-        "Delusion measured",
-        "Delusion",
-        "Delusions jealousy",
-        "Hallucinations measured",
-        "Hallucination",
+        
+        
+        
+        
+        "Help",
         "Symptom",
-        "Symptoms",
-        "Parkinson symptoms",
-        "Parkinson symptom",
+        
+        
         "Parkinson's symptoms",
-        "Parkinsons symptoms",
-        "Parkinsons symptom",
-        "Symptom Parkinson",
-        "Symptoms Parkinson's",
-        "Symptom Parkinson's",
-        "Symptoms Parkinsons",
-        "Symptom Parkinsons",
-        "Symptoms PD",
-        "Symptom PD",
-        "PD symptoms",
-        "Symptom PDP",
-        "PDP symptoms",
+        
+        
+        
+        
+        
+        
+        
+        "Symptoms of PD",
+        
+        "PD symptom",
+        "Symptoms of PDP",
+        "PDP symptom",
         "Learn about NUPLAZID",
         "NUPLAZID Parkinson",
         "NUPLAZID Parkinsons",
-        "Indications",
-        "Indications NUPLAZID",
+
+        
         "Learn NUPLAZID",
         "NUPLAZID Discussion guides",
         "NUPLAZID Resource",
@@ -194,35 +193,35 @@
         "Download Factsheets",
         "Fact sheet download",
         "Education materials patients",
-        "NUPLAZID patient informations",
-        "FDA approve",
+        
+        
         "NUPLAZID FDA approved",
         "NUPLAZID pharmacology",
         "Motor function",
         "Nonmotor function",
         "Impact on motor functions",
-        "Impact motor functions",
+        
         "Impact on nonmotor functions",
-        "Impact nonmotor functions",
+        
         "NUPLAZID warnings",
         "NUPLAZID precautions",
         "NUPLAZID warning and precautions",
         "Warnings",
         "Warning",
-        "QT Prolongations",
-        "QT Interval Prolongations",
-        "Interval",
-        "Prolongations",
-        "Efficacy NUPLAZID",
+        
+        
+        
+        
+        
         "Efficacy",
-        "Measuring",
+        
         "NUPLAZID efficacy results",
         "NUPLAZID efficacy result",
         "Efficacy results",
         "Open label extension Study",
         "Open label safety study",
         "SAPS PD",
-        "Common Adverse",
+        
         "Common adverse reaction",
         "Adverse event",
         "Adverse effect",
@@ -238,10 +237,10 @@
         "NUPLAZID safe",
         "Safety",
         "Mechanism Of Action",
-        "Serotonergic",
-        "In Vitro",
+        "Clinical pharmacology",
+        "Pharmacodynamics",
         "Mechanism action NUPLAZID",
-        "Mechanism action",
+        
         "Dosage details",
         "Dosage forms",
         "Dosage and administration",
@@ -259,11 +258,11 @@
         "Steady state plasma",
         "NUPLAZID drug classification",
         "Drug classification",
-        "Drug",
+        "Safety Data",
         "Drug Interactions",
         "NUPLAZID financial assistance",
         "NUPLAZID financial assistance coverage",
-        "Longtermcareaccess",
+        
         "NUPLAZID medication payment assistance",
         "Medication payment assistance",
         "Medical payment assistance",
@@ -287,13 +286,13 @@
         "Enrolled eligibility",
         "Eligibility",
         "Cost",
-        "Help",
+        
         "Care coordinator",
         "Assistant",
         "Assistance",
-        "Assist me",
+        
         "Contact",
-        "Treatment",
+        "Support program",
         "Treatment form",
         "Patient treatment form",
         "Treatment forms",
@@ -301,7 +300,7 @@
         "NUPLAZID registry",
         "Enroll patient",
         "Insurance Lookup",
-        "Coverage samples",
+        
         "Reimbursement support",
         "Medical necessity template",
         "Medicare plan",
@@ -320,7 +319,7 @@
         "Sample order",
         "Medicine NUPLAZID",
         "NUPLAZID cost",
-        "Much NUPLAZID",
+        
         "NUPLAZID enrollment form",
         "NUPLAZID black box warning",
         "NUPLAZID pharmacy",
@@ -368,7 +367,7 @@
         "Report issues",
         "Someone medical concern",
         "Someone about medical concern",
-        "Someone enroll acadia connect",
+        
         "Placebo",
         "Placebo control",
         "Placebo study",
