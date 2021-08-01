@@ -83,20 +83,19 @@
                 "efficacy",
                 "NUPLAZID help",
                 "help NUPLAZID",
-                "Dosing",
-                "Dosing pd",
-                "Dosing parkinson disease",
-                "Dosing parkinson's disease",
-                "Dosing pdp",
-                "interactions",
-                "interaction",
-                "dosing nuplazid",
+                
+                
+                
+                
+                
+                
+                
                 "nuplazid medicine",
-                "current medications use nuplazid",
-                "current medications nuplazid",
-                "treatment Parkinson's disease",
+                
+                
+                
                 "treatment Parkinsons disease",
-                "treatment pd",
+                
                 "treatment pdp",
                 "treatment"
             ],
@@ -129,25 +128,16 @@
                 "faqs",
                 "faq",
                 "faq nuplazid",
-                "faq pd",
-                "faq pdp",
-                "faq parkinson disease",
-                "faq parkinson's disease",
+                
                 "faqs nuplazid",
-                "faqs pd",
-                "faqs pdp",
-                "faqs parkinson disease",
-                "faqs parkinson's disease",
+                
+                
                 "frequently asked question nuplazid",
-                "frequently asked question pd",
-                "frequently asked question pdp",
-                "frequently asked question parkinson disease",
-                "frequently asked question parkinson's disease",
-                "frequently asked questions nuplazid",
-                "frequently asked questions pd",
-                "frequently asked questions pdp",
-                "frequently asked questions parkinson disease",
-                "frequently asked questions parkinson's disease"
+                
+                "frequently asked questions nuplazid"
+                
+                
+                
             ],
             "responses": [
                 "FAQ"
@@ -156,8 +146,8 @@
         {
             "Intent": "NUPLAZID Clinical Trial",
             "patterns": [
-                "NUPLAZID Parkinson",
-                "NUPLAZID Parkinson's",
+                
+                
                 "NUPLAZID Parkinsons",
                 "Clinical data",
                 "Clinical results",
@@ -272,6 +262,7 @@
             "Intent": "Related hallucinations and delusions queries",
             "patterns": [
                 "hallucinations Parkinson",
+                "hallucinations associated Parkinson's Disease",
                 "Parkinson induced hallucinations",
                 "Parkinson hallucination",
                 "hallucinations Parkinson's",
@@ -281,7 +272,9 @@
                 "sign of hallucination",
                 "hallucination",
                 "hallucinations",
-                "visual hallucinations"
+                "visual hallucinations",
+                "NUPLAZID Parkinson",
+                "NUPLAZID Parkinson's"
             ],
             "responses": [
                 "Parkinson's hallucination"
@@ -420,7 +413,8 @@
                 "indication usage",
                 "Warnings Precautions",
                 "Warning Precaution",
-                "Nuplazid Indication"
+                "Nuplazid Indication",
+                "Dosing"
             ],
             "responses": [
                 "NUPLAZID prescribing information"
@@ -459,8 +453,8 @@
                 "Side effects",
                 "NUPLAZID Side effects",
                 "NUPLAZID Side effect",
-                "side effect pd",
-                "side effect pdp",
+                
+
                 "side effect parkinson disease",
                 "side effect parkinson's disease",
                 "side effects pd",
@@ -516,7 +510,9 @@
                 "safety FAQ",
                 "safety FAQs",
                 "common side effects",
-                "common side effect"
+                "common side effect",
+                "interactions",
+                "interaction"
             ],
             "responses": [
                 "Safety Information"
@@ -640,9 +636,9 @@
                 "financial assistance",
                 "Assistance",
                 "further assistance",
-                "nuplazid covered medicare",
+                "nuplazid covered under medicare",
                 "medicare insurance get coverage nuplazid",
-                "nuplazid covered medicaid",
+                "nuplazid covered under medicaid",
                 "copay assistance",
                 "prescription support nuplazid",
                 "someone assist insurance",
@@ -666,7 +662,7 @@
                 "insurance",
                 "community support",
                 "parkinson's patient support",
-                "organizations parkinson's patient support",
+                "Organizations supporting Parkinson's Patients",
                 "more nuplazid",
                 "parkinson's support community",
                 "pdp support community"
