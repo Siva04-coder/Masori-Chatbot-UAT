@@ -19,24 +19,24 @@
         "NUPLAZID warning and precaution",
         "NUPLAZID approved FDA",
         "NUPLAZID",
-        "NUPLAZID Parkinson's",
+        "NUPLAZID Parkinson's disease psychosis",
         "Adverse reaction",
         
         "About NUPLAZID",
         "About PD disease",
-        "NUPLAZID Discussion guide",
+        "NUPLAZID Dosing guide",
         "NUPLAZID Resources",
         "NUPLAZID Factsheet",
         "Boxed warning",
-        "Blackbox warning",
+        
         "FDA NUPLAZID",
         "Formulary Lookup",
-        "Fact sheets & Discussion guide",
+        "Fact sheets & Dosing guide",
         "Fact sheet",
         "Drug Interaction",
         "Diagnostic codes",
-        "Discussion guide",
-        "NUPLAZID patient information",
+        "Dosing guide",
+        "NUPLAZID data",
 
         "Motor function",
         "Nonmotor function",
@@ -71,7 +71,7 @@
         "Long term care access",
         "Long Term Safety",
         "Precaution",
-        "Placebo controlled studies",
+        "Clinical trials experience",
         "NUPLAZID Safety",
         "Safety information",
         "Common adverse reactions",
@@ -108,7 +108,7 @@
         "Dosage Administration",
         "Dosage information",
         "Dosing Guide",
-        "Brochure",
+        "Patient Brochure",
         "Patient Video",
         "Support",
         "Additional information",
@@ -147,7 +147,7 @@
         "Symptom",
         
         
-        "Parkinson's symptoms",
+        "Parkinson's disease psychosis symptoms",
         
         
         
@@ -161,8 +161,8 @@
         "Symptoms of PDP",
         "PDP symptom",
         "Learn about NUPLAZID",
-        "NUPLAZID Parkinson",
-        "NUPLAZID Parkinsons",
+        
+        
 
         
         "Learn NUPLAZID",
@@ -252,8 +252,8 @@
         "Administration",
         "Recommended daily dosage",
         "Daily dosage",
-        "Nuplazid food",
-        "Adjust dosing",
+        "Nuplazid Dosage and Administration",
+        "Dosage modifications",
         "Steady state plasma concentration",
         "Steady state plasma",
         "NUPLAZID drug classification",
@@ -274,7 +274,7 @@
         "Acadia connect contact information",
         "Forms",
         "Covering prescription costs",
-        "NUPLAZID prescribing",
+        "NUPLAZID prescribing info",
         "Pimavanserin prescribing information",
         "Full prescribing information",
         "Prescribing information",
@@ -317,7 +317,7 @@
         "Sample NUPLAZID",
         "Sample ordering",
         "Sample order",
-        "Medicine NUPLAZID",
+        
         "NUPLAZID cost",
         
         "NUPLAZID enrollment form",
@@ -326,12 +326,11 @@
         "Prescription process",
         "In-office care",
         "Reimbursement process",
-        "Long-term",
+        
         "Long-term care service request form",
         "Long-term care service request",
-        "Long term",
+        
         "Long term care",
-        "Long term service",
         "Long term care service request",
         "Long term care service request form",
         "ICD-10 Code",
@@ -339,7 +338,7 @@
         "Diagnostic code",
         "Pricing guide",
         "Service request form",
-        "Some resources",
+        "Helpful resources",
         "Additional info",
         "Share information",
         "Share info",
@@ -368,16 +367,13 @@
         "Someone medical concern",
         "Someone about medical concern",
         
-        "Placebo",
         "Placebo control",
         "Placebo study",
         "Placebo-controlled studies",
         "Placebo controlled study",
         "Placebo controlled",
         "Acadiaconnect details",
-        "Acadia",
-        "Acadiaconnect",
-        "Enroll acadia connect",
-        "Acadia connect"
+        "Acadia Connect",
+        "Enroll acadia connect"
     ]
 }

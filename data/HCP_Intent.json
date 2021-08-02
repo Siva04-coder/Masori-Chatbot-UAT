@@ -48,6 +48,7 @@
                 "Parkinson symptoms",
                 "Parkinson symptom",
                 "Parkinson's symptoms",
+                "Parkinson's disease psychosis symptoms",
                 "Parkinson's symptom",
                 "Parkinsons symptoms",
                 "Parkinsons symptom",
@@ -77,22 +78,14 @@
         {
             "Intent": "Prescribing Information",
             "patterns": [
-                "NUPLAZID prescribing",
+                "NUPLAZID prescribing info",
                 "Pimavanserin prescribing information",
                 "Full prescribing information",
                 "Prescribing information",
                 "Full PI",
                 "PI",
                 "Prescribing Info",
-                "Package Insert",
-                "warnings",
-                "warning",
-                "box warning",
-                "boxed warning",
-                "Blackbox warning",
-                "Blackbox warnings",
-                "Warning Blackbox",
-                "Warnings Blackbox"
+                "Package Insert"
             ],
             "responses": [
                 "Prescribing Information"
@@ -102,8 +95,8 @@
             "Intent": "About NUPLAZID",
             "patterns": [
                 "care coordinator",
-                "NUPLAZID medications",
-                "NUPLAZID Parkinson's",
+                "NUPLAZID medication",
+                "NUPLAZID Parkinson's disease psychosis",
                 "NUPLAZID Parkinson",
                 "NUPLAZID Parkinsons",
                 "NUPLAZID indication",
@@ -122,16 +115,16 @@
         {
             "Intent": "About NUPLAZID",
             "patterns": [
-                "NUPLAZID Discussion guide",
-                "NUPLAZID Discussion guides",
+                "NUPLAZID Dosing guide",
+                "NUPLAZID Dosing guides",
                 "NUPLAZID Resources",
                 "NUPLAZID Resource",
                 "Resources NUPLAZID",
                 "NUPLAZID Factsheet",
-                "Discussion guide",
-                "Discussion guides",
-                "Fact sheets & Discussion guide",
-                "Fact sheets & Discussion guides",
+                "Dosing guide",
+                "Dosing guides",
+                "Fact sheets & Dosing guide",
+                "Fact sheets & Dosing guides",
                 "Fact sheet",
                 "Factsheet",
                 "Factsheets",
@@ -157,9 +150,8 @@
         {
             "Intent": "Efficacy Story",
             "patterns": [
-                "NUPLAZID patient information",
-                "patient information",
-                "NUPLAZID patient informations",
+                "NUPLAZID data",
+                "NUPLAZID efficacy data",
                 "FDA NUPLAZID",
                 "FDA approve",
                 "NUPLAZID FDA approved",
@@ -181,21 +173,7 @@
         {
             "Intent": "NUPLAZID Warnings",
             "patterns": [
-                "NUPLAZID warnings",
-                "NUPLAZID warning",
-                "NUPLAZID precaution",
-                "NUPLAZID warning and precaution",
-                "NUPLAZID precautions",
-                "NUPLAZID warning and precautions",
-                "QT Interval",
-                "QT Interval Prolongation",
-                "QT Interval Prolongations",
-                "QT Prolongation",
-                "QT Prolongations",
-                "interval",
-                "Prolongation",
-                "Prolongations",
-                "QT"
+                
             ],
             "responses": [
                 "NUPLAZID Warnings"
@@ -286,7 +264,7 @@
                 "precautions",
                 "precaution",
                 "safety studies",
-                "Blackbox"
+                "Boxed Warning"
             ],
             "responses": [
                 "Pimavanserin safety"
@@ -299,17 +277,39 @@
                 "NUPLAZID important safety information",
                 "NUPLAZID Safety",
                 "NUPLAZID safe",
+                "Mortality elderly patients dementia-related psychosis",
                 "safety information",
                 "safety",
                 "Contraindication",
                 "tolerability",
                 "Drug Interactions",
                 "Drug Interaction",
+                "Safety Data",
+                "Drug safety",
                 "Indication usage",
                 "Indication",
                 "Usage",
+                "warnings precautions",
+                "warning precaution",
+                "warning",
                 "precaution",
-                "precautions"
+                "precautions",
+                "warnings",
+                "QT Interval",
+                "QT Interval Prolongation",
+                "QT Interval Prolongations",
+                "QT Prolongation",
+                "QT Prolongations",
+                "interval",
+                "Prolongation",
+                "Prolongations",
+                "QT",
+                "NUPLAZID warnings",
+                "NUPLAZID warning",
+                "NUPLAZID precaution",
+                "NUPLAZID warning and precaution",
+                "NUPLAZID precautions",
+                "NUPLAZID warning and precautions"
             ],
             "responses": [
                 "NUPLAZID important safety information"
@@ -322,7 +322,10 @@
                 "About MOA",
                 "MOA",
                 "Serotonergic agent",
+                "Serotonergic receptors",
                 "Serotonergic",
+                "Clinical pharmacology",
+                "Pharmacodynamics",
                 "In Vitro",
                 "Vitro",
                 "Mechanism of action NUPLAZID",
@@ -354,11 +357,13 @@
                 "Dosage forms",
                 "Tablet",
                 "Capsule",
-                "nuplazid food",
-                "adjust dosing",
+                "Nuplazid Dosage Administration",
+                "Dosage modifications",
                 "steady state plasma concentration",
                 "steady state plasma",
-                "steady state"
+                "steady state",
+                "best practice",
+                "Sprinkle instructions"
             ],
             "responses": [
                 "Dosage Administration"
@@ -420,7 +425,7 @@
             "Intent": "Coverage high level information and links",
             "patterns": [
                 "NUPLAZID patient assistance",
-                "treatment",
+                "Support program",
                 "Treatment form",
                 "Treatment forms",
                 "patient treatment form",
@@ -536,10 +541,10 @@
                 "Dosing Guide",
                 "Pricing guide",
                 "Service request form",
-                "Brochure",
+                "Patient Brochure",
                 "Patient Video",
                 "education materials patients",
-                "some resources",
+                "Helpful resources",
                 "support",
                 "additional information",
                 "additional info",
@@ -621,7 +626,7 @@
             "Intent": "General Information",
             "patterns": [
                 "placebo-controlled studies",
-                "placebo controlled studies",
+                "Clinical trials experience",
                 "placebo controlled study",
                 "placebo controlled",
                 "placebo study",
