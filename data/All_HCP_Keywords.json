@@ -196,9 +196,9 @@
         "NUPLAZID pharmacology",
         "Motor function",
         "Nonmotor function",
-        "Impact on motor functions",
+        "Impact on motor function",
         
-        "Impact on nonmotor functions",
+        "Impact on nonmotor function",
         
         "NUPLAZID warnings",
         "NUPLAZID precautions",
@@ -231,6 +231,7 @@
         "Adverse reactions table",
         "Precautions",
         "NUPLAZID important safety information",
+        "Important safety information",
         "NUPLAZID safe",
         "Safety",
         "Mechanism Of Action",
