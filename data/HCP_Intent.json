@@ -45,25 +45,13 @@
                 "Delusions",
                 "symptom",
                 "symptoms",
-                "Parkinson symptoms",
-                "Parkinson symptom",
-                "Parkinson's symptoms",
                 "Parkinson's disease psychosis symptoms",
-                "Parkinson's symptom",
-                "Parkinsons symptoms",
-                "Parkinsons symptom",
-                "Parkinson's symptoms",
-                "Parkinson's symptom",
-                "symptoms Parkinson",
                 "symptom Parkinson",
-                "symptoms Parkinson's",
                 "symptom Parkinson's",
-                "symptoms Parkinson's",
+                "Symptoms of Parkinson's Disease Psychosis",
                 "symptom Parkinson's",
-                "symptoms Parkinsons",
                 "symptom Parkinsons",
-                "symptoms PD",
-                "symptom PD",
+                
                 "PD symptom",
                 "PD symptoms",
                 "symptoms PDP",
@@ -273,7 +261,6 @@
         {
             "Intent": "Safety Information",
             "patterns": [
-                "placebo controlled studies",
                 "NUPLAZID important safety information",
                 "NUPLAZID Safety",
                 "NUPLAZID safe",
@@ -410,7 +397,6 @@
         {
             "Intent": "Contact",
             "patterns": [
-                "help",
                 "care coordinator",
                 "assistant",
                 "assistance",
@@ -509,12 +495,8 @@
             "patterns": [
                 "Long-term",
                 "Long term",
-                "Long-term care",
-                "Long term care",
                 "long-term service",
                 "long term service",
-                "long-term care service request",
-                "long term care service request",
                 "long-term care service request form",
                 "long term care service request form"
             ],
@@ -625,16 +607,13 @@
         {
             "Intent": "General Information",
             "patterns": [
-                "placebo-controlled studies",
+                
                 "Clinical trials experience",
-                "placebo controlled study",
-                "placebo controlled",
-                "placebo study",
-                "placebo control",
-                "placebo"
+                "Clinical trial experience"
+                
             ],
             "responses": [
-                "Placebo controlled studies"
+                "`Placebo` controlled studies"
             ]
         },
         {
