@@ -37,7 +37,8 @@
         "Nonmotor symptoms",
         "NUPLAZID efficacy",
         "Nuplazid Indication",
-        "NUPLAZID Parkinson's",
+        "NUPLAZID PD-related Hallucinations",
+        "NUPLAZID PD-related Delusions",
         "NUPLAZID prescribing information",
         "NUPLAZID safety",
         
@@ -139,7 +140,7 @@
 
         
         
-        "Pdp",
+        "PDP",
         "Symptoms of Parkinson's disease",
         
 
@@ -254,7 +255,7 @@
         "Information on PD related hallucinations",
         
         
-        "Remedies Parkinson's disease",
+        "Remedies for Parkinson's disease",
         "Hallucinations associated with Parkinson's Disease",
 
         
@@ -270,7 +271,7 @@
         "Parkinson's induced delusions",
         
         
-        "Related hallucinations & delusions",
+        
         "Delusion",
         "Delusions associated with PD psychosis",
         
@@ -337,15 +338,14 @@
         "NUPLAZID effective",
         "Effective NUPLAZID",
         "Effective",
-        "Side effects PDP",
+        
         "Experiencing side effects",
         "NUPLAZID Side effects",
         "NUPLAZID Side effect",
-        "Side effect PD",
-        "Side effect PDP",
+        
         "Side effect Parkinson disease",
         "Side effect Parkinson's disease",
-        "Side effects PD",
+        
         "Side effects",
         "Side effects Parkinson disease",
         "Side effects Parkinson's disease",

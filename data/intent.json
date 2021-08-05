@@ -273,8 +273,10 @@
                 "hallucination",
                 "hallucinations",
                 "visual hallucinations",
-                "NUPLAZID Parkinson",
-                "NUPLAZID Parkinson's"
+                "NUPLAZID PD related Hallucinations",
+                "NUPLAZID PD-related Hallucinations",
+                "NUPLAZID PD-related Hallucination",
+                "NUPLAZID PD related Hallucination"
             ],
             "responses": [
                 "Parkinson's hallucination"
@@ -292,7 +294,11 @@
                 "related hallucination & delusion",
                 "related hallucinations & delusions",
                 "delusion",
-                "delusions"
+                "delusions",
+                "NUPLAZID PD-related Delusions",
+                "NUPLAZID PD related Delusions",
+                "NUPLAZID PD-related Delusion",
+                "NUPLAZID PD related Delusion"
             ],
             "responses": [
                 "Parkinson's delusions"
