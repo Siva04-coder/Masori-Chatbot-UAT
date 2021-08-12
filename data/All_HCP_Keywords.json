@@ -13,7 +13,7 @@
         
         "PD symptom",
         "PDP symptom",
-        "NUPLAZID medication",
+        "Nuplazid Capsule",
         "NUPLAZID indication",
         "NUPLAZID warning and precaution",
         "NUPLAZID approved FDA",
@@ -70,8 +70,9 @@
         "Long-term care service request form",
         "Long term care access",
         "Long Term Safety",
-        "Precaution",
         "Clinical trials experience",
+        "Clinical studies",
+        "Clinical data",
         "NUPLAZID Safety",
         "Safety information",
         "Common adverse reactions",
@@ -136,7 +137,7 @@
         
         "Parkinson's",
         
-        "Psychosis",
+        
         "Parkinson's Disease Psychosis",
         
         
@@ -169,6 +170,7 @@
         "Boxed warning",
         "Blackbox warnings",
         "Warning Blackbox",
+        "Warnings and Precautions",
         "Warnings Blackbox",
         
         "Factsheet download",
@@ -229,13 +231,12 @@
         "Adverse",
         "Safety profile",
         "Adverse reactions table",
-        "Precautions",
         "NUPLAZID important safety information",
         "Important safety information",
         "NUPLAZID safe",
+        "Safety Data",
         "Safety",
         "Mechanism Of Action",
-        "Clinical pharmacology",
         "Pharmacodynamics",
         "Mechanism action NUPLAZID",
         
@@ -256,7 +257,7 @@
         "Steady state plasma",
         "NUPLAZID drug classification",
         "Drug classification",
-        "Safety Data",
+        
         "Drug Interactions",
         "NUPLAZID financial assistance",
         "NUPLAZID financial assistance coverage",
@@ -286,6 +287,7 @@
         "Cost",
         
         "Care coordinator",
+        "Caregiver support",
         "Assistant",
         "Assistance",
         
@@ -365,6 +367,10 @@
         
         "Acadiaconnect details",
         "Acadia Connect",
-        "Enroll acadia connect"
+        "Enroll acadia connect",
+
+        "QT",
+        "QT Interval Prolongation",
+        "QT Interval"
     ]
 }
