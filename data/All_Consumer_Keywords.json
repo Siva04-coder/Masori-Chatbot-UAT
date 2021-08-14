@@ -26,12 +26,13 @@
         "Healthcare Discussion",
         
         "Indication nuplazid",
+        "Indication",
         "Insurance coverage information",
         "Issues",
         "Interactions",
         "Indication and usage",
         "Insurance type",
-        "Manage Parkinson's disease",
+        
         
         "Motor symptoms",
         "Nonmotor symptoms",
@@ -44,7 +45,8 @@
         
         "Organizations supporting Parkinson's Patients",
         "Parkinson's disease symptoms",
-        
+        "Parkinson associated Delusions",
+        "Parkinson's hallucinations",
         "Parkinson’s disease Hallucinations and Delusions",
         
         
@@ -70,7 +72,7 @@
         "Treatment",
         
         "Treatment of PDP",
-        
+        "Treatment Parkinson's disease related hallucination",
         
         
         "Visual hallucinations",
@@ -173,9 +175,7 @@
         "Cause of PD",
         
 
-        "Manage PD",
-        "Manage PDP",
-
+        
         
         "PD",
         
@@ -233,10 +233,9 @@
         "Cause of Parkinson diseases",
         "Cause of Parkinsons diseases",
 
-        "Management of Parkinson's Disease",
         
         
-        "Personal videos",
+        
 
         "Personal Story",
         "Stories",
@@ -336,8 +335,7 @@
         "Dosage information",
         "Take NUPLAZID",
         "NUPLAZID effective",
-        "Effective NUPLAZID",
-        "Effective",
+        
         
         "Experiencing side effects",
         "NUPLAZID Side effects",

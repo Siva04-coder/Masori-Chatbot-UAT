@@ -83,12 +83,14 @@
                 "efficacy",
                 "NUPLAZID help",
                 "help NUPLAZID",
+                "Indication nuplazid",
                 
                 
-                
-                
-                
-                
+                "indication usage",
+                "dosage nuplazid",
+                "dosage administration",
+                "Dosing",
+                "forms dosage",
                 
                 "nuplazid medicine",
                 
@@ -403,24 +405,22 @@
                 "prescription",
                 "NUPLAZID prescription",
                 "prescription nuplazid",
-                "dosage nuplazid",
-                "dosage administration",
+                
+                
                 "nuplazid capsule form",
-                "forms dosage",
-                "indication nuplazid",
+                
                 "nuplazid food",
                 "contraindications nuplazid",
                 "contraindication nuplazid",
                 "contraindications",
                 "contraindication",
-                "boxed warning",
+                
                 "full Prescribing Information",
                 "drug interactions",
-                "indication usage",
                 "Warnings Precautions",
                 "Warning Precaution",
-                "Nuplazid Indication",
-                "Dosing"
+                "Nuplazid Indication"
+                
             ],
             "responses": [
                 "NUPLAZID prescribing information"
@@ -518,7 +518,8 @@
                 "common side effects",
                 "common side effect",
                 "interactions",
-                "interaction"
+                "interaction",
+                "boxed warning"
             ],
             "responses": [
                 "Safety Information"
