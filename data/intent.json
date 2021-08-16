@@ -93,8 +93,8 @@
                 "forms dosage",
                 
                 "nuplazid medicine",
-                
-                
+                "Nuplazid Indication",
+                "Indication",
                 
                 "treatment Parkinsons disease",
                 
@@ -418,8 +418,8 @@
                 "full Prescribing Information",
                 "drug interactions",
                 "Warnings Precautions",
-                "Warning Precaution",
-                "Nuplazid Indication"
+                "Warning Precaution"
+                
                 
             ],
             "responses": [
@@ -587,7 +587,8 @@
                 "constipation nuplazid intake",
                 "getting pain",
                 "Nausea",
-                "Confusion"
+                "Confusion",
+                "Changes normal walking"
             ],
             "responses": [
                 "Important Safety Information"
@@ -622,8 +623,8 @@
                 "issues",
                 "concerns",
                 "product issue",
-                "product issues",
-                "Changes normal walking"
+                "product issues"
+                
             ],
             "responses": [
                 "Adverse Reaction"

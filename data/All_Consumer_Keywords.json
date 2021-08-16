@@ -25,7 +25,7 @@
         "Hallucinations",
         "Healthcare Discussion",
         
-        "Indication nuplazid",
+        
         "Indication",
         "Insurance coverage information",
         "Issues",
@@ -76,10 +76,9 @@
         
         
         "Visual hallucinations",
-        "Warning Precaution",
-        "Warning and precautions",
+        "Warnings and precautions",
         "Warnings",
-        "Warning",
+        
 
 
         "Parkinson's disease",
@@ -92,7 +91,6 @@
 
 
         "Delusions",
-        "Hallucinations",
 
 
         "About PD disease",
@@ -372,7 +370,7 @@
         "Nausea",
         "Confusion",
         "Constipation",
-        "Changes normal walking",
+        
         "Adverse event",
         "Adverse effect",
         "Adverse effects",
@@ -458,7 +456,6 @@
         "Patient enrollment program",
 
         "Enroll",
-        "Caregiver enroll patient",
-        "Hallucinations"
+        "Caregiver enroll patient"
     ]
 }
