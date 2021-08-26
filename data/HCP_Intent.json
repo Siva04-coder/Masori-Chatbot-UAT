@@ -67,13 +67,15 @@
             "Intent": "Prescribing Information",
             "patterns": [
                 "NUPLAZID prescribing info",
-                "Pimavanserin prescribing information",
+                "NUPLAZID prescribing information",
                 "Full prescribing information",
                 "Prescribing information",
                 "Full PI",
                 "PI",
                 "Prescribing Info",
-                "Package Insert"
+                "Package Insert",
+                "recommended dosage",
+                "recommended daily dosage"
             ],
             "responses": [
                 "Prescribing Information"
@@ -246,7 +248,6 @@
         {
             "Intent": "Safety Information",
             "patterns": [
-                "Pimavanserin safety",
                 "Safety profile",
                 "Adverse reactions table",
                 "Adverse reaction table",
@@ -264,7 +265,7 @@
             "Intent": "Safety Information",
             "patterns": [
                 "NUPLAZID important safety information",
-                "NUPLAZID Safety",
+                "NUPLAZID safety",
                 "NUPLAZID safe",
                 "Mortality elderly patients dementia-related psychosis",
                 "safety information",
@@ -340,8 +341,6 @@
                 "dosage detail",
                 "dosage",
                 "administration",
-                "recommended dosage",
-                "recommended daily dosage",
                 "daily dosage",
                 "Dosage forms",
                 "Tablet",
@@ -617,7 +616,7 @@
                 
             ],
             "responses": [
-                "`Placebo` controlled studies"
+                "`Placebo controlled studies"
             ]
         },
         {

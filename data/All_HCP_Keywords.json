@@ -13,8 +13,10 @@
         
         "PD symptom",
         "PDP symptom",
+        "NUPLAZID Safety",
+        "NUPLAZID Efficacy",
+        "NUPLAZID Indication",
         "NUPLAZID Capsule",
-        "NUPLAZID indication",
         "NUPLAZID Warnings and Precautions",
         "NUPLAZID approved FDA",
         "NUPLAZID",
@@ -46,7 +48,7 @@
         
         
         
-        "NUPLAZID efficacy",
+        
         "Efficacy Data",
         "Efficacy Data NUPLAZID",
         "NUPLAZID primary endpoint",
@@ -65,7 +67,6 @@
         "Open label study",
         "Samples NUPLAZID",
         "SAPS-PD",
-        "Pimavanserin safety",
         "Pivotal trial",
         "Long-term care service request form",
         "Long term care access",
@@ -111,7 +112,7 @@
         "Patient Video",
         "Support",
         "Additional information",
-        "Medical necessity",
+        
         "Issues",
         "Medical problem",
         "Product issue",
@@ -203,7 +204,7 @@
         
         "NUPLAZID warnings",
         "NUPLAZID precautions",
-        "NUPLAZID warning and precautions",
+        
         "Warnings",
         "Warning",
         
@@ -263,17 +264,15 @@
         
         "NUPLAZID medication payment assistance",
         "Medication payment assistance",
-        "Medical payment assistance",
-        "Medical payment assistant",
         "Payment assistance",
         "Payment assistant",
-        "Patient care Offered",
+        
         "Coverage financial assistance",
         "Acadia connect contact information",
         "Forms",
         "Covering prescription costs",
         "NUPLAZID prescribing info",
-        "Pimavanserin prescribing information",
+        "NUPLAZID prescribing information",
         "Full prescribing information",
         "Prescribing information",
         "Full PI",
