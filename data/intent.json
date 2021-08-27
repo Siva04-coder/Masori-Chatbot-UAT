@@ -429,7 +429,7 @@
             "patterns": [
                 "NUPLAZID dosage options",
                 "NUPLAZID dosage option",
-                "Recommended dose",
+                
                 "dosage",
                 "dosage information"
             ],
@@ -599,7 +599,7 @@
                 "much NUPLAZID Cost",
                 "much NUPLAZID",
                 "cost nuplazid",
-                
+                "Recommended dose",
                 "Recommend dose"
             ],
             "responses": [
