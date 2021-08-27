@@ -36,12 +36,12 @@
         
         "Motor symptoms",
         "Nonmotor symptoms",
-        "NUPLAZID efficacy",
         "NUPLAZID Indication",
+        "NUPLAZID Efficacy",
+        "NUPLAZID Safety",
         "NUPLAZID PD-related Hallucinations",
         "NUPLAZID PD-related Delusions",
         "NUPLAZID prescribing information",
-        "NUPLAZID safety",
         
         "Organizations supporting Parkinson's Patients",
         "Parkinson's disease symptoms",
@@ -252,7 +252,7 @@
         "Information on PD related hallucinations",
         
         
-        "Remedies for Parkinson's disease",
+        
         "Hallucinations associated with Parkinson's Disease",
 
         
@@ -307,7 +307,7 @@
         "Acadia",
         "NUPLAZID prescribing",
 
-        "Pimavanserin prescribing information",
+        "NUPLAZID prescribing information",
         "Prescribing Information",
         
         "Prescribing",
@@ -317,6 +317,7 @@
         "Dosage nuplazid",
         "Nuplazid capsule form",
         "Forms dosage",
+        
         "Induced",
 
         
@@ -339,12 +340,9 @@
         "NUPLAZID Side effects",
         "NUPLAZID Side effect",
         
-        "Side effect Parkinson disease",
-        "Side effect Parkinson's disease",
         
         "Side effects",
-        "Side effects Parkinson disease",
-        "Side effects Parkinson's disease",
+        
         "Safety FAQs",
 
         "Report Adverse effect",

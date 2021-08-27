@@ -136,10 +136,12 @@
                 
                 "frequently asked question nuplazid",
                 
-                "frequently asked questions nuplazid"
+                "frequently asked questions nuplazid",
                 
                 
                 
+                "getting NUPLAZID",
+                "get NUPLAZID"
             ],
             "responses": [
                 "FAQ"
@@ -249,11 +251,11 @@
             "patterns": [
                 "Parkinson condition",
                 "management of Parkinson",
-                "remedies Parkinson disease",
+                
                 "Learn about Parkinson disease",
                 "Parkinson's condition",
                 "management of Parkinson's",
-                "remedies Parkinson's disease",
+
                 "Learn about Parkinson's disease"
             ],
             "responses": [
@@ -325,9 +327,7 @@
             "Intent": "how to start NUPLAZID",
             "patterns": [
                 "start NUPLAZID",
-                "NUPLAZID start",
-                "getting NUPLAZID",
-                "get NUPLAZID"
+                "NUPLAZID start"
             ],
             "responses": [
                 "how to start NUPLAZID"
@@ -398,7 +398,7 @@
             "patterns": [
                 "NUPLAZID prescribing",
                 "NUPLAZID prescribing information",
-                "pimavanserin prescribing information",
+                "NUPLAZID prescribing information",
                 "Prescribing Information",
                 "prescribe",
                 "prescribing",
@@ -419,8 +419,6 @@
                 "drug interactions",
                 "Warnings Precautions",
                 "Warning Precaution"
-                
-                
             ],
             "responses": [
                 "NUPLAZID prescribing information"
@@ -455,18 +453,9 @@
         {
             "Intent": "Side Effects",
             "patterns": [
-                "Side effect",
-                "Side effects",
                 "NUPLAZID Side effects",
                 "NUPLAZID Side effect",
                 
-
-                "side effect parkinson disease",
-                "side effect parkinson's disease",
-                "side effects pd",
-                "side effects pdp",
-                "side effects parkinson disease",
-                "side effects parkinson's disease",
                 "safety faqs"
             ],
             "responses": [
@@ -517,6 +506,9 @@
                 "safety FAQs",
                 "common side effects",
                 "common side effect",
+                
+                "Side effect",
+                "Side effects",
                 "interactions",
                 "interaction",
                 "boxed warning"
@@ -606,7 +598,9 @@
                 "cost",
                 "much NUPLAZID Cost",
                 "much NUPLAZID",
-                "cost nuplazid"
+                "cost nuplazid",
+                
+                "Recommend dose"
             ],
             "responses": [
                 "NUPLAZID cost"
@@ -670,7 +664,7 @@
                 "insurance",
                 "community support",
                 "parkinson's patient support",
-                "Organizations supporting Parkinson's Patients",
+                
                 "more nuplazid",
                 "parkinson's support community",
                 "pdp support community"
@@ -691,7 +685,8 @@
                 "additional information",
                 "additional info",
                 "share information",
-                "share info"
+                "share info",
+                "Organizations supporting Parkinson's Patients"
             ],
             "responses": [
                 "Support"
