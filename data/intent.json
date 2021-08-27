@@ -90,7 +90,7 @@
                 "dosage nuplazid",
                 "dosage administration",
                 "Dosing",
-                "forms dosage",
+                "Dosage Forms",
                 
                 "nuplazid medicine",
                 "Nuplazid Indication",
@@ -277,10 +277,10 @@
                 "hallucination",
                 "hallucinations",
                 "visual hallucinations",
-                "NUPLAZID PD related Hallucinations",
-                "NUPLAZID PD-related Hallucinations",
-                "NUPLAZID PD-related Hallucination",
-                "NUPLAZID PD related Hallucination"
+                "PD related Hallucinations",
+                "PD-related Hallucinations",
+                "PD-related Hallucination",
+                "PD related Hallucination"
             ],
             "responses": [
                 "Parkinson's hallucination"
