@@ -600,7 +600,8 @@
                 "much NUPLAZID",
                 "cost nuplazid",
                 "Recommended dose",
-                "Recommend dose"
+                "Recommend dose",
+                "Organizations supporting Parkinson's Patients"
             ],
             "responses": [
                 "NUPLAZID cost"
@@ -685,8 +686,7 @@
                 "additional information",
                 "additional info",
                 "share information",
-                "share info",
-                "Organizations supporting Parkinson's Patients"
+                "share info"
             ],
             "responses": [
                 "Support"
