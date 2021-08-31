@@ -223,7 +223,6 @@
                 "healthcare",
                 "speak with",
                 "ddg",
-                "information",
                 "questions doctor",
                 "symptoms get worse over time",
                 "symptoms worse over time",
@@ -688,7 +687,9 @@
                 "additional information",
                 "additional info",
                 "share information",
-                "share info"
+                "share info",
+
+                "information"
             ],
             "responses": [
                 "Support"
