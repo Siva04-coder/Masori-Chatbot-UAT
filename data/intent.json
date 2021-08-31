@@ -386,9 +386,7 @@
                 "Pharmaceutical",
                 "Contact Acadia",
                 "Connect Acadia",
-                "acadia",
-                
-                "Organizations supporting Parkinson's Patients"
+                "acadia"
             ],
             "responses": [
                 "Acadia connect"
@@ -690,7 +688,10 @@
                 "share information",
                 "share info",
 
-                "information"
+                "information",
+                "Organizations supporting",
+                "Organizations supporting Parkinson's",
+                "Organizations supporting Parkinson's Patients"
             ],
             "responses": [
                 "Support"
