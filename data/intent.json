@@ -486,6 +486,7 @@
         {
             "Intent": "Safety Information",
             "patterns": [
+                "Important Safety Information",
                 "safety information",
                 "safety informations",
                 "safety details",
@@ -525,7 +526,6 @@
             "patterns": [
                 "Medwatch",
                 "ISI",
-                "Important Safety Information",
                 "1-800-FDA-1088",
                 "reporting side effects",
                 "report side effects",
