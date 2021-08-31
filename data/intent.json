@@ -476,7 +476,9 @@
                 "Product issue",
                 "Product issues",
                 "Product concern",
-                "Product concerns"
+                "Product concerns",
+                "Medical Information",
+                "Product Quality complaints"
             ],
             "responses": [
                 "Medical Questions"
