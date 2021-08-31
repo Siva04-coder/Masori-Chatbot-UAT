@@ -386,7 +386,9 @@
                 "Pharmaceutical",
                 "Contact Acadia",
                 "Connect Acadia",
-                "acadia"
+                "acadia",
+                
+                "Organizations supporting Parkinson's Patients"
             ],
             "responses": [
                 "Acadia connect"
@@ -601,8 +603,7 @@
                 "cost",
                 "much NUPLAZID Cost",
                 "much NUPLAZID",
-                "cost nuplazid",
-                "Organizations supporting Parkinson's Patients"
+                "cost nuplazid"
             ],
             "responses": [
                 "NUPLAZID cost"
