@@ -19,8 +19,8 @@ from flask_cors import CORS
 import auth
 import json
 
-#import nltk
-#nltk.download('punkt')
+import nltk
+nltk.download('punkt')
 
 # %% Declaration(s)
 cfg = config.Config()
