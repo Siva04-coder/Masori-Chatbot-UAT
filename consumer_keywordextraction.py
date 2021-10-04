@@ -162,11 +162,21 @@ for intent in intents['data']:
 documents['wordcount'] = documents['Keywords'].map(len)
 
 words = sorted(list(set(words)))
-with open('./pickles/Consumer_Intent.pkl', 'wb') as f:
-  pickle.dump(documents, f)
 
-with open('./pickles/Consumer_ExtractedKeyword.pkl', 'wb') as f:
-  pickle.dump(all_words, f)
+def getDocuments():
+    return documents
+
+def getAllWords():
+    return all_words
+
+# with open('./pickles/Consumer_Intent.pkl', 'wb') as f:
+#   pickle.dump(documents, f)
+
+# with open('./pickles/Consumer_ExtractedKeyword.pkl', 'wb') as f:
+#   pickle.dump(all_words, f)
+
+
+
   #files.download('Consumer_ExtractedKeyword.pkl')
     
 # #classes = sorted(list(set(classes)))

@@ -13,6 +13,7 @@ import string
 import re
 import pickle
 import json
+import keywordextraction
 
 words = []
 
@@ -37,9 +38,9 @@ inputstr = " "
 # st = nltk.PorterStemmer()
 
 try:
-    data = pickle.load(open( "./pickles/HCP_ExtractedKeyword.pkl", "rb" ))
+    data = keywordextraction.getAllWords() #pickle.load(open( "./pickles/HCP_ExtractedKeyword.pkl", "rb" ))
     words = data
-    intentdata = pickle.load(open( "./pickles/HCP_Intent.pkl", "rb" ))
+    intentdata = keywordextraction.getDocuments() #pickle.load(open( "./pickles/HCP_Intent.pkl", "rb" ))
     # print('intentdata', intentdata)
     intent = intentdata
     # print("intent",intent)

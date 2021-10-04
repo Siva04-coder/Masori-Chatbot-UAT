@@ -13,6 +13,7 @@ import string
 import re
 import pickle
 import json
+import consumer_keywordextraction
 
 words = []
 
@@ -34,9 +35,9 @@ stopwords = []
 stopwords_plus = stopwords + lots_of_stopwords
 stopwords_plus = set(stopwords_plus)
 
-data = pickle.load(open( "./pickles/Consumer_ExtractedKeyword.pkl", "rb" ))
+data = consumer_keywordextraction.getAllWords() #pickle.load(open( "./pickles/Consumer_ExtractedKeyword.pkl", "rb" ))
 words = data
-intentdata = pickle.load(open( "./pickles/Consumer_Intent.pkl", "rb" ))
+intentdata = consumer_keywordextraction.getDocuments() #pickle.load(open( "./pickles/Consumer_Intent.pkl", "rb" ))
 # print('intentdata', intentdata)
 intent = intentdata
 inputstr = " "
