@@ -18,6 +18,7 @@ import base64
 from flask_cors import CORS
 import auth
 import json
+import updatepanel
 
 import nltk
 nltk.download('punkt')
@@ -44,7 +45,6 @@ unauthorized_msg = 'Unauthorized Access.'
 chat_msg_time_format = '%d/%m/%y %H:%M:%S'
 
 # %% Common
-
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
@@ -621,6 +621,102 @@ def refreshConsumerModel():
     import consumer_keywordextraction
 
     return "Model has been updated."
+
+
+########################################   START UPDATE PANEL    ###########################################
+
+############################################# consumer ##################################################
+
+@application.route('/Show_Keywords_ConAutoSuggestion', methods=['GET', 'POST'])
+def Show_Keywords_ConAutoSuggestion():
+    key = updatepanel.Show_Keywords_ConAutoSuggestion()
+    #print(json.dumps(int))
+    return json.dumps(key)
+
+@application.route('/get_dropdown_intent_consumer', methods=['GET', 'POST'])
+def get_dropdown_intent_consumer():
+    intg = updatepanel.get_dropdown_intent_consumer()
+    #print(json.dumps(int))
+    return json.dumps(intg)
+
+@application.route('/show_dropdownIntent_Keywords_ConSubFunctionalArea', methods=['GET', 'POST'])
+def show_dropdownIntent_Keywords_ConSubFunctionalArea():
+    int1 = updatepanel.show_dropdownIntent_Keywords_ConSubFunctionalArea()
+    #print(json.dumps(int1))
+    return json.dumps(int1)
+
+
+@application.route('/get_new_Keywords_ConAutoSuggestion', methods=['GET', 'POST'])
+def get_new_Keywords_ConAutoSuggestion():
+    int1 = updatepanel.get_new_Keywords_ConAutoSuggestion()
+    #print(json.dumps(int1))
+    return json.dumps(int1)
+    
+@application.route('/Add_Keyword_ConSubFunctionalArea', methods=['GET', 'POST'])
+def Add_Keyword_ConSubFunctionalArea():
+    int1 = updatepanel.Add_Keyword_ConSubFunctionalArea()
+    #print(json.dumps(int1))
+    return json.dumps(int1)
+
+@application.route('/del_keywords_ConSubFunctionalArea', methods=['GET', 'POST'])
+def del_keywords_ConSubFunctionalArea():
+    int1 = updatepanel.del_keywords_ConSubFunctionalArea()
+    #print(json.dumps(int1))
+    return json.dumps(int1)
+    
+@application.route('/delete_Keywords_ConAutoSuggestion', methods=['GET', 'POST'])
+def delete_Keywords_ConAutoSuggestion():
+    word2 = updatepanel.delete_Keywords_ConAutoSuggestion()
+    #print(json.dumps(int1))
+    return json.dumps(word2)
+
+    
+##########################################  HCP ###############################################
+
+
+@application.route('/get_dropdown_intent_HCP', methods=['GET', 'POST'])
+def get_dropdown_intent_HCP():
+    int = updatepanel.get_dropdown_intent_HCP()
+    #print(json.dumps(int))
+    return json.dumps(int)
+
+@application.route('/show_dropdownIntent_Keywords_HCPSubFunctionalArea', methods=['GET', 'POST'])
+def show_dropdownIntent_Keywords_HCPSubFunctionalArea():
+    int1 = updatepanel.show_dropdownIntent_Keywords_HCPSubFunctionalArea()
+    #print(json.dumps(int1))
+    return json.dumps(int1)
+
+@application.route('/Show_Keywords_HCPAutoSuggestion', methods=['GET', 'POST'])
+def Show_Keywords_HCPAutoSuggestion():
+    key = updatepanel.Show_Keywords_HCPAutoSuggestion()
+    #print(json.dumps(int))
+    return json.dumps(key)
+
+@application.route('/get_new_Keywords_HCPAutoSuggestion', methods=['GET', 'POST'])
+def get_new_Keywords_HCPAutoSuggestion():
+    int1 = updatepanel.get_new_Keywords_HCPAutoSuggestion()
+    #print(json.dumps(int1))
+    return json.dumps(int1)
+
+@application.route('/Add_Keyword_HCPSubFunctionalArea', methods=['GET', 'POST'])
+def Add_Keyword_HCPSubFunctionalArea():
+    int1 = updatepanel.Add_Keyword_HCPSubFunctionalArea()
+    #print(json.dumps(int1))
+    return json.dumps(int1)
+
+@application.route('/del_keywords_HCPSubFunctionalArea', methods=['GET', 'POST'])
+def del_keywords_HCPSubFunctionalArea():
+    int1 = updatepanel.del_keywords_HCPSubFunctionalArea()
+    #print(json.dumps(int1))
+    return json.dumps(int1)
+
+@application.route('/delete_Keywords_HCPAutoSuggestion', methods=['GET', 'POST'])
+def delete_Keywords_HCPAutoSuggestion():
+    word = updatepanel.delete_Keywords_HCPAutoSuggestion()
+    #print(json.dumps(int1))
+    return json.dumps(word)
+
+########################################   END UPDATE PANEL    ###########################################
 
 
 # %% Main but it should be commented before upload to Git
