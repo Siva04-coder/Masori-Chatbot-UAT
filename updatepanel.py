@@ -1,4 +1,3 @@
-import pandas as pd
 import json
 from flask import request
 
@@ -41,13 +40,13 @@ def del_keywords_ConSubFunctionalArea():
                 if words==response1:
                     y.remove(org)
         
-    for repo in g.get_user().get_repos():
-        if repo.name == 'Workout':                            
-            repo.edit(has_wiki=False)
-            #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-            file = repo.get_contents("intent.json")
-            print(repo.name)
-            repo.update_file("intent.json", "FileUpdated", str(data), file.sha)
+    # for repo in g.get_user().get_repos():
+    #     if repo.name == 'Workout':                            
+    #         repo.edit(has_wiki=False)
+    #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+    #         file = repo.get_contents("intent.json")
+    #         print(repo.name)
+    #         repo.update_file("intent.json", "FileUpdated", str(data), file.sha)
                 
     with open(r"data/intent.json", "w") as fw:
         json.dump(data, fw)
@@ -67,13 +66,15 @@ def get_new_Keywords_ConAutoSuggestion():
         data=json.load(f)
         x=data['keywords']
         x.append(response)
-    for repo in g.get_user().get_repos():
-        if repo.name == 'Workout':                            
-            repo.edit(has_wiki=False)
-            #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-            file = repo.get_contents("All_Consumer_Keywords.json")
-            print(repo.name)
-            repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
+
+    # for repo in g.get_user().get_repos():
+    #     if repo.name == 'Workout':                            
+    #         repo.edit(has_wiki=False)
+    #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+    #         file = repo.get_contents("All_Consumer_Keywords.json")
+    #         print(repo.name)
+    #         repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
+
     with open(r"data/All_Consumer_Keywords.json", "w") as fw:
         json.dump(data, fw)
 
@@ -87,13 +88,15 @@ def delete_Keywords_ConAutoSuggestion():
         data=json.load(f)
         x=data['keywords']
         x.remove(res)
-    for repo in g.get_user().get_repos():
-        if repo.name == 'Workout':                            
-            repo.edit(has_wiki=False)
-            #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-            file = repo.get_contents("All_Consumer_Keywords.json")
-            print(repo.name)
-            repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
+
+    # for repo in g.get_user().get_repos():
+    #     if repo.name == 'Workout':                            
+    #         repo.edit(has_wiki=False)
+    #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+    #         file = repo.get_contents("All_Consumer_Keywords.json")
+    #         print(repo.name)
+    #         repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
+
     with open(r"data/All_Consumer_Keywords.json", "w") as fw:
         json.dump(data, fw)
 
@@ -113,13 +116,13 @@ def Add_Keyword_ConSubFunctionalArea():
                     if words==response1:
                         y.append(response)
 
-        for repo in g.get_user().get_repos():
-            if repo.name == 'Workout':                            
-                repo.edit(has_wiki=False)
-                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                file = repo.get_contents("intent.json")
-                print(repo.name)
-                repo.update_file("intent.json", "FileUpdated", str(data), file.sha)    
+        # for repo in g.get_user().get_repos():
+        #     if repo.name == 'Workout':                            
+        #         repo.edit(has_wiki=False)
+        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+        #         file = repo.get_contents("intent.json")
+        #         print(repo.name)
+        #         repo.update_file("intent.json", "FileUpdated", str(data), file.sha)    
 
         with open(r"data/intent.json", "w") as fw:
             json.dump(data, fw)
@@ -159,13 +162,15 @@ def get_new_Keywords_HCPAutoSuggestion():
         data=json.load(f)
         x=data['keywords']
         x.append(response)
-    for repo in g.get_user().get_repos():
-        if repo.name == 'Workout':                            
-            repo.edit(has_wiki=False)
-            #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-            file = repo.get_contents("All_HCP_Keywords.json")
-            print(repo.name)
-            repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
+    
+    # for repo in g.get_user().get_repos():
+    #     if repo.name == 'Workout':                            
+    #         repo.edit(has_wiki=False)
+    #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+    #         file = repo.get_contents("All_HCP_Keywords.json")
+    #         print(repo.name)
+    #         repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
+
     with open(r"data/All_HCP_Keywords.json", "w") as fw:
         json.dump(data, fw)
 
@@ -187,13 +192,13 @@ def del_keywords_HCPSubFunctionalArea():
                 if words==response1:
                     y.remove(org)
 
-    for repo in g.get_user().get_repos():
-        if repo.name == 'Workout':                            
-            repo.edit(has_wiki=False)
-            #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-            file = repo.get_contents("HCP_intent.json")
-            print(repo.name)
-            repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
+    # for repo in g.get_user().get_repos():
+    #     if repo.name == 'Workout':                            
+    #         repo.edit(has_wiki=False)
+    #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+    #         file = repo.get_contents("HCP_intent.json")
+    #         print(repo.name)
+    #         repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
 
     with open(r"data/HCP_intent.json", "w") as fw:
         json.dump(data, fw)
@@ -214,13 +219,13 @@ def Add_Keyword_HCPSubFunctionalArea():
                     if words==response1:
                         y.append(response)
 
-        for repo in g.get_user().get_repos():
-            if repo.name == 'Workout':                            
-                repo.edit(has_wiki=False)
-                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                file = repo.get_contents("HCP_intent.json")
-                print(repo.name)
-                repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
+        # for repo in g.get_user().get_repos():
+        #     if repo.name == 'Workout':                            
+        #         repo.edit(has_wiki=False)
+        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+        #         file = repo.get_contents("HCP_intent.json")
+        #         print(repo.name)
+        #         repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
 
         with open(r"data/HCP_intent.json", "w") as fw:
             json.dump(data, fw)
@@ -236,13 +241,13 @@ def delete_Keywords_HCPAutoSuggestion():
         x=data['keywords']
         x.remove(org1)
 
-    for repo in g.get_user().get_repos():
-        if repo.name == 'Workout':                            
-            repo.edit(has_wiki=False)
-            #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-            file = repo.get_contents("All_HCP_Keywords.json")
-            print(repo.name)
-            repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
+    # for repo in g.get_user().get_repos():
+    #     if repo.name == 'Workout':                            
+    #         repo.edit(has_wiki=False)
+    #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+    #         file = repo.get_contents("All_HCP_Keywords.json")
+    #         print(repo.name)
+    #         repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
 
     with open(r"data/All_HCP_Keywords.json", "w") as fw:
         json.dump(data, fw)
