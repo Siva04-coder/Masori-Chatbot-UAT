@@ -66,8 +66,8 @@ class response_finder:
                 
                 if isInvalid == False:
                     intent = consumer_predict.predict(chat_message)
-                    
-                    if len(intent) > 0:                
+                    print('intent', intent)
+                    if len(intent) > 0:
                         if isRecommend == True:
                             try:
                                 intent.remove(chat_message)
