@@ -663,7 +663,7 @@ def del_keywords_ConSubFunctionalArea():
     int1 = updatepanel.del_keywords_ConSubFunctionalArea()
     #print(json.dumps(int1))
     return json.dumps(int1)
-    
+
 @application.route('/delete_Keywords_ConAutoSuggestion', methods=['GET', 'POST'])
 def delete_Keywords_ConAutoSuggestion():
     word2 = updatepanel.delete_Keywords_ConAutoSuggestion()
