@@ -73,7 +73,7 @@ allWords = []
 
 def get_documents():
     
-    with open("./data/Intent.json") as json_data:
+    with open("data/Intent.json") as json_data:
         intents = json.load(json_data)
 
     for line in stopword_file.readlines():

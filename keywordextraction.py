@@ -68,7 +68,7 @@ def ngrams_custom(tokens):
 
 
 # nltk.download('punkt')
-stopword_file = open("./data/long_stopwords.txt", "r")
+stopword_file = open("data/long_stopwords.txt", "r")
 lots_of_stopwords = []
 
 
@@ -93,7 +93,7 @@ allWords = []
 
 def get_documents():
 
-    with open("./data/HCP_intent.json") as json_data:
+    with open("data/HCP_intent.json") as json_data:
         intents = json.load(json_data)
 
     for line in stopword_file.readlines():

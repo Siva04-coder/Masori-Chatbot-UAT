@@ -18,7 +18,7 @@ import keywordextraction
 words = []
 
 # nltk.download('punkt')
-stopword_file = open("./data/long_stopwords.txt", "r")
+stopword_file = open("data/long_stopwords.txt", "r")
 lots_of_stopwords = []
 
 for line in stopword_file.readlines():
@@ -197,7 +197,7 @@ def predict(chat):
 
 
 def getGeneralResponse(chat_msg):
-    with open("./data/General_Intent.json") as json_data:
+    with open("data/General_Intent.json") as json_data:
         intents = json.load(json_data)
 
     chat_msg = re.sub(r'[?|$|.|_|(|)|,|&|!]', r'', chat_msg)
