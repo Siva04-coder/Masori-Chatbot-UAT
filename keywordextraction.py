@@ -68,7 +68,7 @@ lots_of_stopwords = []
 
 
 import json
-with open("./data/HCP_Intent.json") as json_data:
+with open("./data/HCP_intent.json") as json_data:
     intents = json.load(json_data)
 
 for line in stopword_file.readlines():
