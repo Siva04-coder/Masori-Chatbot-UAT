@@ -53,11 +53,11 @@ lots_of_stopwords = []
 
 
 import json
-with open("./data/Intent.json") as json_data:
-    intents = json.load(json_data)
+# with open("./data/Intent.json") as json_data:
+#     intents = json.load(json_data)
 
-for line in stopword_file.readlines():
-    lots_of_stopwords.append(str(line.strip()))
+# for line in stopword_file.readlines():
+#     lots_of_stopwords.append(str(line.strip()))
 
 stopwords_plus = []
 words = []
@@ -70,104 +70,115 @@ stopwords_plus = set(stopwords_plus)
 allWords = []
 #sentence = "There are 2 general types of PD symptoms—motor symptoms, which most people are well aware of, and the nonmotor symptoms, which may be unexpected. The nonmotor symptoms of PD, include hallucinations. Currently, there is no clear understanding of the exact cause of hallucinations and delusions associated with PD. However, certain brain chemicals and receptors (such as dopamine and serotonin) are believed to play."
 #print('intents',intents)
-documents = pd.DataFrame(columns = [ 'Intents', 'Keywords' ])
 
-for intent in intents['data']:
-    respo = str(intent['responses'][0])
+def get_documents():
     
-    arr=[]
-    new_str=''
+    with open("./data/Intent.json") as json_data:
+        intents = json.load(json_data)
+
+    for line in stopword_file.readlines():
+        lots_of_stopwords.append(str(line.strip()))
     
-    for pattern in intent['patterns']:
-        
-        words = []
-        pattern = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',pattern)
-        w = pattern.split(' ')
-        w = [(_w.lower()) for _w in w if _w.lower() not in stopwords_plus]
-        
-        w1 = ' '.join(w)
-        
-        #text = ngrams(w, 3)
-        #text = ngrams_custom(w)
-        #text = sorted(list(set(text)))
-        # words.extend(text)
-        # words = sorted(list(set(words)))
-        # all_words.append(words)
+    documents = pd.DataFrame(columns = [ 'Intents', 'Keywords' ])
 
-        word = w1
-        all_words.append(word)
-        if word != '':
-            doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
-            docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
-                                    & (documents['Keywords'] == word.strip())]
-            # print('docavl', doc)
-            if docavl.empty:
-                documents = documents.append(doc, ignore_index = True)
+    for intent in intents['data']:
+        respo = str(intent['responses'][0])
         
-        # print('\n\nwords', words)
+        arr=[]
+        new_str=''
         
-        # if respo == 'About SAPS-PD':
-        #     print('w', w)
-        #     print('text', text)
-        #     print('response', respo, words)
-        
-        # for word in words:
-        #     if word != '':
-        #         doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
-        #         docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
-        #                                & (documents['Keywords'] == word.strip())]
-        #         # print('docavl', doc)
-        #         if docavl.empty:
-        #             documents = documents.append(doc, ignore_index = True)
+        for pattern in intent['patterns']:
+            
+            words = []
+            pattern = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',pattern)
+            w = pattern.split(' ')
+            w = [(_w.lower()) for _w in w if _w.lower() not in stopwords_plus]
+            
+            w1 = ' '.join(w)
+            
+            #text = ngrams(w, 3)
+            #text = ngrams_custom(w)
+            #text = sorted(list(set(text)))
+            # words.extend(text)
+            # words = sorted(list(set(words)))
+            # all_words.append(words)
+
+            word = w1
+            all_words.append(word)
+            if word != '':
+                doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
+                docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
+                                        & (documents['Keywords'] == word.strip())]
+                # print('docavl', doc)
+                if docavl.empty:
+                    documents = documents.append(doc, ignore_index = True)
+            
+            # print('\n\nwords', words)
+            
+            # if respo == 'About SAPS-PD':
+            #     print('w', w)
+            #     print('text', text)
+            #     print('response', respo, words)
+            
+            # for word in words:
+            #     if word != '':
+            #         doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
+            #         docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
+            #                                & (documents['Keywords'] == word.strip())]
+            #         # print('docavl', doc)
+            #         if docavl.empty:
+            #             documents = documents.append(doc, ignore_index = True)
 
 
-# for intent in intents['data']:
-#     for pattern in intent['patterns']:
+    # for intent in intents['data']:
+    #     for pattern in intent['patterns']:
+            
+    #         pattern = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',pattern)
+    #         w = pattern.split(' ')
+    #         #word = re.sub(r'[?|$|.|_|(|)|,|!]',r'',word)
+    #         #print("pattern",w)
+    #         #w = pattern.lower().split(' ')
+    #         w = [(_w.lower()) for _w in w if _w.lower() not in stopwords_plus]
+    #         # print("before",w)
+    #         text = ngrams(w, 3, [])
+    #         text = sorted(list(set(text)))
+    #         #print("text",text)
+    #         words.extend(text)
+    #         words = sorted(list(set(words)))
         
-#         pattern = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',pattern)
-#         w = pattern.split(' ')
-#         #word = re.sub(r'[?|$|.|_|(|)|,|!]',r'',word)
-#         #print("pattern",w)
-#         #w = pattern.lower().split(' ')
-#         w = [(_w.lower()) for _w in w if _w.lower() not in stopwords_plus]
-#         # print("before",w)
-#         text = ngrams(w, 3, [])
-#         text = sorted(list(set(text)))
-#         #print("text",text)
-#         words.extend(text)
-#         words = sorted(list(set(words)))
+    #     respo = str(intent['responses'][0])
+    #     # print('intent[', words)
+    #     allWords.append(words)
+    #     for word in words:
+    #         if word != '':
+    #             doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
+    #             docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
+    #                                    & (documents['Keywords'] == word.strip())]
+    #             # print('docavl', doc)
+    #             if docavl.empty:
+    #                 documents = documents.append(doc, ignore_index = True)
+
+    #     if intent['responses'] not in classes:
+    #         for response in intent['responses']:
+    #             resp = response.replace("â€™", "'")
+    #             classes.append(resp) 
+        
+    #     #words = sorted(list(set(words)))
+    #     #documents = sorted(list(set(documents)))
+
+    # print(documents)
+
+    documents['wordcount'] = documents['Keywords'].map(len)
+
+    words = sorted(list(set(words)))
     
-#     respo = str(intent['responses'][0])
-#     # print('intent[', words)
-#     allWords.append(words)
-#     for word in words:
-#         if word != '':
-#             doc = {'Intents': respo.replace("â€™", "'").strip(), 'Keywords': word.strip()}
-#             docavl = documents.loc[(documents['Intents'] == respo.replace("â€™", "'").strip())
-#                                    & (documents['Keywords'] == word.strip())]
-#             # print('docavl', doc)
-#             if docavl.empty:
-#                 documents = documents.append(doc, ignore_index = True)
+    return documents, all_words
 
-#     if intent['responses'] not in classes:
-#         for response in intent['responses']:
-#             resp = response.replace("â€™", "'")
-#             classes.append(resp) 
-      
-#     #words = sorted(list(set(words)))
-#     #documents = sorted(list(set(documents)))
+# def getDocuments():
+#     return documents
 
-# print(documents)
-
-documents['wordcount'] = documents['Keywords'].map(len)
-
-words = sorted(list(set(words)))
-
-def getDocuments():
-    return documents
-
-def getAllWords():
-    return all_words
+# def getAllWords():
+#     return all_words
 
 # with open('./pickles/Consumer_Intent.pkl', 'wb') as f:
 #   pickle.dump(documents, f)
