@@ -13,12 +13,11 @@ import string
 import re
 import pickle
 import json
-import keywordextraction
 
 words = []
 
-# nltk.download('punkt')
-stopword_file = open("data/long_stopwords.txt", "r")
+#nltk.download('punkt')
+stopword_file = open("./data/long_stopwords.txt", "r")
 lots_of_stopwords = []
 
 for line in stopword_file.readlines():
@@ -38,77 +37,73 @@ inputstr = " "
 # st = nltk.PorterStemmer()
 
 try:
-    # pickle.load(open( "./pickles/HCP_ExtractedKeyword.pkl", "rb" ))
-    data = keywordextraction.getAllWords()
+    data = pickle.load(open( "./pickles/HCP_ExtractedKeyword.pkl", "rb" ))
     words = data
-    # pickle.load(open( "./pickles/HCP_Intent.pkl", "rb" ))
-    intentdata = keywordextraction.getDocuments()
+    intentdata = pickle.load(open( "./pickles/HCP_Intent.pkl", "rb" ))
     # print('intentdata', intentdata)
     intent = intentdata
     # print("intent",intent)
 except Exception as e:
     pass
 
-
 def clean_up_sentence(sentence):
-    sentence = re.sub(r"[?|$|.|_|(|)|,|&|!|']", r'', sentence)
+    sentence = re.sub(r"[?|$|.|_|(|)|,|&|!|']",r'',sentence)
     w = nltk.word_tokenize(sentence)
     w = [(_w.lower()) for _w in w if _w.lower() not in stopwords_plus]
-
+    
     return w
-
 
 def bow(sentence, words, show_details=False):
     #sentence_words = clean_up_sentence(sentence)
     # bag of words
     documents = []
     for s in sentence:
-        for i, w in enumerate(words):
+        for i,w in enumerate(words):
             # print('words array', w)
-            # for word in w:
-            # if st.stem(word) == st.stem(s):
+            #for word in w:
+                # if st.stem(word) == st.stem(s):
             if w.strip() == s.strip():
                 documents.append(w)
-                # print("Words",documents)
+                #print("Words",documents)
                 # if show_details:
                 #     print ("found in bag: %s" % w)
 
+    
     return(documents)
-
 
 def predict_bag(intent, output, show_details=False):
     prediction = []
     print('output-predict', output)
     #print('intent-predict', intent)
-
+    
     intent = intent.sort_values('wordcount', ascending=False)
 
     #intent.sort_values(by=len(['Keywords']), inplace=True, ascending=False)
     for ind in intent.index:
         #print('keywords', intent['Keywords'][ind])
-        # for wrd in intent['Keywords'][ind].split(' '):
-        #print('match', wrd, output)
-        for i, w in enumerate(output):
-
+        #for wrd in intent['Keywords'][ind].split(' '):
+            #print('match', wrd, output)
+        for i,w in enumerate(output):
+            
             #print('Keyword', intent['Keywords'][ind].strip())
             # print('Keywords', wrd.strip())
             # if st.stem(w.strip()) == st.stem(wrd.strip()):
-            # if w.strip() == wrd.strip():
+            #if w.strip() == wrd.strip():
             if w.strip() == intent['Keywords'][ind].strip():
                 #print('user keys ', w.strip())
-                # if intent['Intents'][ind].replace("â€™", "'") not in prediction:
+                #if intent['Intents'][ind].replace("â€™", "'") not in prediction:
                 #print('pred', intent['Intents'][ind].replace("â€™", "'"))
                 prediction.append(intent['Intents'][ind].replace("â€™", "'"))
-                # if len(prediction) > 0:
-                #     return prediction
+                    # if len(prediction) > 0:
+                    #     return prediction
 
     # for s in intent:
     #     print('intent : ', s, ' = ', intent[s])
     #     if s != '':
     #         for i,si in enumerate(s):
     #             #print('output = ', si)
-    #             #print("sentence",si.strip())
-    #             for i,w in enumerate(output):
+    #             #print("sentence",si.strip())      
+    #             for i,w in enumerate(output):  
     #                 if w.strip() == si.strip():
     #                     print(w.strip(), si.strip())
     #                     prediction.append(intent[s].replace("â€™", "'"))
@@ -116,6 +111,7 @@ def predict_bag(intent, output, show_details=False):
     #                     # print("Words",s[1])
     #                     # if show_details:
     #                     #     print ("found in bag: %s" % w)
+            
 
     return(prediction)
 
@@ -132,7 +128,7 @@ def ngrams(tokens, n, arr=[]):
                 new_str += tokens[j]
             else:
                 for i in reversed(range(n-1)):
-                    if j-i >= 0:
+                    if j-i >=0:
                         new_str += ' '+tokens[j-i]
             arr.append(new_str)
         for i in range(len(tokens)):
@@ -149,7 +145,6 @@ def ngrams(tokens, n, arr=[]):
             arr.append(new_str)
     return ngrams(tokens, n-1, arr)
 
-
 def ngrams_custom(tokens):
     ngram_token = []
     temp_token = []
@@ -160,7 +155,7 @@ def ngrams_custom(tokens):
             ngram_token.append(tokens[j])
             if j+1 <= n-1:
                 temp_token.append(tokens[j] + " " + tokens[j+1])
-
+    
     for temp in temp_token:
         ngram_token.append(temp)
 
@@ -170,37 +165,32 @@ def ngrams_custom(tokens):
 def predict(chat):
     input = []
     inputstr = ""
-    intent, words = keywordextraction.get_documents()
-    # print(words)
-    # print(intent)
-
     processed_list = clean_up_sentence(chat)
-
-    inputstr = ' '.join(map(str, processed_list))
+    
+    inputstr=' '.join(map(str, processed_list))
     input.append(inputstr)
     results = []
 
     if len(processed_list) > 0:
-        new_str = ''
+        new_str=''
         text = ngrams(processed_list, len(processed_list), [])
         #text = ngrams_custom(processed_list)
         print('ngram out ', text)
-        output = bow(text, words)
+        output = bow(text,words)
         output = sorted(list(set(output)))
-        sorted_list = list(sorted(output, key=len, reverse=True))
+        sorted_list = list(sorted(output, key = len, reverse=True))
         print('sorted_list ', sorted_list)
-        results = predict_bag(intent, sorted_list)
+        results= predict_bag(intent,sorted_list)
 
     return results
 
 #predict("What is OLE ?")
 
-
 def getGeneralResponse(chat_msg):
-    with open("data/General_Intent.json") as json_data:
+    with open("./data/General_Intent.json") as json_data:
         intents = json.load(json_data)
 
-    chat_msg = re.sub(r'[?|$|.|_|(|)|,|&|!]', r'', chat_msg)
+    chat_msg = re.sub(r'[?|$|.|_|(|)|,|&|!]',r'',chat_msg)
     response = ''
 
     for intent in intents["intents"]:
@@ -217,4 +207,6 @@ def getGeneralResponse(chat_msg):
         if is_break == True:
             break
 
+    
+    
     return response
