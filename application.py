@@ -624,5 +624,5 @@ def refreshConsumerModel():
 
 
 # %% Main but it should be commented before upload to Git
-if __name__ == "__main__":
-    application.run(debug=True)
+# if __name__ == "__main__":
+#     application.run(debug=True)
