@@ -6,11 +6,13 @@
         "Parkinson's disease psychosis symptoms",
         "PD",
         "PD Psychosis",
+        "PD psychosis with PD dementia",
         "Hallucinations",
+        "Humana",
         "Visual hallucinations",
         "Delusions of jealousy",
         "Delusions",
-        
+
         "PD symptom",
         "PDP symptom",
         "NUPLAZID Safety",
@@ -22,14 +24,14 @@
         "NUPLAZID",
         "NUPLAZID Parkinson's disease psychosis",
         "Adverse reaction",
-        
+
         "About NUPLAZID",
         "About PD disease",
         "NUPLAZID Dosing guide",
         "NUPLAZID Resources",
         "NUPLAZID Factsheet",
         "Boxed warning",
-        
+
         "FDA NUPLAZID",
         "Formulary Lookup",
         "Fact sheets & Dosing guide",
@@ -43,12 +45,12 @@
         "Nonmotor function",
         "NUPLAZID precaution",
         "NUPLAZID warning",
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         "Efficacy Data",
         "Efficacy Data NUPLAZID",
         "NUPLAZID primary endpoint",
@@ -60,6 +62,7 @@
         "Measuring efficacy",
         "Efficacy measuring",
         "Efficacy result",
+        "EHR",
         "Open label safety",
         "Open label extension",
         "OLE Study",
@@ -77,12 +80,14 @@
         "NUPLAZID Safety",
         "Safety information",
         "Common adverse reactions",
+        "COMT inhibitor",
         "Concerns",
         "Contraindication",
         "Tolerability",
         "About MOA",
         "MOA",
         "Pharmacodynamics",
+        "Pharmacy",
         "Dosing Information",
         "NUPLAZID Administration",
         "Report Adverse reactions",
@@ -95,8 +100,8 @@
         "NUPLAZID foundation assistance",
         "Foundation assistance",
         "Sprinkle instructions",
-        
-        
+
+
         "Cost and insurance",
         "NUPLAZID patient assistance",
         "Indication",
@@ -104,75 +109,83 @@
         "Insurance Coverage",
         "NUPLAZID sample",
         "In office care",
-        
+
         "ICD-10 Codes",
         "Dosage Administration",
         "Dosage information",
+        "Patients",
         "Patient Brochure",
         "Patient Video",
+        "Patient Profile",
+        "Patient Stories",
+        "Patient History",
         "Support",
         "Additional information",
-        
+
         "Issues",
         "Medical problem",
+        "MAO-B inhibitor",
         "Product issue",
         "Prior authorization",
         "Acadia Connect patient assistance program",
         "Acadia Connect",
-        
-        
+        "acetylcholinesterase inhibitor",
+
         "Parkinson's Diseases",
         "PDP",
         "About Parkinson's Disease Psychosis",
         "Symptoms of Parkinson's Disease Psychosis",
         "Symptoms of PDP",
-        
-        
+
+
         "Symptoms & potential cause",
-        
-        
+
+
         "Symptoms & potential causes",
-        
-        
-        
+
+
+
         "Parkinson's",
-        
-        
+
+
         "Parkinson's Disease Psychosis",
-        
-        
-        
-        
+
+
+
+
         "Symptom",
-        
-        
+
+
         "Parkinson's disease psychosis symptoms",
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
         "PD symptom",
-        
+
         "PDP symptom",
         "Learn about NUPLAZID",
-        
-        
+        "levodopa",
 
-        
+
+
+
         "Learn NUPLAZID",
         "NUPLAZID Resource",
         "Resources NUPLAZID",
         "Boxed warning",
         "Blackbox warnings",
-        
+
         "Warnings and Precautions",
-        
-        
+        "Walgreens",
+        "Walmart",
+
+
         "Factsheet download",
 
         "Factsheet",
@@ -192,36 +205,37 @@
         "Download Factsheets",
         "Fact sheet download",
         "Education materials patients",
-        
-        
+
+
         "NUPLAZID FDA approved",
         "NUPLAZID pharmacology",
         "Motor function",
         "Nonmotor function",
         "Impact on motor function",
-        
+
         "Impact on nonmotor function",
-        
+
         "NUPLAZID warnings",
         "NUPLAZID precautions",
-        
+
         "Warnings",
         "Warning",
-        
-        
-        
-        
-        
+
+
+
+
+
         "Efficacy",
-        
+
         "NUPLAZID efficacy results",
         "NUPLAZID efficacy result",
         "Efficacy results",
         "Open label extension Study",
         "Open label safety study",
         "SAPS PD",
-        
+
         "Common adverse reaction",
+        "CVS",
         "Adverse event",
         "Adverse effect",
         "Adverse reactions",
@@ -239,7 +253,9 @@
         "Mechanism Of Action",
         "Pharmacodynamics",
         "Mechanism action NUPLAZID",
-        
+        "memantine",
+        "metformin",
+
         "Dosage details",
         "Dosage forms",
         "Dosage and administration",
@@ -257,18 +273,19 @@
         "Steady state plasma",
         "NUPLAZID drug classification",
         "Drug classification",
-        
+
         "Drug Interactions",
         "NUPLAZID financial assistance",
         "NUPLAZID financial assistance coverage",
-        
+
         "NUPLAZID medication payment assistance",
         "Medication payment assistance",
         "Payment assistance",
         "Payment assistant",
-        
+
         "Coverage financial assistance",
         "Acadia connect contact information",
+        "Accredo",
         "Forms",
         "Covering prescription costs",
         "NUPLAZID prescribing info",
@@ -283,12 +300,15 @@
         "Enrolled eligibility",
         "Eligibility",
         "Cost",
-        
+
         "Care coordinator",
         "Caregiver support",
+        "carbidopa",
+        "carbidopa/levodopa",
+        "Case study",
         "Assistant",
         "Assistance",
-        
+
         "Contact",
         "Support program",
         "Treatment form",
@@ -298,9 +318,9 @@
         "NUPLAZID registry",
         "Enroll patient",
         "Insurance Lookup",
-        
+
         "Reimbursement support",
-        
+
         "Medicare plan",
         "Patient eligibility",
         "Insurance Options",
@@ -315,18 +335,18 @@
         "Sample NUPLAZID",
         "Sample ordering",
         "Sample order",
-        
+
         "NUPLAZID cost",
-        
+
         "NUPLAZID enrollment form",
         "NUPLAZID black box warning",
         "NUPLAZID pharmacy",
         "Prescription process",
         "In-office care",
         "Reimbursement process",
-        
-        
-        
+
+
+
         "Long term care service request form",
         "ICD-10 Code",
         "ICD-10",
@@ -335,6 +355,7 @@
         "Service request form",
         "Helpful resources",
         "Additional info",
+        "Advanced Care Scripts",
         "Share information",
         "Share info",
         "Share additional information",
@@ -343,15 +364,15 @@
         "Report Adverse event",
         "Report Adverse effect",
         "Report issue",
-        
-        
+
+
         "Reporting Adverse reaction",
         "Reporting Adverse event",
         "Reporting Adverse effect",
         "Reporting",
         "Reporting Adverse reactions",
-        
-        
+
+
         "Issue",
         "Concern",
         "Disturb",
@@ -360,8 +381,8 @@
         "Report issues",
         "Someone medical concern",
         "Someone about medical concern",
-        
-        
+
+
         "Acadiaconnect details",
         "Acadia Connect",
         "Enroll acadia connect",
