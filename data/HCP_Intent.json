@@ -32,17 +32,10 @@
                 "Delusions of jealousy",
                 "Delusions jealousy",
                 "Patients",
-                "Case study",
                 "Patient Profile",
                 "Patient Stories",
+                "Patient Story",
                 "Patient History",
-                "MAO-B inhibitor",
-                "carbidopa",
-                "levodopa",
-                "COMT inhibitor",
-                "acetylcholinesterase inhibitor",
-                "memantine",
-                "metformin",
                 "PD psychosis with PD dementia"
             ],
             "responses": [
@@ -249,8 +242,7 @@
             "patterns": [
                 "common adverse reactions",
                 "common adverse reaction",
-                "Adverse reaction",
-                "Adverse reactions",
+
                 "Adverse",
                 "Common Adverse"
             ],
@@ -311,7 +303,13 @@
                 "NUPLAZID precaution",
                 "NUPLAZID warning and precaution",
                 "NUPLAZID precautions",
-                "NUPLAZID warning and precautions"
+                "NUPLAZID warning and precautions",
+                "Adverse Reaction",
+                "Adverse Reactions",
+                "Adverse Effect",
+                "Side Effect",
+                "Side Effects",
+                "Common Side Effect"
             ],
             "responses": [
                 "NUPLAZID important safety information"
@@ -332,7 +330,8 @@
                 "Vitro",
                 "Mechanism of action NUPLAZID",
                 "Mechanism action NUPLAZID",
-                "Mechanism action"
+                "Mechanism action",
+                "Drug classification"
             ],
             "responses": [
                 "About MOA"
@@ -493,7 +492,7 @@
                 "much NUPLAZID",
                 "NUPLAZID enrollment form",
                 "NUPLAZID drug classification",
-                "drug classification",
+
                 "NUPLAZID black box warning",
                 "NUPLAZID pharmacy",
                 "prescription process",
@@ -560,8 +559,6 @@
                 "Reporting Adverse reactions",
                 "Reporting Adverse reaction",
                 "Reporting",
-                "Adverse reaction",
-                "Adverse reactions",
                 "Report Adverse reactions",
                 "Report Adverse reaction",
                 "Report Adverse event",
@@ -570,8 +567,6 @@
                 "Report Adverse effects",
                 "Adverse event",
                 "Adverse events",
-                "Adverse effect",
-                "Adverse effects",
                 "Reporting Adverse event",
                 "Reporting Adverse events",
                 "Reporting Adverse effect",
