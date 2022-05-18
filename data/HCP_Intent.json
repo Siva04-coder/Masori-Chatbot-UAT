@@ -191,7 +191,9 @@
                 "efficacy measuring",
                 "measuring",
                 "Clinical studies",
-                "Clinical data"
+                "Clinical data",
+                "Clinical trials experience",
+                "Clinical trial experience"
             ],
             "responses": [
                 "NUPLAZID efficacy"
@@ -240,9 +242,6 @@
         {
             "Intent": "Medical Information",
             "patterns": [
-                "common adverse reactions",
-                "common adverse reaction",
-
                 "Adverse",
                 "Common Adverse"
             ],
@@ -309,7 +308,10 @@
                 "Adverse Effect",
                 "Side Effect",
                 "Side Effects",
-                "Common Side Effect"
+                "Common Side Effect",
+                "Common Side Effects",
+                "Common adverse reaction",
+                "Common adverse reactions"
             ],
             "responses": [
                 "NUPLAZID important safety information"
@@ -612,18 +614,6 @@
             ],
             "responses": [
                 "Medical Questions"
-            ]
-        },
-        {
-            "Intent": "General Information",
-            "patterns": [
-
-                "Clinical trials experience",
-                "Clinical trial experience"
-
-            ],
-            "responses": [
-                "Placebo controlled studies"
             ]
         },
         {
