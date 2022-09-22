@@ -102,7 +102,8 @@
                 "indication NUPLAZID",
                 "indications NUPLAZID",
                 "Learn NUPLAZID",
-                "NUPLAZID"
+                "NUPLAZID",
+                "FDA NUPLAZID"
             ],
             "responses": [
                 "Learn about NUPLAZID"
@@ -148,19 +149,15 @@
             "patterns": [
                 "NUPLAZID data",
                 "NUPLAZID efficacy data",
-                "FDA NUPLAZID",
+
                 "FDA approve",
                 "NUPLAZID FDA approved",
                 "NUPLAZID approved FDA",
                 "NUPLAZID pharmacology",
                 "motor functions",
                 "motor function",
-                "nonmotor functions",
-                "nonmotor function",
                 "Impact on motor functions",
-                "Impact motor functions",
-                "Impact on nonmotor functions",
-                "Impact nonmotor functions"
+                "Impact motor functions"
             ],
             "responses": [
                 "NUPLAZID FDA-approved therapy"

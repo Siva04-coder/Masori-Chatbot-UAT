@@ -4,7 +4,7 @@
         "PD related Hallucinations and Delusions",
         "Parkinson's disease psychosis",
         "Parkinson's disease psychosis symptoms",
-        "PD Dementia",
+
         "PD Psychosis",
         "PD psychosis with PD dementia",
         "PD",
@@ -43,7 +43,6 @@
         "NUPLAZID data",
 
         "Motor function",
-        "Nonmotor function",
         "NUPLAZID precaution",
         "NUPLAZID warning",
 
@@ -72,7 +71,7 @@
         "Samples NUPLAZID",
         "SAPS-PD",
         "Pivotal trial",
-        "Long-term care service request form",
+        "Long term care service request form",
         "Long term care access",
         "Long Term Safety",
         "Clinical trials experience",
@@ -80,11 +79,10 @@
         "Clinical data",
         "NUPLAZID Safety",
         "Safety information",
-        
+
         "Common Side Effect",
         "Common Side Effects",
         "Common adverse reaction",
-        "Common adverse reactions",
 
         "Concerns",
         "Contraindication",
@@ -215,10 +213,8 @@
         "NUPLAZID FDA approved",
         "NUPLAZID pharmacology",
         "Motor function",
-        "Nonmotor function",
         "Impact on motor function",
 
-        "Impact on nonmotor function",
 
         "NUPLAZID warnings",
         "NUPLAZID precautions",
@@ -243,7 +239,6 @@
         "CVS",
         "Adverse event",
         "Adverse effect",
-        "Adverse reactions",
         "Adverse reaction table",
         "Adverse events",
         "Adverse effects",
@@ -332,10 +327,8 @@
         "Insurance Options",
         "Order samples",
         "Order sample",
-        "Order some samples",
         "Order sample now",
         "Order samples now",
-        "Order some sample",
         "NUPLAZID samples",
         "Samples",
         "Sample NUPLAZID",
