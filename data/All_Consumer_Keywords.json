@@ -460,14 +460,14 @@
         "Enroll",
         "Caregiver enroll patient",
 
-        "locate a doctor",
-        "locate a parkinson's disease specialist",
-        "locate a pd specialist",
-        "find a doctor",
-        "find a parkinson's disease specialist",
-        "find a pd specialist",
-        "doctor near me",
-        "parkinson's disease specialist near me",
-        "pd specialist near me"
+        "Locate a Doctor",
+        "Locate a Parkinson's Disease Specialist",
+        "locate a PD Specialist",
+        "Find a Doctor",
+        "Find a Parkinson's Disease Specialist",
+        "Find a PD Specialist",
+        "Doctor near me",
+        "Parkinson's Disease Specialist near me",
+        "PD Specialist near me"
     ]
 }
