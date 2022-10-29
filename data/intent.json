@@ -89,6 +89,10 @@
                 "dosage administration",
                 "Dosing",
                 "Dosage Forms",
+                "NUPLAZID dosage options",
+                "NUPLAZID dosage option",
+                "dosage",
+                "dosage information",
                 "nuplazid medicine",
                 "Nuplazid Indication",
                 "Indication",
@@ -400,18 +404,6 @@
             ],
             "responses": [
                 "NUPLAZID prescribing information"
-            ]
-        },
-        {
-            "Intent": "Prescribe Information",
-            "patterns": [
-                "NUPLAZID dosage options",
-                "NUPLAZID dosage option",
-                "dosage",
-                "dosage information"
-            ],
-            "responses": [
-                "NUPLAZID dosage options"
             ]
         },
         {
