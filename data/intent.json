@@ -368,7 +368,7 @@
         {
             "Intent": "Contact Details",
             "patterns": [
-                "Acadia Connect",
+
                 "about Acadia Pharmaceuticals",
                 "about Acadia Pharmaceutical",
                 "Pharmaceutical",
