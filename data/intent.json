@@ -42,8 +42,6 @@
                 "cause of Parkinson's disease",
                 "cause of Parkinson's disease Psychosis",
                 "Parkinson's condition",
-                "manage Parkinson's disease",
-                "manage pd",
                 "manage pdp"
             ],
             "responses": [
@@ -96,7 +94,6 @@
                 "nuplazid medicine",
                 "Nuplazid Indication",
                 "Indication",
-                "treatment Parkinsons disease",
                 "treatment pdp",
                 "treatment"
             ],
@@ -142,7 +139,6 @@
         {
             "Intent": "NUPLAZID Clinical Trial",
             "patterns": [
-                "NUPLAZID Parkinsons",
                 "Clinical data",
                 "Clinical results",
                 "Clinical trial results",
@@ -166,8 +162,6 @@
                 "cause of Parkinsons diseases",
                 "Parkinson condition",
                 "Parkinson's condition",
-                "management of Parkinson",
-                "management of Parkinson's",
                 "Learn about Parkinson disease",
                 "Learn about Parkinson's disease"
             ],
@@ -239,10 +233,8 @@
             "Intent": "About Parkinson's Disease",
             "patterns": [
                 "Parkinson condition",
-                "management of Parkinson",
                 "Learn about Parkinson disease",
                 "Parkinson's condition",
-                "management of Parkinson's",
                 "Learn about Parkinson's disease"
             ],
             "responses": [
@@ -282,8 +274,6 @@
                 "Parkinson's delusions",
                 "Parkinson's induced delusions",
                 "Parkinson's delusion",
-                "related hallucination & delusion",
-                "related hallucinations & delusions",
                 "delusion",
                 "delusions",
                 "NUPLAZID PD-related Delusions",
@@ -392,7 +382,6 @@
                 "NUPLAZID prescription",
                 "prescription nuplazid",
                 "nuplazid capsule form",
-                "nuplazid food",
                 "contraindications nuplazid",
                 "contraindication nuplazid",
                 "contraindications",
@@ -420,16 +409,6 @@
             ]
         },
         {
-            "Intent": "Side Effects",
-            "patterns": [
-                "NUPLAZID Side effects",
-                "NUPLAZID Side effect"
-            ],
-            "responses": [
-                "Side Effects"
-            ]
-        },
-        {
             "Intent": "Medical Questions",
             "patterns": [
                 "Reporting",
@@ -441,7 +420,6 @@
                 "disturb",
                 "disturbed",
                 "Product issue",
-                "Product issues",
                 "Product concern",
                 "Product concerns",
                 "Medical Information",
@@ -468,8 +446,6 @@
                 "safety information NUPLAZID",
                 "safety informations NUPLAZID",
                 "NUPLAZID safety",
-                "NUPLAZID safe",
-                "safe NUPLAZID",
                 "warnings",
                 "warning",
                 "Warnings Precautions",
@@ -482,7 +458,9 @@
                 "Side effects",
                 "interactions",
                 "interaction",
-                "boxed warning"
+                "boxed warning",
+                "NUPLAZID Side effects",
+                "NUPLAZID Side effect"
             ],
             "responses": [
                 "Safety Information"
@@ -492,7 +470,6 @@
             "Intent": "Important Safety Information",
             "patterns": [
                 "Medwatch",
-                "ISI",
                 "1-800-FDA-1088",
                 "reporting side effects",
                 "report side effects",
@@ -584,7 +561,6 @@
                 "urgent",
                 "issues",
                 "concerns",
-                "product issue",
                 "product issues"
             ],
             "responses": [
@@ -646,7 +622,6 @@
                 "copay",
                 "Support",
                 "care cordinator",
-                "use NUPLAZID",
                 "NUPLAZID usage",
                 "additional information",
                 "additional info",
