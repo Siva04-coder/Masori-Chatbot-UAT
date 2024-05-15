@@ -641,6 +641,18 @@
             "responses": [
                 "Acadiaconnect details"
             ]
+        },
+        {
+            "Intent": "Real-World Evidence",
+            "patterns": [
+                "real world data", 
+                "mortality data", 
+                "Mosholder Study", 
+                "retrospective analysis"
+            ],
+            "responses": [
+                "Real-World Evidence"
+            ]
         }
     ]
 }
