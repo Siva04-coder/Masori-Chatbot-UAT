@@ -40,9 +40,9 @@ try:
     data = pickle.load(open( "./pickles/HCP_ExtractedKeyword.pkl", "rb" ))
     words = data
     intentdata = pickle.load(open( "./pickles/HCP_Intent.pkl", "rb" ))
-    # print('intentdata', intentdata)
+    print('intentdata', intentdata)
     intent = intentdata
-    # print("intent",intent)
+    print("intent",intent)
 except Exception as e:
     print('Load Corpus: ', str(e))
     pass
