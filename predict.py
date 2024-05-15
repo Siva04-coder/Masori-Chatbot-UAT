@@ -44,6 +44,7 @@ try:
     intent = intentdata
     # print("intent",intent)
 except Exception as e:
+    print('Load Corpus: ', str(e))
     pass
 
 def clean_up_sentence(sentence):
