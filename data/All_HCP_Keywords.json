@@ -387,6 +387,11 @@
 
         "QT",
         "QT Interval Prolongation",
-        "QT Interval"
+        "QT Interval",
+
+        "real world data", 
+        "mortality data", 
+        "Mosholder Study", 
+        "retrospective analysis"
     ]
 }
