@@ -389,9 +389,16 @@
         "QT Interval Prolongation",
         "QT Interval",
 
-        "real world data", 
-        "mortality data", 
+        "Real World Data", 
+        "Mortality Data", 
         "Mosholder Study", 
-        "retrospective analysis"
+        "Retrospective Analysis",
+        "Layton study",
+
+        "Expert Perspective Videos", 
+        "Specialist Videos", 
+        "Treatment Videos", 
+        "Treating PD Videos",
+        "Acadia Connect Video"
     ]
 }

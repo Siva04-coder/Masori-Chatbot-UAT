@@ -648,10 +648,44 @@
                 "real world data", 
                 "mortality data", 
                 "Mosholder Study", 
-                "retrospective analysis"
+                "retrospective analysis",
+                "Mosholder mortality study Nuplazid", 
+                "all cause mortality Nuplazid Mosholder study", 
+                "mortality rate Nuplazid Mosholder study", 
+                "Mortality risk Nuplazid Mosholder study info", 
+                "Nuplazid versus atypical antipsychotics Mosholder study", 
+                "Nuplazid vs quetiapine Mosholder study", 
+                "nuplazid vs non-quetiapine Mosholder study", 
+                "Mosholder mortality study design Nuplazid", 
+                "all cause mortality Mosholder study Nuplazid", 
+                "Mosholder mortality study and antipsychotics and Nuplazid", 
+                "Mosholder study antipsychotics Nuplazid", 
+                "Layton Mortality study Nuplazid", 
+                "all cause mortality Layton study Nuplazid", 
+                "Layton mortality study and antipsychotics and Nuplazid", 
+                "Layton study antispychotics Nuplazid", 
+                "all cause mortality Nuplazid Layton study", 
+                "mortality rate Nuplazid Layton study"
             ],
             "responses": [
                 "Real-World Evidence"
+            ]
+        },
+        {
+            "Intent": "Expert Perspectives",
+            "patterns": [
+                "videos", 
+                "treatment videos", 
+                "nuplazid videos", 
+                "expert perspective videos", 
+                "treating PD videos", 
+                "treating Parkinson's disease videos", 
+                "specialist videos", 
+                "expert perspectives", 
+                "Acadia Connect video"
+            ],
+            "responses": [
+                "Expert Perspectives"
             ]
         }
     ]
