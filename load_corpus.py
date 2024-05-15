@@ -39,13 +39,8 @@ def update_master_intent_entity_data():
             else:
                 if str(row["Intents"]).replace("'", "''") != 'nan' and str(row["Entities"]).replace("'", "''") != 'nan':
                     data.append([Site_Area, str(row["Intents"]).replace("'", "''"), str(row["Entities"]).replace("'", "''")])
-                            
-
-    print(data)
 
     df = pd.DataFrame(data, columns = ['Site_Area', 'Intents', 'Entities'])
-
-    print(df)
 
     with pd.ExcelWriter(corpus_path) as writer1:
         corpus.to_excel(writer1, sheet_name = 'website_data', index = False)
