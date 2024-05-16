@@ -389,16 +389,18 @@
         "QT Interval Prolongation",
         "QT Interval",
 
-        "Real World Data", 
-        "Mortality Data", 
+        "Real-World Evidence", 
+        "All-Cause Mortality data",
+        "Phase IV data", 
         "Mosholder Study", 
-        "Retrospective Analysis",
         "Layton study",
 
         "Expert Perspective Videos", 
-        "Specialist Videos", 
-        "Treatment Videos", 
-        "Treating PD Videos",
-        "Acadia Connect Video"
+        "Specialist Videos",
+        "PD Psychosis Conversations Video",
+        "Initiating Treatment Video",
+        "Evidence for NUPLAZID® Video", 
+        "Treating PD-related hallucinations and delusions in the LTC Setting Video",
+        "Acadia Connect® Video"
     ]
 }

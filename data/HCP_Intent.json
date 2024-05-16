@@ -645,6 +645,8 @@
         {
             "Intent": "Real-World Evidence",
             "patterns": [
+                "real-world evidence",
+                "phase IV data",
                 "real world data", 
                 "mortality data", 
                 "Mosholder Study", 
@@ -674,11 +676,15 @@
         {
             "Intent": "Expert Perspectives",
             "patterns": [
+                "pd psychosis conversations video",
+                "evidence for nuplazid video",
+                "acadia connect video",
                 "videos", 
+                "treatment video", 
                 "treatment videos", 
                 "nuplazid videos", 
                 "expert perspective videos", 
-                "treating PD videos", 
+                "treating pd videos", 
                 "treating Parkinson's disease videos", 
                 "specialist videos", 
                 "expert perspectives", 
