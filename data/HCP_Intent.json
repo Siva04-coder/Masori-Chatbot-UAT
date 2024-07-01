@@ -654,6 +654,7 @@
                 "retrospective analysis",
                 "Mosholder mortality study Nuplazid", 
                 "all cause mortality Nuplazid Mosholder study", 
+                "mortality rate Nuplazid Mosholder study", 
                 "Mortality risk Nuplazid Mosholder study info", 
                 "Nuplazid versus atypical antipsychotics Mosholder study", 
                 "Nuplazid vs quetiapine Mosholder study", 
@@ -667,8 +668,9 @@
                 "all cause mortality Layton study Nuplazid", 
                 "Layton mortality study", 
                 "Layton mortality study and antipsychotics and Nuplazid", 
-                "Layton study antipychotics Nuplazid", 
-                "all cause mortality Nuplazid Layton study"
+                "Layton study antispychotics Nuplazid", 
+                "all cause mortality Nuplazid Layton study", 
+                "mortality rate Nuplazid Layton study"
             ],
             "responses": [
                 "Real-World Evidence"
