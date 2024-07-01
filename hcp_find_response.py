@@ -79,7 +79,7 @@ class response_finder:
             # master = self.master_intent_entity
             corpus = self.website_data
 
-            if chat_message in ["mortality rate Nuplazid Mosholder study","mortality rate Nuplazid Layton study"]:
+            if "mortality rate" in str(chat_message).lower():
                 chat = ''
 
             # for chat in chats:
@@ -88,13 +88,9 @@ class response_finder:
             #         master = master.loc[(master['Site_Area'] == 'HCP') & (master['Entities'].str.contains(chat))]
             
             if chat != '':
-                print('corpus', corpus)
                 corpus = corpus.loc[(corpus['Sub Functional Area'] == str(chat))]
                 
-                print('Filtered corpus', corpus)
                 if not corpus.empty:
-                    print('\n\ncorpus : ', corpus)
-                    print('\n\nintent : ', chat)
                     output_text = '' if str(corpus['Response'].iloc[0]) == 'nan' else corpus['Response'].iloc[0]
                     bullet = '' if str(corpus['Bullets'].iloc[0]) == 'nan' else corpus['Bullets'].iloc[0]
                     video_url = '' if str(corpus['Video URL'].iloc[0]) == 'nan' else corpus['Video URL'].iloc[0]
@@ -118,7 +114,6 @@ class response_finder:
                         "is_general": False
                     }
                 else:
-                    print('\n\ncorpus else ')
                     cnt = 1
                     while True:
                         try:
@@ -178,8 +173,6 @@ class response_finder:
                     "visit_page": '',
                     "is_general": True
                 }
-
-            print('\n\nres_json : ', res_json)
 
         except Exception as e:
             print(str(e))
